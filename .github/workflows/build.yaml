@@ -18,15 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 15 ]
+        node-version: [ 18 ]
     permissions:
       packages: write
       contents: read
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
-      - name: Setup
-        uses: actions/setup-node@v3
       - uses: pnpm/action-setup@v2
         with:
           version: 8
