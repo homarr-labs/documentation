@@ -5,7 +5,7 @@ export default function HomepageUserReviews() {
     {
       username: 'Maeglin',
       plattform: 'Twitter',
-      profilePicture: '/img/pictures/reviews/maeglin.webp',
+      profilePicture: '/img/pictures/review/maeglin.webp',
       fullText:
         "Day 49/100 set up Homarr just for a test spin. It's a nice dashboard and the Arrs integration especialy the calendar is awesome.",
       link: 'https://twitter.com/Maeglin931/status/1555725442744586240',
@@ -13,21 +13,21 @@ export default function HomepageUserReviews() {
     {
       username: 'IBRACORP',
       plattform: 'Youtube',
-      profilePicture: '/img/pictures/reviews/ibracorp.webp',
+      profilePicture: '/img/pictures/review/ibracorp.webp',
       fullText: "Homarr Is Here To Stay. Here's Why | Selfhosted Homepage",
       link: 'https://www.youtube.com/watch?v=Mk9ZZiH5qi0',
     },
     {
       username: 'u/uncmnsense',
       plattform: 'r/selfhosted',
-      profilePicture: '/img/pictures/reviews/r_selfhosted.webp',
+      profilePicture: '/img/pictures/review/r_selfhosted.webp',
       fullText: 'Anyone using homarr? check it out, its pretty fancy...',
       link: 'https://www.reddit.com/r/selfhosted/comments/wqxsk3/anyone_using_homarr_check_it_out_its_pretty_fancy',
     },
     {
       username: 'u/RoachedCoach',
       plattform: 'r/unRAID',
-      profilePicture: '/img/pictures/reviews/r_unraid.webp',
+      profilePicture: '/img/pictures/review/r_unraid.webp',
       fullText:
         "I enjoy Homarr - mostly because it's very simple, straightforward, and attractive.",
       link: 'https://www.reddit.com/r/unRAID/comments/wk3x2s/comment/ijn4vpg/',
@@ -35,7 +35,7 @@ export default function HomepageUserReviews() {
     {
       username: 'u/YankeesIT',
       plattform: 'r/selfhosted',
-      profilePicture: '/img/pictures/reviews/r_selfhosted.webp',
+      profilePicture: '/img/pictures/review/r_selfhosted.webp',
       fullText: 'My Homarr setup...',
       link: 'https://www.reddit.com/r/selfhosted/comments/x84c9v/my_homarr_setup/',
     },
