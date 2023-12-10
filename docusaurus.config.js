@@ -7,14 +7,14 @@ const a11yEmoji = require('@fec/remark-a11y-emoji');
 /** @type {import('@docusaurus/types').Config} */
 const config = async function createConfig() {
   return {
-    title: 'Homarr Docs',
+    title: 'Alparr documentation',
     tagline: 'A simple yet powerful dashboard for your server.',
     url: 'https://homarr.dev',
     baseUrl: '/',
     favicon: 'img/favicon.png',
     // Used for publishing to GitHub Pages
     organizationName: 'ajnart',
-    projectName: 'homarr-docs',
+    projectName: 'alarr-documentation',
     // Has to be set even if not using translations
     i18n: {
       defaultLocale: 'en',
