@@ -11,7 +11,7 @@ const config = async function createConfig() {
     tagline: 'A simple yet powerful dashboard for your server.',
     url: 'https://alparr.app',
     baseUrl: '/',
-    favicon: 'img/favicon.png',
+    favicon: 'img/alparr.png',
     // Used for publishing to GitHub Pages
     organizationName: 'ajnart',
     projectName: 'alarr-documentation',
@@ -80,10 +80,10 @@ const config = async function createConfig() {
           isCloseable: true,
         },
         navbar: {
-          title: 'Homarr',
+          title: 'Alparr',
           logo: {
             alt: 'Homarr Logo',
-            src: 'img/logo.svg',
+            src: 'img/alparr.png',
           },
           items: [
             {
