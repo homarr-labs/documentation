@@ -9,7 +9,7 @@ const config = async function createConfig() {
   return {
     title: 'Alparr documentation',
     tagline: 'A simple yet powerful dashboard for your server.',
-    url: 'https://homarr.dev',
+    url: 'https://alparr.app',
     baseUrl: '/',
     favicon: 'img/favicon.png',
     // Used for publishing to GitHub Pages
@@ -31,18 +31,10 @@ const config = async function createConfig() {
 
     scripts: [
       {
-        src: 'https://umami.homarr.dev/script.js',
+        src: 'http://static.160.216.69.159.clients.your-server.de:3100/script.js',
         async: true,
-        'data-website-id': '2847e7dd-32a1-41f2-a6ed-2d9db17d71b9',
-      },
-      {
-        src: 'https://widget.kapa.ai/kapa-widget.bundle.js',
-        'data-website-id': '1e4656f4-abeb-4343-bbae-1d8626f52378',
-        'data-project-name': 'Homarr',
-        'data-project-color': '#2B2B2B',
-        'data-project-logo': 'https://homarr.dev/img/favicon.png',
-        async: true,
-      },
+        'data-website-id': 'b75387c3-6ed4-41ec-8338-fce561f1fef2',
+      }
     ],
 
     presets: [
