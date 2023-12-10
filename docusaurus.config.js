@@ -34,7 +34,7 @@ const config = async function createConfig() {
         src: 'http://static.160.216.69.159.clients.your-server.de:3100/script.js',
         async: true,
         'data-website-id': 'b75387c3-6ed4-41ec-8338-fce561f1fef2',
-      }
+      },
     ],
 
     presets: [
@@ -44,8 +44,6 @@ const config = async function createConfig() {
         {
           docs: {
             sidebarPath: require.resolve('./sidebars.js'),
-            // Please change this to your repo.
-            // Remove this to remove the "edit this page" links.
             editUrl: 'https://github.com/ajnart/homarr-docs/edit/master',
             remarkPlugins: [a11yEmoji],
           },
@@ -69,62 +67,79 @@ const config = async function createConfig() {
     ],
 
     themeConfig:
-      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       {
-        announcementBar: {
-          id: 'updates',
-          content:
-            '🎉 <b>Homarr\'s authentication update v0.14 has been released!</b> Please <a href="/docs/introduction/installation#updating">update your instance.</a> 🎉',
-          backgroundColor: 'var(--homarr-secondary-bg)', // #0e8860
-          textColor: 'var(--ifm-heading-color)',
-          isCloseable: true,
-        },
-        navbar: {
-          title: 'Alparr',
-          logo: {
-            alt: 'Homarr Logo',
-            src: 'img/alparr.png',
+        'navbar': {
+          'title': 'Alparr',
+          'logo': {
+            'alt': 'Logo',
+            'src': 'img/alparr.png',
           },
-          items: [
+          'items': [
             {
+              label: 'Getting started',
               type: 'doc',
-              docId: 'about',
-              label: 'Documentation',
-            },
-            {
-              to: '/about-us',
-              label: 'About us',
-            },
-            {
-              to: '/blog',
-              label: 'Blog',
               position: 'left',
+              docId: 'getting-started/introduction/prerequisites'
             },
             {
-              to: 'https://demo.homarr.dev/',
-              label: 'Demo',
-              position: 'right',
+              label: 'Dashboards',
+              type: 'doc',
+              position: 'left',
+              docId: 'dashboards/apps/index'
             },
             {
-              to: 'https://discord.com/invite/aCsmEV5RgA',
-              label: 'Discord',
-              position: 'right',
+              label: 'Management',
+              type: 'doc',
+              position: 'left',
+              docId: 'management/boards'
             },
             {
-              to: 'https://github.com/ajnart/homarr',
-              label: 'GitHub',
-              position: 'right',
+              label: 'Configuration',
+              type: 'doc',
+              position: 'left',
+              docId: 'configuration/customizations/icons'
             },
             {
-              to: 'https://www.answeroverflow.com/c/972958686051962910',
-              label: 'Answer Overflow',
-              position: 'right',
+              'to': '/about-us',
+              'label': 'About us',
+              'position': 'left',
+            },
+            {
+              'to': '/blog',
+              'label': 'Blog',
+              'position': 'left',
+            },
+            {
+              'to': 'https://demo.homarr.dev/',
+              'label': 'Demo instance',
+              'position': 'right',
+            },
+            {
+              'type': 'dropdown',
+              'label': 'Community',
+              'position': 'right',
+              'items': [
+                {
+                  'to': 'https://discord.com/invite/aCsmEV5RgA',
+                  'label': 'Discord'
+                },
+                {
+                  'to': 'https://github.com/ajnart/homarr',
+                  'label': 'GitHub'
+                },
+                {
+                  'to': 'https://www.answeroverflow.com/c/972958686051962910',
+                  'label': 'Answer Overflow'
+                },
+              ],
             },
             {
               type: 'search',
               position: 'right',
             },
           ],
+          hideOnScroll: false,
         },
         footer: {
           links: [
@@ -164,7 +179,7 @@ const config = async function createConfig() {
               ],
             },
           ],
-          copyright: `Copyright © ${new Date().getFullYear()} Homarr — <a href="/docs/community/license">License</a>`,
+          copyright: `Copyright © ${new Date().getFullYear()} Homarr — <a href="/docs/configuration/community/license">License</a>`,
         },
         prism: {
           theme: lightCodeTheme,
