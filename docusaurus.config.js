@@ -92,7 +92,7 @@ const config = async function createConfig() {
               label: 'Management',
               type: 'doc',
               position: 'left',
-              docId: 'management/boards'
+              docId: 'management/index'
             },
             {
               label: 'Configuration',
