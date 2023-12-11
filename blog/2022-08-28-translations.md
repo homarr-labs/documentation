@@ -17,7 +17,7 @@ We've been working hard to offer Homarr in many languages. The next update of Ho
 
 ### We need your help
 ![](img/homarr-we-need-you.webp) <br/>
-Yes, we need **YOU**! We want to make Homarr accessible to as many people as possible. Thus, we need to translate all content into many different languages. We need your help for that! [You can help us now to translate Homarr into as many languages as possible](/docs/community/translations).
+Yes, we need **YOU**! We want to make Homarr accessible to as many people as possible. Thus, we need to translate all content into many different languages. We need your help for that! [You can help us now to translate Homarr into as many languages as possible](/docs/configuration/community/translations).
 
 ### About global translations / translations per user
 

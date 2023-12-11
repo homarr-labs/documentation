@@ -26,7 +26,7 @@ Here is a summary of the MIT license, which Homarr is licensed under:
 
 :::note
 
-Please consider [making a donation](/docs/community/donate) to Homarr, if this project has been useful for your needs. Donations help us to keep Homarr up to date, implement new features and help our users with problems and questions.
+Please consider [making a donation](/docs/configuration/community/donate) to Homarr, if this project has been useful for your needs. Donations help us to keep Homarr up to date, implement new features and help our users with problems and questions.
 
 :::
 
