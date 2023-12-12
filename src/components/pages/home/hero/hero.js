@@ -23,16 +23,9 @@ export default function HomeHero() {
 
             <div className={styles.heroButtons}>
               <Link
-                className={clsx('button button--secondary button--lg', styles.heroButton)}
-                to="/docs/about"
-              >
-                Learn More
-                <IconInfoCircle size={20} />
-              </Link>
-              <Link
                 data-umami-event="Install button"
                 className={clsx('button button--secondary button--lg', styles.heroButton)}
-                to="/docs/introduction/installation"
+                to="/docs/getting-started/introduction/installation"
               >
                 Install
                 <IconDownload size={20} />

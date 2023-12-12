@@ -8,7 +8,6 @@ import HomepageUserReviews from '../components/pages/home/review-list';
 import HomeHero from '../components/pages/home/hero/hero';
 
 import styles from './index.module.css';
-import CtaSection from '../components/CTA/ctaSection';
 
 export default function Home() {
   return (
@@ -34,7 +33,6 @@ export default function Home() {
         <HomepageFeatures />
         <HomepageShowcase />
         <HomepageUserReviews />
-        <CtaSection />
       </main>
     </Layout>
   );

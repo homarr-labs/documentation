@@ -147,12 +147,8 @@ const config = async function createConfig() {
               title: 'Documentation',
               items: [
                 {
-                  label: 'About',
-                  to: '/docs/about',
-                },
-                {
                   label: 'Installation',
-                  to: '/docs/introduction/installation',
+                  to: '/docs/getting-started/introduction/installation',
                 },
               ],
             },

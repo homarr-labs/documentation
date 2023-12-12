@@ -10,13 +10,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ### Can I install Homarr on a Raspberry Pi?
-Yes, Homarr is compatible with the architecture of the Raspberry Pi. Have a look in our <a href="/docs/introduction/installation">installation guide</a> on how to do so.
+Yes, Homarr is compatible with the architecture of the Raspberry Pi. Have a look in our <a href="/docs/getting-started/introduction/installation">installation guide</a> on how to do so.
 
 ### I have a suggestion / idea for improvement or want to report a bug
 You can report issues, suggestions, or ideas for improvements <a href="https://github.com/ajnart/homarr/issues/new/choose">here</a>.
 
 ### Can I use my own custom icons for apps?
-Yes, check out our guide on <a href="/docs/customizations/icons">how to add your custom icons</a>.
+Yes, check out our guide on <a href="/docs/configuration/customizations/icons">how to add your custom icons</a>.
 
 ### Some of my online icons are not working (anymore)
 It seems the `cdn.jsdelivr.net` database of icon sometimes appear in the lists for DNS-Holes (Pihole, AdGuard Home...). <br />
@@ -30,12 +30,12 @@ Enabling users to write their own widgets is easy at the first glance, but there
 - Custom widgets would need to be able to request data, so they work properly. We use tRPC for this. Many APIs use different formats and we'd have to convert and read those.
 - Using custom widgets, one could easily create harmful widgets, leak your personal data (potentially including your tokens) and trick your users. A proper implementation (eg. official plugin store, where we can ban harmful widgets from) would resolve this problem to a certain extend, but again requires additional work and time to be put in.
 
-If you still want to add a widget, please consider to contribute it directly to Homarr. For that, basic programming skills are required. Our [Developer Guides](/docs/community/developer-guides) explain this even more detailed.
+If you still want to add a widget, please consider to contribute it directly to Homarr. For that, basic programming skills are required. Our [Developer Guides](/docs/configuration/community/developer-guides) explain this even more detailed.
 
 ### Is it secure to expose Homarr to the web?
 
 Yes, since v0.14.0, we are confident that Homarr is secure enough to be exposed to the web. 
-Make sure to enable the "allow anonymouse access" [option in the settings](/docs/customizations/board-customization#access), if you want to allow people without an account to be able to see your dashboard (not edit)
+Make sure to enable the "allow anonymouse access" [option in the settings](/docs/configuration/customizations/board-customization#access), if you want to allow people without an account to be able to see your dashboard (not edit)
 
 ### How do I open the console / log?
 There are two different sources of information:
@@ -72,23 +72,20 @@ Yes, you can! But please consider a donation, if our work has been useful to you
 ### I think I found a bug. What can I do?
 If you think, that you found a bug, please create an issue <a href="https://github.com/ajnart/homarr/issues/new/choose">here</a>.
 
-### Why are the posters in my calendar not loading?
-This is a common known issue of Homarr. Please refer to our [guide on how to solve it](/docs/community/known-issues#🚨-adblocker-will-break-and-block-the-posters-of-tv-shows). If you're still having trouble, please contact us on [our Discord](/docs/community/get-in-touch#discord) or [open a new issue on GitHub](https://github.com/ajnart/homarr/issues/new/choose).
-
 ### Why can't I use my custom icons?
-This is a common known issue with the Docker version of Homarr. Please refer to our [guide on how to solve it](/docs/community/known-issues#🚨-docker-container-requires-a-restart-after-making-modifications-to-the-icons). If you're still having trouble, please contact us on [our Discord](/docs/community/get-in-touch#discord) or [open a new issue on GitHub](https://github.com/ajnart/homarr/issues/new/choose).
+You need to restart the Homarr Docker container after adding icons.
 
 ### Why can't homarr see/ping containers running locally behind GluetunVPN?
 This is because GluetunVPN, and many other docker VPN services, secure their VPN connections with strict firewalls. These firewalls often block access to local containers, even on the same docker network. The workaround for <a href="https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/firewall.md">GluetunVPN</a> is to add "- FIREWALL_OUTBOUND_SUBNETS=192.168.1.0/24" into the environmental variables of the docker compose file. If you are using a firewall on your system, you will need to add a rule that allows requests from ip's in the range of 192.168.xxx.xxx . If you are using UFW the command would be "sudo ufw allow from 192.168.0.0/16".
 Tip: If you are running your torrent client behind a VPN, and running Sonarr (or something similar) normally, make sure to open your torrent client's port in your firewall. If you don't, Sonarr will not be able to see it. Furthermore, use your machines IP (192.168.x.x) rather then 127.0.0.1 or localhost.
 
 ### Can I get in touch with you?
-Yes, go <a href="/docs/community/get-in-touch">here</a> to get with us in touch.
+Yes, go <a href="/docs/configuration/community/get-in-touch">here</a> to get with us in touch.
 
 <hr/>
 
 :::tip
 
-Haven't found the solution to your problem / question? We are eager to help you on [our Discord](/docs/community/get-in-touch#discord) or in a [GitHub Issue](https://github.com/ajnart/homarr/issues/new/choose).
+Haven't found the solution to your problem / question? We are eager to help you on [our Discord](/docs/configuration/community/get-in-touch#discord) or in a [GitHub Issue](https://github.com/ajnart/homarr/issues/new/choose).
 
 :::
