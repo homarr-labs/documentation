@@ -7,7 +7,7 @@ const a11yEmoji = require('@fec/remark-a11y-emoji');
 /** @type {import('@docusaurus/types').Config} */
 const config = async function createConfig() {
   return {
-    title: 'Alparr documentation',
+    title: 'Homarr documentation',
     tagline: 'A simple yet powerful dashboard for your server.',
     url: 'https://alparr.app',
     baseUrl: '/',
@@ -70,7 +70,7 @@ const config = async function createConfig() {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       {
         'navbar': {
-          'title': 'Alparr',
+          'title': 'Homarr',
           'logo': {
             'alt': 'Logo',
             'src': 'img/alparr.png',
