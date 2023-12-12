@@ -130,3 +130,16 @@ form.aa-Form {
   background-image: radial-gradient(circle,  rgb(253, 126, 20) 0%, rgb(250, 82, 82) 100%) !important;
   font-weight: 600;
 }
+
+.dsla-search-wrapper {
+  width: 300px;
+}
+
+.dsla-search-wrapper .aa-DetachedSearchButton svg {
+  color: #9a9a9a;
+}
+
+.dsla-search-wrapper .aa-DetachedSearchButtonPlaceholder,
+[data-theme="dark"] .dsla-search-wrapper .aa-DetachedSearchButton svg {
+  color: #9a9a9a;
+}
