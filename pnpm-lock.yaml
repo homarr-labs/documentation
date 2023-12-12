@@ -38,6 +38,9 @@ dependencies:
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
+  leader-line-new:
+    specifier: ^1.1.9
+    version: 1.1.9
   plugin-image-zoom:
     specifier: ^1.2.0
     version: 1.2.0
@@ -6494,6 +6497,10 @@ packages:
 
   /layout-base@2.0.1:
     resolution: {integrity: sha512-dp3s92+uNI1hWIpPGH3jK2kxE2lMjdXdr+DH8ynZHpd6PUlH6x6cbuXnoMmiNumznqaNO31xu9e79F0uuZ0JFg==}
+    dev: false
+
+  /leader-line-new@1.1.9:
+    resolution: {integrity: sha512-x56aRYaqJTA4aAS2fgbSpvWKY3IxRXDSFeGkNBmCQ3LX44B3F1HEjcBTkCiK5I3W0nPWeUTWe7dTt59VtdfFWw==}
     dev: false
 
   /leven@3.1.0:

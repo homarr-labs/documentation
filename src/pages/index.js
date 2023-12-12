@@ -8,6 +8,7 @@ import HomepageUserReviews from '../components/pages/home/review-list';
 import HomeHero from '../components/pages/home/hero/hero';
 
 import styles from './index.module.css';
+import { DataflowVisualizationComponent } from '../components/pages/home/dataflow/dataflow';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       </svg>
       <main className='mx-auto w-full md:w-2/3 ps-10 pr-10'>
         <HomepageFeatures />
+        <DataflowVisualizationComponent />
         <HomepageShowcase />
         <HomepageUserReviews />
       </main>
