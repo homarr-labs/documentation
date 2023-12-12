@@ -132,6 +132,14 @@ const config = async function createConfig() {
                   'to': 'https://www.answeroverflow.com/c/972958686051962910',
                   'label': 'Answer Overflow'
                 },
+                {
+                  to: 'https://crowdin.com/project/homarr',
+                  label: 'Community translations (Crowdin)'
+                },
+                {
+                  to: 'https://www.reddit.com/r/homarr/',
+                  label: 'Reddit'
+                }
               ],
             },
             {
