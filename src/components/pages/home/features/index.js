@@ -8,7 +8,7 @@ import {
   IconLicense,
   IconPlug,
   IconSearch,
-  IconApps, IconDragDrop, IconKey,
+  IconApps, IconDragDrop, IconKey, IconLanguage, IconAccessible, IconAdjustments,
 } from '@tabler/icons';
 
 const featureList = [
@@ -31,6 +31,21 @@ const featureList = [
     icon: IconKey,
     title: 'Authentication system',
     content: 'Protect your data with the built in authentication system'
+  },
+  {
+    icon: IconLanguage,
+    title: '26 languages available',
+    content: 'Accessible for users in many countries thanks to the community translation program'
+  },
+  {
+    icon: IconAccessible,
+    title: 'Accessible for color blind & disabled',
+    content: 'Settings to help you navigate and use Homarr'
+  },
+  {
+    icon: IconAdjustments,
+    title: 'Detailed settings for customization',
+    content: 'Adjust apps and dashboards until you like them with helpful and easy to understand settings'
   }
 ];
 
@@ -50,7 +65,7 @@ function Feature(props) {
 
 export default function HomepageFeatures() {
   return (
-    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-16">
+    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-32">
       {featureList.map((props, idx) => (
         <Feature key={idx} {...props} />
       ))}
