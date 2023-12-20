@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '@theme/Layout';
 
 import HomepageFeatures from '../components/pages/home/features/index';
-import HomepageShowcase from '../components/pages/home/showcase/index';
 import HomepageUserReviews from '../components/pages/home/review-list';
 import HomeHero from '../components/pages/home/hero/hero';
 
@@ -38,7 +37,6 @@ export default function Home() {
             return <DataflowVisualizationComponent />;
           }}
         </BrowserOnly>
-        <HomepageShowcase />
         <HomepageUserReviews />
       </main>
     </Layout>
