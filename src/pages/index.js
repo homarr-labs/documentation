@@ -8,7 +8,7 @@ import HomepageUserReviews from '../components/pages/home/review-list';
 import HomeHero from '../components/pages/home/hero/hero';
 
 import styles from './index.module.css';
-import { DataflowVisualizationComponent } from '../components/pages/home/dataflow/dataflow';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default function Home() {
   return (
@@ -30,9 +30,14 @@ export default function Home() {
           d="M0,224L48,202.7C96,181,192,139,288,133.3C384,128,480,160,576,149.3C672,139,768,85,864,58.7C960,32,1056,32,1152,37.3C1248,43,1344,53,1392,58.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
         ></path>
       </svg>
-      <main className='mx-auto w-full md:w-2/3 ps-10 pr-10'>
+      <main className="mx-auto w-full md:w-2/3 ps-10 pr-10">
         <HomepageFeatures />
-        <DataflowVisualizationComponent />
+        <BrowserOnly fallback={<span>loading...</span>}>
+          {() => {
+            const DataflowVisualizationComponent = require('../components/pages/home/dataflow/dataflow').DataflowVisualizationComponent;
+            return <DataflowVisualizationComponent />;
+          }}
+        </BrowserOnly>
         <HomepageShowcase />
         <HomepageUserReviews />
       </main>
