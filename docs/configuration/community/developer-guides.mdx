@@ -7,6 +7,8 @@ tags:
   - Programming
 ---
 
+import CustomWidgetCodeBlock from './custom-widget.mdx';
+
 :::caution
 
 Hold on! This is a technical documentation that
@@ -73,8 +75,8 @@ There are other packages as well, but those are not of significant importance to
 If you want to know those technologies are used for production builds & deplyoments, check out the [deployments section](#deployments).
 
 <details>
-  <summary>Online documentation</summary>
-  <div>
+<summary>Online documentation</summary>
+<div>
 
 The above only covers the application itself.
 For the online documentation, we are using different technologies
@@ -91,7 +93,7 @@ that builds the nessesary data at build.
 
 Graphs can be written using [mermaid.js](https://mermaid.js.org), which were in fact used for this page.
 
-  </div>
+</div>
 </details>
 
 ## Principles and conventions
@@ -204,42 +206,7 @@ Creating your own widget may look overwheling at first, but using this guide, it
 <ul>
 <li>Widgets are located in the directory <code>/src/widgets</code>. Choose a name for your widget and create a directory with this name</li>
 <li>Inside the directory, create a new <code>.tsx</code> file, that has the name of the widget, suffixed by <code>WidgetTile.tsx</code> (example: <code>VideoStreamWidgetTile.tsx</code>)</li>
-<li>Copy and paste the following code in your new file:
-
-```tsx
-const definition = defineWidget({
-  id: 'your-widget-name',
-  icon: IconClock,
-  options: {},
-  gridstack: {
-    minWidth: 1,
-    minHeight: 1,
-    maxWidth: 12,
-    maxHeight: 12,
-  },
-  component: YourWidgetTile,
-});
-
-export type IYourWidget = IWidget<(typeof definition)['id'], typeof definition>;
-
-interface YourWidgetTileProps {
-  widget: IYourWidget;
-}
-
-function YourWidgetTile({ widget }: YourWidgetTileProps) {
-    /* hooks go here */
-    ...
-
-    /* return JSX */
-    return (
-        <span>Hello World</span>
-    );
-}
-
-export default definition;
-```
-
-</li>
+<li>Copy and paste the following code in your new file: <CustomWidgetCodeBlock /></li>
 <li>Replace all <code>YourWidget</code> in the above example with your widget name.
 Now you can start writing the UI of your widget.</li>
 <li>If your widget makes requests over the network, it is recommended that

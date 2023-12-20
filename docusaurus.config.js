@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import { themes as prismThemes } from 'prism-react-renderer';
 const a11yEmoji = require('@fec/remark-a11y-emoji');
 
 /** @type {import('@docusaurus/types').Config} */
@@ -46,6 +45,7 @@ const config = async function createConfig() {
             sidebarPath: require.resolve('./sidebars.js'),
             editUrl: 'https://github.com/ajnart/homarr-docs/edit/master',
             remarkPlugins: [a11yEmoji],
+            exclude: ['**/custom-widget.mdx']
           },
           blog: {
             showReadingTime: true,
@@ -186,8 +186,8 @@ const config = async function createConfig() {
           copyright: `Copyright © ${new Date().getFullYear()} Homarr — <a href="/docs/configuration/community/license">License</a>`,
         },
         prism: {
-          theme: lightCodeTheme,
-          darkTheme: darkCodeTheme,
+          theme: prismThemes.github,
+          darkTheme: prismThemes.dracula,
           defaultLanguage: 'bash',
         },
         colorMode: {
