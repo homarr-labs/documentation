@@ -71,6 +71,8 @@ export default function AboutUs() {
         <h1 className="text-5xl font-extrabold">About us</h1>
         <p className="text-lg text-gray-500">
           Homarr is a community driven open source project that is being maintained by volunteers.
+          Thanks to these people, Homarr has been a growing project since 2021.
+          Our team is working completely remote from many different countries on Homarr in their leisure time for no compensation.
         </p>
 
         <h2 className={'mt-10'}>Code contributions</h2>
