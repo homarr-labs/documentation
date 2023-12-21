@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@cmfcmf/docusaurus-search-local':
-    specifier: ^0.11.0
-    version: 0.11.0(@docusaurus/core@3.0.1)(search-insights@2.13.0)
+    specifier: ^1.1.0
+    version: 1.1.0(@docusaurus/core@3.0.1)(search-insights@2.13.0)
   '@dipakparmar/docusaurus-plugin-umami':
     specifier: ^2.1.2
     version: 2.1.2(eslint@8.56.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
@@ -1628,10 +1628,10 @@ packages:
     resolution: {integrity: sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==}
     dev: false
 
-  /@cmfcmf/docusaurus-search-local@0.11.0(@docusaurus/core@3.0.1)(search-insights@2.13.0):
-    resolution: {integrity: sha512-UzJ0G7JfrhuXJ9h79vforQZs05C5rWhXqrK7C5ie1ImHLTC4RPW7FHagIpZULhcA2PbDkc4ewnWVIufLKq+KzA==}
+  /@cmfcmf/docusaurus-search-local@1.1.0(@docusaurus/core@3.0.1)(search-insights@2.13.0):
+    resolution: {integrity: sha512-0IVb/aA0IK8ZlktuxmgXmluXfcSpo6Vdd2nG21y1aOH9nVYnPP231Dn0H8Ng9Qf9ronQQCDWHnuWpYOr9rUrEQ==}
     peerDependencies:
-      '@docusaurus/core': ^v2.0.0-beta.21
+      '@docusaurus/core': ^2.0.0
       nodejieba: ^2.5.0
     peerDependenciesMeta:
       nodejieba:
