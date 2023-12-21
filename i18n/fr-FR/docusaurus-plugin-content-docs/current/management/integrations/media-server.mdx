@@ -1,0 +1,47 @@
+# 🎬 Media servers
+
+Homarr can integrate with your media servers, which allows you to control it from your dashboard.
+You may add multiple media servers, also of different kinds, to your dashboard.
+
+:::tip
+
+We recommend creating a separate account just for Homarr. Only grant access to the libraries and permissions that you require to be accessed by Homarr. This allows for better security.
+
+:::
+
+
+## Jellyfin
+The Jellyfin integration enables you to view the active sessions, using the [Media Server widget](../../dashboards/widgets/media-server), on your dashboard.
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| Username | Private | Username used for authentication |
+| Password | Private | Password used for authentication |
+
+  </div>
+</details>
+
+## Plex
+For a successful integration, remember that the internal address should not have a path, only the IP and the port (http://IP:port).
+
+In this case it would mean to remove anything of the likes of "/web/index.html" from the link you would usually use.
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| ApiToken | Private | Token used for authentication |
+
+  </div>
+</details>

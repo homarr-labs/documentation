@@ -1,0 +1,62 @@
+{
+  "title": {
+    "message": "Homarr",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Getting started": {
+    "message": "Getting started",
+    "description": "Navbar item with label Getting started"
+  },
+  "item.label.Dashboards": {
+    "message": "Dashboards",
+    "description": "Navbar item with label Dashboards"
+  },
+  "item.label.Management": {
+    "message": "Management",
+    "description": "Navbar item with label Management"
+  },
+  "item.label.Configuration": {
+    "message": "Configuration",
+    "description": "Navbar item with label Configuration"
+  },
+  "item.label.About us": {
+    "message": "About us",
+    "description": "Navbar item with label About us"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Demo instance": {
+    "message": "Demo instance",
+    "description": "Navbar item with label Demo instance"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Answer Overflow": {
+    "message": "Answer Overflow",
+    "description": "Navbar item with label Answer Overflow"
+  },
+  "item.label.Community translations (Crowdin)": {
+    "message": "Community translations (Crowdin)",
+    "description": "Navbar item with label Community translations (Crowdin)"
+  },
+  "item.label.Reddit": {
+    "message": "Reddit",
+    "description": "Navbar item with label Reddit"
+  }
+}

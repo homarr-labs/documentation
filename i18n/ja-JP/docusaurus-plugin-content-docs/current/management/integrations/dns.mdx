@@ -1,0 +1,46 @@
+# ⚙️ DNS
+
+Homarr allows the integration of DHS-holes to control them and display their stats.
+Multiple DNS-holes can be added at the same time.
+Currently, only PiHole and AdGuard Home are supported.
+
+## PiHole
+The PiHole integration enables you to see basic stats like the number of queries in the day and how many are blocked.
+
+You can also disable and enable it using the dns-hole control widget.
+
+For a successful integration, remember that the internal address should not have a path, only the IP and the port (http://IP:port).
+
+In this case it would mean to remove anything of the likes of "/admin" from the link you would usually use.
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| ApiToken | Private | Token used for authentication |
+
+  </div>
+</details>
+
+## AdGuard Home
+The Adguard Home integration enables you to see basic stats like the number of queries in the day and how many are blocked.
+
+You can also disable and enable it using the dns-hole control widget.
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| Username | Private | Username used for authentication |
+| Password | Private | Password used for authentication |
+
+  </div>
+</details>

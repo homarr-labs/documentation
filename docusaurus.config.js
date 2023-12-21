@@ -12,12 +12,32 @@ const config = async function createConfig() {
     baseUrl: '/',
     favicon: 'img/alparr.png',
     // Used for publishing to GitHub Pages
-    organizationName: 'ajnart',
-    projectName: 'alarr-documentation',
+    organizationName: 'homarr',
+    projectName: 'homarr-documentation',
     // Has to be set even if not using translations
     i18n: {
-      defaultLocale: 'en',
-      locales: ['en'],
+      defaultLocale: 'en-US',
+      locales: ['en-US', 'de-DE', 'zh-TW', 'zh-CN', 'ja-JP', 'fr-FR'],
+      localeConfigs: {
+        'en-US': {
+          htmlLang: 'en-US'
+        },
+        'de-DE': {
+          htmlLang: 'de-DE'
+        },
+        'zh-TW': {
+          htmlLang: 'cn-CN'
+        },
+        'zh-CN': {
+          htmlLang: 'zh-CN'
+        },
+        'ja-JP': {
+          htmlLang: 'ja-JP'
+        },
+        'fr-FR': {
+          htmlLang: 'fr-FR'
+        }
+      }
     },
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
@@ -109,6 +129,10 @@ const config = async function createConfig() {
               'to': '/blog',
               'label': 'Blog',
               'position': 'left',
+            },
+            {
+              type: 'localeDropdown',
+              position: 'right'
             },
             {
               'to': 'https://demo.homarr.dev/',

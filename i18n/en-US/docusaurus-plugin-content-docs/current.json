@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.GettingStarted.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar GettingStarted"
+  },
+  "sidebar.Dashboards.category.Widgets": {
+    "message": "Widgets",
+    "description": "The label for category Widgets in sidebar Dashboards"
+  },
+  "sidebar.Dashboards.category.Widgets.link.generated-index.title": {
+    "message": "Widgets",
+    "description": "The generated-index page title for category Widgets in sidebar Dashboards"
+  },
+  "sidebar.Dashboards.category.Widgets.link.generated-index.description": {
+    "message": "Widgets allow you to show data on your board or control applications. Click on one of the widgets below for further information:",
+    "description": "The generated-index page description for category Widgets in sidebar Dashboards"
+  },
+  "sidebar.Management.category.Integrations": {
+    "message": "Integrations",
+    "description": "The label for category Integrations in sidebar Management"
+  },
+  "sidebar.Configuration.category.Customizations": {
+    "message": "Customizations",
+    "description": "The label for category Customizations in sidebar Configuration"
+  },
+  "sidebar.Configuration.category.Advanced": {
+    "message": "Advanced",
+    "description": "The label for category Advanced in sidebar Configuration"
+  },
+  "sidebar.Configuration.category.Community": {
+    "message": "Community",
+    "description": "The label for category Community in sidebar Configuration"
+  }
+}

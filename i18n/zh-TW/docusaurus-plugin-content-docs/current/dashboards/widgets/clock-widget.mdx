@@ -1,0 +1,43 @@
+---
+title: 🕓 Clock
+tags:
+  - Widgets
+  - Configuration
+---
+
+
+The Clock Widget will display the current time and date. The Widget will use your current system time. If you are using Docker, ensure that the [timezone is set correctly](/docs/configuration/advanced/environment-variables#timezone-settings).
+
+---
+
+## Adding the widget
+Please check out our documentation on [how to add a widget](/docs/getting-started/introduction/after-the-installation#adding-widgets).
+
+---
+
+## Configuration
+
+| Configuration         | Description | Values | Default Value |
+| --------------------- | ----------- | ------ | ------------- |
+| Display full time (24 hour format) | Determines if the clock displays in 12 or 24 hour format | yes / no | no |
+| Date formatting | Select how you want the date to be displayed | see [Screenshots](#screenshots) | Weekday, month day |
+| Display a custom Timezone | In case you want to show a timezone different from where you currently are, after toggling this option, you may select the city using the following options | yes / no | no |
+| Timezone location | Location selector, choose the city and it will automatically get you the coordinates. | City name | Paris |
+| City Title | Choose if you want to add a title above the time to show the city you selected and the timezone code it is in. | <ul><li>City and Timezone</li><li>City only</li><li>None</li></ul> | City and Timezone |
+
+![configuration of the weather widget](./img/clock/widget-clock-configuration.webp)
+
+:::tip
+
+Check out our documentation on [editing tiles](/docs/getting-started/introduction/after-the-installation#organizing-and-re-arranging-your-dashboard).
+
+:::
+
+---
+
+## Screenshots
+
+![Date formatting](./img/clock/widget-clock-configuration-date-formatting.webp)
+
+![clock widget in light mode](./img/clock/widget-clock-light-mode.webp)
+![clock widget in dark mode](./img/clock/widget-clock-dark-mode.webp)

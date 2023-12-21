@@ -1,0 +1,90 @@
+---
+title: 🧿 DNS Hole
+tags:
+  - Widgets
+  - Configuration
+  - DNS
+  - PiHole
+  - AdGuard
+  - AdGuard Home
+  - Blocking
+  - Sinkhole
+---
+
+If you're running a PiHole or AdGuard Home instance, you might want to display statistics on your dashboard or control them.
+This widget enables you to integrate crucial data on your dashboard and control your instances directly from Homarr.
+
+---
+
+## Adding the widget
+Please check out our documentation on [how to add a widget](/docs/getting-started/introduction/after-the-installation#adding-widgets).
+
+There must be at least one app on your dashboard, that has it's integration set to PiHole or AdGuard Home.
+
+For PiHole, you must retrieve the API token via WebUI:
+1. Log in to your PiHole admin dashboard. If you use the default hostname, you can use this direct link: http://pi.hole/admin
+2. Go to the settings
+3. Click on the "API / Web interface" tab
+4. Click the button "Show API token"
+5. Confirm that you want to show your API token on screen
+6. Copy **the raw API token** and paste it in your PiHole app in Homarr under the intgeration tab
+
+![](./get-api-token.webp)
+
+For Adguard, you can use the username and password, that you use to log in.
+
+---
+
+## Toggle controls
+There is 2 ways to control you DNS holes from homarr. Both are about disabling or enabling them. <br/>
+The main buttons at the top will toggle all the dns holes instances listed below, which is useful when you have more than 1 instance of dns-hole.
+
+If you want to toggle only one, you can toggle it by clicking the badge on it.
+
+![](./controls-widget-badge-highlight.webp)
+
+---
+
+## Configuration
+
+### DNS Hole Summary widget
+
+| Configuration         | Description | Values | Default Value |
+| --------------------- | ----------- | ------ | ------------- |
+| Use colors from PiHole | Color the tiles using the background color, that is used by default in PiHole. | yes / no | yes |
+| Layout | Choose the layout in which the informations are displayed. | <ul><li>2 by 2</li><li>Horizontal</li><li>Vertical</li></ul> | 2 by 2 |
+
+![](./summary-widget-configuration.webp)
+
+### DNS Hole Controls widget
+
+| Configuration         | Description | Values | Default Value |
+| --------------------- | ----------- | ------ | ------------- |
+| Show 'Enable/Disable All' Buttons | Show or not the 2 buttons that may be redundant when having only one DNS-hole. | yes / no | yes |
+
+![](./controls-widget-configuration.webp)
+
+:::tip
+
+Check out our documentation on [editing tiles](/docs/getting-started/introduction/after-the-installation#organizing-and-re-arranging-your-dashboard).
+
+:::
+
+---
+
+## Screenshots
+
+### Summary
+#### Standard
+![](./summary-widget.webp)
+#### PiHole colors
+![](./summary-widget-colored.webp)
+#### Layouts
+![](./summary-widget-horizontal.webp)
+
+![](./summary-widget-vertical.webp)
+### Controls
+#### Standard
+![](./controls-widget.webp)
+#### 'Toggle All' buttons hidden
+![](./controls-widget-buttonless.webp)

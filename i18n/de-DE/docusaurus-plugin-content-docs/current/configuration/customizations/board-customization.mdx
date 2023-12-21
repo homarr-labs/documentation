@@ -1,0 +1,169 @@
+---
+title: 📄 Board customization
+tags:
+  - Board
+  - Configuration
+  - Customization
+  - Theming
+---
+
+## How to get to the customize page
+
+To get to the customize page you can click on the settings button in the right top corner of your board.
+
+![homarr header board customization settings button](./img/board-customization/settings-button.webp)
+
+## Layout
+
+Using the layout settings, you can customize the structure and layout of your Homarr board.
+
+![homarr board customization layout settings](./img/board-customization/layout-settings.gif)
+
+### Sidebars
+
+There are two sidebars available: right and left. Sidebars are additional spaces with a width of 2, that you can fill with apps or widgets - they do not support categories though.
+
+### Pings
+
+If you activate Pings, Homarr will send a HTTP/-S request to all your services on the page load. When the response code matches the expected status code, the ping indicator will be green. Otherwise, it will be red.
+
+![Pings](img/layout/pings.webp)
+
+Example of an ping indicator:
+
+![Pings](img/layout/example-ping.webp)
+
+
+---
+
+## Access
+
+With the allow anonymous switch you can allow / decline access for not logged in users to your board.
+
+![homarr board customization access settings](./img/board-customization/access-settings.webp)
+
+---
+
+## Screen Sizes
+
+Whenever you enter Edit Mode, a screen size indicator will appear at the bottom-right corner of the screen. You can use this indicator to see which screen size you are editing. To make your dashboard look the best, configure each screen size seperatly, making sure to save your changes before continuing to the next size.
+
+To change the screen size you are editing, simply resize the browser.
+
+| Screen Size | Breakpoint | Amount of Columns |
+|-------------|------------|-------------------|
+| Large       | >1400px    | 10                |
+| Medium      | >768px     | 6                 |
+| Small       | \<768px    | 3                 |
+
+The amount of columns can be configured in the gridstack settings.
+
+![homarr board customization gridstack settings](./img/board-customization/gridstack-settings.webp)
+
+---
+
+## Page Metadata
+
+In this section you can configure the title and meta title of your board. Additionally you can define the logo and favicon.
+
+![homarr board customization page metadata settings](./img/board-customization/page-metadata-settings.webp)
+
+### Page Title
+
+The page title is the text shown in the top left corner.
+
+![homarr board customization page title settings](./img/board-customization/page-title.webp)
+
+### Meta Title
+
+The meta title is the text shown in the browser tab.
+
+![homarr board customization meta title settings](./img/board-customization/meta-title.webp)
+
+### Logo
+
+The logo is the image shown in the top left corner.
+
+![homarr board customization logo settings](./img/board-customization/logo.webp)
+
+### Favicon
+
+The favicon is the image shown in the browser tab.
+
+![homarr board customization favicon settings](./img/board-customization/favicon.webp)
+
+---
+
+## Appearance
+
+In this section you can configure the appearance of your board.
+
+![homarr board customization appearance settings](./img/board-customization/appearance-settings.webp)
+
+### Background image
+
+The background image is the image shown in the background of your board. You can either use an image from the internet or one from the public img directory. 
+You can find out [here](https://link.to.something/) how to mount the public image directory.
+
+![homarr board customization background image](./img/board-customization/board-background-image.webp)
+
+#### Random Backgrounds
+
+You can get a random image from Unsplash by using their [public API](https://unsplash.com). Just add the following URL to the input field:
+
+`https://source.unsplash.com/featured/`
+
+:::tip
+ [Topics](https://unsplash.com/t) can also be used to filter the results: `?nature,nature`
+:::
+
+Example:
+
+![homarr with random unplash background](./img/board-customization/background-unplash.webp)
+
+### Colors & Shade
+
+You can configure the primary and secondary color for your board. The primary color is used for things like buttons or the logo. The secondary color is mostly only used for gradients.
+
+![homarr board customization primary color settings](./img/board-customization/primary-color.webp)
+
+![homarr board customization color logo](./img/board-customization/color-logo.webp)
+
+The shade is used to configure the intensity of the primary color.
+
+![homarr board customization low shade settings](./img/board-customization/low-shade.webp)
+
+### App Opacity
+
+The app opacity slider can be used to configure the opacity of different elements on your board.
+For example it can be used to decrease the opacity of the app items so the background image is more visible.
+
+![homarr board customization app opacity settings](./img/board-customization/app-opacity.webp)
+
+### Custom CSS
+
+This textarea let's you define custom css that will be applied to your board. You can use this to customize your board even further.
+
+![homarr board customization custom css settings](./img/board-customization/custom-css-input.webp)
+![homarr board customization custom css settings applied](./img/board-customization/custom-css-applied.webp)
+
+#### Static Classes
+
+By default, many class names will be made out of a random value, also known as a hash.
+These are used internally by Mantine and can make writing custom CSS quite difficult.
+The biggest issue with these hashes is, that they will be randomized each build - which means, if you update Homarr, they will change and your CSS might no longer work.
+For this reason, we recommend you to avoid the random hash class-names and instead use implemented static ones, for the most important objects on your dashboard, they are easier to use and don't change.
+
+| Classname   | Description |
+| ------------------ | ------------------ |
+| dashboard-app-shell | Full App (including Header) |
+| dashboard-header | Header |
+| dashboard-header-logo-image | Logo image |
+| dashboard-header-logo-text | Header text |
+| dashboard-header-search-root | Searchbar root |
+| dashboard-header-search-input | Searchbar input |
+| grid-stack-wrapper | Gridstack wrapper |
+| grid-stack-empty-wrapper | Empty gridstack wrapper |
+| dashboard-gs-category | Category |
+| dashboard-gs-generic-item | App/Widget wrapper |
+
