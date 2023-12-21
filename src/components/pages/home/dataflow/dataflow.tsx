@@ -13,7 +13,7 @@ export const DataflowVisualizationComponent = () => {
 
   return (
     <div>
-      <h2 className={'text-center text-4xl mb-5'}>Connect your infrastructure</h2>
+      <h2 className={'text-center text-5xl font-extrabold mb-5'}>Connect your infrastructure</h2>
       <p className={'text-center mb-10 text-gray-500 dark:text-gray-400'}>Homarr integrates seamlessly with your
         favourite tools and
         applications</p>
