@@ -6,6 +6,9 @@ on:
 env:
   HOMARR_DOCUMENTATION_GH_TOKEN: "${{ secrets.HOMARR_DOCUMENTATION_GH_TOKEN }}"
 
+permissions:
+  contents: write
+
 jobs:
   dump:
     runs-on: ubuntu-latest
