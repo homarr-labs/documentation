@@ -10,39 +10,7 @@ import {
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
-
-const authors = [
-  {
-    name: 'Thomas Camlong',
-    image: 'https://avatars.githubusercontent.com/u/49837342?v=4',
-    text: 'A passionate full stack developer from France',
-    link: 'https://github.com/ajnart',
-  },
-  {
-    name: 'Meier Lukas',
-    image: 'https://avatars.githubusercontent.com/u/63781622?v=4',
-    text: 'Working on different projects like ajnart/homarr and Meierschlumpf/sempla w/ NextJS, tRPC, Mantine',
-    link: 'https://github.com/Meierschlumpf',
-  },
-  {
-    name: 'manuel-rw',
-    image: 'https://avatars.githubusercontent.com/u/30572287?v=4',
-    link: 'https://github.com/manuel-rw',
-    text: 'Developer apprentice 🚀, loves to code, always open minded to learn new things. 🌌 .NET, React / Next JS',
-  },
-  {
-    link: 'https://github.com/walkxcode',
-    name: 'Bjorn Lammers',
-    image: 'https://avatars.githubusercontent.com/u/71191962?v=4',
-    text: 'IT enthusiast from The Netherlands',
-  },
-  {
-    image: 'https://avatars.githubusercontent.com/u/18658092?v=4',
-    name: 'Mauz',
-    link: 'https://github.com/MauriceNino',
-    text: 'Passionate JS/TS advocate',
-  },
-];
+import { ContributorList } from '@site/src/components/pages/about/contributors/contributor-list';
 
 const roadmap = [
   {
@@ -105,19 +73,7 @@ export default function AboutUs() {
           this project solely on our leisure time.
         </p>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mb-10">
-          {authors.map((author) => (
-            <a className="hover:no-underline" href={author.link}>
-              <div class="flex items-center space-x-4 h-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 p-2 rounded transition-colors">
-                <img class="w-10 h-10 rounded-full" src={author.image} alt="" />
-                <div class="font-medium dark:text-white">
-                  <div>{author.name}</div>
-                  <div class="text-sm text-gray-500 dark:text-gray-400">{author.text}</div>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <ContributorList />
 
         <div className="flex items-center flex-col gap-2">
           <p className="text-gray-500 text-sm m-0">including many more contributors...</p>
