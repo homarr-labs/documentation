@@ -67,6 +67,12 @@ devDependencies:
   '@docusaurus/module-type-aliases':
     specifier: ^3.0.1
     version: 3.0.1(react-dom@18.2.0)(react@18.2.0)
+  '@docusaurus/tsconfig':
+    specifier: ^3.0.1
+    version: 3.0.1
+  '@docusaurus/types':
+    specifier: ^3.0.1
+    version: 3.0.1(react-dom@18.2.0)(react@18.2.0)
   '@fec/remark-a11y-emoji':
     specifier: ^3.1.0
     version: 3.1.0
@@ -2601,6 +2607,10 @@ packages:
       fs-extra: 11.2.0
       tslib: 2.6.2
     dev: false
+
+  /@docusaurus/tsconfig@3.0.1:
+    resolution: {integrity: sha512-hT2HCdNE3pWTzXV/7cSsowfmaOxXVOTFOXmkqaYjBWjaxjJ3FO0nHbdJ8rF6Da7PvWmIPbUekdP5gep1XCJ7Vg==}
+    dev: true
 
   /@docusaurus/types@3.0.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Qb+l/hmCOVemReuzvvcFdk84bUmUFyD0Zi81y651ie3VwMrXqC7C0E7yZLKMOsLj/vkqsxHbtkAuYMI89YzNzg==}
