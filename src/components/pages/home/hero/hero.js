@@ -11,7 +11,7 @@ export default function HomeHero() {
       <div className="container" style={{ zIndex: 1 }}>
         <div className="row">
           <div className="col">
-            <h1 className='hyphens-auto'>A simple, yet<br/>powerful dashboard<br/>for your server.</h1>
+            <h1 className="hyphens-auto">A simple, yet<br />powerful dashboard<br />for your server.</h1>
             <p>
               Simplify the management of your server with Homarr - a sleek, modern dashboard that
               puts all of your apps and services at your fingertips. With Homarr, you can access and
@@ -21,23 +21,16 @@ export default function HomeHero() {
               methods.
             </p>
 
-            <div className={styles.heroButtons}>
+            <div className={''}>
               <Link
                 data-umami-event="Install button"
-                className={clsx('button button--secondary button--lg', styles.heroButton)}
+                className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
                 to="/docs/getting-started/introduction/installation"
               >
-                Install
-                <IconDownload size={20} />
-              </Link>
-            </div>
-
-            <div className={clsx(styles.heroButtons, styles.shieldBadges)}>
-              <Link to="https://github.com/ajnart/homarr">
-                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-              </Link>
-              <Link to="https://discord.com/invite/aCsmEV5RgA">
-                <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
+                <div class={'flex items-center gap-3'}>
+                  <span class={"dark:text-gray-200"}>Install</span>
+                  <IconDownload class={"dark:text-gray-200"} size={20} />
+                </div>
               </Link>
             </div>
           </div>
@@ -60,7 +53,7 @@ const ThemedDevicePreview = () => {
       style={{
         filter: 'drop-shadow(2px 4px 6px rgba(0,0,0,0.5))',
       }}
-      alt={"Hero Image"}
+      alt={'Hero Image'}
     />
   );
 };
