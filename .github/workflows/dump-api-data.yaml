@@ -3,10 +3,13 @@ on:
     - cron: "0 12 * * FRI" # At 12:00 on Friday.
   workflow_dispatch:
 
+env:
+  HOMARR_DOCUMENTATION_GH_TOKEN: "${{ secrets.HOMARR_DOCUMENTATION_GH_TOKEN }}"
+
 jobs:
   dump:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: npm run
+      - run: npm run api-dump-contributors

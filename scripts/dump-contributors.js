@@ -2,7 +2,7 @@ const z = require('zod');
 const fs = require('fs');
 
 const schema = z.object({
-  GITHUB_API_TOKEN: z.string()
+  HOMARR_DOCUMENTATION_GH_TOKEN: z.string()
 });
 
 const env = schema.parse(process.env);
