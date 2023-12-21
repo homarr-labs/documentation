@@ -67,7 +67,7 @@ const roadmap = [
 export default function AboutUs() {
   return (
     <Layout title="Roadmap">
-      <main className="mx-auto w-full md:w-2/3 ps-10 pr-10 mt-10">
+      <main className="mx-auto w-full md:w-2/3 ps-10 pr-10 mb-20 mt-10">
         <h1 className="text-5xl font-extrabold">About us</h1>
         <p className="text-lg text-gray-500">
           Homarr is a community driven open source project that is being maintained by volunteers.
