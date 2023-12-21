@@ -20,8 +20,6 @@ const options = {
 fetch(url, options).then(async (response) => {
   const data = await response.json();
 
-  console.log(data);
-
   const dataSchema = z.array(z.object({
     login: z.string(),
     avatar_url: z.string().url(),
@@ -29,5 +27,5 @@ fetch(url, options).then(async (response) => {
 
   const contributionsData = dataSchema.parse(data);
 
-  fs.writeFileSync('./data/contributions.json', contributionsData);
+  fs.writeFileSync('./data/contributions.json', JSON.stringify(contributionsData));
 });
