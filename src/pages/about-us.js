@@ -74,37 +74,7 @@ export default function AboutUs() {
 
         <ContributorList />
 
-        <h2 className="text-2xl mt-16 mb-10">Roadmap</h2>
-
-        <ol class="relative border-l border-0 border-gray-200 dark:border-gray-700 border-solid">
-          {roadmap.map((item) => (
-            <li class="mb-10 ml-6">
-              <span
-                class={clsx(
-                  'absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white dark:ring-opacity-10 ',
-                  item.reached ? 'bg-red-100 dark:ring-red-500 dark:bg-red-900' : 'bg-gray-100 dark:bg-zinc-600',
-                )}
-              >
-                {item.icon}
-              </span>
-              <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                {item.title}
-                {item.badge && (
-                  <span
-                    class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 ml-3">
-                    {item.badge}
-                  </span>
-                )}
-              </h3>
-              <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                {item.subtitle}
-              </time>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                {item.content}
-              </p>
-            </li>
-          ))}
-        </ol>
+        <h2 className={'mt-10'}>Translation contributions</h2>
       </main>
     </Layout>
   );
