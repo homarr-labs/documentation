@@ -36,7 +36,7 @@ yarn-error.log*
 
 # storybook
 storybook-static
-data/configs
+static/data/configs
 
 # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 # Yarn v2

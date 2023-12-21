@@ -27,5 +27,5 @@ fetch(url, options).then(async (response) => {
 
   const contributionsData = dataSchema.parse(data);
 
-  fs.writeFileSync('./data/contributions.json', JSON.stringify(contributionsData));
+  fs.writeFileSync('./static/data/contributions.json', JSON.stringify(contributionsData));
 });
