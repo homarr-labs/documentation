@@ -20,6 +20,8 @@ const options = {
 fetch(url, options).then(async (response) => {
   const data = await response.json();
 
+  console.log(data);
+
   const dataSchema = z.array(z.object({
     login: z.string(),
     avatar_url: z.string().url(),
