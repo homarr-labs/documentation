@@ -1,14 +1,12 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import {
-  IconAlignBoxLeftBottom,
-  IconBrandDiscord,
-  IconHome,
+  IconAccessible,
+  IconAdjustments,
+  IconDragDrop,
   IconIcons,
-  IconLicense,
+  IconKey,
+  IconLanguage,
   IconPlug,
-  IconSearch,
-  IconApps, IconDragDrop, IconKey, IconLanguage, IconAccessible, IconAdjustments,
 } from '@tabler/icons';
 
 const featureList = [
