@@ -17,8 +17,8 @@ const options = {
   }
 };
 
-fetch(url, options).then((response) => {
-  const data = response.json();
+fetch(url, options).then(async (response) => {
+  const data = await response.json();
 
   const dataSchema = z.array(z.object({
     login: z.string(),
