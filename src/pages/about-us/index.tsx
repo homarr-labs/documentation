@@ -7,7 +7,7 @@ import {
 
 export default function AboutUs() {
   return (
-    <Layout title="Roadmap">
+    <Layout title="About Homarr" description={"Homarr is a community driven open source project that is being maintained by volunteers. Homarr has been a growing project since 2021."}>
       <main className="mx-auto w-full md:w-2/3 ps-10 pr-10 mb-20 mt-10">
         <h1 className="text-5xl font-extrabold">About us</h1>
         <p className="text-lg text-gray-500">
