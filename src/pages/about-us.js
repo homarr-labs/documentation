@@ -10,7 +10,10 @@ import {
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
-import { ContributorList } from '@site/src/components/pages/about/contributors/contributor-list';
+import { CodeContributorList } from '@site/src/components/pages/about/code-contributors/code-contributor-list';
+import {
+  TranslationContributorList
+} from '@site/src/components/pages/about/translations-contributors/translation-constributor-list';
 
 const roadmap = [
   {
@@ -72,9 +75,11 @@ export default function AboutUs() {
 
         <h2 className={'mt-10'}>Code contributions</h2>
 
-        <ContributorList />
+        <CodeContributorList />
 
         <h2 className={'mt-10'}>Translation contributions</h2>
+
+        <TranslationContributorList />
       </main>
     </Layout>
   );

@@ -57,7 +57,8 @@ const fetchCrowdinMembers = async () => {
   const dataSchema = z.object({
     data: z.array(z.object({
       data: z.object({
-        username: z.string()
+        username: z.string(),
+        avatarUrl: z.string().url()
       })
     }))
   });
