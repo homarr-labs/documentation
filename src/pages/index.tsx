@@ -2,8 +2,8 @@ import React from 'react';
 
 import Layout from '@theme/Layout';
 
-import HomepageFeatures from '../components/pages/home/features/index';
-import HomepageUserReviews from '../components/pages/home/review-list';
+import HomepageFeatures from '../components/pages/home/features/features';
+import HomepageUserReviews from '../components/pages/home/review-list/review-list';
 import HomeHero from '../components/pages/home/hero/hero';
 
 import styles from './index.module.css';
@@ -12,7 +12,6 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 export default function Home() {
   return (
     <Layout
-      title={'Home'}
       description="Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods."
     >
       <HomeHero />

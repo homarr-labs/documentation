@@ -6,10 +6,16 @@ import {
   IconIcons,
   IconKey,
   IconLanguage,
-  IconPlug,
+  IconPlug, TablerIcon,
 } from '@tabler/icons';
 
-const featureList = [
+interface Feature {
+  icon: TablerIcon,
+  title: string,
+  content: string;
+}
+
+const featureList: Feature[] = [
   {
     icon: IconDragDrop,
     title: 'Easy to use drag and drop system',
@@ -47,7 +53,7 @@ const featureList = [
   }
 ];
 
-function Feature(props) {
+function FeatureComponent(props: Feature) {
   return (
     <div>
       <div className={'flex gap-2 items-center mb-2'}>
@@ -65,7 +71,7 @@ export default function HomepageFeatures() {
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-32">
       {featureList.map((props, idx) => (
-        <Feature key={idx} {...props} />
+        <FeatureComponent key={idx} {...props} />
       ))}
     </div>
   );

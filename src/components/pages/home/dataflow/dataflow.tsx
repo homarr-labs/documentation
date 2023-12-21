@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import LeaderLine from 'leader-line-new';
+import LeaderLine, { SocketType } from 'leader-line-new';
 
 export const DataflowVisualizationComponent = () => {
   const homarrRef = useRef();
@@ -13,11 +13,12 @@ export const DataflowVisualizationComponent = () => {
 
   return (
     <div>
-      <h2 class={'text-center text-4xl mb-5'}>Connect your infrastructure</h2>
-      <p class={'text-center mb-10 text-gray-500 dark:text-gray-400'}>Homarr integrates seamlessly with your favourite tools and
+      <h2 className={'text-center text-4xl mb-5'}>Connect your infrastructure</h2>
+      <p className={'text-center mb-10 text-gray-500 dark:text-gray-400'}>Homarr integrates seamlessly with your
+        favourite tools and
         applications</p>
 
-      <div class="relative w-80 h-80 mx-auto">
+      <div className="relative w-80 h-80 mx-auto">
         <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}
              src={'/img/alparr.png'}
              alt={'Homarr Logo'} width={40}
@@ -63,7 +64,13 @@ export const DataflowVisualizationComponent = () => {
   );
 };
 
-export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }) => {
+export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }: {
+  start: any,
+  end: any,
+  startSocket: SocketType,
+  endSocket: SocketType,
+  x?: number
+}) => {
   const line = useRef();
   React.useEffect(() => {
     const drawLine = () => {
