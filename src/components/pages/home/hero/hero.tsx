@@ -21,18 +21,16 @@ export default function HomeHero() {
               methods.
             </p>
 
-            <div className={''}>
-              <Link
-                data-umami-event="Install button"
-                className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
-                to="/docs/getting-started/introduction/installation"
-              >
-                <div className={'flex items-center gap-3'}>
-                  <span className={"dark:text-gray-200"}>Install</span>
-                  <IconDownload className={"dark:text-gray-200"} size={20} />
-                </div>
-              </Link>
-            </div>
+            <Link
+              data-umami-event="Install button"
+              className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
+              to="/docs/getting-started/prerequisites"
+            >
+              <div className={'flex items-center gap-3'}>
+                <span className={'dark:text-gray-200'}>Install</span>
+                <IconDownload className={'dark:text-gray-200'} size={20} />
+              </div>
+            </Link>
           </div>
           <div className="col">
             <ThemedDevicePreview />

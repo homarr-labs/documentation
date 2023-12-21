@@ -77,7 +77,7 @@ const config: Config = {
           label: 'Getting started',
           type: 'doc',
           position: 'left',
-          docId: 'getting-started/introduction/prerequisites',
+          docId: 'getting-started/prerequisites',
         },
         {
           label: 'Dashboards',
