@@ -16,9 +16,12 @@ export const ContributorList = () => {
   }, []);
 
   return (
-    <div className={'flex gap-3'}>
-      {contributors.map(contributor => (
-        <span>{contributor.login}</span>
+    <div className={'flex flex-wrap gap-3'}>
+      {contributors.map((contributor: Contributor) => (
+        <div className={'flex flex-col items-center w-24'}>
+          <img className={'w-24 h-24 aspect-square rounded mb-2'} src={contributor.avatar_url} alt={''} />
+          <h6>{contributor.login}</h6>
+        </div>
       ))}
     </div>
   );

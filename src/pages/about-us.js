@@ -33,7 +33,7 @@ const roadmap = [
     title: 'Technical debt and tRPC migration',
     subtitle: 'Released in 0.13.0',
     content:
-      "Homarr has grown in complexity and the code is starting to get a problem. We often hit a border, where it's getting harder to implement something, than it actually should be. This is also known as technical debt. We have learned many new things in our journey and have decided to migrate to tRPC. That will clean up code and enable us for faster development.",
+      'Homarr has grown in complexity and the code is starting to get a problem. We often hit a border, where it\'s getting harder to implement something, than it actually should be. This is also known as technical debt. We have learned many new things in our journey and have decided to migrate to tRPC. That will clean up code and enable us for faster development.',
     reached: true,
   },
   {
@@ -42,7 +42,7 @@ const roadmap = [
     subtitle: 'Due to release in 0.14',
     reached: true,
     content:
-      "A part of Homarr is still not secure enough to be exposed to the internet. Existing solutions for authentication exist, but are incredibly cumbersome. We'll implement a basic authentication solution using the new tRPC APIs and remove the old legacy systems.",
+      'A part of Homarr is still not secure enough to be exposed to the internet. Existing solutions for authentication exist, but are incredibly cumbersome. We\'ll implement a basic authentication solution using the new tRPC APIs and remove the old legacy systems.',
   },
   {
     icon: <IconDatabase size="1rem" strokeWidth={1.5} />,
@@ -50,58 +50,29 @@ const roadmap = [
     subtitle: 'Due to release in 0.15',
     badge: 'In progress',
     content:
-      "Homarr still uses an unstructured JSON file behind the scenes. This adds much complexity regarding types, errors, exceptions and relationships. In 0.15, we'll migrate to a RDBMS. After that, JSON will no longer be supported.",
+      'Homarr still uses an unstructured JSON file behind the scenes. This adds much complexity regarding types, errors, exceptions and relationships. In 0.15, we\'ll migrate to a RDBMS. After that, JSON will no longer be supported.',
   },
   {
     icon: <IconUser size="1rem" strokeWidth={1.5} />,
     title: 'Fine grained permissions',
     subtitle: 'Due to release in 0.15.1',
     content:
-      "In this version we'll add more configurations to the adminstration section and a more complex permission system for users.",
-  }
+      'In this version we\'ll add more configurations to the adminstration section and a more complex permission system for users.',
+  },
 ];
 
 export default function AboutUs() {
   return (
     <Layout title="Roadmap">
-      <main className="mx-auto w-full md:w-2/3 ps-10 pr-10 mt-5">
-        <h1 className="text-4xl">About us</h1>
-        <p className="text-sm">
+      <main className="mx-auto w-full md:w-2/3 ps-10 pr-10 mt-10">
+        <h1 className="text-5xl font-extrabold">About us</h1>
+        <p className="text-lg text-gray-500">
           Homarr is a community driven open source project that is being maintained by volunteers.
-          We are working on Homarr, because we want to have fun, learn new technologies and get
-          challenged. We are not sponsored and do not get any compensation for our work - we work on
-          this project solely on our leisure time.
         </p>
 
-        <ContributorList />
+        <h2 className={'mt-10'}>Code contributions</h2>
 
-        <div className="flex items-center flex-col gap-2">
-          <p className="text-gray-500 text-sm m-0">including many more contributors...</p>
-          <div class="flex -space-x-4">
-            <img
-              class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-              src="https://avatars.githubusercontent.com/u/39219859?v=4"
-              alt=""
-            />
-            <img
-              class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-              src="https://avatars.githubusercontent.com/u/15677803?v=4"
-              alt=""
-            />
-            <img
-              class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-              src="https://avatars.githubusercontent.com/u/1828486?v=4"
-              alt=""
-            />
-            <a
-              class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
-              href="https://github.com/ajnart/homarr/graphs/contributors"
-              target='_blank'
-            >
-              ...
-            </a>
-          </div>
-        </div>
+        <ContributorList />
 
         <h2 className="text-2xl mt-16 mb-10">Roadmap</h2>
 
@@ -111,7 +82,7 @@ export default function AboutUs() {
               <span
                 class={clsx(
                   'absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white dark:ring-opacity-10 ',
-                  item.reached ? 'bg-red-100 dark:ring-red-500 dark:bg-red-900' : 'bg-gray-100 dark:bg-zinc-600'
+                  item.reached ? 'bg-red-100 dark:ring-red-500 dark:bg-red-900' : 'bg-gray-100 dark:bg-zinc-600',
                 )}
               >
                 {item.icon}
@@ -119,7 +90,8 @@ export default function AboutUs() {
               <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
                 {item.title}
                 {item.badge && (
-                  <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 ml-3">
+                  <span
+                    class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 ml-3">
                     {item.badge}
                   </span>
                 )}
