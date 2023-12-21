@@ -20,7 +20,7 @@ export const TranslationContributorList = () => {
       {contributors.map((contributor: Contributor) => (
         <div className={'flex flex-col items-center w-24'}>
           <img className={'w-24 h-24 aspect-square rounded mb-2'} src={contributor.avatarUrl} alt={''} />
-          <h6>{contributor.username}</h6>
+          <h6 className={"truncate text-nowrap max-w-full"}>{contributor.username}</h6>
         </div>
       ))}
     </div>

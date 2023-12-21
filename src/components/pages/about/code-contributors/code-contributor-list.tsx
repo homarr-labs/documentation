@@ -23,7 +23,7 @@ export const CodeContributorList = () => {
       {contributors.map((contributor: Contributor) => (
         <div className={'flex flex-col items-center w-24'}>
           <img className={'w-24 h-24 aspect-square rounded mb-2'} src={contributor.avatar_url} alt={''} />
-          <h6>{contributor.login}</h6>
+          <h6 className={"truncate text-nowrap max-w-full"}>{contributor.login}</h6>
         </div>
       ))}
     </div>
