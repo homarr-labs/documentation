@@ -11,7 +11,7 @@ const url = 'https://api.github.com/repos/ajnart/homarr/contributors';
 const options = {
   method: 'GET',
   headers: {
-    Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+    Authorization: `Bearer ${env.HOMARR_DOCUMENTATION_GH_TOKEN}`,
     Accept: 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28'
   }
