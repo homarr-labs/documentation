@@ -1,0 +1,12 @@
+on:
+  schedule:
+    - cron: "0 12 * * 7" # “At 12:00 on Sunday.” https://crontab.guru/#0_12_*_*_7
+  workflow_dispatch:
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm run
