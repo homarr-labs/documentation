@@ -64,7 +64,9 @@ const fetchCrowdinMembers = async () => {
 
   const contributionsData = dataSchema.parse(data);
 
-  fs.writeFileSync('./static/data/translation-contributions.json', JSON.stringify(contributionsData));
+  const flatContributors = contributionsData.data.flatMap(data => data.data);
+
+  fs.writeFileSync('./static/data/translation-contributions.json', JSON.stringify(flatContributors));
 }
 
 fetchGithubContributors();
