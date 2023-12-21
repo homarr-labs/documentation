@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "0 12 * * 7" # “At 12:00 on Sunday.” https://crontab.guru/#0_12_*_*_7
+    - cron: "0 12 * * FRI" # At 12:00 on Friday.
   workflow_dispatch:
 
 jobs:
