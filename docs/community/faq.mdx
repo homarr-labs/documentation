@@ -30,12 +30,12 @@ Enabling users to write their own widgets is easy at the first glance, but there
 - Custom widgets would need to be able to request data, so they work properly. We use tRPC for this. Many APIs use different formats and we'd have to convert and read those.
 - Using custom widgets, one could easily create harmful widgets, leak your personal data (potentially including your tokens) and trick your users. A proper implementation (eg. official plugin store, where we can ban harmful widgets from) would resolve this problem to a certain extend, but again requires additional work and time to be put in.
 
-If you still want to add a widget, please consider to contribute it directly to Homarr. For that, basic programming skills are required. Our [Developer Guides](/docs/configuration/community/developer-guides) explain this even more detailed.
+If you still want to add a widget, please consider to contribute it directly to Homarr. For that, basic programming skills are required. Our [Developer Guides](/docs/community/developer-guides) explain this even more detailed.
 
 ### Is it secure to expose Homarr to the web?
 
 Yes, since v0.14.0, we are confident that Homarr is secure enough to be exposed to the web. 
-Make sure to enable the "allow anonymouse access" [option in the settings](/docs/configuration/customizations/board-customization#access), if you want to allow people without an account to be able to see your dashboard (not edit)
+Make sure to enable the "allow anonymouse access" [option in the settings](/docs/advanced/customizations/board-customization#access), if you want to allow people without an account to be able to see your dashboard (not edit)
 
 ### How do I open the console / log?
 There are two different sources of information:
@@ -80,12 +80,12 @@ This is because GluetunVPN, and many other docker VPN services, secure their VPN
 Tip: If you are running your torrent client behind a VPN, and running Sonarr (or something similar) normally, make sure to open your torrent client's port in your firewall. If you don't, Sonarr will not be able to see it. Furthermore, use your machines IP (192.168.x.x) rather then 127.0.0.1 or localhost.
 
 ### Can I get in touch with you?
-Yes, go <a href="/docs/configuration/community/get-in-touch">here</a> to get with us in touch.
+Yes, go <a href="/docs/community/get-in-touch">here</a> to get with us in touch.
 
 <hr/>
 
 :::tip
 
-Haven't found the solution to your problem / question? We are eager to help you on [our Discord](/docs/configuration/community/get-in-touch#discord) or in a [GitHub Issue](https://github.com/ajnart/homarr/issues/new/choose).
+Haven't found the solution to your problem / question? We are eager to help you on [our Discord](/docs/community/get-in-touch#discord) or in a [GitHub Issue](https://github.com/ajnart/homarr/issues/new/choose).
 
 :::

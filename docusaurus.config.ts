@@ -92,10 +92,16 @@ const config: Config = {
           docId: 'management/resources/index',
         },
         {
-          label: 'Configuration',
+          label: 'Advanced',
           type: 'doc',
           position: 'left',
-          docId: 'configuration/customizations/icons',
+          docId: 'advanced/customizations/icons',
+        },
+        {
+          label: 'Community',
+          position: 'left',
+          type: 'doc',
+          docId: 'community/faq',
         },
         {
           'to': '/about-us',
@@ -180,7 +186,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Homarr — <a href="/docs/configuration/community/license">License</a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} Homarr — <a href="/docs/advanced/community/license">License</a>`,
     },
     prism: {
       theme: prismThemes.github,
