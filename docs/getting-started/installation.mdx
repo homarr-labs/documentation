@@ -11,20 +11,60 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Link from '@docusaurus/Link';
+import { IconDownload } from '@tabler/icons';
 
-Homarr can be installed in many ways. For most users, [Installation using Docker](#-installation-using-docker) will be sufficient and the easiest.
+We provide multiple installation methods. [Are you a newbie to Docker? We recommend Docker Compose for beginners](#-docker-compose).
+More experienced? Try out [Helm Charts](#installation-using-helm) or [TrueNas Scale](#-truenas).
 
----
+## Docker
+### 🐋 Docker Compose
+#### Prerequisites
 
-## Installation using Docker
+- A Linux or Windows based system that meets the [hardware prerequisites](./Prerequisites#hardware) and [architecture prerequisites](./Prerequisites#Architecture).
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/) - *preinstalled on many systems nowadays*
 
-Docker is a free Software that isolates Homarr using containers. Using Docker, you can run Homarr on any supported platform (including Windows and Raspberry Pi), easily.
+#### Installation
 
-### Prerequisites
+#### Updating
 
+To update, navigate to the directory with the ``docker-compose.yaml`` located.
+
+- Stop Homarr using ``docker compose down``
+- Pull the newest image of Homarr using ``docker compose pull``
+- Start Homarr again using ``docker compose up -d`` (``-d`` for detached mode - start in background)
+- Delete the old image using ``docker image prune`` (*Warning: this also removes you other unused images - not just Homarr*)
+
+You can automate this process using [Watchtower](https://containrrr.dev/watchtower/).
+
+#### Uninstalling
+
+To uninstall, navigate to the directory with the ``docker-compose.yaml`` located.
+
+- Stop Homarr using ``docker compose down``
+- Delete the created directories & files on your root file system (check ``docker-compose.yaml`` file for your specific locations)
+- Delete compose file using ``rm docker-compose.yaml``
+- Prune unused Docker images using ``docker image prune`` (*Warning: this also removes you other unused images - not just Homarr*)
+- (Optional): Prune any network or volumes if you use any.
+- (Optional): Remove Homarr from your reverse proxy, VPNs or tunnels if you use any.
+
+<br/>
+
+### 🐋 Docker - Not recommended
+
+:::caution
+
+Docker is a not recommended installation method, because [Docker Compose](#docker-compose) is in many ways superior and easier to use for beginners.
+
+:::
+
+#### Prerequisites
+
+- A Linux or Windows based system that meets the [hardware prerequisites](./Prerequisites#hardware) and [architecture prerequisites](./Prerequisites#Architecture).
 - [Docker](https://docs.docker.com/get-docker/)
 
-### Installation
+#### Installation
 
 To install Homarr using Docker, simply run the following command.
 
@@ -65,7 +105,7 @@ Instead do:
 
 :::
 
-### Updating
+#### Updating
 To update Homarr, you must remove your container first. Make sure that you've mounted your data and that you have access to it, so your configuration doesn't get lost.
 
 1. Run ``docker rm homarr`` to remove the container.
@@ -80,50 +120,36 @@ Want to update all your containers automatically? Checkout [Watchtower](https://
 
 :::
 
----
+#### Uninstalling
 
-## Installation using Docker Compose or Portainer Stacks
+1. Obtain the container ID of your Homarr container using ``docker ps | grep homarr``.
+2. Delete the container using ``docker rm <your-container-id>``
+3. Prune unused Docker images using ``docker image prune`` (*Warning: this also removes you other unused images - not just Homarr*)
+4. (Optional): Prune any network or volumes if you use any.
+5. (Optional): Remove Homarr from your reverse proxy, VPNs or tunnels if you use any.
 
-### Prerequisites
-- [Docker Compose](https://docs.docker.com/compose/install/) or [Portainer Stacks](https://www.portainer.io/blog/stacks-docker-compose-the-portainer-way)
+<br/>
 
-### Installing
+## Container Management Software
+### 💻 Portainer CE
+#### Prerequisites
 
-<Tabs>
-  <TabItem value="compose" label="Docker Compose">
+- [Portainer CE](https://www.portainer.io/)
 
-To install Homarr using Docker Compose, simply create a file called ``docker-compose.yml`` and paste the following code into it.
+#### Installing
 
-```yml title="docker-compose.yml"
-version: '3'
-#---------------------------------------------------------------------#
-#     Homarr - A simple, yet powerful dashboard for your server.     #
-#---------------------------------------------------------------------#
-services:
-  homarr:
-    container_name: homarr
-    image: ghcr.io/ajnart/homarr:latest
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
-      - ./homarr/configs:/app/data/configs
-      - ./homarr/icons:/app/public/icons
-      - ./homarr/data:/data
-    ports:
-      - '7575:7575'
-```
+#### Updating
 
-Then, run ``docker-compose up -d`` in the same directory. This will start the Homarr container in the background.
+#### Uninstalling
 
-:::caution
+<br/>
 
-Docker compose creates a network by default. Some integrations may not work (specifically Dash.) when the network internal hostname is used since clients do not know this name. It is recommended that you either use a local network wide hostname or the IP directly. An alternative is to create a DNS record with the same internal compose stack hostname for all clients outside.
+### 💻 Portainer Stacks
+#### Prerequisites
 
-:::
+- [Portainer Stacks](https://www.portainer.io/blog/stacks-docker-compose-the-portainer-way)
 
-  </TabItem>
-
-  <TabItem value="portainer" label="Portainer Stacks">
+#### Installing
 
 To install Homarr using Portainer Stacks, simply create a new stack and paste the following code into it.
 
@@ -167,41 +193,52 @@ If you're unsure how to create a stack, checkout the [Portainer Documentation](h
 
 :::
 
-  </TabItem>
-
-</Tabs>
-
-### Updating
+#### Updating
 
 To update Homarr using Docker Compose or Portainer Stacks, simply pull the latest image and restart the container.
 
 1. Run ``docker pull ghcr.io/ajnart/homarr:latest`` to pull the latest image.
 2. Re-run ``docker-compose up -d`` or re-deploy the stack in Portainer.
 
----
+<br/>
 
+### 💻 TrueNas
 
-## Installation using the Unraid Community App Store
+Although Homarr is available from the Official TrueNas Scale Catalog, we recommend using the Truecharts catalog instead as they update to the latest release faster and offer more customization.
+
+![](img/truenas-scale-integration.webp)
+
+It is also recommended to make the volumes in there into HostPaths so you can access the folders easily.
+
+:::caution
+
+Don't use the same final destination folder twice as this will cause problems.
+
+:::
+
+<br/>
+
+### 💻 Unraid
+
 You can install Homarr directly from your Unraid Dashboard, no terminal required.
 
-### Prerequisites
+#### Prerequisites
 
 - [Unraid](https://unraid.net/)
 - [Community Apps](https://forums.unraid.net/topic/38582-plug-in-community-applications/)
 
-### Install the Community Apps Plugin
+#### Install the Community Apps Plugin
 
-<a
-  href="https://forums.unraid.net/topic/38582-plug-in-community-applications/"
-  style={{
-    backgroundColor: 'var(--ifm-color-primary)',
-    borderRadius: '0.5rem',
-    color: '#fff',
-    padding: '0.4rem 2rem',
-    textDecoration: 'none'
-  }}>
-  Open Installation Guide
-</a>
+<Link
+  data-umami-event="Install button"
+  className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
+  to="https://forums.unraid.net/topic/38582-plug-in-community-applications/"
+>
+  <div className={'flex items-center gap-3'}>
+    <span className={"dark:text-gray-200"}>Install community applications plugin</span>
+    <IconDownload className={"dark:text-gray-200"} size={20} />
+  </div>
+</Link>
 
 <br/>
 <br/>
@@ -213,7 +250,7 @@ Don't know whether you have the plugin installed or not? Search for this tab in 
 ![](img/unraid-navigation-app-manager.webp)
 :::
 
-### Installing
+#### Installing
 
 After you've installed the Community Apps Plugin, you can install Homarr from the Unraid Dashboard.
 
@@ -227,110 +264,45 @@ After you've installed Homarr, you can find it under the tab "Docker".
 
 The official support thread is located [here](https://forums.unraid.net/topic/123478-support-smartphonelover-homarr/), but we prefer to communicate over GitHub and Discord instead.
 
----
 
-## Installation on Synology
+<br/>
+
+### 💻 Synology
+
 The installation process is quite easy and fast on Synology devices.
 Since this method is used less often, we recommend you to follow this guide written by mariushosting.
 
 https://mariushosting.com/how-to-install-homarr-on-your-synology-nas/
 
-:::note
+<br/>
 
-This is a third party guide! It might not be up-to-date, nor do we offer official support.
+### 💻 QNAP
 
-:::
-
----
-
-## Installation on QNAP
 When installing on QNAP, we recommend you to install Homarr using [Container Station]( https://www.qnap.com/en/software/container-station) or [this third-party image](https://www.myqnap.org/product/homarr/).
 
 There is also a guide available, but note that it is written in Chinese: https://post.smzdm.com/p/awzm7op2/
 
-:::caution
+<br/>
 
-This is a *unvalidated* third party guide! It might not be up-to-date, nor do we offer official support.
+### 💻 Saltbox
 
-:::
-
----
-
-## Installation using Saltbox
 You can also use this to install on Saltbox:
 ```bash
 sb install sandbox-homarr
 ```
 
-:::caution
+<br/>
 
-This is a *unvalidated* third party guide! It might not be up-to-date, nor do we offer official support.
-
-:::
-
----
-
-## Installation on TrueNas Scale
-Although Homarr is available from the Official TrueNas Scale Catalog, we recommend using the Truecharts catalog instead as they update to the latest release faster and offer more customization.
-
-![](img/truenas-scale-integration.webp)
-
-It is also recommended to make the volumes in there into HostPaths so you can access the folders easily.
-
-:::caution
-
-Don't use the same final destination folder twice as this will cause problems.
-
-:::
-
----
-
-## Building from source
-:::info
-
-Installing Homarr from source is not recommended and only intended for developers and contributors, please use the [Docker](#installation-using-docker) installation method instead.
-
-:::
-
-<Tabs>
-  <TabItem value="orange" label="Yarn Package Manager" default>
-    <ol>
-      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
-      <li>Enter the created directory using <code>cd homarr</code></li>
-      <li>Install all dependencies using <code>yarn install</code></li>
-      <li>Build the source using <code>yarn build</code></li>
-      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
-      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
-      <li>Start the NextJS web server using <code>yarn start</code></li>
-      <li><i>Alternatively, use <code>yarn dev</code> to run a live development server.</i></li>
-    </ol>
-  </TabItem>
-  <TabItem value="apple" label="NPM Package Manager">
-    <ol>
-      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
-      <li>Enter the created directory using <code>cd homarr</code></li>
-      <li>Install all dependencies using <code>npm install</code></li>
-      <li>Build the source using <code>npm build</code></li>
-      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
-      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
-      <li>Start the NextJS web server using <code>npm start</code></li>
-      <li><i>Alternatively, use <code>npm run dev</code> to run a live development server.</i></li>
-    </ol>
-  </TabItem>
-</Tabs>
-
----
-
-## Installation using Easypanel
+### 💻 EasyPanel
 
 Easypanel is a modern server control panel. If you [run Easypanel](https://easypanel.io/docs) on your server, you can deploy Homarr with 1 click on it.
 
 [![Deploy to Easypanel](https://easypanel.io/img/deploy-on-easypanel-40.svg)](https://easypanel.io/docs/templates/homarr)
 
----
+<br/>
 
-## Installation using Helm
-
+## Kubernetes
+### Helm Chart
 
 Helm is a package manager for Kubernetes, easing deployment of applications like Homarr. The Helm chart for Homarr simplifies its deployment on any supported platform by Kubernetes, enabling efficient scaling and management.
 
@@ -345,18 +317,18 @@ To install Homarr using Helm chart, please follow this steps.
 <Tabs>
   <TabItem value="orange" label="OCI (Recommended)" default>
 
-```bash
-helm install homarr oci://ghcr.io/oben01/charts/homarr
-```
+    ```bash
+    helm install homarr oci://ghcr.io/oben01/charts/homarr
+    ```
 
   </TabItem>
   <TabItem value="apple" label="Traditional">
 
-```bash
-helm repo add oben01 https://oben01.github.io/charts/
-helm repo update
-helm install homarr oben01/homarr
-```
+    ```bash
+    helm repo add oben01 https://oben01.github.io/charts/
+    helm repo update
+    helm install homarr oben01/homarr
+    ```
 
   </TabItem>
 </Tabs>
@@ -402,9 +374,56 @@ helm uninstall homarr
 
 The command removes all the Kubernetes components associated with the chart including persistent volumes and deletes the release.
 
----
+<br/>
 
-## Installation as a Home Assistant Add-on
+## (Not recommended): From source
+
+:::caution
+
+Installing from source is a bad idea in many ways:
+
+- No isolation between applications
+- Dependency conflicts on your root operating system
+- Cumbersome update process
+- Permission management
+- Handling of conflicts
+
+Therefore, we highly discourage you from using this as a normal user.
+This method is only useful, when you want to develop on Homarr or extend it with your own functionality.
+
+:::
+
+
+<Tabs>
+  <TabItem value="orange" label="Yarn Package Manager" default>
+    <ol>
+      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
+      <li>Enter the created directory using <code>cd homarr</code></li>
+      <li>Install all dependencies using <code>yarn install</code></li>
+      <li>Build the source using <code>yarn build</code></li>
+      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
+      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
+      <li>Start the NextJS web server using <code>yarn start</code></li>
+      <li><i>Alternatively, use <code>yarn dev</code> to run a live development server.</i></li>
+    </ol>
+  </TabItem>
+  <TabItem value="apple" label="NPM Package Manager">
+    <ol>
+      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
+      <li>Enter the created directory using <code>cd homarr</code></li>
+      <li>Install all dependencies using <code>npm install</code></li>
+      <li>Build the source using <code>npm build</code></li>
+      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
+      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
+      <li>Start the NextJS web server using <code>npm start</code></li>
+      <li><i>Alternatively, use <code>npm run dev</code> to run a live development server.</i></li>
+    </ol>
+  </TabItem>
+</Tabs>
+
+<br/>
+
+## Home Assistant Add-on
 
 Homarr can be seamlessly integrated into your Home Assistant setup with this add-on. This is perfect for users who rely on Home Assistant as their primary server and don't have a separate device for hosting.
 
@@ -426,12 +445,3 @@ Homarr can be seamlessly integrated into your Home Assistant setup with this add
 
 Your configuration, data and icons will be saved at /shares
 
----
-
-
-### Troubleshooting
-Having trouble installing Homarr on your system? Check out our [FAQ](/docs/community/faq). If you are still running into issues, please contact us in our [Discord server](https://discord.com/invite/aCsmEV5RgA).
-
----
-## Anything else in mind?
-Have you installed Homarr using a different method? Please share it with us, so we can expand to a bigger userbase!
