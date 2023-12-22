@@ -1,4 +1,4 @@
-import type { Config } from '@docusaurus/types';
+import type { Config, PluginOptions } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { EnumChangefreq } from 'sitemap';
@@ -204,7 +204,7 @@ const config: Config = {
       },
     ],
     imageZoom: {
-      selector: '.markdown :not(em) > img',
+      selector: '.markdown :not(em):not(a) > img'
     },
     tableOfContents: {
       minHeadingLevel: 2,

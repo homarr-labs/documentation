@@ -143,3 +143,8 @@ form.aa-Form {
 [data-theme="dark"] .dsla-search-wrapper .aa-DetachedSearchButton svg {
   color: #9a9a9a;
 }
+
+.medium-zoom-overlay {
+  background-color: transparent !important;
+  backdrop-filter: blur(10px) brightness(0.7);
+}
