@@ -57,9 +57,7 @@ export const DataflowVisualizationComponent = () => {
         <LineTree start={plexRef} end={homarrRef} startSocket={'left'} endSocket={'right'} x={100} />
         <LineTree start={jellyfinRef} end={homarrRef} startSocket={'left'} endSocket={'right'} x={100} />
         <LineTree start={sabnzbdRef} end={homarrRef} startSocket={'left'} endSocket={'right'} x={100} />
-
       </div>
-
     </div>
   );
 };
@@ -72,9 +70,11 @@ export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }: {
   x?: number
 }) => {
   const line = useRef();
+  let leaderLine: LeaderLine;
+
   React.useEffect(() => {
     const drawLine = () => {
-      new LeaderLine(
+      leaderLine = new LeaderLine(
         start.current,
         LeaderLine.pointAnchor(end.current, { x: `${x}%` }),
         {
@@ -95,6 +95,7 @@ export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }: {
     }, 5);
     return () => {
       timer && clearInterval(timer);
+      leaderLine.remove();
     };
   }, []);
 
