@@ -10,7 +10,7 @@ const config: Config = {
   tagline: 'A simple yet powerful dashboard for your server.',
   url: 'https://alparr.app',
   baseUrl: '/',
-  favicon: 'img/alparr.png',
+  favicon: 'img/logo.png',
   // Used for publishing to GitHub Pages
   organizationName: 'ajnart',
   projectName: 'alarr-documentation',
@@ -70,7 +70,7 @@ const config: Config = {
       'title': 'Homarr',
       'logo': {
         'alt': 'Logo',
-        'src': 'img/alparr.png',
+        'src': 'img/logo.png',
       },
       'items': [
         {

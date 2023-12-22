@@ -20,8 +20,8 @@ export const DataflowVisualizationComponent = () => {
 
       <div className="relative w-80 h-80 mx-auto">
         <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}
-             src={'/img/alparr.png'}
-             alt={'Homarr Logo'} width={40}
+             src={'/img/logo.png'}
+             alt={'Homarr Logo'} width={55}
              height={40} />
         <img ref={radarrRef} className={'absolute left-0 top-0'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/radarr.png?raw=true'}
