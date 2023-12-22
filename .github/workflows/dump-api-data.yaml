@@ -1,3 +1,5 @@
+name: Dump API data
+
 on:
   schedule:
     - cron: "0 12 * * FRI" # At 12:00 on Friday.
