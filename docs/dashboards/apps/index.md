@@ -22,7 +22,7 @@ There is a wide variety of options for it, and if you wish for more customizatio
 
 ## Adding an App and General Option
 
-Adding any new app follows the same steps as this [Adding your first app](/docs/getting-started/introduction/after-the-installation#adding-your-first-app) part of the introduction.
+Adding any new app follows the same steps as this [Adding your first app](/docs/getting-started/after-the-installation#adding-your-first-app) part of the introduction.
 
 ---
 
