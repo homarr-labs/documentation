@@ -15,36 +15,54 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The App is the center element in integration and direct link to the applications available on your server(s).
-There is a wide variety of options for it, and if you wish for more customization, make sure to come by our [Discord](https://discord.com/invite/aCsmEV5RgA) to discuss it.
+Apps are the main components of your board.
+An app can be any application in your network or any public website on the Internet.
+Each app currently must have a HTTP/S URL.
+The behaviour, appearance and other factors of apps can be adjusted.
 
----
+Please have a look at the [getting started guide](../../getting-started/after-the-installation#adding-your-first-app) on how to add an app.
 
-## Adding an App and General Option
+## General
 
-Adding any new app follows the same steps as this [Adding your first app](/docs/getting-started/after-the-installation#adding-your-first-app) part of the introduction.
+Here, you can configure:
 
----
+- what name should be displayed on the tile
+- the internal address *(see [glossary](../../getting-started/glossary))*
+- the external address *(see [glossary](../../getting-started/glossary))*
+
+In most scenarios, you should set the internal IP address to the LAN address (this means your local IPv4 address).
+Homarr will use this IP to communicate with your app if needed.
+The external address is only used, when the user clicks on the app.
+Therefore, this should be something that is always reachable.
+If you use a domain, (Cloudflare) tunnels or a reverse proxy, you should set this to their respective hostname.
+Otherwise, you can use the same value as for internal address.
+
+![](./img/app-general-tab.png)
 
 ## Behavior
+
+In the behaviour section, you can configure what should happen when you interact with the app.
 
 ![](img/behavior-tab.webp)
 
 ### Open in new tab
-When clicking the app, defines whether the link is opened in a new tab or as a redirect in the current tab. By default it is set to open in a new tab.
+By default, Homarr will open the app in a new tab when you click on it.
+If you dislike this behavior, you can disable it here.
 
 ### Application Description
 You can set a message/description to be shown when hovering your mouse over the app.
 
 ![](img/description-hover-example.webp)
 
----
+<br/>
 
 ## Network
+As mention earlier, you can configure apps on your board to communicate.
+This section configures whether you want to do this.
 
-This part is also explained later on in the documentation right here in [Pings.](https://homarr.dev/docs/customizations/layout#pings)
+This feature is explained in greater detail here: [configuring pings on your board](../../advanced/customizations/board-customization.mdx#pings).
 
----
+<br/>
 
 ## Appearance
 
@@ -68,8 +86,8 @@ You can choose where the app's title will be on the tile relative to the Icon.
 
 ![](img/app-title-top.webp) ![](img/app-title-right.webp) ![](img/app-title-bottom.webp) ![](img/app-title-left.webp)
 
----
+<br/>
 
 ## Integration
 
-This part is also explained later on in the documentation right here in [Integrations.](https://homarr.dev/docs/integrations/)
+An app may have an integration. [Integrations](https://homarr.dev/docs/integrations/) are explained here.
