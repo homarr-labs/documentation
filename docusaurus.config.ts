@@ -89,7 +89,7 @@ const config: Config = {
           label: 'Management',
           type: 'doc',
           position: 'left',
-          docId: 'management/index',
+          docId: 'management/resources/index',
         },
         {
           label: 'Configuration',
