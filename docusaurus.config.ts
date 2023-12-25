@@ -80,7 +80,7 @@ const config: Config = {
           docId: 'getting-started/prerequisites',
         },
         {
-          label: 'Dashboards',
+          label: 'Boards',
           type: 'doc',
           position: 'left',
           docId: 'dashboards/apps/index',
@@ -104,18 +104,23 @@ const config: Config = {
           docId: 'community/faq',
         },
         {
-          'to': '/about-us',
-          'label': 'About us',
-          'position': 'left',
-        },
-        {
-          'to': '/blog',
-          'label': 'Blog',
-          'position': 'left',
+          type: 'dropdown',
+          label: 'About us',
+          position: 'left',
+          items: [
+            {
+              to: '/about-us',
+              label: 'Our team',
+            },
+            {
+              to: '/blog',
+              label: 'Blog',
+            },
+          ],
         },
         {
           'to': 'https://demo.homarr.dev/',
-          'label': 'Demo instance',
+          'label': 'Demo',
           'position': 'right',
         },
         {
@@ -204,7 +209,7 @@ const config: Config = {
       },
     ],
     imageZoom: {
-      selector: '.markdown :not(em):not(a) > img'
+      selector: '.markdown :not(em):not(a) > img',
     },
     tableOfContents: {
       minHeadingLevel: 2,

@@ -51,24 +51,6 @@
   box-shadow: none !important;
 }
 
-.searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
-  min-width: 400px;
-}
-
-@media screen and (max-width: 996px) {
-  .navbar__items--right {
-    flex: 2;
-  }
-  .searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
-    width: 100%;
-    position: relative !important;
-  }
-}
-
-.me-shield {
- margin-right: 0.3rem;
-}
-
 .navbar__logo {
   margin-right: 1rem;
 }
@@ -147,4 +129,9 @@ form.aa-Form {
 .medium-zoom-overlay {
   background-color: transparent !important;
   backdrop-filter: blur(10px) brightness(0.7);
+}
+
+.navbar__inner .navbar__items a.navbar__item,
+.navbar__inner .navbar__items div.navbar__item.dropdown {
+  white-space: nowrap;
 }

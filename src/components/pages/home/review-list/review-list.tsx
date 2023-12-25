@@ -81,7 +81,7 @@ export default function HomepageUserReviews() {
     <div className="mt-24">
       <h2 className="text-5xl font-extrabold mb-10">Here's what our community says 🙌</h2>
 
-      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {reviews.map((review, index) => (
           <article className="hover:bg-gray-100 dark:hover:bg-zinc-800 p-3 rounded">
             <a className="hover:no-underline h-full block" href={review.link} target="_blank">
