@@ -148,6 +148,10 @@ const config: Config = {
               to: 'https://www.reddit.com/r/homarr/',
               label: 'Reddit',
             },
+            {
+              to: 'https://opencollective.com/homarr',
+              label: 'OpenCollective'
+            }
           ],
         },
         {
@@ -164,8 +168,8 @@ const config: Config = {
           items: [
             {
               label: 'Installation',
-              to: '/docs/getting-started/installation',
-            },
+              to: '/docs/getting-started/prerequisites',
+            }
           ],
         },
         {
@@ -179,6 +183,10 @@ const config: Config = {
               label: 'GitHub',
               to: 'https://github.com/ajnart/homarr',
             },
+            {
+              label: 'Donate',
+              to: 'https://opencollective.com/homarr'
+            }
           ],
         },
         {
@@ -188,6 +196,10 @@ const config: Config = {
               label: 'Blog',
               to: '/blog',
             },
+            {
+              label: 'About us',
+              to: '/about-us'
+            }
           ],
         },
       ],
