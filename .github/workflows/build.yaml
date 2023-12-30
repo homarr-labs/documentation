@@ -13,6 +13,10 @@ permissions:
   actions: read # for fetching base branch bundle stats
   pull-requests: write # for comments
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,6 +43,8 @@ jobs:
         run: pnpm build
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
   deploy:
     runs-on: ubuntu-latest
     permissions:
@@ -49,6 +55,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Deploy to GitHub pages
         id: deployment
         uses: actions/deploy-pages@v4
