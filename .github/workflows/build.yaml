@@ -41,6 +41,8 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -55,8 +57,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
       - name: Deploy to GitHub pages
         id: deployment
         uses: actions/deploy-pages@v4
