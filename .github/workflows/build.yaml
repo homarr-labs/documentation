@@ -14,7 +14,7 @@ permissions:
   pull-requests: write # for comments
 
 jobs:
-  amd64:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,21 +33,22 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-#      - name: Install dependencies
-#        run: pnpm install
-#      - name: Build
-#        run: pnpm build
-      - name: Login to ghcr.io
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build image and push to registry
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub pages
+        id: deployment
+        uses: actions/deploy-pages@v4
