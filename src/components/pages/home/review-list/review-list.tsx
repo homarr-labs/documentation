@@ -84,7 +84,7 @@ export default function HomepageUserReviews() {
       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {reviews.map((review, index) => (
           <article className="hover:bg-gray-100 dark:hover:bg-zinc-800 p-3 rounded">
-            <a className="hover:no-underline h-full block" href={review.link} target="_blank">
+            <a className="hover:no-underline h-full block" href={review.link} target="_blank" data-umami-event={"Open review"}>
               <div className="flex items-center mb-4 space-x-4">
                 <img className="w-10 h-10 rounded-full" src={review.profilePicture} alt="profile" />
                 <div className="space-y-1 font-medium dark:text-white">
