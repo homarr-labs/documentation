@@ -345,24 +345,23 @@ image:
   tag: "0.14.2"
 ingress:
   enabled: true
-  className: traefik
-hosts:
-  - host: homarr.homelab.dev
-    paths:
-      - path: /
-        pathType: Prefix
-  - host: www.homarr.homelab.dev
-    paths:
-      - path: /
-        pathType: Prefix
-tls:
-  - hosts:
-    - "homarr.homelab.dev"
-    - "www.homarr.homelab.dev"
-  secretName: homelab-tls
+  className: "traefik"
+  annotations:
+  # Add any additional annotations as needed
+  hosts:
+    - host: homarr.homelab.dev
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - "homarr.homelab.dev"
+        - "www.homarr.homelab.dev"
+      secretName: homelab-tls
 ```
 
-All available values are listed on the [artifacthub](https://artifacthub.io/packages/helm/homarr/homarr?modal=values). If you find any issue please open an issue on [github](https://github.com/oben01/charts/issues/new?assignees=oben01&labels=bug&projects=&template=bug_report.yaml)
+All available values are listed on the [artifacthub](https://artifacthub.io/packages/helm/oben01/homarr?modal=values). If you find any issue please open an issue on [github](https://github.com/oben01/charts/issues/new?assignees=oben01&labels=bug&template=bug_report.yaml&name=homarr)
+
 
 ### Uninstalling the Chart
 
