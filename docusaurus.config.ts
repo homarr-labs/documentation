@@ -8,12 +8,12 @@ const a11yEmoji = require('@fec/remark-a11y-emoji');
 const config: Config = {
   title: 'Homarr documentation',
   tagline: 'A simple yet powerful dashboard for your server.',
-  url: 'https://alparr.app',
+  url: 'https://homarr.dev',
   baseUrl: '/',
   favicon: 'img/logo.png',
   // Used for publishing to GitHub Pages
   organizationName: 'ajnart',
-  projectName: 'alarr-documentation',
+  projectName: 'homarr-documentation',
   // Has to be set even if not using translations
   i18n: {
     defaultLocale: 'en',

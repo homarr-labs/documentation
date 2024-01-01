@@ -27,6 +27,35 @@ More experienced? Try out [Helm Charts](#installation-using-helm) or [TrueNas Sc
 
 #### Installation
 
+To install Homarr using Docker Compose, simply create a file called ``docker-compose.yml`` and paste the following code into it.
+
+```yml title="docker-compose.yml"
+version: '3'
+#---------------------------------------------------------------------#
+#     Homarr - A simple, yet powerful dashboard for your server.     #
+#---------------------------------------------------------------------#
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+      - ./homarr/data:/data
+    ports:
+      - '7575:7575'
+```
+
+Then, run ``docker-compose up -d`` in the same directory. This will start the Homarr container in the background.
+
+:::caution
+
+Docker compose creates a network by default. Some integrations may not work (specifically Dash.) when the network internal hostname is used since clients do not know this name. It is recommended that you either use a local network wide hostname or the IP directly. An alternative is to create a DNS record with the same internal compose stack hostname for all clients outside.
+
+:::
+
 #### Updating
 
 To update, navigate to the directory with the ``docker-compose.yaml`` located.
