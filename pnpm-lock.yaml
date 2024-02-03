@@ -57,8 +57,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   swiper:
-    specifier: ^9.4.1
-    version: 9.4.1
+    specifier: ^11.0.5
+    version: 11.0.5
   tailwindcss:
     specifier: ^3.4.0
     version: 3.4.0
@@ -9952,10 +9952,6 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /ssr-window@4.0.2:
-    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
-    dev: false
-
   /stable@0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
     deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
@@ -10136,11 +10132,9 @@ packages:
       stable: 0.1.8
     dev: false
 
-  /swiper@9.4.1:
-    resolution: {integrity: sha512-1nT2T8EzUpZ0FagEqaN/YAhRj33F2x/lN6cyB0/xoYJDMf8KwTFT3hMOeoB8Tg4o3+P/CKqskP+WX0Df046fqA==}
+  /swiper@11.0.5:
+    resolution: {integrity: sha512-rhCwupqSyRnWrtNzWzemnBLMoyYuoDgGgspAm/8iBD3jCvAWycPLH4Z3TB0O5520DHLzMx94yUMH/B9Efpa48w==}
     engines: {node: '>= 4.7.0'}
-    dependencies:
-      ssr-window: 4.0.2
     dev: false
 
   /tailwindcss@3.4.0:
