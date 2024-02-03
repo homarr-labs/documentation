@@ -27,7 +27,7 @@
     "@mdx-js/react": "^3.0.0",
     "@tabler/icons": "^1.119.0",
     "autoprefixer": "^10.4.16",
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.0",
     "leader-line-new": "^1.1.9",
     "plugin-image-zoom": "^1.2.0",
     "postcss": "^8.4.32",
