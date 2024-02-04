@@ -1,6 +1,8 @@
 {
   "name": "docs",
   "version": "0.2.3",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "dev": "docusaurus start",
@@ -27,28 +29,32 @@
     "@mdx-js/react": "^3.0.0",
     "@tabler/icons": "^1.119.0",
     "autoprefixer": "^10.4.16",
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.0",
     "leader-line-new": "^1.1.9",
     "plugin-image-zoom": "^1.2.0",
     "postcss": "^8.4.32",
-    "prism-react-renderer": "^2.1.0",
+    "prism-react-renderer": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "swiper": "^9.4.1",
+    "swiper": "^11.0.5",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
+    "@argos-ci/cli": "^1.0.10",
+    "@argos-ci/playwright": "^1.9.1",
     "@docusaurus/module-type-aliases": "^3.0.1",
     "@docusaurus/tsconfig": "^3.0.1",
     "@docusaurus/types": "^3.0.1",
     "@fec/remark-a11y-emoji": "^3.1.0",
+    "@playwright/test": "^1.41.2",
     "@tsconfig/docusaurus": "^1.0.7",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "cheerio": "1.0.0-rc.12",
     "eslint": "^8.56.0",
     "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.2.4",
     "typescript": "^5.3.3",
     "zod": "^3.22.4"
   },
@@ -69,6 +75,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.11.0"
   }
 }

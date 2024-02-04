@@ -1,0 +1,35 @@
+name: Argos CI Screenshots
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  take-screenshots:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Install Playwright browsers
+        run: pnpm playwright install --with-deps chromium
+      - name: Build the website
+        run: pnpm docusaurus build
+      - name: Take screenshots with Playwright
+        run: pnpm playwright test
+      - name: Upload screenshots to Argos
+        run: pnpm argos upload ./screenshots
