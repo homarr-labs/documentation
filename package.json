@@ -1,6 +1,8 @@
 {
   "name": "docs",
   "version": "0.2.3",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "dev": "docusaurus start",
