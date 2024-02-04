@@ -23,9 +23,9 @@
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.1.0",
     "@dipakparmar/docusaurus-plugin-umami": "^2.1.2",
-    "@docusaurus/core": "^3.0.1",
-    "@docusaurus/plugin-sitemap": "^3.0.1",
-    "@docusaurus/preset-classic": "^3.0.1",
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/plugin-sitemap": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
     "@mdx-js/react": "^3.0.0",
     "@tabler/icons": "^1.119.0",
     "autoprefixer": "^10.4.17",
@@ -40,11 +40,11 @@
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.1.1",
+    "@docusaurus/tsconfig": "^3.1.1",
+    "@docusaurus/types": "^3.1.1",
     "@argos-ci/cli": "^1.0.10",
     "@argos-ci/playwright": "^1.9.1",
-    "@docusaurus/module-type-aliases": "^3.0.1",
-    "@docusaurus/tsconfig": "^3.0.1",
-    "@docusaurus/types": "^3.0.1",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@playwright/test": "^1.41.2",
     "@tsconfig/docusaurus": "^1.0.7",
@@ -59,8 +59,8 @@
     "zod": "^3.22.4"
   },
   "peerDependencies": {
-    "@docusaurus/theme-common": "^3.0.1",
-    "@docusaurus/theme-mermaid": "^3.0.1"
+    "@docusaurus/theme-common": "^3.1.1",
+    "@docusaurus/theme-mermaid": "^3.1.1"
   },
   "browserslist": {
     "production": [
