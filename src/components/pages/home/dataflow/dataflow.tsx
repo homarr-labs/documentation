@@ -18,7 +18,7 @@ export const DataflowVisualizationComponent = () => {
         favourite tools and
         applications</p>
 
-      <div className="relative w-80 h-80 mx-auto">
+      <div className="relative w-80 h-80 mx-auto animated-dataflow">
         <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}
              src={'/img/logo.png'}
              alt={'Homarr Logo'} width={55}
