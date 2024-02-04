@@ -5,7 +5,7 @@ import {extractSitemapPathnames, pathnameToArgosName} from './utils';
 
 // Constants
 const siteUrl = 'http://localhost:3000';
-const sitemapPath = './build/sitemap.xml';
+const sitemapPath = '../build/sitemap.xml';
 const stylesheetPath = './screenshot.css';
 const stylesheet = fs.readFileSync(stylesheetPath).toString();
 
