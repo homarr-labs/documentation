@@ -5,6 +5,6 @@
   ],
   "baseBranches": ["master"],
   "dependencyDashboard": false,
-  "automerge": false,
+  "automerge": true,
   "rangeStrategy": "bump"
 }
