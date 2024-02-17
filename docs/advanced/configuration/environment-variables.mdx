@@ -88,3 +88,28 @@ You can disable this data reporting by setting the environment variable ``DISABL
 
 Alternatively, you can block any outgoing requests to ``umami.homarr.dev`` on your firewall.
 We will never sell this data or track your specific user activity.
+
+## Authentication
+
+Homarr supports multiple authentication providers.
+For a more detailed walkthrough, it is recommended that you read on [how to set up SSO in Homarr](../sso).
+
+| Environment Variable                      | Description                                         | Default value      |
+|-------------------------------------------|-----------------------------------------------------|--------------------|
+| ``AUTH_PROVIDER``                         | Specifies which providers you want to use           | credentials        |
+| ``AUTH_LDAP_URI``                         | URI of your LDAP server                             | ---                |
+| ``AUTH_LDAP_BASE``                        | Base dn of your LDAP server                         | ---                |
+| ``AUTH_LDAP_BIND_DN``                     | User used for finding users and groups              | ---                |
+| ``AUTH_LDAP_BIND_PASSWORD``               | Password for bind user                              | ---                |
+| ``AUTH_LDAP_USERNAME_ATTRIBUTE``          | Attribute used for username                         | uid                |
+| ``AUTH_LDAP_GROUP_CLASS``                 | Class used for querying groups                      | groupOfUniqueNames |
+| ``AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE``      | Attribute used for querying group member            | member             |
+| ``AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE`` | User attribute used for comparing with group member | dn                 |
+| ``AUTH_LDAP_ADMIN_GROUP``                 | Admin group                                         | admin              |
+| ``AUTH_LDAP_OWNER_GROUP``                 | Owner group                                         | admin              |
+| ``AUTH_OIDC_URI``                         | URI of OIDC provider                                | ---                |
+| ``AUTH_OIDC_CLIENT_ID``                   | ID of OIDC client (application)                     | ---                |
+| ``AUTH_OIDC_CLIENT_SECRET``               | Secret of OIDC client (application)                 | ---                |
+| ``AUTH_OIDC_CLIENT_NAME``                 | Display name of provider (in login screen)          | OIDC               |
+| ``AUTH_OIDC_ADMIN_GROUP``                 | Admin group                                         | admin              |
+| ``AUTH_OIDC_OWNER_GROUP``                 | Owner group                                         | admin              |
