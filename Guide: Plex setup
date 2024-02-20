@@ -1,0 +1,50 @@
+Hi everyone
+
+I see that there are a lot of people asking for help with the plex issues.
+I have been researching how to fix this problem.
+
+** Find your ip: **
+
+first of all, you must examine which internal ip address you are running with plex on the Nas server..
+I use portainer, so it makes it easier for me to operate around the system and read the log and console
+
+image below
+
+this is how it looks to me - image of Portainer
+https://i.gyazo.com/ce4396981714e539fad105e8838a9061.png
+
+I have found this internal ip which is under qbittorrent -> 172.17.0.2 the reason is that I have set my plex to run under qbittorrent's network with vpn. so that's why plex doesn't have its own ip
+
+** Plex: **
+
+Plex: entry your localhost:ip address -> jump to settings -> network.
+There are some settings you need to make sure are set correctly.
+secure connections: Preferred.
+Preferred network interface: Any.
+LAN Networks: None.
+
+Which next jumps to Remote Access
+There you will find your IP address and how it registers in the local network and outside the network.
+
+Private: Your internal ip 
+Public:  Your hostname ip like 192.168.x.x
+If you use VPN, then it would show different ip address
+
+image below. - this image is set up with vpn address (Spoiler)
+
+image of plex remote access
+https://i.gyazo.com/e5104f7e782c7e32ef6cd030babfbc44.png
+
+
+** Homarr: **
+
+This is how my Plex setup looks on Homarr
+
+Internal address: http://172.17.0.2:32400
+External address: http://192.168.50.140:32400
+
+External address can be used different ip address.
+This means that the internal address gets homarr access to the plex container. and external means that it forwards you to the other ip for access to the plex website.
+
+image of Plex setup on Homarr
+https://i.gyazo.com/543c08a8c2b2a2c43a5474dc2a0cb458.png
