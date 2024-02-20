@@ -90,4 +90,4 @@ You can choose where the app's title will be on the tile relative to the Icon.
 
 ## Integration
 
-An app may have an integration. [Integrations](https://homarr.dev/docs/integrations/) are explained here.
+An app may have an integration. [Integrations](https://homarr.dev/docs/management/integrations/) are explained here.
