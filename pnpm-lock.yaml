@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^1.0.10
     version: 1.0.10
   '@argos-ci/playwright':
-    specifier: ^1.9.1
-    version: 1.9.1
+    specifier: ^1.9.3
+    version: 1.9.3
   '@docusaurus/module-type-aliases':
     specifier: ^3.1.1
     version: 3.1.1(react-dom@18.2.0)(react@18.2.0)
@@ -338,8 +338,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.20
     dev: false
 
-  /@argos-ci/browser@1.4.1:
-    resolution: {integrity: sha512-XE5TZnoP+zKeV/Gm0pjuJUx0+xoCnVo4ajWBM2V6vyMAP8P+gO7v8HPHWXBLJoEGgF1Ij365fDA3R3+OMD5Hzw==}
+  /@argos-ci/browser@1.5.0:
+    resolution: {integrity: sha512-a9uzWL3L2qalqXa5kzkjlfnznpkGbzNhS5QSf0DtCylOWSrpnUMK+cIj3xzGMgmZK7SZ/r9OYdSZfsaSizWLXA==}
     engines: {node: '>=16.0.0'}
     dev: true
 
@@ -371,13 +371,28 @@ packages:
       - supports-color
     dev: true
 
-  /@argos-ci/playwright@1.9.1:
-    resolution: {integrity: sha512-gh9upfhE+cyxCF3XTdAMcD+DXDWfWogJlYdL6Gc7litJX7h1yckBmO+deAtsh6xT58DfUIg4SJUjOHDq/CKzDw==}
+  /@argos-ci/core@1.5.4:
+    resolution: {integrity: sha512-XgRJSJYfauCbqOGNLFFiVri70TAp0TORfKrK/6yXyt7k9NgZD6vD10hUhSMeJP7REwYrqD3wxY7l85K+wwoo3Q==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@argos-ci/browser': 1.4.1
-      '@argos-ci/core': 1.5.3
-      '@argos-ci/util': 1.2.0
+      '@argos-ci/util': 1.2.1
+      axios: 1.6.2(debug@4.3.4)
+      convict: 6.2.4
+      debug: 4.3.4
+      fast-glob: 3.3.2
+      sharp: 0.32.6
+      tmp: 0.2.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@argos-ci/playwright@1.9.3:
+    resolution: {integrity: sha512-kgMy7SHkBj4MFXfpeqh8Gk6upQwgs16/4zcV9U/C2A8JpXRov96IKetK5vlCqqcrO/k0oglS+eZypMP5bvmfsw==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@argos-ci/browser': 1.5.0
+      '@argos-ci/core': 1.5.4
+      '@argos-ci/util': 1.2.1
       chalk: 5.3.0
     transitivePeerDependencies:
       - supports-color
@@ -385,6 +400,11 @@ packages:
 
   /@argos-ci/util@1.2.0:
     resolution: {integrity: sha512-e/sAEECDzUr02v5sXPcd1Ky3WqNOMDWkutfBC8RBizj3Z+CUp6uwV+bzyTZaE9Zms9WekqXAfKe1rZkEie+DrA==}
+    engines: {node: '>=16.0.0'}
+    dev: true
+
+  /@argos-ci/util@1.2.1:
+    resolution: {integrity: sha512-/o7t0TcSED3BsBnnPrvXdmT+reThGMoGC9Lk+TTghrEE9GFlSKhjBmfYt4fUgXj5hQIe5tcdO01BVB2TsjjYSw==}
     engines: {node: '>=16.0.0'}
     dev: true
 
