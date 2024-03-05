@@ -1,5 +1,5 @@
-import type { Config, PluginOptions } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { EnumChangefreq } from 'sitemap';
 
@@ -82,71 +82,47 @@ const config: Config = {
       },
       'items': [
         {
-          label: 'Getting started',
+          label: 'Docs',
           type: 'doc',
           position: 'left',
-          docId: 'getting-started/prerequisites',
+          docId: 'getting-started/index',
         },
         {
-          label: 'Boards',
-          type: 'doc',
+          label: 'More',
           position: 'left',
-          docId: 'dashboards/apps/index',
+          to: '/docs/category/more',
         },
         {
-          label: 'Management',
-          type: 'doc',
+          label: 'Blog',
           position: 'left',
-          docId: 'management/resources/index',
+          to: '/blog',
         },
         {
-          label: 'Advanced',
-          type: 'doc',
+          label: 'About us',
           position: 'left',
-          docId: 'advanced/customizations/icons',
+          to: '/about-us',
         },
         {
-          label: 'Community',
-          position: 'left',
-          type: 'doc',
-          docId: 'community/faq',
+          to: 'https://demo.homarr.dev/',
+          label: 'Demo',
+          position: 'right',
         },
         {
           type: 'dropdown',
-          label: 'About us',
-          position: 'left',
+          label: 'Community',
+          position: 'right',
           items: [
             {
-              to: '/about-us',
-              label: 'Our team',
+              to: 'https://discord.com/invite/aCsmEV5RgA',
+              label: 'Discord',
             },
             {
-              to: '/blog',
-              label: 'Blog',
-            },
-          ],
-        },
-        {
-          'to': 'https://demo.homarr.dev/',
-          'label': 'Demo',
-          'position': 'right',
-        },
-        {
-          'type': 'dropdown',
-          'label': 'Community',
-          'position': 'right',
-          'items': [
-            {
-              'to': 'https://discord.com/invite/aCsmEV5RgA',
-              'label': 'Discord',
+              to: 'https://github.com/ajnart/homarr',
+              label: 'GitHub',
             },
             {
-              'to': 'https://github.com/ajnart/homarr',
-              'label': 'GitHub',
-            },
-            {
-              'to': 'https://www.answeroverflow.com/c/972958686051962910',
-              'label': 'Answer Overflow',
+              to: 'https://www.answeroverflow.com/c/972958686051962910',
+              label: 'Answer Overflow',
             },
             {
               to: 'https://crowdin.com/project/homarr',
@@ -176,7 +152,7 @@ const config: Config = {
           items: [
             {
               label: 'Installation',
-              to: '/docs/getting-started/prerequisites',
+              to: '/docs/category/getting-started',
             }
           ],
         },

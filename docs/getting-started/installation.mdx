@@ -9,19 +9,19 @@ tags:
   - Helm
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import { IconDownload } from '@tabler/icons';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 We provide multiple installation methods. [Are you a newbie to Docker? We recommend Docker Compose for beginners](#-docker-compose).
-More experienced? Try out [Helm Charts](#installation-using-helm) or [TrueNas Scale](#-truenas).
+More experienced? Try out [Helm Charts](#helm-chart) or [TrueNas Scale](#-truenas).
 
 ## Docker
 ### 🐋 Docker Compose
 #### Prerequisites
 
-- A Linux or Windows based system that meets the [hardware prerequisites](./prerequisites#hardware) and [architecture prerequisites](./prerequisites#Architecture).
+- A Linux or Windows based system that meets the [hardware prerequisites](/docs/getting-started/#hardware) and [architecture prerequisites](/docs/getting-started/#architecture).
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/) - *preinstalled on many systems nowadays*
 
@@ -80,17 +80,17 @@ To uninstall, navigate to the directory with the ``docker-compose.yaml`` located
 
 <br/>
 
-### 🐋 Docker - Not recommended
+### 🐋 Docker Standalone
 
 :::caution
 
-Docker is a not recommended installation method, because [Docker Compose](#docker-compose) is in many ways superior and easier to use for beginners.
+Docker is a not the recommended installation method, because [Docker Compose](#-docker-compose) is in many ways superior and easier to use for beginners. Continue along if you know what you're doing.
 
 :::
 
 #### Prerequisites
 
-- A Linux or Windows based system that meets the [hardware prerequisites](./prerequisites#hardware) and [architecture prerequisites](./prerequisites#Architecture).
+- A Linux or Windows based system that meets the [hardware prerequisites](/docs/getting-started/#hardware) and [architecture prerequisites](/docs/getting-started/#architecture).
 - [Docker](https://docs.docker.com/get-docker/)
 
 #### Installation
@@ -141,7 +141,7 @@ To update Homarr, you must remove your container first. Make sure that you've mo
 2. Pull the latest Homarr image ``docker pull ghcr.io/ajnart/homarr:latest``.
 3. Re-run the command you used to install Homarr.
 
-This process can get tideous, if you update frequently. Thus, we recommend [the installation using docker-compose](#-installation-using-docker-compose-or-portainer) for more experienced users.
+This process can get tideous, if you update frequently. Thus, we recommend [using docker-compose](#-docker-compose) 
 
 :::tip
 

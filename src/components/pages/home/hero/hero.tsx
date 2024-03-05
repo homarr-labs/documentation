@@ -1,9 +1,8 @@
+import Link from '@docusaurus/Link';
+import { useColorMode } from '@docusaurus/theme-common';
+import { IconDownload } from '@tabler/icons';
 import clsx from 'clsx';
 import styles from '../../../../pages/index.module.css';
-import Link from '@docusaurus/Link';
-import { IconDownload, IconInfoCircle } from '@tabler/icons';
-import { useColorMode } from '@docusaurus/theme-common';
-import React from 'react';
 
 export default function HomeHero() {
   return (
@@ -24,7 +23,7 @@ export default function HomeHero() {
             <Link
               data-umami-event="Install button"
               className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
-              to="/docs/getting-started/prerequisites"
+              to="/docs/getting-started"
             >
               <div className={'flex items-center gap-3'}>
                 <span className={'dark:text-gray-200'}>Install</span>
