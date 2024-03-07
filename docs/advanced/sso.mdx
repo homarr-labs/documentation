@@ -50,13 +50,25 @@ Multiple providers can be enabled with by separating them with `,`, (ex. `AUTH_P
         Minimal configuration requires 4 env variables, LDAP URI, base, user and password for querying data.
 
         There's more variables, but all have defaults corresponding to lldap defaults. These might need to be changed if you have different LDAP provider.
-
         ```
+        docker run ...
         AUTH_PROVIDER="ldap"
         AUTH_LDAP_URI="ldap://example.com:3890"
         AUTH_LDAP_BASE="dc=example,dc=com" // Same as LLDAP_LDAP_BASE_DN
         AUTH_LDAP_BIND_DN="uid=admin,ou=People,dc=example,dc=com"
         AUTH_LDAP_BIND_PASSWORD="adminpass" // Same as LLDAP_LDAP_USER_PASS
+        ```
+        ```
+        #Docker compose
+        version: x
+        services:
+          homarr:
+            environment:
+              AUTH_PROVIDER: ldap
+              AUTH_LDAP_URI: ldap://example.com:3890
+              AUTH_LDAP_BASE: dc=example,dc=com #Same as LLDAP_LDAP_BASE_DN
+              AUTH_LDAP_BIND_DN: uid=admin,ou=People,dc=example,dc=com
+              AUTH_LDAP_BIND_PASSWORD: adminpass #Same as LLDAP_LDAP_USER_PASS
         ```
 
         In lldap, create a user and admin group, assign this user to admin group. You can log in using this user and he will be admin and owner.
@@ -79,7 +91,6 @@ Multiple providers can be enabled with by separating them with `,`, (ex. `AUTH_P
     | ``AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE`` | User attribute used for comparing with group member | dn                 |
     | ``AUTH_LDAP_ADMIN_GROUP``                 | Admin group                                         | admin              |
     | ``AUTH_LDAP_OWNER_GROUP``                 | Owner group                                         | admin              |
-
 
   </TabItem>
   <TabItem value="oidc" label="OIDC provider">
