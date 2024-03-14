@@ -1,6 +1,95 @@
 # 🖥️ Hardware
 
-## With dashdot, you can monitor the performance and used system resources of your machine.
+Homarr supports various different integrations that allow monitoring of your hardware directly from your dashboard.
 
-The Dash. integration can be used to monitor the performance and used system resources of your machine.
-Dash. will be used in the [Dash.](/docs/widgets/dashdot-widget)
+## Dash.
+
+The Dash. integration can be used to monitor the performance and used system resources of your machine. Used by the follwing widget:
+
+- [Dash. widget](/docs/widgets/dashdot-widget)
+
+## OpenMediaVault
+
+The OpenMediaVault integration allows you to view performance and resource data from your OpenMediaVault system. It is used by the following widgets:
+
+- [System Heath Monitoring](/docs/widgets/health-monitoring)
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| Username | Private | Username from the WebUI used for authentication |
+| Password | Private | Password from the WebUI used for authentication |
+
+  </div>
+</details>
+
+## Proxmox
+
+The Proxmox integration allows you to view performance and resource data from your Proxmox cluster/system. It is used by the following widgets:
+
+- [System Heath Monitoring](/docs/widgets/health-monitoring)
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| ApiToken | Private | API token used for authentication |
+
+  </div>
+</details>
+
+:::tip
+Getting an API token to use the Proxmox integration is a bit more complicated than most services. Please use the below steps when creating your API token.
+:::
+
+1. Navigate to the Proxmox portal, click on Datacenter
+2. Expand Permissions, click on Groups
+3. Click the Create button
+4. Name the group something informative, like api-users
+5. Click on the Permissions "folder"
+6. Click Add -> Group Permission
+    * Path: /
+    * Group: group from Step 4 above
+    * Role: PVEAuditor
+    * Propagate: Checked
+7. Expand Permissions, click on Users
+8. Click the Add button
+    * User name: something informative like api
+    * Realm: Linux PAM standard authentication
+    * Group: group from Step 4 above
+9. Expand Permissions, click on API Tokens
+10. Click the Add button
+    * User: user from Step 8 above
+    * Token ID: something informative like the application or purpose like homarr
+    * Privilege Separation: Checked
+11. Go back to the "Permissions" menu
+12. Click Add -> API Token Permission
+    * Path: /
+    * API Token: select the Token ID created in Step 10
+    * Role: PVE Auditor
+    * Propagate: Checked
+13. Copy the Secret that is shown in Step 12 because it is only shown once
+
+Using the User, Token ID, and Secret created above you need to format your API token as follows:
+
+```
+PVEAPIToken=<User>@pam!<Token ID>=<Secret>
+```
+
+For example, the following settings will create the string:
+ - User: api
+ - Token ID: homarr
+ - Secret: eef235db-f891-4327-b84e-32bd48b7d0fd
+
+```
+PVEAPIToken=api@pam!homarr=eef235db-f891-4327-b84e-32bd48b7d0fd
+```
