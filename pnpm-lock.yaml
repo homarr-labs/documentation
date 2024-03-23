@@ -30,8 +30,8 @@ dependencies:
     specifier: ^3.0.1
     version: 3.0.1(@types/react@18.2.45)(react@18.2.0)
   '@tabler/icons':
-    specifier: ^1.119.0
-    version: 1.119.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^3.1.0
+    version: 3.1.0
   autoprefixer:
     specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.32)
@@ -3268,19 +3268,8 @@ packages:
     dependencies:
       defer-to-connect: 2.0.1
 
-  /@tabler/icons@1.119.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Fk3Qq4w2SXcTjc/n1cuL5bccPkylrOMo7cYpQIf/yw6zP76LQV9dtLcHQUjFiUnaYuswR645CnURIhlafyAh9g==}
-    peerDependencies:
-      react: ^16.x || 17.x || 18.x
-      react-dom: ^16.x || 17.x || 18.x
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+  /@tabler/icons@3.1.0:
+    resolution: {integrity: sha512-CpZGyS1IVJKFcv88yZ2sYZIpWWhQ6oy76BQKQ5SF0fGgOqgyqKdBGG/YGyyMW632on37MX7VqQIMTzN/uQqmFg==}
     dev: false
 
   /@trysound/sax@0.2.0:
