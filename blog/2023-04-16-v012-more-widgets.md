@@ -66,8 +66,8 @@ Now, users will still be able to use their dashboard and an information message 
 ## Migration to Mantine V6
 We've migrated Mantine to version 6. This will bring some upstream changes for responsiveness and usability.
 
-## Fix width and height in the calender
-In 0.11.5 and previous versions, the calender scaled really bad if the widget was resized.
+## Fix width and height in the calendar
+In 0.11.5 and previous versions, the calendar scaled poorly if the widget was resized.
 Now, the calendar will fill out the entire available space and scale nicely with your dashboard.
 
 ![](https://cdn.discordapp.com/attachments/988335098493542410/1095416419816067175/homarr-calendar-scaling.gif)
