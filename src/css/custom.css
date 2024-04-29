@@ -135,3 +135,7 @@ form.aa-Form {
 .navbar__inner .navbar__items div.navbar__item.dropdown {
   white-space: nowrap;
 }
+
+:is(p, h3, h4, h5, h6):has(+ :is(ul, ol)){
+  margin-bottom: 4px !important;
+}
