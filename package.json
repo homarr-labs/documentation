@@ -47,7 +47,7 @@
     "@docusaurus/types": "^3.1.1",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@playwright/test": "^1.42.1",
-    "@tsconfig/docusaurus": "^2.0.2",
+    "@tsconfig/docusaurus": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "cheerio": "1.0.0-rc.12",
