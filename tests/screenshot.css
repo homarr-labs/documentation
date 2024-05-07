@@ -29,3 +29,7 @@ img[decoding="async"],
 .docusaurus-mermaid-container {
     display: none;
 }
+
+img {
+    border-radius: 0 !important;
+}
