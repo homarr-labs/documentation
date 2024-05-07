@@ -7,6 +7,7 @@ tags:
   - SSO
   - LDAP
   - OIDC
+  - Active Directory
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,11 +15,14 @@ import TabItem from '@theme/TabItem';
 
 # Single Sign On
 
-Homarr supports multiple authentication options, namely *credentials*, *ldap* and *oidc*.
+Homarr supports multiple authentication options, from internal userbase (credentials), to LDAP (with Active directory support), and OIDC.
 
-Enabled authentication methods can be specified in env variable **AUTH_PROVIDER**.
-
-Multiple providers can be enabled with by separating them with `,`, (ex. `AUTH_PROVIDER=credentials,oidc`, it is highly recommended to just enable one provider).
+### Auth configuration common variables
+| Environment Variable      | Description | Default Value |
+|---------------------------|-------------|---------------|
+| AUTH_PROVIDER             | Select Which provider to use between *credentials*, *ldap* and *oidc*. <br /> Multiple providers can be enabled with by separating them with `,`, (ex. `AUTH_PROVIDER=credentials,oidc`, it is highly recommended to just enable one provider).  |  credentials  |
+| AUTH_LOGOUT_REDIRECT_URL  | URL to redirect to after clicking logging out.  | --- |
+| AUTH_SESSION_EXPIRY_TIME  | Time for the session to time out. Can be set as pure number, which will automatically be used in seconds, or followed by s, m, h or d for seconds, minutes, hours or days. (ex: "30m") | "30d"  |
 
 <Tabs>
   <TabItem value="credentials" label="Credentials Provider" default>
@@ -73,24 +77,47 @@ Multiple providers can be enabled with by separating them with `,`, (ex. `AUTH_P
 
         In lldap, create a user and admin group, assign this user to admin group. You can log in using this user and he will be admin and owner.
 
+        Here is another example for Active Directory:
+
+        ```
+        AUTH_LDAP_URI="ldap://ldap.abc.xyz:389
+        AUTH_LDAP_BASE="DC=abc,DC=xyz"
+        AUTH_LDAP_BIND_DN="CN=Administrator,CN=Users,DC=abc,DC=xyz"
+        AUTH_LDAP_BIND_PASSWORD="YourAdministratorPassword"
+        AUTH_LDAP_USERNAME_ATTRIBUTE="sAMAccountName"
+        AUTH_LDAP_USER_MAIL_ATTRIBUTE="userPrincipalName"
+        AUTH_LDAP_GROUP_CLASS="group"
+        AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE="member"
+        AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE="dn"
+        AUTH_LDAP_ADMIN_GROUP="Administrators"
+        AUTH_LDAP_OWNER_GROUP="Administrators"
+        AUTH_LDAP_SEARCH_SCOPE="sub"
+        AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG="(sAMAccountType=805306368)"
+        ```
+        You can change the admin and owner groups to any group you have created. User mail attribute is set to userPrincipalName as it follows the right schema, but it is recommended to use real emails and the default 'mail' value.
+
       </div>
     </details>
 
 
     ### Configuration
 
-    | Environment Variable                      | Description                                         | Default value      |
-    |-------------------------------------------|-----------------------------------------------------|--------------------|
-    | ``AUTH_LDAP_URI``                         | URI of your LDAP server                             | ---                |
-    | ``AUTH_LDAP_BASE``                        | Base dn of your LDAP server                         | ---                |
-    | ``AUTH_LDAP_BIND_DN``                     | User used for finding users and groups              | ---                |
-    | ``AUTH_LDAP_BIND_PASSWORD``               | Password for bind user                              | ---                |
-    | ``AUTH_LDAP_USERNAME_ATTRIBUTE``          | Attribute used for username                         | uid                |
-    | ``AUTH_LDAP_GROUP_CLASS``                 | Class used for querying groups                      | groupOfUniqueNames |
-    | ``AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE``      | Attribute used for querying group member            | member             |
-    | ``AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE`` | User attribute used for comparing with group member | dn                 |
-    | ``AUTH_LDAP_ADMIN_GROUP``                 | Admin group                                         | admin              |
-    | ``AUTH_LDAP_OWNER_GROUP``                 | Owner group                                         | admin              |
+    | Environment Variable                      | Description                                               | Default value       |
+    |-------------------------------------------|-----------------------------------------------------------|---------------------|
+    | ``AUTH_LDAP_URI``                         | URI of your LDAP server                                   | ---                 |
+    | ``AUTH_LDAP_BASE``                        | Base dn of your LDAP server                               | ---                 |
+    | ``AUTH_LDAP_BIND_DN``                     | User used for finding users and groups                    | ---                 |
+    | ``AUTH_LDAP_BIND_PASSWORD``               | Password for bind user                                    | ---                 |
+    | ``AUTH_LDAP_USERNAME_ATTRIBUTE``          | Attribute used for username                               | uid                 |
+    | ``AUTH_LDAP_USER_MAIL_ATTRIBUTE``         | Attribute used for mail field                             | mail                |
+    | ``AUTH_LDAP_GROUP_CLASS``                 | Class used for querying groups                            | groupOfUniqueNames  |
+    | ``AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE``      | Attribute used for querying group member                  | member              |
+    | ``AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE`` | User attribute used for comparing with group member       | dn                  |
+    | ``AUTH_LDAP_ADMIN_GROUP``                 | Admin group                                               | admin               |
+    | ``AUTH_LDAP_OWNER_GROUP``                 | Owner group                                               | admin               |
+    | ``AUTH_LDAP_SEARCH_SCOPE``                | Serach scopes between base, one and sub                   | base                |
+    | ``AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG``   | Extra arguments for user search filter (& based)          | ---                 |
+    | ``AUTH_LDAP_GROUP_FILTER_EXTRA_ARG``      | Extra arguments for user's groups search filter (& based) | ---                 |
 
   </TabItem>
   <TabItem value="oidc" label="OIDC provider">
