@@ -115,8 +115,8 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
       zod:
-        specifier: ^3.22.4
-        version: 3.22.4
+        specifier: ^3.23.7
+        version: 3.23.7
 
 packages:
 
@@ -6177,8 +6177,8 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
 
-  zod@3.22.4:
-    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+  zod@3.23.7:
+    resolution: {integrity: sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -14207,6 +14207,6 @@ snapshots:
 
   yocto-queue@1.0.0: {}
 
-  zod@3.22.4: {}
+  zod@3.23.7: {}
 
   zwitch@2.0.4: {}
