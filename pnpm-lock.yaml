@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@cmfcmf/docusaurus-search-local':
-        specifier: ^1.1.0
-        version: 1.1.0(@docusaurus/core@3.3.2(@docusaurus/types@3.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(search-insights@2.13.0)
+        specifier: ^1.2.0
+        version: 1.2.0(@docusaurus/core@3.3.2(@docusaurus/types@3.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(search-insights@2.13.0)
       '@dipakparmar/docusaurus-plugin-umami':
         specifier: ^2.1.2
         version: 2.1.2(eslint@9.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
@@ -890,8 +890,8 @@ packages:
   '@braintree/sanitize-url@6.0.4':
     resolution: {integrity: sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==}
 
-  '@cmfcmf/docusaurus-search-local@1.1.0':
-    resolution: {integrity: sha512-0IVb/aA0IK8ZlktuxmgXmluXfcSpo6Vdd2nG21y1aOH9nVYnPP231Dn0H8Ng9Qf9ronQQCDWHnuWpYOr9rUrEQ==}
+  '@cmfcmf/docusaurus-search-local@1.2.0':
+    resolution: {integrity: sha512-Tc0GhRBsfZAiB+f6BoPB8YCQap6JzzcDyJ0dLSCSzWQ6wdWvDlTBrHc1YqR8q8AZ+STRszL5eZpZFi5dbTCdYg==}
     peerDependencies:
       '@docusaurus/core': ^2.0.0
       nodejieba: ^2.5.0
@@ -5751,6 +5751,9 @@ packages:
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
+  tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+
   tsutils@3.21.0:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
@@ -7058,7 +7061,7 @@ snapshots:
 
   '@braintree/sanitize-url@6.0.4': {}
 
-  '@cmfcmf/docusaurus-search-local@1.1.0(@docusaurus/core@3.3.2(@docusaurus/types@3.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(search-insights@2.13.0)':
+  '@cmfcmf/docusaurus-search-local@1.2.0(@docusaurus/core@3.3.2(@docusaurus/types@3.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(search-insights@2.13.0)':
     dependencies:
       '@algolia/autocomplete-js': 1.12.2(@algolia/client-search@4.22.0)(algoliasearch@4.22.0)(search-insights@2.13.0)
       '@algolia/autocomplete-theme-classic': 1.12.2
@@ -7069,6 +7072,7 @@ snapshots:
       clsx: 1.2.1
       lunr-languages: 1.14.0
       mark.js: 8.11.1
+      tslib: 2.6.3
     transitivePeerDependencies:
       - search-insights
 
@@ -13573,6 +13577,8 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.6.2: {}
+
+  tslib@2.6.3: {}
 
   tsutils@3.21.0(typescript@5.4.5):
     dependencies:
