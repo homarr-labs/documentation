@@ -33,8 +33,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(@types/react@18.2.45)(react@18.3.1)
       '@tabler/icons':
-        specifier: ^1.119.0
-        version: 1.119.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^3.7.0
+        version: 3.7.0
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.32)
@@ -1554,16 +1554,8 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tabler/icons@1.119.0':
-    resolution: {integrity: sha512-Fk3Qq4w2SXcTjc/n1cuL5bccPkylrOMo7cYpQIf/yw6zP76LQV9dtLcHQUjFiUnaYuswR645CnURIhlafyAh9g==}
-    peerDependencies:
-      react: ^16.x || 17.x || 18.x
-      react-dom: ^16.x || 17.x || 18.x
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
+  '@tabler/icons@3.7.0':
+    resolution: {integrity: sha512-lJGIZLSWrPO6VygRUbaVvQjWgL2EaiBMD8e6leCYUQ8ZPO4LIzKMq358C8KlhXJcyNiRz1Io3YWoc/DNTcWqSg==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -8454,10 +8446,7 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tabler/icons@1.119.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    optionalDependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+  '@tabler/icons@3.7.0': {}
 
   '@trysound/sax@0.2.0': {}
 
