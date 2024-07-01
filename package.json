@@ -55,7 +55,7 @@
     "eslint-plugin-markdown": "^5.0.0",
     "eslint-plugin-unused-imports": "^3.2.0",
     "prettier": "^3.2.4",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.3",
     "zod": "^3.23.8"
   },
   "peerDependencies": {
