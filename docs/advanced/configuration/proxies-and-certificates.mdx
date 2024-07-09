@@ -156,3 +156,58 @@ networks:
 :::tip
 Of particular note here is that both configurations explicitly define which network they are using, in this case "proxy", but it can be named anything. It just has to be the same across all apps for which Traefik is serving as a proxy. These are marked as external because the proxy network was manually created by running: `docker network create proxy` but this might be unnecessary depending on HOW exactly you are running Traefik. For example, if running [Traefik with Portainer](https://docs.portainer.io/advanced/reverse-proxy/traefik#deploying-in-a-docker-standalone-scenario), you can follow their official docs on how to set up Traefik and Portainer together, and you can just focus on the Homarr docker labels instead.
 :::
+
+## Securing Homarr with Caddy
+
+If you are using Caddy as the reverse proxy for your setup, your `docker-compose.yml` should look something like this:
+
+```yaml
+services:
+
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+      - ./homarr/data:/data
+    ports:
+      - 7575:7575
+    networks:
+      - proxy
+
+  caddy:
+    container_name: caddy
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - proxy
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  proxy:
+    external: true
+```
+
+Next, create a file named `Caddyfile` at the same level as your `docker-compose.yml` file with the following content:
+
+```
+homarr.mydomain.com {
+	reverse_proxy homarr:7575
+}
+```
+
+If you want more information about working with Caddy and Docker Compose, refer to the official documentation:
+https://caddyserver.com/docs/running#docker-compose
