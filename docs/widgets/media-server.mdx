@@ -49,6 +49,10 @@ Is the widget not working? Please try out the following tips and tricks to possi
 - Use a URL that does not terminate on a single ``/`` or something like ``/web`` or ``index.html``. This may break the integration. Only use the main domain of your server.
 - Make sure that your container has access to the media server. Try making a ping to it.
 - Use a token, that has been created from your Plex. You can retrieve the token using this official guide: https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
+  - Alternatively you can use the following javascript snippet in the browser console while viewing your Plex library to retrieve your token. At least one media file displayed on the page must be from your self-hosted library.
+   ```javascript
+   console.log(document.querySelector('img[src*=X-Plex-Token]')?.src.split("X-Plex-Token=")[1] ?? "No self hosted content on this page. Please nagivate to your library and try again.")
+   ```
   - Make sure the token isn't expired.
   - No token visible? Try logging out and in again.
 - Do not use the cloud or remote URLs. The integration will only work for local instances. Do not worry, as Homarr will act as a primitve reverse proxy when you're outside the network of Plex.
