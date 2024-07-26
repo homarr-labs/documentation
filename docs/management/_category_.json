@@ -1,10 +1,10 @@
 {
-  "label": "Managment",
+  "label": "Management",
   "collapsed": true,
   "position": 2,
   "link": {
     "type": "generated-index",
-    "title": "Managment pages",
+    "title": "Management pages",
     "description": "Management pages enable you to control and adjust resources on your Homarr servers."
   }
 }
