@@ -16,7 +16,7 @@ img[src$='.gif'],
 img[decoding="async"],
     /* Video is animated */
 video {
-    visibility: hidden;
+    visibility: hidden !important;
 }
 
 /* Different docs last-update dates can alter layout */
@@ -24,10 +24,10 @@ video {
     /* Dataflow is animated */
 .animated-dataflow,
     /* Asynchronous loading images (eg. Discord server widget) */
-img[decoding="async"],
+img[loading="lazy"],
     /* Mermaid diagrams are rendered client-side and produce layout shifts */
 .docusaurus-mermaid-container {
-    display: none;
+    display: none !important;
 }
 
 img {
