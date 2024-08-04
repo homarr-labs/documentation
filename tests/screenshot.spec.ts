@@ -22,7 +22,10 @@ function screenshotPathname(pathname: string) {
     await page.goto(url);
     await page.waitForFunction(waitForDocusaurusHydration);
     await page.addStyleTag({content: stylesheet});
-    await argosScreenshot(page, pathnameToArgosName(pathname));
+    await argosScreenshot(page, pathnameToArgosName(pathname), {
+      argosCSS: stylesheet,
+      animations: "disabled"
+    });
   });
 }
 
