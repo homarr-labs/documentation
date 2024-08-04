@@ -67,8 +67,8 @@ importers:
         version: 3.4.0
     devDependencies:
       '@argos-ci/cli':
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.3.1
+        version: 2.3.1
       '@argos-ci/playwright':
         specifier: ^3.0.2
         version: 3.0.2
@@ -230,13 +230,17 @@ packages:
     resolution: {integrity: sha512-pOWyyp39g1Jhags7Z7Qb+rgNjUtvMxh21lgF1Ts9epobE2ZQLkRxlUheSDlC6VbvauhO+8WS3mo3Q8dgEn7UtA==}
     engines: {node: '>=18.0.0'}
 
-  '@argos-ci/cli@2.1.0':
-    resolution: {integrity: sha512-nbubtKVqtGt4VW0AhSDxBL3wryk1INC9Fv4Hk+BEI72nATjA7OMWqZKs/iVQp4iDbrk7ydnzy+0dSNN1m5WPYg==}
+  '@argos-ci/cli@2.3.1':
+    resolution: {integrity: sha512-qYvik4jvw+MXmrcFsRV4osanDlm6BCxfmNPm8SGEl+0O/+cjObtc8pWUliHAC1l6zQZsjolv0N4TxOTsz/1wpw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
   '@argos-ci/core@2.2.0':
     resolution: {integrity: sha512-T5W37CZ6HZjRcVAXuPj0wUB/Fm4VdwLvKpQL9yqSwiJganeNz7u8AFYJ30ujSUJS1jdUViW5TNnmsgDjuvGyTQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@argos-ci/core@2.4.1':
+    resolution: {integrity: sha512-Sl+5Zq4LBZF+CDB0eXGdTOLv3E9bubO2tfpDncQku5/s/N+2Ptn0JAw/Vc3EdJAtMWj1G8uy+6cvtV+eaVNnFg==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/playwright@3.0.2':
@@ -245,6 +249,10 @@ packages:
 
   '@argos-ci/util@2.0.0':
     resolution: {integrity: sha512-wnsNQOjcNfxOi8cHWSv8+GhzUeIitDJgjhuSNR9zrfHB0Y3nDVI57S/mHRo+EMAaWwghfbrxW1ypRCXVseN0GA==}
+    engines: {node: '>=18.0.0'}
+
+  '@argos-ci/util@2.1.0':
+    resolution: {integrity: sha512-/78zJjZJCh3i7Eh3/lo7ybXK2pzXFGUNHbK3SgJNKNbFiBDllNRfy+x0kccjvN2gCCDz877jnFOlSoZZuMK56A==}
     engines: {node: '>=18.0.0'}
 
   '@babel/code-frame@7.23.5':
@@ -6239,9 +6247,9 @@ snapshots:
 
   '@argos-ci/browser@2.1.0': {}
 
-  '@argos-ci/cli@2.1.0':
+  '@argos-ci/cli@2.3.1':
     dependencies:
-      '@argos-ci/core': 2.2.0
+      '@argos-ci/core': 2.4.1
       commander: 12.0.0
       ora: 8.0.1
       update-notifier: 7.0.0
@@ -6251,6 +6259,18 @@ snapshots:
   '@argos-ci/core@2.2.0':
     dependencies:
       '@argos-ci/util': 2.0.0
+      axios: 1.6.8(debug@4.3.4)
+      convict: 6.2.4
+      debug: 4.3.4
+      fast-glob: 3.3.2
+      sharp: 0.33.3
+      tmp: 0.2.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@argos-ci/core@2.4.1':
+    dependencies:
+      '@argos-ci/util': 2.1.0
       axios: 1.6.8(debug@4.3.4)
       convict: 6.2.4
       debug: 4.3.4
@@ -6271,6 +6291,8 @@ snapshots:
       - supports-color
 
   '@argos-ci/util@2.0.0': {}
+
+  '@argos-ci/util@2.1.0': {}
 
   '@babel/code-frame@7.23.5':
     dependencies:
