@@ -70,8 +70,8 @@ importers:
         specifier: ^2.3.1
         version: 2.3.1
       '@argos-ci/playwright':
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.4.1
+        version: 3.4.1
       '@docusaurus/module-type-aliases':
         specifier: ^3.3.2
         version: 3.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -226,8 +226,8 @@ packages:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
     engines: {node: '>=6.0.0'}
 
-  '@argos-ci/browser@2.1.0':
-    resolution: {integrity: sha512-pOWyyp39g1Jhags7Z7Qb+rgNjUtvMxh21lgF1Ts9epobE2ZQLkRxlUheSDlC6VbvauhO+8WS3mo3Q8dgEn7UtA==}
+  '@argos-ci/browser@2.1.2':
+    resolution: {integrity: sha512-4dpz76kW0KnXCYdxtkcdiaYUM4owmKtT9zPqrd1yPo+VuSNCNULyCZJ4mdy0aXWT716JLMMmIZ3AnQSkyaqvaA==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/cli@2.3.1':
@@ -235,20 +235,12 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@argos-ci/core@2.2.0':
-    resolution: {integrity: sha512-T5W37CZ6HZjRcVAXuPj0wUB/Fm4VdwLvKpQL9yqSwiJganeNz7u8AFYJ30ujSUJS1jdUViW5TNnmsgDjuvGyTQ==}
-    engines: {node: '>=18.0.0'}
-
   '@argos-ci/core@2.4.1':
     resolution: {integrity: sha512-Sl+5Zq4LBZF+CDB0eXGdTOLv3E9bubO2tfpDncQku5/s/N+2Ptn0JAw/Vc3EdJAtMWj1G8uy+6cvtV+eaVNnFg==}
     engines: {node: '>=18.0.0'}
 
-  '@argos-ci/playwright@3.0.2':
-    resolution: {integrity: sha512-fvrocGEVC6S3IatprSBmikzDKJcHH4i7ekHSG9xU5fXQHaIFoQJDti/sCCJ7QbKY2w30Ry9yaEALnsPVprD80w==}
-    engines: {node: '>=18.0.0'}
-
-  '@argos-ci/util@2.0.0':
-    resolution: {integrity: sha512-wnsNQOjcNfxOi8cHWSv8+GhzUeIitDJgjhuSNR9zrfHB0Y3nDVI57S/mHRo+EMAaWwghfbrxW1ypRCXVseN0GA==}
+  '@argos-ci/playwright@3.4.1':
+    resolution: {integrity: sha512-zJJmztOVmkzrn5iuB0yAVcBvHGKFqfMZ1oq11eWspXk+eyAPcfBSlpoP4ss9xyxKuXbhOB8FWQbKkd8hV7MV4Q==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/util@2.1.0':
@@ -6272,7 +6264,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
 
-  '@argos-ci/browser@2.1.0': {}
+  '@argos-ci/browser@2.1.2': {}
 
   '@argos-ci/cli@2.3.1':
     dependencies:
@@ -6280,18 +6272,6 @@ snapshots:
       commander: 12.0.0
       ora: 8.0.1
       update-notifier: 7.0.0
-    transitivePeerDependencies:
-      - supports-color
-
-  '@argos-ci/core@2.2.0':
-    dependencies:
-      '@argos-ci/util': 2.0.0
-      axios: 1.6.8(debug@4.3.4)
-      convict: 6.2.4
-      debug: 4.3.4
-      fast-glob: 3.3.2
-      sharp: 0.33.3
-      tmp: 0.2.3
     transitivePeerDependencies:
       - supports-color
 
@@ -6307,17 +6287,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@argos-ci/playwright@3.0.2':
+  '@argos-ci/playwright@3.4.1':
     dependencies:
-      '@argos-ci/browser': 2.1.0
-      '@argos-ci/core': 2.2.0
-      '@argos-ci/util': 2.0.0
+      '@argos-ci/browser': 2.1.2
+      '@argos-ci/core': 2.4.1
+      '@argos-ci/util': 2.1.0
       chalk: 5.3.0
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
-
-  '@argos-ci/util@2.0.0': {}
 
   '@argos-ci/util@2.1.0': {}
 
