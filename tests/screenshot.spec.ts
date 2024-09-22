@@ -21,7 +21,6 @@ function screenshotPathname(pathname: string) {
     const url = siteUrl + pathname;
     await page.goto(url);
     await page.waitForFunction(waitForDocusaurusHydration);
-    await page.addStyleTag({content: stylesheet});
     await argosScreenshot(page, pathnameToArgosName(pathname), {
       argosCSS: stylesheet,
       animations: "disabled"
