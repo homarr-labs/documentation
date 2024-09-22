@@ -103,8 +103,8 @@ importers:
         specifier: ^9.11.0
         version: 9.11.0(jiti@1.21.0)
       eslint-plugin-markdown:
-        specifier: ^5.0.0
-        version: 5.0.0(eslint@9.11.0(jiti@1.21.0))
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.11.0(jiti@1.21.0))
       eslint-plugin-unused-imports:
         specifier: ^4.1.4
         version: 4.1.4(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@9.11.0(jiti@1.21.0))(typescript@5.6.2))(eslint@9.11.0(jiti@1.21.0))(typescript@5.6.2))(eslint@9.11.0(jiti@1.21.0))
@@ -2992,8 +2992,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-  eslint-plugin-markdown@5.0.0:
-    resolution: {integrity: sha512-kY2u9yDhzvfZ0kmRTsvgm3mTnvZgTSGIIPeHg3yesSx4R5CTCnITUjCPhzCD1MUhNcqHU5Tr6lzx+02EclVPbw==}
+  eslint-plugin-markdown@5.1.0:
+    resolution: {integrity: sha512-SJeyKko1K6GwI0AN6xeCDToXDkfKZfXcexA6B+O2Wr2btUS9GrC+YgwSyVli5DJnctUHjFXcQ2cqTaAmVoLi2A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8'
@@ -10218,7 +10218,7 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-plugin-markdown@5.0.0(eslint@9.11.0(jiti@1.21.0)):
+  eslint-plugin-markdown@5.1.0(eslint@9.11.0(jiti@1.21.0)):
     dependencies:
       eslint: 9.11.0(jiti@1.21.0)
       mdast-util-from-markdown: 0.8.5
