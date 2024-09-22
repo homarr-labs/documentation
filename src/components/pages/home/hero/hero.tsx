@@ -1,6 +1,6 @@
 import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
-import { IconDownload } from '@tabler/icons';
+import { IconDownload } from '@tabler/icons-react';
 import clsx from 'clsx';
 import styles from '../../../../pages/index.module.css';
 
