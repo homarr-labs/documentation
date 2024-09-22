@@ -23,8 +23,8 @@ video {
 .theme-last-updated,
     /* Dataflow is animated */
 .animated-dataflow,
-    /* Asynchronous loading images (eg. Discord server widget) */
-img[loading="lazy"],
+/* Remove discord banner */
+img[src*="discordapp.com"],
     /* Mermaid diagrams are rendered client-side and produce layout shifts */
 .docusaurus-mermaid-container {
     display: none !important;
