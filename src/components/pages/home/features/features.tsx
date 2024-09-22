@@ -7,7 +7,7 @@ import {
   IconKey,
   IconLanguage,
   IconPlug, TablerIcon,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 
 interface Feature {
   icon: TablerIcon,
