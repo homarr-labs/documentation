@@ -19,38 +19,38 @@ const featureList: Feature[] = [
   {
     icon: IconDragDrop,
     title: 'Easy to use drag and drop system',
-    content: 'Using the drag and drop system, you can simply move parts of your dashboard using your mouse or your finger on mobile devices.',
+    content: 'Using the drag and drop system, you can simply move parts of your dashboard using your mouse or your finger on mobile devices. No YAML / JSON configurations are involved.',
   },
   {
     icon: IconIcons,
-    title: 'Over 7000+ icons available',
-    content: 'We integrate with many different icon repositories to provide you with high quality and easy to use images.'
+    title: 'Over 10\'000+ icons available',
+    content: 'We integrate with many different icon repositories to provide you with high quality and easy to use images.',
   },
   {
     icon: IconPlug,
     title: 'Seamless integrations',
-    content: 'Integrate with your favourite applications to display their status or control them'
+    content: 'Integrate with your favourite applications to display their status or control them. Scales well with hundreds of users. Robust background job system enables high performance & scalability.',
   },
   {
     icon: IconKey,
-    title: 'Authentication system',
-    content: 'Protect your data with the built in authentication system'
+    title: 'Authentication & Authorization built in',
+    content: 'Support for credentials authentication, OIDC and LDAP. Complex system to manage permissions for users',
   },
   {
     icon: IconLanguage,
     title: '26 languages available',
-    content: 'Accessible for users in many countries thanks to the community translation program'
+    content: 'Accessible for users in many countries thanks to the community translation program',
   },
   {
     icon: IconAccessible,
     title: 'Accessible for color blind & disabled',
-    content: 'Settings to help you navigate and use Homarr'
+    content: 'Advanced settings for users that make Homarr more accessible & usable',
   },
   {
     icon: IconAdjustments,
     title: 'Detailed settings for customization',
-    content: 'Adjust apps and dashboards until you like them with helpful and easy to understand settings'
-  }
+    content: 'Adjust apps and dashboards until you like them with helpful and easy to understand settings',
+  },
 ];
 
 function FeatureComponent(props: Feature) {
