@@ -12,11 +12,10 @@ export const DataflowVisualizationComponent = () => {
   const sabnzbdRef = useRef();
 
   return (
-    <div>
-      <h2 className={'text-center text-5xl font-extrabold mb-5'}>Connect your infrastructure</h2>
-      <p className={'text-center mb-10 text-gray-500 dark:text-gray-400'}>Homarr integrates seamlessly with your
-        favourite tools and
-        applications</p>
+    <div className={'bg-black/[.10] py-20'}>
+      <h2 className={'text-center text-5xl font-extrabold mb-3'}>Seamless integrations</h2>
+      <p className={'text-center text-base mb-24 text-gray-500 dark:text-gray-400'}>18+ integrations supported out of
+        the box.<br />Minimal configuration required.</p>
 
       <div className="relative w-80 h-80 mx-auto animated-dataflow">
         <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}

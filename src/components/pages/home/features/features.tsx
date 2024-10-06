@@ -56,13 +56,15 @@ const featureList: Feature[] = [
 function FeatureComponent(props: Feature) {
   return (
     <div>
-      <div className={'flex gap-2 items-center mb-2'}>
-        <div className={'rounded bg-gray-100 dark:bg-zinc-800 p-2 pb-0.5 aspect-square'}>
-          <props.icon size={20} />
+      <div className={'flex flex-nowrap gap-4 items-center mb-2'}>
+        <div className={'rounded-xl bg-gray-100 dark:bg-zinc-800 p-3 pb-0.5 aspect-square'}>
+          <props.icon size={40} />
         </div>
-        <h3 className="text-lg text-gray-700 dark:text-gray-300 m-0">{props.title}</h3>
+        <div>
+          <h3 className="text-2xl font-extrabold text-gray-700 dark:text-gray-300 m-0">{props.title}</h3>
+          <p className="mb-0 text-base text-gray-500 dark:text-gray-400">{props.content}</p>
+        </div>
       </div>
-      <p className="mb-0 text-sm text-gray-500 dark:text-gray-400">{props.content}</p>
     </div>
   );
 }
