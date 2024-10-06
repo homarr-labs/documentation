@@ -105,7 +105,29 @@ Using custom CSS, you can apply your own styling to Homarr.
 See [board customizations](/docs/advanced/customizations/board-customization#custom-css) for more information.
 
 ### Access control
+With the access control, you can permit a single user or a group to your board.
+The users and groups can have one of these three levels of access:
 
+| **Permission Level** | View board | Edit mode | Settings | Danger zone (eg. delete) |
+|----------------------|------------|-----------|----------|--------------------------|
+| View board           | X          |           |          |                          |
+| Modify board         | X          | X         | X        |                          |
+| Full access          | X          | X         | X        | X                        |
+
+The permission level can only be changed after adding the user / group:
+
+![](./img/change-user-permission-level.png)
+
+If the board is private and the user is not added in any of the three tabs, they cannot access the board.
+They also do not see the board on the start page nor do they have access to any links for the board.
+
+Groups that have high permissions (e.g. admin group) will be shown as "inherited".
+They are permitted implicitly due to their permissions.
+
+// TODO: @meierschlumpf is this correct?
+
+After editing permissions, the save button below the table must be pressed.
+Otherwise, all changes will be discarded.
 
 ### Danger zone
 #### Rename
@@ -120,5 +142,38 @@ This will permanently delete the board.
 This action is irreversible and cannot be undone.
 
 ## Delete boards
+The deletion of boards is permanent and cannot be undone.
+There are two ways to delete a board:
+
+- Navigate to the settings of your board, open the "Danger zone" dropdown and click on the "delete this board" button.
+- Navigate to the list of boards in the management pages, click the three dots and click on "delete permanently".
+
+Both actions will execute the same deletion process.
+
 ## Setting boards as your home board
-## Editing boards
+The home dashboard is the dashboard, that will be shown at the root path of Homarr or if no board name was passed in the URL.
+All the following paths will lead to the home board:
+- ``my-homarr.com``
+- ``my-homarr.com/b``
+- ``my-homarr.com/board``
+
+Your home board will have a special small badge at the top right in the list of boards:
+
+![](./img/home-board-flag.png)
+
+### For yourself
+To set the home board yourself, the easiest option is to set it directly in the list of boards:
+
+![](./img/set-as-home-board-menu.png)
+
+Alternatively, you can also define it via your user profile:
+1. Click on your user profile at the top right
+2. Click on ``Your preferences``
+3. Change the home board in the ``home board`` dropdown and click on ``Save``.
+
+### For other users
+
+1. Navigate to the users: ``Management`` > ``Users`` > ``Manage``
+2. Click on the username of the user that you want to adjust
+3. Select the desired home board via the dropdown and click on ``Save`` \
+![](./img/set-home-board-other-user.png)
