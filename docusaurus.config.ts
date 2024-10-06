@@ -21,6 +21,8 @@ const config: Config = {
   },
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
 
   markdown: {
     mermaid: true,
