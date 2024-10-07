@@ -23,7 +23,7 @@ const featureList: Feature[] = [
   },
   {
     icon: IconIcons,
-    title: 'Over 10\'000+ icons available',
+    title: 'Over 10K icons available',
     content: 'We integrate with many different icon repositories to provide you with high quality and easy to use images.',
   },
   {
