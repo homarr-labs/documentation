@@ -11,6 +11,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { SectionContainer } from '@site/src/components/pages/home/container/section-container';
 import { DataflowVisualizationComponent } from '@site/src/components/pages/home/dataflow/dataflow';
 import { DragAndDropShowcase } from '@site/src/components/pages/home/drag-and-drop/drag-and-drop-showcase';
+import { AvailableIntegrations } from '@site/src/components/pages/home/integrations/available-integrations';
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
         }}
       </BrowserOnly>
       <DragAndDropShowcase />
+      <AvailableIntegrations />
       <SectionContainer>
         <HomepageUserReviews />
       </SectionContainer>
