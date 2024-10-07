@@ -42,7 +42,7 @@ docker run  \
   -v ./homarr/icons:/app/public/icons \
   -v ./homarr/data:/data \
   -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
-  -d ghcr.io/ajnart/homarr:latest
+  -d ghcr.io/homarr-labs/homarr:latest
 ```
 
   </TabItem>
@@ -56,7 +56,7 @@ version: '3'
 apps:
   homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/homarr:latest
+    image: ghcr.io/homarr-labs/homarr:latest
     restart: unless-stopped
     volumes:
       - ./homarr/configs:/app/data/configs
@@ -81,7 +81,7 @@ version: '3'
 apps:
   homarr:
     container_name: homarr
-    image: ghcr.io/ajnart/homarr:latest
+    image: ghcr.io/homarr-labs/homarr:latest
     restart: unless-stopped
     volumes:
       - ./homarr/configs:/app/data/configs
