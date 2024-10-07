@@ -10,6 +10,7 @@ import styles from './index.module.css';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { SectionContainer } from '@site/src/components/pages/home/container/section-container';
 import { DataflowVisualizationComponent } from '@site/src/components/pages/home/dataflow/dataflow';
+import { DragAndDropShowcase } from '@site/src/components/pages/home/drag-and-drop/drag-and-drop-showcase';
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
           return <DataflowVisualizationComponent />;
         }}
       </BrowserOnly>
+      <DragAndDropShowcase />
       <SectionContainer>
         <HomepageUserReviews />
       </SectionContainer>
