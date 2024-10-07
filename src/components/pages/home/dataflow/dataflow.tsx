@@ -13,9 +13,7 @@ export const DataflowVisualizationComponent = () => {
 
   return (
     <div className={'bg-black/[.10] py-20'}>
-      <h2 className={'text-center text-5xl font-extrabold mb-3'}>Seamless integrations</h2>
-      <p className={'text-center text-base mb-24 text-gray-500 dark:text-gray-400'}>18+ integrations supported out of
-        the box.<br />Minimal configuration required.</p>
+      <h2 className={'text-center text-5xl font-extrabold mb-24'}>No YAML configurations.<br/>Easy and quick to manage integrations.</h2>
 
       <div className="relative max-w-128 h-80 mx-auto animated-dataflow">
         <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}
