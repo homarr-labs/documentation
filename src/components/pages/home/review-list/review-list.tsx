@@ -68,8 +68,8 @@ const reviews = [
 
 export default function HomepageUserReviews() {
   return (
-    <div className="mt-24">
-      <h2 className="text-5xl font-extrabold mb-10">Big and friendly community</h2>
+    <div className="my-24">
+      <h2 className="text-5xl font-extrabold text-center mb-10">Big and friendly community</h2>
 
       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {reviews.map((review, index) => (
