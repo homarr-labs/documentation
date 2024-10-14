@@ -70,8 +70,8 @@ importers:
         specifier: ^2.4.3
         version: 2.4.3
       '@argos-ci/playwright':
-        specifier: ^3.6.1
-        version: 3.6.1
+        specifier: ^3.7.1
+        version: 3.7.1
       '@docusaurus/module-type-aliases':
         specifier: ^3.5.2
         version: 3.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -230,8 +230,12 @@ packages:
     resolution: {integrity: sha512-syJJmvLtJKQYXDmGYRb+ZKpzpSk/dReqhZZm2tnWn7ThxHaJRJ7Wu3J5nqDpCP3LxoYCVfvV/dmfoJO0v8+PbQ==}
     engines: {node: '>=18.0.0'}
 
-  '@argos-ci/browser@2.1.3':
-    resolution: {integrity: sha512-C9/k32HrmkHkUT9KrhHuOvlli1ibPGE1nkToC6+t4cAmbJCIU8HFrVa6VG2UT3xJjLht+gpqvPwTbJAsCRXv3A==}
+  '@argos-ci/api-client@0.6.0':
+    resolution: {integrity: sha512-m8ARJOfdOzyML8bFjTwPNAhGrLD5WaEvYS5g0qoHFD+6Za7Cz3d2mTDoXJX/h3T5aeVZ4WLK+ac0/F6jttd/sQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@argos-ci/browser@2.1.5':
+    resolution: {integrity: sha512-HeWz3FQN2F3omeqsQh7Z/F/eM+qmaqe9UsHIso6VH09KX+SOinHGtPN9Xa+2LcMq7E/g4zcIbFi2TnyipnEatQ==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/cli@2.4.3':
@@ -243,8 +247,12 @@ packages:
     resolution: {integrity: sha512-5ygruMnfQ3OY6LvywnwTycZFg6oTG5UYvPCVdwQiOh+8FgUZUyJge7QBVfeWW+qC0UXFMo+f3eTQ5YFvTwc0ZA==}
     engines: {node: '>=18.0.0'}
 
-  '@argos-ci/playwright@3.6.1':
-    resolution: {integrity: sha512-bBkk7bSj1wIfLp/UL+esSqaXReQsZGt6MYJBwYrYGcVD0a5mAxg57S6DVwIvKAmVsfZs52gB/bidMmCG28zSFg==}
+  '@argos-ci/core@2.9.0':
+    resolution: {integrity: sha512-EVo8Twd/At3r2z/ruycI+czMIJT88K5TrcUyrNH3osdV5eF9Vcp2wp+u9VVbBYTTTfLywIJ30v/ucb662CoUfg==}
+    engines: {node: '>=18.0.0'}
+
+  '@argos-ci/playwright@3.7.1':
+    resolution: {integrity: sha512-aUvgyFrZ66IINO6gjRrTU4MA9XTZpu+0nygRMQhp2s+pF8toJGqy8k0v8kEXS8AfUCZNhoyc05GTa8CkcyngGg==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/util@2.1.1':
@@ -2011,9 +2019,6 @@ packages:
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
-
-  axios@1.6.8:
-    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
 
   axios@1.7.7:
     resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
@@ -6336,7 +6341,14 @@ snapshots:
     dependencies:
       openapi-fetch: 0.11.3
 
-  '@argos-ci/browser@2.1.3': {}
+  '@argos-ci/api-client@0.6.0':
+    dependencies:
+      debug: 4.3.7
+      openapi-fetch: 0.11.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@argos-ci/browser@2.1.5': {}
 
   '@argos-ci/cli@2.4.3':
     dependencies:
@@ -6360,10 +6372,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@argos-ci/playwright@3.6.1':
+  '@argos-ci/core@2.9.0':
     dependencies:
-      '@argos-ci/browser': 2.1.3
-      '@argos-ci/core': 2.8.1
+      '@argos-ci/api-client': 0.6.0
+      '@argos-ci/util': 2.1.1
+      axios: 1.7.7(debug@4.3.7)
+      convict: 6.2.4
+      debug: 4.3.7
+      fast-glob: 3.3.2
+      sharp: 0.33.5
+      tmp: 0.2.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@argos-ci/playwright@3.7.1':
+    dependencies:
+      '@argos-ci/browser': 2.1.5
+      '@argos-ci/core': 2.9.0
       '@argos-ci/util': 2.1.1
       chalk: 5.3.0
       debug: 4.3.7
@@ -8829,7 +8854,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.6.3)
       '@typescript-eslint/utils': 5.62.0(eslint@9.12.0(jiti@1.21.0))(typescript@5.6.3)
-      debug: 4.3.4
+      debug: 4.3.7
       eslint: 9.12.0(jiti@1.21.0)
       tsutils: 3.21.0(typescript@5.6.3)
     optionalDependencies:
@@ -9099,14 +9124,6 @@ snapshots:
       picocolors: 1.0.1
       postcss: 8.4.38
       postcss-value-parser: 4.2.0
-
-  axios@1.6.8:
-    dependencies:
-      follow-redirects: 1.15.6(debug@4.3.7)
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
 
   axios@1.7.7(debug@4.3.7):
     dependencies:
@@ -13994,7 +14011,7 @@ snapshots:
 
   wait-on@7.2.0:
     dependencies:
-      axios: 1.6.8
+      axios: 1.7.7(debug@4.3.7)
       joi: 17.11.0
       lodash: 4.17.21
       minimist: 1.2.8
