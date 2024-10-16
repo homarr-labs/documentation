@@ -135,6 +135,10 @@ const config: Config = {
             {
               to: 'https://opencollective.com/homarr',
               label: 'OpenCollective'
+            },
+            {
+              to: 'https://x.com/homarr_labs',
+              label: 'X / Twitter'
             }
           ],
         },
