@@ -1,15 +1,12 @@
-# 📑 Glossary
-## Apps
-Apps is an abbreviation for applications. An application is a piece of software, that executes a job or fulfills a certain purpose. An application may be public (Google, Youtube, Spotify, ...) or privately hosted (selfhosted applications).
-Homarr requires application to have an internal and external URL.
-### Internal URL
-The internal URL defines how Homarr should communicate to the application, it is the address that will be used by integrations in order to communicate with 3rd party services, it is often an IP address so that Homarr can communicate with the application inside your network, bypassing any layers on top of it (eg. reverse proxy, auth)
-### External URL
-The external URL is the link to an application. If you click on an application on your dashboard, Homarr will open that link, this value should ideally be an HTTPs url linking to your homain (eg. https://homarr.example.com)
-## Widgets
-A widget will display data or enable you to control the state of a system.
-Some widgets use the integrations to display a set of data or give you control over the applications (eg. disable ad blocking).
-## Integration
-An integration is the back bone of apps and widgets. It acts as the bridge between them.
-Integrations can be configured inside applications (Edit application > Integration tab).
-Widgets will then search for applications that are set to the appropriate integration (eg. Ad summary widget will use all apps that are set to the PiHole and AdGuard Home integration).
+# Glossary
+In the glossary, you'll learn the different components and their names of Homarr.
+
+| Term            | Definition                                                                                                     |
+|-----------------|----------------------------------------------------------------------------------------------------------------|
+| Apps            | An piece of software that you or a third party hosts (eg. Google)                                              |
+| Integration     | A connection to a service outside of Homarr                                                                    |
+| Dynamic section | Resizeable area where items on your board can be placed and grouped                                            |
+| Widget          | A tile that uses your integrations to display data or enables you to interact with with them                   |
+| Edit mode       | Temporary state that you can enter where you can drag and drop, edit or customize your board                   |
+| Board           | Customizable page which can be edited using the edit mode. This is where apps, sections and widgets are placed |
+| Tasks           | Workloads that are performed in the background - even if there is no user present                              |

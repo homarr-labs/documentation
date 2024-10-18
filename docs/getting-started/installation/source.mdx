@@ -1,0 +1,51 @@
+---
+title: From source
+---
+
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+# (Not recommended): From source
+
+:::caution
+
+Installing from source is a bad idea in many ways:
+
+- No isolation between applications
+- Dependency conflicts on your root operating system
+- Cumbersome update process
+- Permission management
+- Handling of conflicts
+
+Therefore, we highly discourage you from using this as a normal user.
+This method is only useful, when you want to develop on Homarr or extend it with your own functionality.
+
+:::
+
+
+<Tabs>
+  <TabItem value="orange" label="Yarn Package Manager" default>
+    <ol>
+      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
+      <li>Enter the created directory using <code>cd homarr</code></li>
+      <li>Install all dependencies using <code>yarn install</code></li>
+      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
+      <li>Build the source using <code>yarn build</code></li>
+      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
+      <li>Start the NextJS web server using <code>yarn start</code></li>
+      <li><i>Alternatively, use <code>yarn dev</code> to run a live development server.</i></li>
+    </ol>
+  </TabItem>
+  <TabItem value="apple" label="NPM Package Manager">
+    <ol>
+      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
+      <li>Enter the created directory using <code>cd homarr</code></li>
+      <li>Install all dependencies using <code>npm install</code></li>
+      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
+      <li>Build the source using <code>npm build</code></li>
+      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
+      <li>Start the NextJS web server using <code>npm start</code></li>
+      <li><i>Alternatively, use <code>npm run dev</code> to run a live development server.</i></li>
+    </ol>
+  </TabItem>
+</Tabs>

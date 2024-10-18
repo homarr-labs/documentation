@@ -12,8 +12,8 @@ const config: Config = {
   baseUrl: '/',
   favicon: 'img/logo.png',
   // Used for publishing to GitHub Pages
-  organizationName: 'ajnart',
-  projectName: 'homarr-documentation',
+  organizationName: 'homarr-labs',
+  projectName: 'documentation',
   // Has to be set even if not using translations
   i18n: {
     defaultLocale: 'en',
@@ -21,6 +21,8 @@ const config: Config = {
   },
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
 
   markdown: {
     mermaid: true,
@@ -53,6 +55,8 @@ const config: Config = {
           editUrl: 'https://github.com/homarr-labs/documentation/edit/master',
           remarkPlugins: [a11yEmoji],
           exclude: ['**/custom-widget.mdx'],
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true
         },
         blog: {
           showReadingTime: true,
@@ -83,15 +87,10 @@ const config: Config = {
       },
       'items': [
         {
-          label: 'Docs',
+          label: 'Documentation',
           type: 'doc',
           position: 'left',
           docId: 'getting-started/index',
-        },
-        {
-          label: 'More',
-          position: 'left',
-          to: '/docs/category/more',
         },
         {
           label: 'Blog',
@@ -136,6 +135,10 @@ const config: Config = {
             {
               to: 'https://opencollective.com/homarr',
               label: 'OpenCollective'
+            },
+            {
+              to: 'https://x.com/homarr_labs',
+              label: 'X / Twitter'
             }
           ],
         },
