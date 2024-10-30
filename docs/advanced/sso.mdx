@@ -180,16 +180,16 @@ Homarr supports multiple authentication options, from internal userbase (credent
 
     ### Configuration
 
-    | Environment Variable        | Description                                | Default value |
-    |-----------------------------|--------------------------------------------|---------------|
-    | ``AUTH_OIDC_URI``           | URI of OIDC provider                       | ---           |
-    | ``AUTH_OIDC_CLIENT_ID``     | ID of OIDC client (application)            | ---           |
-    | ``AUTH_OIDC_CLIENT_SECRET`` | Secret of OIDC client (application)        | ---           |
-    | ``AUTH_OIDC_CLIENT_NAME``   | Display name of provider (in login screen) | OIDC          |
-    | ``AUTH_OIDC_ADMIN_GROUP``   | Admin group                                | admin         |
-    | ``AUTH_OIDC_OWNER_GROUP``   | Owner group                                | admin         |
-    | ``AUTH_OIDC_TIMEOUT``       | Timeout in milliseconds                    | 3500          |
-    | ``AUTH_OIDC_AUTO_LOGIN``    | Automatically redirect to OIDC login       | false         |
+    |     Environment Variable    |                         Description                        | Default value |
+    |-----------------------------|------------------------------------------------------------|---------------|
+    | ``AUTH_OIDC_URI``           | Issuer URI of OIDC provider **without trailing slash (/)** | ---           |
+    | ``AUTH_OIDC_CLIENT_ID``     | ID of OIDC client (application)                            | ---           |
+    | ``AUTH_OIDC_CLIENT_SECRET`` | Secret of OIDC client (application)                        | ---           |
+    | ``AUTH_OIDC_CLIENT_NAME``   | Display name of provider (in login screen)                 | OIDC          |
+    | ``AUTH_OIDC_ADMIN_GROUP``   | Admin group                                                | admin         |
+    | ``AUTH_OIDC_OWNER_GROUP``   | Owner group                                                | admin         |
+    | ``AUTH_OIDC_TIMEOUT``       | Timeout in milliseconds                                    | 3500          |
+    | ``AUTH_OIDC_AUTO_LOGIN``    | Automatically redirect to OIDC login                       | false         |
 
 
 
