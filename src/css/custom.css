@@ -135,7 +135,36 @@ form.aa-Form {
 .navbar__inner .navbar__items div.navbar__item.dropdown {
   white-space: nowrap;
 }
+.navbar__inner a.navbar__brand {
+  font-size: 22px;
+  color: var(--ifm-color-primary);
+}
 
 :is(p, h3, h4, h5, h6):has(+ :is(ul, ol)){
   margin-bottom: 4px !important;
+}
+
+.table-of-contents__left-border {
+  border-left: none !important;
+}
+
+.thin-scrollbar.theme-doc-toc-desktop {
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 20px;
+}
+
+.table-of-contents__link--active {
+  font-weight: bold !important;
+}
+
+.pagination-nav__link {
+  background-color: var(--ifm-navbar-background-color);
+  border: 4px transparent solid;
+}
+
+.row.theme-doc-footer-tags-row ul li a {
+  border: none;
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 20px;
+  padding: 6px 12px;
 }
