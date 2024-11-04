@@ -168,3 +168,17 @@ form.aa-Form {
   border-radius: 20px;
   padding: 6px 12px;
 }
+
+/* Default theme collides with some docusaurus rules. We overwrite them to fix the styling. */
+.swagger-ui pre {
+  background-color: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] .swagger-ui {
+    filter: invert(88%) hue-rotate(180deg);
+  }
+  html[data-theme="dark"] .swagger-ui .microlight {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}
