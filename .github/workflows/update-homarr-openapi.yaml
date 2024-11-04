@@ -1,0 +1,43 @@
+name: "Homarr API spec"
+
+on:
+  schedule:
+    - cron: "* */1 * * *" # Every hour
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-api-spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: "Checkout source repository"
+        with:
+          repository: homarr-labs/homarr
+      - uses: pnpm/action-setup@v2
+        name: "Install pnpm"
+        with:
+          version: 8
+      - name: "Use Node.js ${{ matrix.node-version }}"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - run: pnpm install
+        name: "Install dependencies"
+      - run: pnpm docker:dev
+        name: "Start development docker containers"
+      - run: pnpm dev
+        name: "Start development server"
+      - name: "Fetch OpenAPI specification from development server"
+        run: wget https://localhost:3000/api/openapi
+      - name: "Move OpenAPI json schema to target directory"
+        run: mv openapi /static/api/open-api-schema.json
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: './static/api/'
+          default_author: github_actor
+          message: '(chore): update contributors'
+          push: true
