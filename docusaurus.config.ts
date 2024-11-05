@@ -56,14 +56,14 @@ const config: Config = {
           remarkPlugins: [a11yEmoji],
           exclude: ['**/custom-widget.mdx'],
           showLastUpdateAuthor: true,
-          showLastUpdateTime: true
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/ajnart/homarr-docs/edit/master',
-          authorsMapPath: "authors.yml"
+          authorsMapPath: 'authors.yml',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -79,13 +79,18 @@ const config: Config = {
   ],
 
   themeConfig: {
-    'navbar': {
-      'title': 'Homarr',
-      'logo': {
-        'alt': 'Logo',
-        'src': 'img/logo.png',
+    announcementBar: {
+      content:
+        'We just released Homarr 1.0 - with significant performance improvements, advanced permissions and user management. Read our <a href="/blog/2024/09/23/version-1.0"><b>blog post</b></a> for more information.',
+      isCloseable: true,
+    },
+    navbar: {
+      title: 'Homarr',
+      logo: {
+        alt: 'Homarr Logo',
+        src: 'img/logo.png',
       },
-      'items': [
+      items: [
         {
           label: 'Documentation',
           type: 'doc',
@@ -104,7 +109,12 @@ const config: Config = {
         },
         {
           to: 'https://demo.homarr.dev/',
-          label: 'Demo',
+          label: '🚀 Demo',
+          position: 'right',
+        },
+        {
+          to: 'https://opencollective.com/homarr',
+          label: '💴 Donate',
           position: 'right',
         },
         {
@@ -134,12 +144,12 @@ const config: Config = {
             },
             {
               to: 'https://opencollective.com/homarr',
-              label: 'OpenCollective'
+              label: 'OpenCollective',
             },
             {
               to: 'https://x.com/homarr_labs',
-              label: 'X / Twitter'
-            }
+              label: 'X / Twitter',
+            },
           ],
         },
         {
@@ -157,7 +167,7 @@ const config: Config = {
             {
               label: 'Installation',
               to: '/docs/category/getting-started',
-            }
+            },
           ],
         },
         {
@@ -173,8 +183,8 @@ const config: Config = {
             },
             {
               label: 'Donate',
-              to: 'https://opencollective.com/homarr'
-            }
+              to: 'https://opencollective.com/homarr',
+            },
           ],
         },
         {
@@ -186,12 +196,17 @@ const config: Config = {
             },
             {
               label: 'About us',
-              to: '/about-us'
-            }
+              to: '/about-us',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Homarr — <a href="/docs/advanced/community/license">License</a>`,
+      logo: {
+        alt: 'Homarr Logo',
+        src: 'img/logo.png',
+        height: 100,
+      },
+      copyright: `<span class="copyright_text">Copyright © ${new Date().getFullYear()} Homarr<span> — <a href="/docs/advanced/community/license">License</a>`,
     },
     prism: {
       theme: prismThemes.github,
@@ -217,7 +232,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
-    require.resolve('@cmfcmf/docusaurus-search-local'),
+    [require.resolve('@cmfcmf/docusaurus-search-local'), {}],
     'plugin-image-zoom',
     async function tailwindCssPlugin(context, options) {
       return {
