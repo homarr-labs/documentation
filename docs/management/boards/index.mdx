@@ -73,6 +73,12 @@ Homarr will fall back to the Homarr logo if nothing is set.
 Homarr has a complex drag and drop system that can be used from the browser.
 The column count defines how many horizontal columns are available to drag and drop elements to.
 
+:::caution
+
+Changing the column count might break existing layouts. Especially when reducing the column count, elements will be moved arround!
+
+:::
+
 // TODO: create more detailed documentation on a separate page and link it here
 
 ### Background
@@ -121,10 +127,8 @@ The permission level can only be changed after adding the user / group:
 If the board is private and the user is not added in any of the three tabs, they cannot access the board.
 They also do not see the board on the start page nor do they have access to any links for the board.
 
-Groups that have high permissions (e.g. admin group) will be shown as "inherited".
+Groups that have high permissions (e.g. administrator or all board permissions) will be shown as "inherited".
 They are permitted implicitly due to their permissions.
-
-// TODO: @meierschlumpf is this correct?
 
 After editing permissions, the save button below the table must be pressed.
 Otherwise, all changes will be discarded.
@@ -151,11 +155,10 @@ There are two ways to delete a board:
 Both actions will execute the same deletion process.
 
 ## Setting boards as your home board
-The home dashboard is the dashboard, that will be shown at the root path of Homarr or if no board name was passed in the URL.
+The home board is the dashboard, that will be shown at the root path of Homarr or if no board name was passed in the URL.
 All the following paths will lead to the home board:
 - ``my-homarr.com``
-- ``my-homarr.com/b``
-- ``my-homarr.com/board``
+- ``my-homarr.com/boards``
 
 Your home board will have a special small badge at the top right in the list of boards:
 
