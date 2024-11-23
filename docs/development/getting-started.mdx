@@ -1,0 +1,44 @@
+---
+title: 🚀 Getting started
+tags:
+  - Developer
+  - Technical documentation
+  - Code
+  - Programming
+---
+
+## Setting up your development environment
+
+This guide will help you set up your development environment to start contributing to homarr.
+
+### Prerequisites
+
+- **Node.js (lts)**: You can download it from the [official website](https://nodejs.org/).
+- **pnpm (latest)**: You can install it by running `npm install -g pnpm`.
+- **Git**: You can download it from the [official website](https://git-scm.com/).
+- **Docker or Docker Desktop**: You can download it from the [official website](https://www.docker.com/).
+- **A GitHub account**: You can create one on the [official website](https://github.com/).
+
+### Setting up the project
+
+1. Fork the repository by clicking on the "Fork" button on the top right corner of the repository page.
+
+![Fork button](./img/fork.png)
+
+2. Clone the repository to your local machine with `git clone`. You can find the url to use by clicking on the "Code" button on the top right corner of your forks repository page.
+
+![Clone button](./img/clone.png)
+
+3. Change directory to the project folder with `cd homarr`.
+
+4. Install the dependencies with `pnpm install`.
+
+5. Start redis by running `pnpm run docker:dev`. This will run a docker-compose file with a redis service.
+
+6. Copy the `.env.example` file to `.env` and replace `DB_URL` with the full path you want to use for the sqlite database file. For example `DB_URL='C:\\Dev\\homarr\\packages\\db\\db.sqlite'`
+
+7. Run the migrations to create the sqlite db file with `pnpm run db:migration:sqlite:run`.
+
+8. Start the development server with `pnpm dev` and wait for a message that says `✓ Ready in 10.7s`
+
+9. Open your browser and navigate to [http://localhost:3000](http://localhost:3000). (Loading the page might take up to 2 minutes the first time)
