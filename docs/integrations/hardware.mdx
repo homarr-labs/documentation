@@ -51,6 +51,10 @@ The Proxmox integration allows you to view performance and resource data from yo
 Getting an API token to use the Proxmox integration is a bit more complicated than most services. Please use the below steps when creating your API token.
 :::
 
+:::caution
+The Proxmox API may not work with Linux PAM standard authentication. It is strongly recommended to use the Proxmox VE authentication server realm when creating your API user.
+:::
+
 1. Navigate to the Proxmox portal, click on Datacenter
 2. Expand Permissions, click on Groups
 3. Click the Create button
@@ -64,7 +68,9 @@ Getting an API token to use the Proxmox integration is a bit more complicated th
 7. Expand Permissions, click on Users
 8. Click the Add button
     * User name: something informative like api
-    * Realm: Linux PAM standard authentication
+    * Realm: Proxmox VE authentication server
+    * Password: create a secure password for the user
+    * Confirm Password: re-enter the password
     * Group: group from Step 4 above
 9. Expand Permissions, click on API Tokens
 10. Click the Add button
@@ -82,7 +88,7 @@ Getting an API token to use the Proxmox integration is a bit more complicated th
 Using the User, Token ID, and Secret created above you need to format your API token as follows:
 
 ```
-<User>@pam!<Token ID>=<Secret>
+<User>@pve!<Token ID>=<Secret>
 ```
 
 For example, the following settings will create the string:
@@ -91,5 +97,5 @@ For example, the following settings will create the string:
  - Secret: eef235db-f891-4327-b84e-32bd48b7d0fd
 
 ```
-api@pam!homarr=eef235db-f891-4327-b84e-32bd48b7d0fd
+api@pve!homarr=eef235db-f891-4327-b84e-32bd48b7d0fd
 ```
