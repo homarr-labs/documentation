@@ -1,0 +1,74 @@
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+# Kubernetes
+## Helm Chart
+
+Helm is a package manager for Kubernetes, easing deployment of applications like Homarr. The Helm chart for Homarr simplifies its deployment on any supported platform by Kubernetes, enabling efficient scaling and management.
+
+### Prerequisites
+
+- [Helm](https://helm.sh/docs/intro/install/)
+
+### Installation
+
+To install Homarr using Helm chart, please follow this steps.
+
+<Tabs>
+  <TabItem value="orange" label="OCI (Recommended)" default>
+
+    ```bash
+    helm install homarr oci://ghcr.io/oben01/charts/homarr
+    ```
+
+  </TabItem>
+  <TabItem value="apple" label="Traditional">
+
+    ```bash
+    helm repo add oben01 https://oben01.github.io/charts/
+    helm repo update
+    helm install homarr oben01/homarr
+    ```
+
+  </TabItem>
+</Tabs>
+
+#### Override values
+
+```bash
+helm install homarr oci://ghcr.io/oben01/charts/homarr --namespace homarr --create-namespace --values=override.yaml
+```
+
+```yml title="override.yaml"
+image:
+# Overrides the image tag whose default is the chart appVersion.
+  tag: "0.14.2"
+ingress:
+  enabled: true
+  className: "traefik"
+  annotations:
+  # Add any additional annotations as needed
+  hosts:
+    - host: homarr.homelab.dev
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - "homarr.homelab.dev"
+        - "www.homarr.homelab.dev"
+      secretName: homelab-tls
+```
+
+All available values are listed on the [artifacthub](https://artifacthub.io/packages/helm/oben01/homarr?modal=values). If you find any issue please open an issue on [github](https://github.com/oben01/charts/issues/new?assignees=oben01&labels=bug&template=bug_report.yaml&name=homarr)
+
+
+### Uninstalling the Chart
+
+To uninstall the `homarr` deployment
+
+```bash
+helm uninstall homarr
+```
+
+The command removes all the Kubernetes components associated with the chart including persistent volumes and deletes the release.
