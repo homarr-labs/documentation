@@ -6,132 +6,31 @@ tags:
   - Configuration
 ---
 
-Congratulations on installing Homarr. Now it's time to get yourself familiar with the concepts of Homarr and how to use it.
-As a start, [please read the glossary](./glossary) so that you know the terms that will be used in the following documentation.
-
-## Creating the administrator account
-Let's begin by creating the administrator account.
-This account will be used to manage your dashboard.
-Enter a **secure** password, that is different from your other logins and at least 8 characters long.
-
-![onboarding](img/create-account.webp)
-
-Click ``Continue`` to save your account. Your Homarr is now fully configured.
-To help you get started, try experimenting with your first dashboard by clicking "Go to default board".
-
-<br/>
-
-## Entering Edit Mode
-You can adjust your board by going into ***✨ Edit Mode ✨***. In Edit Mode, you can move, edit and delete tiles.
-
-You can enter Edit Mode using this button, which is located at the top right of your screen:
-
-![edit mode button at the top right](img/enter-edit-mode.webp)
-
-When you enter Edit Mode, you will see a few changes:
-
-- Tiles will have their own menu, where you can make changes to them.
-- A "Add a Tile" button will appear next to the "Edit Mode" button.
-- A popup will appear on the bottom left of the screen with some useful information.
-
-:::caution
-
-Changes are only saved when you exit Edit Mode. If you leave the page **without exiting Edit Mode, your changes will be lost**.
-
-:::
-
-<br/>
-
-## Adding your first app
-In Homarr, apps are the key concept.
-An app is a tile on your board that links to an application.
-Apps may have an integration to integrate with your favourite applications (see [integrations](/docs/category/integrations)).
-
-Let's begin by adding your first app to Homarr. [Enter Edit Mode](#entering-edit-mode) and click on the Add a Tile button:
-
-![](img/edit-mode-add-tile-button.webp)
-
-A popup will appear, where you can choose the type of tile you want to add. For now, we'll choose "Apps":
-
-![](img/edit-mode-select-element.webp)
-
-Another popup will appear, where you can enter the details of your app. You can also [choose an icon](/docs/advanced/customizations/icons) for your app:
-
-![](img/add-app-modal.webp)
-
-The following fields are required:
-
-- App Name
-- Internal address
-- App Icon *(Will be automatically grabbed if possible.)*
-
-:::note What's the internal address? 
-
-> The internal URL defines how Homarr should communicate to the application, it is the address that will be used by integrations in order to communicate with 3rd party services, it is often an IP address so that Homarr can communicate with the application inside your network, bypassing any layers on top of it (eg. reverse proxy, auth)
-
-> If you have any problems, the "Having issues?" button will give you basic steps of troubleshooting.
-
-From the [glossary](/docs/getting-started/glossary)
-:::
-
-<br/>
-
-## Organizing and re-arranging your dashboard
-
-After you've added a few apps, it's time to organize and re-arrange your dashboard. While Edit Mode is active, the following changes will be made to the tiles.
-
-- A menu will appear on the top right of the tile. This menu can be used to edit or delete the tile.
-- A resize arrow will appear on the bottom right of the tile. Click (hold) and drag to resize the tile.
-- Tiles are movable. Click (hold) and drag to move the tile.
-
-![](img/homarr-organize.gif)
-
-<br/>
-
-## Adding categories
-
-You can add categories to your dashboard. Categories are useful for organizing your apps. Click the "Add a new tile" button and choose "Category":
-
-![](img/edit-mode-select-element.webp)
-
-Tiles can be organized into categories. Simply drag and drop the tile into the category.
-
-![](img/category-drag-and-drop.gif)
-
-Each category will have it's own menu, allowing you to change it's position and name, to delete it, or to add a new category below/above.
-
-![](img/category-menu.webp)
-
-<br/>
-
-## Adding widgets
-
-You can further extend the functionality of your dashboard by adding widgets. Widgets are used to display information from your apps. For example, you can add a widget that displays the current weather. Widgets can also be interactive, allowing you to control external apps or services from your dashboard.
-
-Click the "Add a new tile" button and choose "Widget":
-
-![](img/edit-mode-select-element.webp)
-
-Click on the widget you want to add. You can choose from a variety of widgets:
-![](./img/widgets-select-type.webp)
-
 :::tip
 
-Wigets can be organized the same way as apps can be. Please note that some widgets require additional configuration before they can be used.
+Read our [glossary](./glossary) if you are new to Homarr.
 
 :::
 
-Integrations are configured using the "Integration" tab when Editing/Adding a widget. You can [choose from a variety of integrations](/docs/category/integrations).
+Congratulations on installing Homarr. Now it's time to get yourself familiar with the concepts of Homarr and how to use it.
 
-![](img/app-integration.webp)
+## Onboarding
+TODO!
 
-After choosing an integration type, you can configure the integration. For example, if you choose the "Weather" integration, you will be able to configure the location of the weather widget.
-
-:::caution
-
-Two types of values are used. ``private`` and ``public``. Public values should not contain passwords or tokens, as they are being sent to the client. Private values will only be sent one time, and will never be used after exiting Edit Mode. For this reason, you won't be able to read the values of your private credentials after setting them.
-
-:::
+## Creating your first board
+## Arrange and organize your board
+## Adding your first integration
+## Embed integration data using widgets
+## Working with categories
+## Next steps
+You're done with the basic setup. Now it's time to organize and customize even more.
+See these curated pages for your next steps:
+- Create new apps using the [apps management](../management/apps/)
+- Customize your board or add more boards using the [boards management](../management/boards/)
+- Integrate software that you use using the [integrations management](../management/integrations)
+- Choose from our beautiful and interactive [widgets](/docs/category/widgets)
+- See [all supported integrations](/docs/category/integrations)
+- Integrate with Homarr with your own application using [the API](../management/api/)
 
 :::danger
 
