@@ -59,7 +59,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/ajnart/homarr-docs/edit/master',
-          authorsMapPath: "authors.yml"
+          authorsMapPath: 'authors.yml',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -75,13 +75,13 @@ const config: Config = {
   ],
 
   themeConfig: {
-    'navbar': {
-      'title': 'Homarr',
-      'logo': {
-        'alt': 'Logo',
-        'src': 'img/logo.png',
+    navbar: {
+      title: 'Homarr',
+      logo: {
+        alt: 'Logo',
+        src: 'img/logo.png',
       },
-      'items': [
+      items: [
         {
           label: 'Docs',
           type: 'doc',
@@ -135,8 +135,8 @@ const config: Config = {
             },
             {
               to: 'https://opencollective.com/homarr',
-              label: 'OpenCollective'
-            }
+              label: 'OpenCollective',
+            },
           ],
         },
         {
@@ -154,7 +154,7 @@ const config: Config = {
             {
               label: 'Installation',
               to: '/docs/category/getting-started',
-            }
+            },
           ],
         },
         {
@@ -170,8 +170,8 @@ const config: Config = {
             },
             {
               label: 'Donate',
-              to: 'https://opencollective.com/homarr'
-            }
+              to: 'https://opencollective.com/homarr',
+            },
           ],
         },
         {
@@ -183,8 +183,8 @@ const config: Config = {
             },
             {
               label: 'About us',
-              to: '/about-us'
-            }
+              to: '/about-us',
+            },
           ],
         },
       ],
@@ -205,8 +205,16 @@ const config: Config = {
         content: 'Homarr, Dashboard, Selfhosted, Hosting, Modules, Open-Source',
       },
     ],
-    imageZoom: {
-      selector: '.markdown :not(em):not(a) > img',
+    zoom: {
+      selector: '.markdown img',
+      background: {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(50, 50, 50)',
+      },
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+        margin: 80
+      },
     },
     tableOfContents: {
       minHeadingLevel: 2,
@@ -215,7 +223,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   plugins: [
     require.resolve('@cmfcmf/docusaurus-search-local'),
-    'plugin-image-zoom',
+    'docusaurus-plugin-image-zoom',
     async function tailwindCssPlugin(context, options) {
       return {
         name: 'docusaurus-tailwindcss',
