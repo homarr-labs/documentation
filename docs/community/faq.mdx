@@ -1,6 +1,5 @@
 ---
-title: ❓ Frequently Asked Questions
-sidebar_position: 1
+title: Frequently Asked Questions
 tags:
   - Community
   - Help
@@ -30,12 +29,12 @@ Enabling users to write their own widgets is easy at the first glance, but there
 - Custom widgets would need to be able to request data, so they work properly. We use tRPC for this. Many APIs use different formats and we'd have to convert and read those.
 - Using custom widgets, one could easily create harmful widgets, leak your personal data (potentially including your tokens) and trick your users. A proper implementation (eg. official plugin store, where we can ban harmful widgets from) would resolve this problem to a certain extend, but again requires additional work and time to be put in.
 
-If you still want to add a widget, please consider to contribute it directly to Homarr. For that, basic programming skills are required. Our [Developer Guides](/docs/community/developer-guides) explain this even more detailed.
+If you still want to add a widget, please consider to contribute it directly to Homarr. For that, basic programming skills are required. Our [Developer Guides](/docs/advanced/development/getting-started) explain this even more detailed.
 
 ### Is it secure to expose Homarr to the web?
 
 Yes, since v0.14.0, we are confident that Homarr is secure enough to be exposed to the web. 
-Make sure to enable the "allow anonymous access" [option in the settings](/docs/advanced/customizations/board-customization#access), if you want to allow people without an account to be able to see your dashboard (not edit)
+Make sure to enable the "allow anonymous access" [option in the settings](/docs/management/boards#access-control), if you want to allow people without an account to be able to see your dashboard (not edit)
 
 ### How do I open the console / log?
 There are two different sources of information:

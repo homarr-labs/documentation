@@ -1,30 +1,47 @@
-# 🐋 Containers
+# Docker Containers
+## Enabling the Docker integration
+This integration must first be enabled.
+If you directly run on the host system and you have docker installed, it will be enabled by default.
+Otherwise, you'll need to mount the [docker socket](https://docs.docker.com/engine/security/protect-access/) to the Homarr container,
+so Homarr can interact with the Docker service.
+
+In Docker Compose, you can simply add this line:
+
+```yaml {10}
+#---------------------------------------------------------------------#
+#     Homarr - A simple, yet powerful dashboard for your server.      #
+#---------------------------------------------------------------------#
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/homarr-labs/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # <--- add this line here!
+      - ./homarr/appdata:/appdata
+    ports:
+      - '7575:7575'
+```
+
+With docker run, add this parameter: `-v /var/run/docker.sock:/var/run/docker.sock`.
+In Windows, you'll need to adjust the slashes: `-v //var/run/docker.sock:/var/run/docker.sock`
+
 ## Managing your Docker containers within Homarr
-
 Homarr allows you to interact with Docker containers running on your system.
+You can **restart**, **stop**, **start**, **refresh** and **remove** containers.
+A search also allows you to search through your containers.
 
-You can **restart**, **stop**, **start**, **refresh** and **remove** containers as well as **add** them to the Homarr dashboard
-
-![Docker Core Features](img/docker-core-features.png)
-
-Additionally, if you have a lot of containers you can search and filter them by **container** or **image** name
+Additionally, if you have a lot of containers you can search and filter them by **container** or **image** name:
 
 ![Container and Image Search](img/container-and-image-search.png)
 
-View the state of each container (**created**, **running** or **stopped**)
+## Security
+Mounting docker sockets can be risk, as they permit full control over your docker service.
+As an example, a thread actor could abuse Homarr use the socket to start, stop or delete containers on your system.
+Therefore we recommend the usage of a socket proxy, which can prohibit certain actions.
+A few examples include:
+- https://github.com/linuxserver/docker-socket-proxy
+- https://github.com/Tecnativa/docker-socket-proxy
 
-![Container States](img/container-states.png)
-
-And also check what ports the container has exposed (container port:external port)
-
-![Exposed Ports](img/exposed-ports.png)
-
-
-### Before you begin
-In order for Homarr to be able to interact with your Docker instance you must tell Homarr the path to your Docker socket.  You do this by adding the following to the Docker command when you first run Homarr:
-
-`-v /var/run/docker.sock:/var/run/docker.sock`
-
-If you are running Docker Desktop on Windows 10, use the following path to your Docker socket:
-
-`-v //var/run/docker.sock:/var/run/docker.sock`
+See documentation of the respective proxies on how to configure them.
+Homarr may behave in unexpected ways when you use proxies.

@@ -6,9 +6,6 @@
     "type": "generated-index",
     "title": "Widgets",
     "description": "Widgets allow you to show data on your board or control applications. Click on one of the widgets below for further information:",
-    "keywords": [
-      "guides"
-    ],
     "image": "/img/docusaurus.png"
   }
 }

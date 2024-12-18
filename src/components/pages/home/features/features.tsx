@@ -6,12 +6,13 @@ import {
   IconIcons,
   IconKey,
   IconLanguage,
-  IconPlug, TablerIcon,
+  IconPlug,
+  TablerIcon,
 } from '@tabler/icons-react';
 
 interface Feature {
-  icon: TablerIcon,
-  title: string,
+  icon: TablerIcon;
+  title: string;
   content: string;
 }
 
@@ -19,50 +20,54 @@ const featureList: Feature[] = [
   {
     icon: IconDragDrop,
     title: 'Easy to use drag and drop system',
-    content: 'Using the drag and drop system, you can simply move parts of your dashboard using your mouse or your finger on mobile devices.',
+    content:
+      'Using the drag and drop system, you can simply move parts of your dashboard using your mouse or your finger on mobile devices. No YAML / JSON configurations are involved.',
   },
   {
     icon: IconIcons,
-    title: 'Over 7000+ icons available',
-    content: 'We integrate with many different icon repositories to provide you with high quality and easy to use images.'
+    title: 'Over 10K icons available',
+    content:
+      'We integrate with many different icon repositories to provide you with high quality and easy to use images.',
   },
   {
     icon: IconPlug,
     title: 'Seamless integrations',
-    content: 'Integrate with your favourite applications to display their status or control them'
+    content:
+      'Integrate with your favourite applications to display their status or control them. Scales well with hundreds of users. Robust background job system enables high performance & scalability.',
   },
   {
     icon: IconKey,
-    title: 'Authentication system',
-    content: 'Protect your data with the built in authentication system'
+    title: 'Authentication & Authorization built in',
+    content:
+      'Support for credentials authentication, OIDC and LDAP. Complex system to manage permissions for users',
   },
   {
     icon: IconLanguage,
     title: '26 languages available',
-    content: 'Accessible for users in many countries thanks to the community translation program'
-  },
-  {
-    icon: IconAccessible,
-    title: 'Accessible for color blind & disabled',
-    content: 'Settings to help you navigate and use Homarr'
+    content: 'Accessible for users in many countries thanks to the community translation program',
   },
   {
     icon: IconAdjustments,
     title: 'Detailed settings for customization',
-    content: 'Adjust apps and dashboards until you like them with helpful and easy to understand settings'
-  }
+    content:
+      'Adjust apps and dashboards until you like them with helpful and easy to understand settings',
+  },
 ];
 
 function FeatureComponent(props: Feature) {
   return (
     <div>
-      <div className={'flex gap-2 items-center mb-2'}>
-        <div className={'rounded bg-gray-100 dark:bg-zinc-800 p-2 pb-0.5 aspect-square'}>
-          <props.icon size={20} />
+      <div className={'flex flex-nowrap gap-4 items-center mb-2'}>
+        <div className={'rounded-xl bg-gray-100 dark:bg-zinc-800 p-3 pb-0.5 aspect-square'}>
+          <props.icon size={40} />
         </div>
-        <h3 className="text-lg text-gray-700 dark:text-gray-300 m-0">{props.title}</h3>
+        <div>
+          <h3 className="text-2xl font-extrabold text-gray-700 dark:text-gray-300 m-0">
+            {props.title}
+          </h3>
+          <p className="mb-0 text-base text-gray-500 dark:text-gray-400">{props.content}</p>
+        </div>
       </div>
-      <p className="mb-0 text-sm text-gray-500 dark:text-gray-400">{props.content}</p>
     </div>
   );
 }

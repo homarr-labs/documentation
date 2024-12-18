@@ -1,0 +1,54 @@
+---
+title: Environment variables
+tags:
+  - Configuration
+  - Docker
+  - Advanced
+  - Env
+  - Environment variables
+  - Variables
+  - Database
+---
+
+Homarr offers a Docker Container, which can be run on any compatible system, such as Unraid, Kubernetes and many more systems! Our Docker container is based on the ``22.12.0-alpine`` image and serves per standard on the port `7575`.
+
+---
+
+Homarr offers a few environment variables, which can be used to configure the container.
+
+## Authentication
+
+See [Single Sign-On](/docs/advanced/single-sign-on) for more informations.
+
+## Docker
+
+| Environment Variable     | Description | Possible values | Default |
+| ------------------------ | ----------- | --------------- | ------- |
+| ``DOCKER_HOSTNAMES``          | Comma seperated list of hostnames to connect to | For example `localhost,docker.example.com` | - |
+| ``DOCKER_PORTS``             | Comma seperated list of ports to connect to | For example `2375,2376` | - |
+
+## Database
+| Environment Variable     | Description | Possible values | Default |
+| ------------------------ | ----------- | --------------- | ------- |
+| ``DB_DRIVER``            | Database driver to use. Currently `better-sqlite3` is used for sqlite and `mysql2` for mysql | ``better-sqlite3`` / ``mysql2`` | ``better-sqlite3`` |
+| ``DB_DIALECT``           | Database dialect to use. | ``sqlite`` / ``mysql`` | ``sqlite`` |
+| ``DB_URL`` | Database URL to connect to. | Any valid database URL | ``/appdata/db/db.sqlite`` | 
+| ``DB_HOST`` | Database host to connect to. | Any valid database host | - |
+| ``DB_PORT`` | Database port to connect to. | Any valid database port | - |
+| ``DB_NAME`` | Database name to connect to. | Any valid database name | - |
+| ``DB_USER`` | Database user to connect with. | Any valid database user | - |
+| ``DB_PASSWORD`` | Database password to connect with. | Any valid database password | - |
+
+You can either use the url or host, port, name and credentials combined. The URL will be prioritized over the other values.
+
+
+
+## Advanced deployments
+
+:::warning
+The advanced deployments environment variables should only be used if you know what you are doing.
+:::
+
+| Environment Variable     | Description |
+| ------------------------ | ----------- |
+| ``DB_MIGRATIONS_DISABLED`` | Disable db migrations. For example for helm charts |

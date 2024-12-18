@@ -1,0 +1,31 @@
+# TrueNAS
+There are multiple products of TrueNAS.
+This guide exclusively refers to TrueNAS **Scale**, not **Core**.
+First, check that you are running TrueNAS Scale 24.10 or later.
+Previous versions, such as 24.04 and 23.10 used Kubernetes (k3s) to run apps or required [jlmkr](https://github.com/Jip-Hop/jailmaker) to run Homarr.
+
+Then, navigate to the "Apps" in the navigation:
+
+![](img/truenas-scale-apps.png)
+
+Ensure that this page shows "Apps service running". Check https://www.truenas.com/docs/truenasapps/ for instructions on how to set up apps on TrueNAS.
+Then, click on this button to install a new app:
+
+![](img/truenas-scale-apps-search.png)
+
+Next, search for "Homarr" in the search bar at the top of the page and choose "Homarr" with the blue badge "community" below:
+
+![](img/truenas-scale-installation.png)
+
+Click on the big blue "Install" button:
+
+![](img/truenas-scale-install-homarr.png)
+
+Next, enter a secure and completly random string in the "NextAuth Secret" field.
+You can optionally check the box "Mount Docker socket" if you want to enable the Docker integration in Homarr.
+
+![](img/truenas-scale-auth-secret.png)
+
+Next, you need to specify the storage configuration for the container.
+We usually recommend ``Host path`` since it's easy to access and use - but you can use ixVolume as well.
+See https://www.truenas.com/docs/truenasapps/#understanding-app-storage-volumes for more information.
