@@ -21,7 +21,6 @@
     "api-dump-contributors": "node ./scripts/dump-contributors.js"
   },
   "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^1.2.0",
     "@dipakparmar/docusaurus-plugin-umami": "^2.1.2",
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/plugin-sitemap": "^3.6.3",

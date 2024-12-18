@@ -146,6 +146,12 @@ const config: Config = {
       ],
       hideOnScroll: false,
     },
+    algolia: {
+      appId: 'N69WSPZTID',
+      apiKey: 'b2b00f4ed8ca3dc87b5d211c55121416',
+      contextualSearch: true,
+      indexName: 'homarr'
+    },
     footer: {
       links: [
         {
@@ -222,7 +228,6 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
-    require.resolve('@cmfcmf/docusaurus-search-local'),
     'docusaurus-plugin-image-zoom',
     async function tailwindCssPlugin(context, options) {
       return {
