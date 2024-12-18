@@ -74,8 +74,8 @@
   background-color: var(--homarr-secondary-bg) !important;
 }
 
-.footer__copyright {
-  color: var(--ifm-color-primary-lighter) !important;
+.footer__copyright span.copyright_text {
+  opacity: .6;
 }
 
 .medium-zoom-overlay {
@@ -106,6 +106,69 @@
   white-space: nowrap;
 }
 
+.navbar__items.navbar__items--right .navbar__item.navbar__link:first-of-type {
+  background-color: var(--ifm-color-primary-light) !important;
+  border-radius: 30px;
+}
+
+.navbar__items.navbar__items--right .navbar__item.navbar__link:first-of-type:hover {
+  background-color: var(--ifm-color-primary) !important;
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+html[data-theme="dark"] div#__docusaurus div[role="banner"] {
+  background-color: #1b1b1d;
+  color: #c1c1c1;
+}
+
+html[data-theme="dark"] div#__docusaurus div[role="banner"] button svg {
+  color: white;
+}
+
+.navbar__inner a.navbar__brand {
+  font-size: 22px;
+  color: var(--ifm-color-primary);
+}
+
 :is(p, h3, h4, h5, h6):has(+ :is(ul, ol)){
   margin-bottom: 4px !important;
+}
+
+.table-of-contents__left-border {
+  border-left: none !important;
+}
+
+.thin-scrollbar.theme-doc-toc-desktop {
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 20px;
+}
+
+.table-of-contents__link--active {
+  font-weight: bold !important;
+}
+
+.pagination-nav__link {
+  background-color: var(--ifm-navbar-background-color);
+  border: 4px transparent solid;
+}
+
+.row.theme-doc-footer-tags-row ul li a {
+  border: none;
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+/* Default theme collides with some docusaurus rules. We overwrite them to fix the styling. */
+.swagger-ui pre {
+  background-color: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] .swagger-ui {
+    filter: invert(88%) hue-rotate(180deg);
+  }
+  html[data-theme="dark"] .swagger-ui .microlight {
+    filter: invert(100%) hue-rotate(180deg);
+  }
 }

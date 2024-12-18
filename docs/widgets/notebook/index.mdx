@@ -1,5 +1,5 @@
 ---
-title: 🗒️ Notebook
+title: Notebook
 tags:
   - Widgets
   - Configuration
@@ -15,50 +15,48 @@ tags:
 
 The notebook widget focuses on usability and is designed to be as simple as possible to bring a familiar editing experience to regular users. It is based on Tiptap.dev and supports most of its features.
 
----
+![](./img/screenshot.png)
 
 ## Editing
 When the permissions of the user allows it, you can enter the editing of the text by clicking the following button in the top right.
 
-![](./notebook-enter-editing.webp)
+![](./img/notebook-enter-editing.webp)
 
 
 You can then decide to save your changes or cancel them to exit editing, using the buttons placed in the same location.
 
-![](./notebook-exit-editing.webp)
-
----
+![](./img/notebook-exit-editing.webp)
 
 ## Notebook toolbar functions
 The notebook offers a variaty of functions to edit the text and more.
 
-![](./notebook-toolbar.webp)
+![](./img/notebook-toolbar.webp)
 
-### 🟥 Common text formatting
-| Function | Description |
-| -------- | ----------- |
-| Bold | Makes the selected text bold |
-| Italic | Tilts the selected text |
-| Strikethrough | Puts a bar through the selected text |
-| Color text | Changes the color of the text |
-| Colored highlight text | Highlights the text with a chosen color |
-| Code | Elevates the text to a box |
-| Clear formatting | Erases any of the preceding function's effects on the selected text |
+### Common text formatting
+| Function               | Description                                                         |
+| ---------------------- | ------------------------------------------------------------------- |
+| Bold                   | Makes the selected text bold                                        |
+| Italic                 | Tilts the selected text                                             |
+| Strikethrough          | Puts a bar through the selected text                                |
+| Color text             | Changes the color of the text                                       |
+| Colored highlight text | Highlights the text with a chosen color                             |
+| Code                   | Elevates the text to a box                                          |
+| Clear formatting       | Erases any of the preceding function's effects on the selected text |
 
-### 🟧 Heading
+### Heading
 Choose a heading size for the line, making the text bigger. Working like titles and sub-titles.
 
-### 🟨 Text Alignement
+### Text Alignement
 Select the alignement on the line. Left, center or right.
 
-### 🟩 Misc functions
+### Misc functions
 #### Blockquote
 Puts the current line in a quoting block.
 
 #### Horizontal line
 Adds a line that goes from the far right to the far left as a separator.
 
-### 🟦 Lists
+### Lists
 #### Bullet lists
 Simple list with a dot preceding each element.
 
@@ -69,11 +67,11 @@ List with numbers preceding each element.
 List with a checkbox on each element.
 
 #### Indentation changes
-![](./notebook-toolbar-lists.webp)
+![](./img/notebook-toolbar-lists.webp)
 
 When you are currently in a list of any sort, the last 2 buttons will appear and will allow you to change the indentation of the current list item.
 
-### 🟪 Insert functions
+### Insert functions
 #### Link controls
 The first buttons is to insert a link, or edit an existing link. The link will be applied on the selected text.
 
@@ -81,12 +79,12 @@ Pasting a link directly into the text will automatically put the link anchor on 
 
 The second button will remove the link while leaving the text intact.
 
-![](./notebook-link-modal.webp)
+![](./img/notebook-link-modal.webp)
 
 This is the modal for the link, The little button in the textbox can be clicked to make the link open in a new tab.
 
 #### Image controls
-![](./notebook-image-modal.webp)
+![](./img/notebook-image-modal.webp)
 
 #### Source
 You can use a normal link to an image or you can also use locally stored images.
@@ -95,15 +93,15 @@ You can use a normal link to an image or you can also use locally stored images.
 The aspect ratio will always be respected, so only the width field is necessary.
 You can provide a value in a plain number or you can also use percents to have your image size dynamically change on different screens.
 
-### ⬛ Table
+### Table
 This last control allows you to add a table, for which you can determine the number of columns and row before inserting it.
 
-![](./notebook-table-modal.webp)
+![](./img/notebook-table-modal.webp)
 
 Clicking that button while in a table will delete it.
 
 #### Table controls
-![](./notebook-toolbar-table.webp)
+![](./img/notebook-toolbar-table.webp)
 
 While in a table, further controls will appear to help edit the table.
 
@@ -115,24 +113,13 @@ All the following ones are for editing the wize of the table:
 
 <ul><li>Add column on the right</li><li>Add column on the left</li><li>Delete Column</li><li>Add row on top</li><li>Add row below</li><li>Delete Row</li></ul>
 
----
-
 ## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#adding-widgets).
-
----
+Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
 
 ## Configuration
 Both media requests widget have the same configurations.
 
-| Configuration         | Description | Values | Default Value |
-| --------------------- | ----------- | ------ | ------------- |
-| Show the toolbar to help you write markdown | Upon editing, enables a toolbar at the top with document editing functions. | yes / no | yes |
-| Allow check in read only mode | Allows the ability to check the boxes from checklists outside of editing | yes / no | yes |
-
-![](./widget-configuration.webp)
-
----
-
-## Screenshots
-![](./widget.webp)
+| Configuration                               | Description                                                                 | Values   | Default Value |
+| ------------------------------------------- | --------------------------------------------------------------------------- | -------- | ------------- |
+| Show the toolbar to help you write markdown | Upon editing, enables a toolbar at the top with document editing functions. | yes / no | yes           |
+| Allow check in read only mode               | Allows the ability to check the boxes from checklists outside of editing    | yes / no | yes           |

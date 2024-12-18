@@ -1,9 +1,8 @@
 {
-  "label": "More",
+  "label": "Community",
   "position": 5,
   "collapsed": true,
   "link": {
-    "type": "generated-index",
-    "title": "More"
+    "type": "generated-index"
   }
 }

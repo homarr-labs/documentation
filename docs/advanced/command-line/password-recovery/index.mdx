@@ -1,4 +1,4 @@
-# 🔑 Password Recovery
+# Password Recovery
 
 :::info
 
@@ -6,18 +6,9 @@ This guide requires that you understand [how to access the CLI](../).
 
 :::
 
-This command can be useful, if you forget the password to your administrator account or you don't have access to the Web UI.
-
-## Reset for the administrator
-
-This command is parameter-less. It will create a random password, update the database and display the new password.
-All sessions for the administrator will be terminated and they must re-login.
-
-![](./img/screenshot-cli-owner-reset.png)
-
-## Reset for a specific user
-
-The syntax of the command is as follows:
+Using this command, you can forcefully reset the password of a user.
+It will be set to a random value and the hash for the user will be updated.
+All sessions for that user will be terminated and the user must re-login.
 
 ![](./img/screenshot-cli.png)
 

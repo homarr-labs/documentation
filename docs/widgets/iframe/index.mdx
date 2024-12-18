@@ -1,5 +1,5 @@
 ---
-title: 🎴 IFrame
+title: IFrame
 tags:
   - Widgets
   - Configuration
@@ -13,6 +13,8 @@ If you application is not supported natively by Homarr, you can integrate it usi
 It uses the [iframe element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe),
 which embeds the desired page in the browser.
 This means, no traffic is routed through Homarr (and the URL must be reachable from the client).
+
+![](./img/screenshot.webp)
 
 Athough you can integrate many websites, some may not work.
 This is because the administrators of those sites disallow iframes
@@ -29,45 +31,34 @@ https://en.wikipedia.org/wiki/Main_Page
 iframes can be used to host streaming content, such as a youtube video, by directly linking the embed source, you can test this with the NASA ISS stream:
 https://www.youtube.com/embed/K5JSRGhB-nM?si=XRV7_NjreHywZbYS
 
----
-
 ## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#adding-widgets).
-
----
+Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
 
 ## Configuration
 
-| Configuration         | Description | Values | Default Value |
-| --------------------- | ----------- | ------ | ------------- |
-| Embed URL | The page that should be embedded | URL | - |
-| Allow full screen | Allow pages inside the iframe to enter full screen | yes / no | no |
-| Allow scrolling | Allows scrolling pass through to iframe | yes / no | yes |
-| Allow transparency | Allows scrolling pass through from iframe (board transparency settings do not impact the iframe, only the border) | yes / no | no |
-| Allow payment | Allow payment information pass through to iframe | yes / no | no |
-| Allow auto play | Allows videos to autoplay | yes / no | no |
-| Allow microphone | Allows microphone pass through to iframe | yes / no | no |
-| Allow camera | Allows camera pass through to iframe | yes / no | no |
-| Allow geolocation | Allows geolocation pass through to iframe | yes / no | no |
+| Configuration      | Description                                                                                                       | Values   | Default Value |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| Embed URL          | The page that should be embedded                                                                                  | URL      | -             |
+| Allow full screen  | Allow pages inside the iframe to enter full screen                                                                | yes / no | no            |
+| Allow scrolling    | Allows scrolling pass through to iframe                                                                           | yes / no | yes           |
+| Allow transparency | Allows scrolling pass through from iframe (board transparency settings do not impact the iframe, only the border) | yes / no | no            |
+| Allow payment      | Allow payment information pass through to iframe                                                                  | yes / no | no            |
+| Allow auto play    | Allows videos to autoplay                                                                                         | yes / no | no            |
+| Allow microphone   | Allows microphone pass through to iframe                                                                          | yes / no | no            |
+| Allow camera       | Allows camera pass through to iframe                                                                              | yes / no | no            |
+| Allow geolocation  | Allows geolocation pass through to iframe                                                                         | yes / no | no            |
 
 :::tip
 
-Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#organizing-and-re-arranging-your-dashboard).
+Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#arrange-and-organize-your-board).
 
 :::
 
----
-
-## Screenshots
-![](./widget.webp)
-
----
-
 ## Third party content
-
-:::info
+:::warning
 
 The content below is an overview of third party projects. All support requests/problems must be redirected to the appropriate repository.
+We cannot guarantee the functionality nor security of these tools.
 
 :::
 
@@ -78,6 +69,6 @@ The project [homarr-iframes](https://github.com/diogovalentte/homarr-iframes) ha
 - [Linkwarden](https://github.com/linkwarden/linkwarden): overview of your bookmarks with links to them.
 - [Cinemark Brazil](https://www.cinemark.com.br): overview of the movies in Cinemark theaters in your city (*only in Brazil*).
 
-![Image of the Vikunja (left), Linkwarden (middle), and Cinemark Brazil (right) iframes on a Homarr dashboard](./homarr-iframes-example.webp "Image of the Vikunja (left), Linkwarden (middle), and Cinemark Brazil (right) iframes on a Homarr dashboard")
+![Image of the Vikunja (left), Linkwarden (middle), and Cinemark Brazil (right) iframes on a Homarr dashboard](./img/homarr-iframes-example.webp "Image of the Vikunja (left), Linkwarden (middle), and Cinemark Brazil (right) iframes on a Homarr dashboard")
 
 You can [configure the iframes appearance and behavior](https://github.com/diogovalentte/homarr-iframes?tab=readme-ov-file#adding-to-homarr) using query arguments when adding them to your dashboard, like selecting the iframe theme and limit of items to show, and other options specific to each iframe.
