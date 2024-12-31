@@ -16,6 +16,18 @@ Homarr offers a Docker Container, which can be run on any compatible system, suc
 
 Homarr offers a few environment variables, which can be used to configure the container.
 
+## General
+
+:::warning
+Using the `PUID` and `PGID` will require you to set the correct permissions on the mounted volumes and if used the docker socket. See more in the [Running as a different user](/docs/advanced/running-as-different-user) documentation.
+:::
+
+| Environment Variable     | Description | Possible values | Default |
+| ------------------------ | ----------- | --------------- | ------- |
+| ``PUID``                 | User ID to run the container as | Any valid user ID | ``0`` |
+| ``PGID``                 | Group ID to run the container as | Any valid group ID | ``0`` |
+
+
 ## Authentication
 
 See [Single Sign-On](/docs/advanced/single-sign-on) for more informations.
