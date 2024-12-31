@@ -37,6 +37,7 @@ docker run  \
   -p 7575:7575 \
   -v ./homarr/appdata:/appdata \
   -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
+  - e SECRET_ENCRYPTION_KEY=your_64_character_hex_string \
   -d ghcr.io/homarr-labs/homarr:latest
 ```
 
@@ -56,6 +57,7 @@ services:
       - ./homarr/appdata:/appdata
     environment:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
+      SECRET_ENCRYPTION_KEY: your_64_character_hex_string # <--- can be generated with `openssl rand -hex 32`
     ports:
       - '7575:7575'
 ```
@@ -79,6 +81,7 @@ services:
       - ./homarr/appdata:/appdata
     environment:
       - BASE_URL=your.internal.dns.address.here.com
+      - SECRET_ENCRYPTION_KEY=your_64_character_hex_string # <--- can be generated with `openssl rand -hex 32`
     networks:
       - proxy
     labels:
