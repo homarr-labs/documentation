@@ -43,6 +43,7 @@ Please consult the breaking changes list & upgrade guide if you used third-party
   - Removed support for ``arm/v7`` -> upgrade to newer architectures as an alternative
   - Renamed image from ``ghcr.io/ajnart/homarr`` to ``ghcr.io/homarr-labs/homarr``. We now use semantic versioning for our release numbers.
 - Environment Variables
+  - New required env variable ``SECRET_ENCRYPTION_KEY`` used for encryption of secrets in the database
   - Removed ``DISABLE_ANALYTICS``, can now be configured via UI
   - Renamed ``AUTH_PROVIDER`` to ``AUTH_PROVIDERS``
   - Renamed ``DATABASE_URL`` to ``DB_URL`` and made it optional conditionally. If ``DB_HOST`` is set, this is optional - otherwise it's required.
