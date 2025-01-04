@@ -2,9 +2,9 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
-![AppVersion: v1.0.0-beta.10](https://img.shields.io/badge/AppVersion-v1.0.0--beta.10-informational?style=flat)
+![AppVersion: v1.0.0-beta.11](https://img.shields.io/badge/AppVersion-v1.0.0--beta.11-informational?style=flat)
 
 A Helm chart to deploy homarr for Kubernetes
 
@@ -288,6 +288,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | env.AUTH_OIDC_CLIENT_NAME | string | `"OIDC"` | Display name of provider (in login screen) |
 | env.AUTH_OIDC_GROUPS_ATTRIBUTE | string | `"groups"` | Attribute used for groups (roles) claim |
 | env.AUTH_OIDC_ISSUER | string | `nil` | Issuer URI of OIDC provider without trailing slash (/) |
+| env.AUTH_OIDC_NAME_ATTRIBUTE_OVERWRITE | string | `nil` | Overwrite name attribute. By default, it will use preferred_username if it does not contain a @ and otherwise name. |
 | env.AUTH_OIDC_SCOPE_OVERWRITE | string | `"openid email profile groups"` | Override the OIDC scopes |
 | env.AUTH_PROVIDERS | string | `"credentials"` | Enabled authentication methods. Multiple providers can be enabled with by separating them with , (ex. AUTH_PROVIDERS=credentials,oidc, it is highly recommended to just enable one provider). |
 | env.AUTH_SESSION_EXPIRY_TIME | string | `"30d"` | Time for the session to time out. Can be set as pure number, which will automatically be used in seconds, or followed by s, m, h or d for seconds, minutes, hours or days. (ex: "30m") |
@@ -305,7 +306,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | fullnameOverride | string | `""` | Overrides chart's fullname |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
 | image.repository | string | `"ghcr.io/homarr-labs/homarr"` | Image repository |
-| image.tag | string | `"v1.0.0-beta.10"` | Overrides the image tag whose default is the chart appVersion |
+| image.tag | string | `"v1.0.0-beta.11"` | Overrides the image tag whose default is the chart appVersion |
 | imagePullSecrets | list | `[]` | Secrets for Docker registry |
 | imagesCopy.enabled | bool | `false` | Set to true to enable the init container for copying local images to the PVC. Requires homarr-images PVC to be enabled. |
 | imagesCopy.pathToLocalImages | string | `"/path-to-local-images"` | The path where local images are stored for copying to the PVC |
