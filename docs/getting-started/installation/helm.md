@@ -14,17 +14,17 @@ A Helm chart to deploy homarr for Kubernetes
 
 * <https://github.com/homarr-labs/homarr>
 
-## 📄 Requirements
+## Requirements
 
 Kubernetes: `>=1.22.0-0`
 
-## 🍱 Dependencies
+## Dependencies
 
 | Repository | Name | Version |
 |------------|------|---------|
 | <https://charts.bitnami.com/bitnami> | mysql | 12.2.0 |
 
-## 🚀 Installing the Chart
+## Installing the Chart
 
 To install the chart with the release name `homarr`
 
@@ -42,7 +42,7 @@ helm repo update
 helm install homarr homarr-labs/homarr
 ```
 
-## ➖ Uninstalling the Chart
+## Uninstalling the Chart
 
 To uninstall the `homarr` deployment
 
@@ -52,7 +52,7 @@ helm uninstall homarr
 
 The command removes all the Kubernetes components associated with the chart **including persistent volumes** and deletes the release.
 
-## 🔧 Configuration
+## Configuration
 
 Read through the [values.yaml](https://github.com/homarr-labs/charts/blob/dev/charts/homarr/values.yaml) file. It has several commented out suggested values.
 
@@ -70,9 +70,9 @@ Alternatively, a YAML file that specifies the values for the above parameters ca
 helm install homarr homarr-labs/homarr -f values.yaml
 ```
 
-## 🎨 Custom configuration
+## Custom configuration
 
-### 🔐 Secrets
+### Secrets
 
 To avoid including sensitive information in plain text within your version control, consider using a declarative approach by applying secrets directly with kubectl apply. For example, instead of including repository credentials in your Helm values, you can leverage a kubernetes secrets manager.
 
@@ -88,7 +88,7 @@ Below is an exhaustive list of all secrets:
 
 </center>
 
-### 🗃️ Database
+### Database
 
 You have multiple options for configuring the database:
 
@@ -212,7 +212,7 @@ database:
 ````
 </details>
 
-### 📸 Images
+### Images
 
 You can import your local images into `homarr-images` PVC
 
@@ -230,7 +230,7 @@ imagesCopy:
 ````
 </details>
 
-### 🌐 Ingress
+### Ingress
 
 The ingress section in the values.yaml file allows you to configure how external traffic accesses your application through an Ingress resource. This section defines whether Ingress is enabled, the class to use, and how to set up hosts, paths, and TLS for secure connections.
 
@@ -260,7 +260,7 @@ ingress:
 
 All available values are listed on the [artifacthub](https://artifacthub.io/packages/helm/homarr/homarr?modal=values). If you find any issue please open an issue on [github](https://github.com/homarr-labs/charts/issues/new?assignees=maintainers&labels=bug&projects=&template=bug_report.yaml)
 
-## 🗃 Values
+## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
