@@ -2,9 +2,6 @@
 title: From source
 ---
 
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
-
 # (Not recommended): From source
 
 :::caution
@@ -22,30 +19,24 @@ This method is only useful, when you want to develop on Homarr or extend it with
 
 :::
 
+## Prerequisites
 
-<Tabs>
-  <TabItem value="orange" label="Yarn Package Manager" default>
-    <ol>
-      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
-      <li>Enter the created directory using <code>cd homarr</code></li>
-      <li>Install all dependencies using <code>yarn install</code></li>
-      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
-      <li>Build the source using <code>yarn build</code></li>
-      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
-      <li>Start the NextJS web server using <code>yarn start</code></li>
-      <li><i>Alternatively, use <code>yarn dev</code> to run a live development server.</i></li>
-    </ol>
-  </TabItem>
-  <TabItem value="apple" label="NPM Package Manager">
-    <ol>
-      <li>Clone the Repository using <code>git clone https://github.com/ajnart/homarr.git</code></li>
-      <li>Enter the created directory using <code>cd homarr</code></li>
-      <li>Install all dependencies using <code>npm install</code></li>
-      <li>Copy the <code>example.env</code> file to <code>.env</code></li>
-      <li>Build the source using <code>npm build</code></li>
-      <li>Run <code>yarn db:migrate</code> and wait that it completes</li>
-      <li>Start the NextJS web server using <code>npm start</code></li>
-      <li><i>Alternatively, use <code>npm run dev</code> to run a live development server.</i></li>
-    </ol>
-  </TabItem>
-</Tabs>
+- [Node.js](https://nodejs.org/en/download/)
+- [pnpm](https://pnpm.io/installation)
+- [Redis](https://redis.io/download)
+
+## Steps
+
+<ol>
+  <li>Clone the Repository using <code>git clone https://github.com/homarr-labs/homarr.git</code></li>
+  <li>Enter the created directory using <code>cd homarr</code></li>
+  <li>Install all dependencies using <code>pnpm install</code></li>
+  <li>Copy the `.env.example` file to `.env` and replace `DB_URL` with the full path you want to use for the sqlite database file. For example `DB_URL='/home/username/homarr/db.sqlite`</li>
+  <li>Replace `AUTH_SECRET` and `SECRET_ENCRYPTION_KEY` both with a secure random string by using `openssl rand -hex 32`</li>
+  <li>Run `pnpm run db:migration:sqlite:run` and wait that it completes</li>
+  <li>Build the source using `pnpm build`</li>
+  <li>Copy better-sqlite3.node files with `mkdir build` and `cp ./node_modules/better-sqlite3/build/Release/better_sqlite3.node ./build/better_sqlite3.node`</li>
+  <li>Start a redis server using `redis-server`</li>
+  <li>Run the server using `pnpm start`</li>
+  <li>Open `http://localhost:3000` in your browser</li>
+</ol>
