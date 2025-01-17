@@ -1,5 +1,5 @@
 ---
-title: 📕 Bookmarks
+title: Bookmarks
 tags:
   - Widgets
   - Bookmark
@@ -8,40 +8,32 @@ tags:
 
 The Bookmarks widget enables you, to add a list of web pages or URLs to your dashboard - similar like bookmarks in Browsers.
 
-![](./widget-example.webp)
-
----
-
 ## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#adding-widgets).
-
----
+Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
 
 ## Configuration
-This widget can be configured using an advanced visual editor.
-You need to enter edit mode, to edit the bookmarks:
+| Configuration | Description                                                                                         | Values                                                          | Default Value |
+| ------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------- |
+| Widget title  | Title of the widget. Will appear at the top of the widget. Can be left empty to not have any title. | String                                                          | Empty         |
+| Items         | List of bookmarks                                                                                   | -                                                               | Empty List    |
+| Layout        | Changes the layout of the bookmarks                                                                 | <ul><li>Auto-Grid</li><li>Horizontal</li><li>Vertical</li></ul> | Auto-Grid     |
 
-![](./widget-configuration.webp)
+### Configuration per item
 
-| Configuration         | Description | Values | Default Value |
-| --------------------- | ----------- | ------ | ------------- |
-| Widget title | Title of the widget. Will appear at the top of the widget. Can be left empty to not have any title. | String | Empty |
-| Items | List of bookmarks | - | Empty List |
-| <li>Name</li> | Name of your bookmark. | String | Homarr Documentation |
-| <li>URL</li> | Link to your bookmark. | URL/String | https://homarr.dev |
-| <li>App Icon</li> | URL or Link to the icon to represent your bookmark. | URL/String | /imgs/logo/logo.png |
-| <li>Open in new tab</li> | If switched, the link will open in a new tab, otherwise it will redirect on the current tab | yes / no | no |
-| <li>Hide Hostname</li> | Hide the link under the the title/name. | yes / no | no |
-| <li>Hide Icon</li> | Hide the icon of the bookmark (Helps Using less space). | yes / no | no |
-| Layout | Changes the layout of the bookmarks | <ul><li>Auto-Grid</li><li>Horizontal</li><li>Vertical</li></ul> | Auto-Grid |
+| Configuration   | Description                                                                                 | Values     | Default Value        |
+| --------------- | ------------------------------------------------------------------------------------------- | ---------- | -------------------- |
+| Name            | Name of your bookmark.                                                                      | String     | Homarr Documentation |
+| URL             | Link to your bookmark.                                                                      | URL/String | https://homarr.dev   |
+| App Icon        | URL or Link to the icon to represent your bookmark.                                         | URL/String | /imgs/logo/logo.png  |
+| Open in new tab | If switched, the link will open in a new tab, otherwise it will redirect on the current tab | yes / no   | no                   |
+| Hide Hostname   | Hide the link under the the title/name.                                                     | yes / no   | no                   |
+| Hide Icon       | Hide the icon of the bookmark (Helps Using less space).                                     | yes / no   | no                   |
 
 :::tip
 
-Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#organizing-and-re-arranging-your-dashboard).
+Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#arrange-and-organize-your-board).
 
 :::
-
----
 
 ## Layouts
 ### Auto Grid
@@ -49,14 +41,14 @@ The Auto Grid mode will automatically scale the items.
 Items will have a min width of 150px, but can scale bigger if they need more space.
 If there is no space available, they will wrap.
 
-![](./widget-auto-grid.webp)
+![](./img/screenshot-grid.png)
 
-### Vertical
+### Vertical (default)
 Vertical mode will put items in a vertical list. Overflowing items will create a scroll bar.
 
-![](./widget-example.webp)
+![](./img/screenshot-vertical.png)
 
 ### Horizontal
 Horizontal mode will put items in a horizontal list. Overflowing items will create a scroll bar.
 
-![](./widget-horizontal.webp)
+![](./img/screenshot-horizontal.png)

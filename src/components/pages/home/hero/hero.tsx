@@ -10,14 +10,11 @@ export default function HomeHero() {
       <div className="container" style={{ zIndex: 1 }}>
         <div className="row">
           <div className="col">
-            <h1 className="hyphens-auto">A simple, yet<br />powerful dashboard<br />for your server.</h1>
-            <p>
-              Simplify the management of your server with Homarr - a sleek, modern dashboard that
-              puts all of your apps and services at your fingertips. With Homarr, you can access and
-              control everything in one convenient location. Homarr seamlessly integrates with the
-              apps you've added, providing you with valuable information and giving you complete
-              control. Installation is a breeze, and Homarr supports a wide range of deployment
-              methods.
+            <h1 className="hyphens-auto font-extrabold">A simple, yet<br />powerful dashboard<br />for your server.</h1>
+            <p className={'text-2xl'}>
+              A sleek, modern dashboard that puts all of your apps and services at your fingertips.
+              Control everything in one convenient location. Seamlessly integrates with the
+              apps you've added, providing you with valuable information.
             </p>
 
             <Link

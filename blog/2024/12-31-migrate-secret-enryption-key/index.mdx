@@ -1,0 +1,54 @@
+---
+authors:
+  - meierschlumpf
+---
+
+# Migrate Secret Encryption Key
+
+In the release `v1.0.0-beta.10` we introduced a newly required env variable `SECRET_ENCRYPTION_KEY`.
+This key is used to encrypt sensitive data in the database. 
+Before this release, the key was generated automatically and stored in the anonymous volume `/secrets`.
+Because of the deletion of anonymous volumes between updates, by some installation methods, we decided to move this key to an environment variable.
+
+<!-- truncate -->
+
+## How to migrate
+
+When you want to keep your integration secrets working after the update, you need to migrate your existing key to the new environment variable.
+To do this, you can use the following steps:
+
+1. Print your current secret key with the following command:
+   ```bash
+   docker exec -it homarr cat /secrets/encryptionKey
+   ```
+
+2. Copy the output of the command and set it as the new environment variable
+
+3. Change your docker-compose.yml to include the new environment variable:
+
+    ```yml title="docker-compose.yml"
+    services:
+      homarr:
+        container_name: homarr
+        image: ghcr.io/homarr-labs/homarr:beta
+        restart: unless-stopped
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+          - ./homarr/appdata:/appdata
+        environment:
+          - SECRET_ENCRYPTION_KEY=your_64_character_hex_string # <--- can be generated with `openssl rand -hex 32`
+        ports:
+          - '7575:7575'
+    ```
+
+4. Update the container:
+
+    ```bash
+    docker compose pull
+    ```
+
+5. Restart the container:
+
+    ```bash
+    docker compose up -d
+    ```
