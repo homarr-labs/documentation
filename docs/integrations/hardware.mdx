@@ -22,7 +22,7 @@ The OpenMediaVault integration allows you to view performance and resource data 
 
 | Field    | Type    | Description |
 | -------- | ------- | ----------- |
-| Username | Private | Username from the WebUI used for authentication |
+| Username | Public | Username from the WebUI used for authentication |
 | Password | Private | Password from the WebUI used for authentication |
 
   </div>
@@ -42,7 +42,10 @@ The Proxmox integration allows you to view performance and resource data from yo
 
 | Field    | Type    | Description |
 | -------- | ------- | ----------- |
-| ApiToken | Private | API token used for authentication |
+| Username | Public | Username used for authentication |
+| TokenId  | Public | Token ID used for authentication |
+| ApiKey  | Private | API Key used for authentication |
+| Realm   | Public | Realm used for authentication |
 
   </div>
 </details>
@@ -85,17 +88,3 @@ The Proxmox API may not work with Linux PAM standard authentication. It is stron
     * Role: PVE Auditor
     * Propagate: Checked
 
-Using the User, Token ID, and Secret created above you need to format your API token as follows:
-
-```
-<User>@pve!<Token ID>=<Secret>
-```
-
-For example, the following settings will create the string:
- - User: api
- - Token ID: homarr
- - Secret: eef235db-f891-4327-b84e-32bd48b7d0fd
-
-```
-api@pve!homarr=eef235db-f891-4327-b84e-32bd48b7d0fd
-```
