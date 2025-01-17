@@ -136,7 +136,7 @@ const config: Config = {
               label: 'Answer Overflow',
             },
             {
-              to: 'https://crowdin.com/project/homarr',
+              to: 'https://crowdin.com/project/homarr_labs',
               label: 'Community translations (Crowdin)',
             },
             {
@@ -150,8 +150,8 @@ const config: Config = {
             {
               to: 'https://x.com/homarr_labs',
               label: 'X / Twitter',
-            }
-          ]
+            },
+          ],
         },
         {
           type: 'search',
@@ -164,7 +164,7 @@ const config: Config = {
       appId: 'N69WSPZTID',
       apiKey: 'b2b00f4ed8ca3dc87b5d211c55121416',
       contextualSearch: true,
-      indexName: 'homarr'
+      indexName: 'homarr',
     },
     footer: {
       links: [
@@ -238,7 +238,7 @@ const config: Config = {
       },
       config: {
         // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
-        margin: 80
+        margin: 80,
       },
     },
     tableOfContents: {
