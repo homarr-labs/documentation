@@ -88,17 +88,3 @@ The Proxmox API may not work with Linux PAM standard authentication. It is stron
     * Role: PVE Auditor
     * Propagate: Checked
 
-Using the User, Token ID, and Secret created above you need to format your API token as follows:
-
-```
-<User>@pve!<Token ID>=<Secret>
-```
-
-For example, the following settings will create the string:
- - User: api
- - Token ID: homarr
- - Secret: eef235db-f891-4327-b84e-32bd48b7d0fd
-
-```
-api@pve!homarr=eef235db-f891-4327-b84e-32bd48b7d0fd
-```
