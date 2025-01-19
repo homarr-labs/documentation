@@ -21,7 +21,7 @@ const schema = z.object({
 const env = schema.parse(process.env);
 
 const fetchGithubContributors = async (slug, repository) => {
-  const url = `https://api.github.com/repos/${slug}/${repository}/contributors`;
+  const url = `https://api.github.com/repos/${slug}/${repository}/contributors?per_page=999`;
   const options = {
     method: 'GET',
     headers: {
