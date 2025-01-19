@@ -1,74 +1,102 @@
 const z = require('zod');
-const fs = require('fs');
+const fs = require('fs/promises');
 
-const Constants = {
-  GitHub: {
-    User: 'ajnart',
-    Slug: 'homarr'
-  },
-  Crowdin: {
-    ProjectId: '534422'
-  }
+const sources = {
+  crowdin: [
+    { projectId: 534422, tokenName: 'HOMARR_CROWDIN_TOKEN' },
+    { projectId: 742587, tokenName: 'HOMARR_LABS_CROWDIN_TOKEN' },
+  ],
+  github: [
+    { repository: 'homarr', slug: 'ajnart' },
+    { repository: 'homarr', slug: 'homarr-labs' },
+  ],
 };
 
 const schema = z.object({
-  HOMARR_DOCUMENTATION_GH_TOKEN: z.string(),
-  HOMARR_CROWDIN_TOKEN: z.string()
+  GITHUB_TOKEN: z.string().nonempty(),
+  HOMARR_CROWDIN_TOKEN: z.string().nonempty(),
+  HOMARR_LABS_CROWDIN_TOKEN: z.string().nonempty(),
 });
 
 const env = schema.parse(process.env);
 
-const fetchGithubContributors = async () => {
-  const url = 'https://api.github.com/repos/ajnart/homarr/contributors';
+const fetchGithubContributors = async (slug, repository) => {
+  const url = `https://api.github.com/repos/${slug}/${repository}/contributors`;
   const options = {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${env.HOMARR_DOCUMENTATION_GH_TOKEN}`,
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
       Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28'
-    }
+      'X-GitHub-Api-Version': '2022-11-28',
+    },
   };
 
   const response = await fetch(url, options);
   const data = await response.json();
 
-  const dataSchema = z.array(z.object({
-    login: z.string(),
-    avatar_url: z.string().url(),
-  }));
+  const dataSchema = z.array(
+    z.object({
+      login: z.string(),
+      avatar_url: z.string().url(),
+      contributions: z.number(),
+    })
+  );
 
-  const contributionsData = dataSchema.parse(data);
+  return dataSchema.parse(data);
+};
 
-  fs.writeFileSync('./static/data/contributions.json', JSON.stringify(contributionsData));
-}
-
-const fetchCrowdinMembers = async () => {
-  const url = `https://crowdin.com/api/v2/projects/${Constants.Crowdin.ProjectId}/members`;
+const fetchCrowdinMembers = async (projectId, tokenName) => {
+  const url = `https://crowdin.com/api/v2/projects/${projectId}/members`;
   const options = {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${env.HOMARR_CROWDIN_TOKEN}`
-    }
+      Accept: 'application/json',
+      Authorization: `Bearer ${env[tokenName]}`,
+    },
   };
 
   const response = await fetch(url, options);
   const data = await response.json();
 
   const dataSchema = z.object({
-    data: z.array(z.object({
-      data: z.object({
-        username: z.string(),
-        avatarUrl: z.string().url()
+    data: z.array(
+      z.object({
+        data: z.object({
+          username: z.string(),
+          avatarUrl: z.string().url(),
+        }),
       })
-    }))
+    ),
   });
 
   const contributionsData = dataSchema.parse(data);
 
-  const flatContributors = contributionsData.data.flatMap(data => data.data);
+  return contributionsData.data.flatMap((data) => data.data);
+};
 
-  fs.writeFileSync('./static/data/translation-contributions.json', JSON.stringify(flatContributors));
+const distinctBy = (callback) => (value, index, self) => {
+  return self.findIndex((item) => callback(item) == callback(value)) === index;
+};
+
+const githubContributors = [];
+const crowdinContributors = [];
+
+for (const { repository, slug } of sources.github) {
+  githubContributors.push(...(await fetchGithubContributors(slug, repository)));
 }
+const distinctGithubContributors = githubContributors
+  .filter(distinctBy((contributor) => contributor.login))
+  .sort((a, b) => b.contributions - a.contributions)
+  .map(({ contributions, ...props }) => props);
+await fs.writeFile('./static/data/contributions.json', JSON.stringify(distinctGithubContributors));
 
-fetchGithubContributors();
-fetchCrowdinMembers();
+for (const { projectId, tokenName } of sources.crowdin) {
+  crowdinContributors.push(...(await fetchCrowdinMembers(projectId, tokenName)));
+}
+const distinctCrowdinContributors = crowdinContributors.filter(
+  distinctBy((contributor) => contributor.username)
+);
+await fs.writeFile(
+  './static/data/translation-contributions.json',
+  JSON.stringify(distinctCrowdinContributors)
+);
