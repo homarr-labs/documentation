@@ -2,7 +2,8 @@ name: "Homarr API spec"
 
 on:
   schedule:
-    - cron: "* */1 * * *" # Every hour
+    # Run it every day at 00:00 UTC
+    - cron: '0 0 * * *'
   workflow_dispatch: {}
 
 permissions:
