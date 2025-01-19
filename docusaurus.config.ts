@@ -63,7 +63,7 @@ const config: Config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/ajnart/homarr-docs/edit/master',
+          editUrl: 'https://github.com/homarr-labs/documentation/edit/master',
           authorsMapPath: 'authors.yml',
         },
         theme: {
@@ -128,7 +128,7 @@ const config: Config = {
               label: 'Discord',
             },
             {
-              to: 'https://github.com/ajnart/homarr',
+              to: 'https://github.com/homarr-labs/homarr',
               label: 'GitHub',
             },
             {
@@ -186,7 +186,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              to: 'https://github.com/ajnart/homarr',
+              to: 'https://github.com/homarr-labs/homarr',
             },
             {
               label: 'Donate',
