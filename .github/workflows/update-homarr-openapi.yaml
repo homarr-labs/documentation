@@ -72,9 +72,9 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: api-specification
-          path: openapi.json
+          path: api-specification
       - name: "Move file to target directory"
-        run: mv openapi.json ./static/api/open-api-schema.json
+        run: mv api-specification/openapi.json ./static/api/open-api-schema.json
       - uses: EndBug/add-and-commit@v9
         with:
           add: './static/api/'
