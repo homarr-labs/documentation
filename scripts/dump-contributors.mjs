@@ -1,5 +1,5 @@
-const z = require('zod');
-const fs = require('fs/promises');
+import { z } from 'zod';
+import fs from 'fs/promises';
 
 const sources = {
   crowdin: [
