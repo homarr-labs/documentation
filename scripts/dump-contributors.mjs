@@ -87,7 +87,8 @@ for (const { repository, slug } of sources.github) {
 const distinctGithubContributors = githubContributors
   .filter(distinctBy((contributor) => contributor.login))
   .sort((a, b) => b.contributions - a.contributions)
-  .map(({ contributions, ...props }) => props);
+  .map(({ contributions, ...props }) => props)
+  .filter((contributor) => !contributor.login.includes('[bot]'));
 await fs.writeFile('./static/data/contributions.json', JSON.stringify(distinctGithubContributors));
 
 for (const { projectId, tokenName } of sources.crowdin) {
