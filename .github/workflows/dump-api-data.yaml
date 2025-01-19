@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 env:
-  HOMARR_DOCUMENTATION_GH_TOKEN: "${{ secrets.HOMARR_DOCUMENTATION_GH_TOKEN }}"
+  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
   HOMARR_CROWDIN_TOKEN: "${{ secrets.HOMARR_CROWDIN_TOKEN }}"
+  HOMARR_LABS_CROWDIN_TOKEN: "${{ secrets.HOMARR_LABS_CROWDIN_TOKEN }}"
 
 permissions:
   contents: write
@@ -17,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [22]
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
