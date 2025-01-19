@@ -1,7 +1,7 @@
 # This template is heavily inspired by the Next.js's template:
 # See here: https://github.com/vercel/next.js/blob/canary/.github/ISSUE_TEMPLATE/3.feature_request.yml
 
-name: 🛠 Documentation Request
+name: 📕 Documentation Request
 description: Request something that should be documented or improved in the documentation.
 title: "feat: "
 body:
