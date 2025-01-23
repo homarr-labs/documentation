@@ -88,6 +88,7 @@ docker run  \
   -p 7575:7575 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v <your-path>/homarr/appdata:/appdata \
+  -e SECRET_ENCRYPTION_KEY='your_64_character_hex_string' \
   -d ghcr.io/homarr-labs/homarr:latest
 ```
 
