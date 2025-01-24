@@ -50,8 +50,9 @@ They are then available in the app list and can be used as normally added apps.
 ![Apps added from containers](img/containers/add-to-homarr-apps.png)
 
 ## Security
-Mounting docker sockets can be risk, as they permit full control over your docker service.
+Mounting docker sockets can be risky, as they permit full control over your docker service.
 As an example, a thread actor could abuse Homarr use the socket to start, stop or delete containers on your system.
+
 Therefore we recommend the usage of a socket proxy, which can prohibit certain actions.
 A few examples include:
 - https://github.com/linuxserver/docker-socket-proxy
@@ -59,3 +60,49 @@ A few examples include:
 
 See documentation of the respective proxies on how to configure them.
 Homarr may behave in unexpected ways when you use proxies.
+
+### Permissions
+Homarr needs the following permissions from the Docker API:
+- Containers/Start
+- Containers/Stop
+- Containers/Restart
+- Containers/Remove
+
+For socket proxies, you will need these permissions:
+- `CONTAINERS=1`
+- `POST=1`
+
+**Caution:** `POST` access is security critical as it provides extensive capabilities to modify your docker environment. Please leave it disabled if you're concerned about this.
+
+As a workaround, you can use [LSIO's socket proxy](https://github.com/linuxserver/docker-socket-proxy) and set the following:
+- ALLOW_START=1
+- ALLOW_STOP=1
+- ALLOW_RESTARTS=1
+
+These will work even with `POST=0`. 
+
+You lose the ability to remove containers, but start, stop and restarts should work just fine.
+
+### Connecting to Docker via Socket Proxies
+To connect to Docker via a socket proxy, you'll need to add these two environment variables in the compose file:
+- `DOCKER_HOSTNAMES=<name of the socket proxy container>`
+- `DOCKER_PORTS=<socket proxy port, usually 2375>`
+
+Refer: https://homarr.dev/docs/advanced/environment-variables/
+
+You will also need to add Homarr to the network of your socket proxy. You can do it like this:
+1. Add the network to your compose file (with appropriate changes):
+```yaml
+networks:
+  socket-proxy:
+    name: socket-proxy # <--- change this to the name of the network as set up by the socket proxy
+    external: true
+```
+
+2. Add the network to the homarr service in the compose file:
+```yaml
+networks:
+  - socket-proxy
+```
+
+3. Finally, if it is present, remove the default docker socket connection under `volumes` in the homarr service.
