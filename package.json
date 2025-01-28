@@ -35,7 +35,7 @@
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "swagger-ui-react": "^5.18.2",
+    "swagger-ui-react": "^5.18.3",
     "swiper": "^11.2.1",
     "tailwindcss": "^3.4.0"
   },
