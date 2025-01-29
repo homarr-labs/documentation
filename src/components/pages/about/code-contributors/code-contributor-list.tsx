@@ -6,15 +6,22 @@ type Contributor = {
 };
 
 // do not add any real users here
-const blacklistedUsernames = ['deepsource-autofix[bot]', 'deepsource-io[bot]', 'renovate[bot]', 'dependabot[bot]'];
+const blacklistedUsernames = [
+  'deepsource-autofix[bot]',
+  'deepsource-io[bot]',
+  'renovate[bot]',
+  'dependabot[bot]',
+];
 
 export const CodeContributorList = () => {
   const [contributors, setContributors] = useState<Contributor[]>([]);
 
   useEffect(() => {
-    fetch('./data/contributions.json').then(async (response) => {
+    fetch('/data/contributions.json').then(async (response) => {
       const data = await response.json();
-      setContributors(data.filter((contributor: Contributor) => !blacklistedUsernames.includes(contributor.login)));
+      setContributors(
+        data.filter((contributor: Contributor) => !blacklistedUsernames.includes(contributor.login))
+      );
     });
   }, []);
 
@@ -22,8 +29,12 @@ export const CodeContributorList = () => {
     <div className={'flex flex-wrap gap-3'}>
       {contributors.map((contributor: Contributor) => (
         <div className={'flex flex-col items-center w-24'}>
-          <img className={'w-24 h-24 aspect-square rounded mb-2'} src={contributor.avatar_url} alt={''} />
-          <h6 className={"truncate text-nowrap max-w-full"}>{contributor.login}</h6>
+          <img
+            className={'w-24 h-24 aspect-square rounded mb-2'}
+            src={contributor.avatar_url}
+            alt={''}
+          />
+          <h6 className={'truncate text-nowrap max-w-full'}>{contributor.login}</h6>
         </div>
       ))}
     </div>
