@@ -48,8 +48,6 @@ services:
         can generate one yourself using <code>openssl rand -hex 32</code>
         <button className='px-1 mx-4' onClick={generateNewHex}>Refresh key</button>
       </Admonition>
-      <h3>random hex </h3>
-      <div className="relative group"></div>
     </div>
   );
 };
