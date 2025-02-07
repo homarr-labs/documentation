@@ -15,7 +15,9 @@ img[src$='.gif'],
     /* Asynchronous loading images (eg. Discord server widget) */
 img[decoding="async"],
     /* Video is animated */
-video {
+video,
+    /* Elements that should be ignored from Argos */
+.agos-ignore {
     visibility: hidden !important;
 }
 
