@@ -37,7 +37,7 @@
     "react-dom": "^19.0.0",
     "swagger-ui-react": "^5.18.3",
     "swiper": "^11.2.2",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^4.0.4"
   },
   "devDependencies": {
     "@argos-ci/cli": "^2.5.5",
