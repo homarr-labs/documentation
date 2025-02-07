@@ -29,7 +29,7 @@
     "@tabler/icons-react": "^3.29.0",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.0",
-    "docusaurus-plugin-image-zoom": "^2.0.0",
+    "docusaurus-plugin-image-zoom": "^3.0.1",
     "leader-line-new": "^1.1.9",
     "postcss": "^8.4.32",
     "prism-react-renderer": "^2.4.1",

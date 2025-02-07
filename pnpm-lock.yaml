@@ -39,8 +39,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       docusaurus-plugin-image-zoom:
-        specifier: ^2.0.0
-        version: 2.0.0(@docusaurus/theme-classic@3.7.0(@types/react@18.2.45)(eslint@9.19.0(jiti@1.21.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3))
+        specifier: ^3.0.1
+        version: 3.0.1(@docusaurus/theme-classic@3.7.0(@types/react@18.2.45)(eslint@9.19.0(jiti@1.21.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3))
       leader-line-new:
         specifier: ^1.1.9
         version: 1.1.9
@@ -3901,8 +3901,8 @@ packages:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
 
-  docusaurus-plugin-image-zoom@2.0.0:
-    resolution: {integrity: sha512-TWHQZeoiged+95CESlZk++lihzl3pqw34n0/fbexx2AocmFhbo9K2scYDgYB8amki4/X6mUCLTPZE1pQvT+00Q==}
+  docusaurus-plugin-image-zoom@3.0.1:
+    resolution: {integrity: sha512-mQrqA99VpoMQJNbi02qkWAMVNC4+kwc6zLLMNzraHAJlwn+HrlUmZSEDcTwgn+H4herYNxHKxveE2WsYy73eGw==}
     peerDependencies:
       '@docusaurus/theme-classic': '>=3.0.0'
 
@@ -13439,7 +13439,7 @@ snapshots:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.4
 
-  docusaurus-plugin-image-zoom@2.0.0(@docusaurus/theme-classic@3.7.0(@types/react@18.2.45)(eslint@9.19.0(jiti@1.21.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)):
+  docusaurus-plugin-image-zoom@3.0.1(@docusaurus/theme-classic@3.7.0(@types/react@18.2.45)(eslint@9.19.0(jiti@1.21.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)):
     dependencies:
       '@docusaurus/theme-classic': 3.7.0(@types/react@18.2.45)(eslint@9.19.0(jiti@1.21.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
       medium-zoom: 1.1.0
