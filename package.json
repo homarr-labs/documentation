@@ -78,5 +78,18 @@
   },
   "engines": {
     "node": ">=20.11.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@scarf/scarf",
+      "core-js",
+      "core-js-pure"
+    ],
+    "onlyBuiltDependencies": [
+      "@tree-sitter-grammars/tree-sitter-yaml",
+      "sharp",
+      "tree-sitter",
+      "tree-sitter-json"
+    ]
   }
 }
