@@ -29,6 +29,9 @@ importers:
       '@mdx-js/react':
         specifier: ^3.1.0
         version: 3.1.0(@types/react@18.2.45)(react@19.0.0)
+      '@swagger-api/apidom-ns-json-schema-2019-09':
+        specifier: 1.0.0-beta.11
+        version: 1.0.0-beta.11
       '@tabler/icons-react':
         specifier: ^3.29.0
         version: 3.29.0(react@19.0.0)
