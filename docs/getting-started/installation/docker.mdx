@@ -1,3 +1,5 @@
+import { DockerInstallSnippet } from '../../../src/components/pages/installation/docker/dynamic-docker-install'
+
 # Docker
 Docker is our recommended installation method for beginners and professionals.
 It is easy to use, ships with all dependencies inside a single container and is easy to use and maintain.
@@ -13,27 +15,8 @@ We recommend [NetworkChuck's Docker Containers 101](https://www.youtube.com/watc
 
 ### Installation
 
-To install Homarr using Docker Compose, simply create a file called ``docker-compose.yml`` and paste the following code into it.
-
-```yml title="docker-compose.yml"
-#---------------------------------------------------------------------#
-#     Homarr - A simple, yet powerful dashboard for your server.      #
-#---------------------------------------------------------------------#
-services:
-  homarr:
-    container_name: homarr
-    image: ghcr.io/homarr-labs/homarr:latest
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
-      - ./homarr/appdata:/appdata
-    environment:
-      - SECRET_ENCRYPTION_KEY=your_64_character_hex_string # <--- can be generated with `openssl rand -hex 32`
-    ports:
-      - '7575:7575'
-```
-
-Then, run ``docker compose up -d`` in the same directory. This will start the Homarr container in the background.
+<DockerInstallSnippet data-visual-test="blackout"/>
+Finally, run ``docker compose up -d`` in the same directory. This will start the Homarr container in the background.
 
 :::caution
 
