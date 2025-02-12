@@ -60,8 +60,8 @@ importers:
         specifier: ^5.18.3
         version: 5.18.3(@types/react@18.2.45)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       swiper:
-        specifier: ^11.2.2
-        version: 11.2.2
+        specifier: ^11.2.3
+        version: 11.2.3
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -7258,8 +7258,8 @@ packages:
       react: '>=16.8.0 <19'
       react-dom: '>=16.8.0 <19'
 
-  swiper@11.2.2:
-    resolution: {integrity: sha512-FmAN6zACpVUbd/1prO9xQ9gKo9cc6RE2UKU/z4oXtS8fNyX4sdOW/HHT/e444WucLJs0jeMId6WjdWM2Lrs8zA==}
+  swiper@11.2.3:
+    resolution: {integrity: sha512-24m5tqHCd1Wmp9+86aKDoIGMsZGEjIL++3nuB1UjhAhIlvwj4k0Jikxu9PGQ/VswLpoje6JtMDWo12uu4aS2FA==}
     engines: {node: '>= 4.7.0'}
 
   tailwindcss@3.4.17:
@@ -17741,7 +17741,7 @@ snapshots:
       - '@types/react'
       - debug
 
-  swiper@11.2.2: {}
+  swiper@11.2.3: {}
 
   tailwindcss@3.4.17:
     dependencies:
