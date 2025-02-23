@@ -36,7 +36,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "swagger-ui-react": "^5.18.3",
-    "swiper": "^11.2.2",
+    "swiper": "^11.2.4",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
