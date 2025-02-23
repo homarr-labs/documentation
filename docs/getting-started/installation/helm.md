@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 2.7.0](https://img.shields.io/badge/Version-2.7.0-informational?style=flat)
+![Version: 2.8.0](https://img.shields.io/badge/Version-2.8.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.7.0](https://img.shields.io/badge/AppVersion-v1.7.0-informational?style=flat)
 
@@ -326,12 +326,14 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | persistence.homarrDatabase.name | string | `"homarr-database"` | homarr-database persistent storage name |
 | persistence.homarrDatabase.size | string | `"50Mi"` | homarr-database storage size |
 | persistence.homarrDatabase.storageClassName | string | `"local-path"` | homarr-database storage class name |
+| persistence.homarrDatabase.volumeClaimName | string | `""` | homarr-database optional volumeClaimName to target specific PV |
 | persistence.homarrImages.accessMode | string | `"ReadWriteOnce"` | homarr-images access mode |
 | persistence.homarrImages.enabled | bool | `false` | Enable homarr-images persistent storage |
 | persistence.homarrImages.mountPath | string | `"/images"` | homarr-images mount path inside the pod |
 | persistence.homarrImages.name | string | `"homarr-images"` | homarr-images persistent storage name |
 | persistence.homarrImages.size | string | `"50Mi"` | homarr-images storage size |
 | persistence.homarrImages.storageClassName | string | `"local-path"` | homarr-images storage class name |
+| persistence.homarrImages.volumeClaimName | string | `""` | homarr-images optional volumeClaimName to target specific PV |
 | podAnnotations | object | `{}` | Pod annotations |
 | podLabels | object | `{}` | Pod labels |
 | podSecurityContext | object | `{}` | Pod security context |
