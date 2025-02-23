@@ -7,6 +7,9 @@ tags:
   - Edit mode
 ---
 
+import iconColorImage from './img/icon-color.png'
+import itemRadiusImage from './img/item-radius.png'
+
 Each dashboard is called a "board".
 You can create as many boards as you want.
 Boards can be restricted to user groups.
@@ -94,13 +97,23 @@ This option can be useful if you have patterns that can be repeated easily (e.g.
 
 ![](./img/background-repeat.png)
 
-### Colors
+### Appearance
 #### Primary color
 Color that can be chosen freely to give accents to active elements.
 #### Secondary color
 Color that can be chosen freely to give accents.
 #### Opacity
 Opacity of the colors.
+#### Icon color
+Change the color of your bookmark / app icons.
+
+<img src={iconColorImage}  height={100} />
+
+#### Item radius
+Change the radius of your items / categories.
+
+<img src={itemRadiusImage}  height={100} />
+
 
 ### Custom CSS
 Using custom CSS, you can apply your own styling to Homarr.
@@ -108,6 +121,11 @@ Using custom CSS, you can apply your own styling to Homarr.
 {/* 
 // TODO: add more info
 */}
+
+### Behaviour
+
+#### Disable app status
+This will disable the status check for apps.
 
 ### Access control
 With the access control, you can permit a single user or a group to your board.
@@ -191,6 +209,13 @@ Alternatively, you can also define it via your user profile:
 2. Click on the username of the user that you want to adjust
 3. Select the desired home board via the dropdown and click on ``Save`` \
 ![](./img/set-home-board-other-user.png)
+
+### For user groups
+
+1. Navigate to the user groups: ``Management`` > ``Users`` > ``Groups`` > ``Manage``
+2. Go to tab ``Settings``
+3. Select the desired home board via the dropdown and click on ``Save`` \
+![](./img/set-home-board-user-group.png)
 
 ### For whole server
 

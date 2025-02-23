@@ -57,6 +57,18 @@ The user may choose a different language by themselves afterward.
 Optional field for the board that is loaded by default if no board was specified in the URL.
 Only boards that the user has permission to are being shown.
 
+#### Search
+
+Options to configure default search engine of user and whether to open search results in a new tab.
+
+#### First day of the week
+
+Choose the first day of the week for the user. This will affect the calendar widget.
+
+#### Accessibility
+
+Option to show icons for status check instead of colored dots.
+
 #### Delete
 This action will permanently delete the user from the database, including any preferences they set.
 If the user created boards, they wil **not** be deleted.
@@ -79,7 +91,7 @@ Members can be directly assigned to groups.
 A user will have the permissions of all groups they are a member of. 
 Some permissions include other permissions, for example the "Full board access" permission includes all board permissions.
 
-By default, a group called "admin" will be generated where the first user will be placed.
+By default, a group called "credentials-admin" will be generated where the first user will be placed.
 However, you can create as many groups as you'd like.
 
 ### Creating a group
@@ -97,6 +109,24 @@ Group ownership is only organizational.
 
 ##### Delete
 Deletes the group permanently. This change is irreversible.
+
+#### Settings tab
+In this tab, you can configure some settings for the group. Those settings will be prioritized by the order of the groups on the groups list page
+
+##### Priorization
+The higher a group in the list, the higher the priority. This means that if a user is in multiple groups, the permissions of the group with the highest priority will be used.
+It will always fallback to the everyone group if no other group permissions are set.
+
+![](./img/groups-list.png)
+
+##### Boards
+Configure board settings for a group. User specific settings will override group settings.
+
+###### Home board
+The board that is loaded by default if no board was specified in the URL.
+
+###### Mobile board
+The board that is loaded by default on mobile devices.
 
 #### Members tab
 In this tab, you can assign users to the group. With the button at the top right, a new member can be added to the group:
