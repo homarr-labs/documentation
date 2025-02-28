@@ -5,10 +5,15 @@ tags:
   - Boards
   - Customization
   - Edit mode
+  - Responsive
+  - Layout
 ---
 
 import iconColorImage from './img/icon-color.png'
 import itemRadiusImage from './img/item-radius.png'
+import layoutLargeImage from './img/layout-large.png'
+import layoutMediumImage from './img/layout-medium.png'
+import layoutSmallImage from './img/layout-small.png'
 
 Each dashboard is called a "board".
 You can create as many boards as you want.
@@ -70,15 +75,33 @@ This is the URL that is used for the favicon in the tab title.
 Homarr will fall back to the Homarr logo if nothing is set.
 
 ### Layout
+
+In this section you can configure the different responsive layouts. Depending on your screens width the layout will change.
+
+![](./img/layout-settings.png)
+
+On each element the position and size of items can be changed seperately.
+When adding a new layout the position and sizes will automatically be generated depending on the column count.
+When adding a new item / dynamic section that will always be 1x1 on each layout and placed on the first available position.
+
+#### Name
+
+The name of the layout can be choosen freely. It is only used for the management and will not be visible on the board.
+
 #### Column count
-Homarr has a complex drag and drop system that can be used from the browser.
-The column count defines how many horizontal columns are available to drag and drop elements to.
 
-:::caution
+Amount of columns for this layout. Defines how many items can be placed in a row. When changed it will automatically adjust the position and size of the items.
 
-Changing the column count might break existing layouts. Especially when reducing the column count, elements will be moved arround!
+#### Breakpoint
 
-:::
+Minimum width of the screen where the layout will be used. 
+Once the minmum of the next layout is reached the layout will change.
+
+#### Preview
+
+<img src={layoutSmallImage}  height={256} />
+<img src={layoutMediumImage}  height={256} />
+<img src={layoutLargeImage}  height={256} />
 
 ### Background
 #### Background image URL
