@@ -12,6 +12,11 @@ For a successful integration, remember that the internal address should not have
 
 In this case it would mean to remove anything of the likes of "/admin" from the link you would usually use.
 
+:::note
+Homarr supports both PiHole v5 and v6.
+It automatically detects the version and uses the correct API.
+:::
+
 <details>
   <summary>
   Available configuration options
@@ -22,6 +27,8 @@ In this case it would mean to remove anything of the likes of "/admin" from the 
 | -------- | ------- | ----------- |
 | ApiKey | Private | Token used for authentication |
 
+  Please note, that in v6 of PiHole you no longer specify an API key, but instead either a password or application password.
+  We suggest to use the application password when possible.
   </div>
 </details>
 
