@@ -44,7 +44,7 @@ export const AvailableIntegrations = () => {
             <p className={'text-base text-gray-500 dark:text-gray-400'}>Homarr has support for tons of your favourite
               applications, tools and websites.</p>
           </div>
-          <div className={'rotate-12 w-1/2 hidden md:block'}>
+          <div className={'rotate-12 w-1/2 hidden md:block argos-ignore'}>
             <div className={'grid gap-12 grid-cols-3'}>
               {Array(countIconGroups)
                 .fill(0)

@@ -17,7 +17,7 @@ img[decoding="async"],
     /* Video is animated */
 video,
     /* Elements that should be ignored from Argos */
-.agos-ignore {
+.argos-ignore {
     visibility: hidden !important;
 }
 
