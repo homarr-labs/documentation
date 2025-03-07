@@ -24,7 +24,7 @@ export const DockerInstallSnippet: React.FC = () => {
       <p>
         First, create a <code>docker-compose.yml</code> file with the following content:
       </p>
-      <CodeBlock language="yml" title="docker-compose.yml">
+      <CodeBlock language="yml" title="docker-compose.yml" className={'argos-ignore'}>
         {`#---------------------------------------------------------------------#
 #     Homarr - A simple, yet powerful dashboard for your server.      #
 #---------------------------------------------------------------------#
