@@ -93,6 +93,12 @@ const config: Config = {
       },
       items: [
         {
+          type: 'docsVersionDropdown',
+          position: 'left',
+          dropdownActiveClassDisabled: true,
+          includeCurrentVersion: false
+        },
+        {
           label: 'Documentation',
           type: 'doc',
           position: 'left',
