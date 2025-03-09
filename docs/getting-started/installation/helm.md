@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 2.12.0](https://img.shields.io/badge/Version-2.12.0-informational?style=flat)
+![Version: 3.0.0](https://img.shields.io/badge/Version-2.6.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.10.0](https://img.shields.io/badge/AppVersion-v1.10.0-informational?style=flat)
 
@@ -16,7 +16,7 @@ A Helm chart to deploy homarr for Kubernetes
 
 ## Requirements
 
-Kubernetes: `>=1.22.0-0`
+Kubernetes: `>=1.24.0-0`
 
 ## Dependencies
 
@@ -347,6 +347,8 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | podAnnotations | object | `{}` | Pod annotations |
 | podLabels | object | `{}` | Pod labels |
 | podSecurityContext | object | `{}` | Pod security context |
+| rbac | object | `{"enabled":false}` | Enable RBAC resources for Kubernetes integration Creates Role, ClusterRole, and associated bindings for Homarr's Kubernetes features |
+| rbac.enabled | bool | `false` | Enable to create RBAC resources and activate Kubernetes integration |
 | readinessProbe.httpGet.path | string | `"/api/health/ready"` | This is the readiness check endpoint used by Kubernetes to determine if the application is ready to handle traffic. |
 | readinessProbe.httpGet.port | int | `7575` | The port on which the readiness check will be performed. This must match the container's exposed port. |
 | replicaCount | int | `1` | Number of replicas |
