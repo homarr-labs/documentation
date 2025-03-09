@@ -16,7 +16,7 @@ export const TranslationContributorList = () => {
   }, []);
 
   return (
-    <div className={'flex flex-wrap gap-3 agos-ignore'}>
+    <div className={'flex flex-wrap gap-3 argos-ignore'}>
       {contributors.map((contributor: Contributor) => (
         <div className={'flex flex-col items-center w-24'}>
           <img
