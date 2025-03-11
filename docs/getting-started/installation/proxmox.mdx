@@ -1,0 +1,67 @@
+# Proxmox
+
+This guide covers how to install homarr inside of a linux-container in ProxmoxVE, using a fully automated approach.
+
+# What is community-scripts?
+
+https://community-scripts.github.io/ProxmoxVE/
+
+We are a community-driven initiative that simplifies the setup of Proxmox Virtual Environment (VE).
+With hundreds of scripts to help you manage your Proxmox VE environment. Whether you're a seasoned user or a newcomer, we've got you covered.
+
+# Installation
+
+It's as simple as pasting the following snippet into your Proxmox Node's console
+
+```bash
+bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/ct/homarr.sh)"
+```
+
+:::warning
+Never trust any script directly injected from the web, without prior looking through it or searching the web for other's opinions.
+
+After executing this command, you will get asked, if you want to accept defaults or would like to specify things like IP-Adress, DNS etc, then choose advanced.
+The installation part takes a moment, but you there is a nice progress-spinner.
+
+After you've installed Homarr, you can find a new LXC "homarr".
+
+# Updating
+
+Updating is as simple as executing 
+
+```bash
+update
+```
+
+or running the script again but this time inside the container's shell:
+
+```bash
+bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/ct/homarr.sh)"
+```
+
+# Troubleshooting
+
+If something does not work after an update, please first try rebooting the LXC or the homarr Service with 
+
+```bash
+systemctl restart homarr
+```
+
+# Getting help
+
+The official support of community-scripts is located [here](https://discord.gg/2wvnMDgdnU) if you feel like there is an issue with the script, feel free ot open a github issue [here](https://github.com/community-scripts/ProxmoxVE/issues/new/choose)
+
+If you feel like the issue is at homarr side, please ask on the homarr Discord or Github instead.
+
+# How to find logs
+Homarr runs under a system service called `homarr`, so getting the logs is a simple as using
+
+```bash
+systemctl status homarr
+```
+
+As homarr logs really a log, it sometimes feels like the log is endless till you get the bottom, so a command like this only shows the latest 100 lines:
+
+```bash
+journalctl -u homarr | tail -n 100
+```
