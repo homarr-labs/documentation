@@ -1,0 +1,52 @@
+# DNS
+
+Homarr allows the integration of DNS-holes to control them and display their stats.
+Multiple DNS-holes can be added at the same time.
+
+## PiHole
+The PiHole integration enables you to see basic stats like the number of queries in the day and how many are blocked.
+
+You can also disable and enable it using the dns-hole control widget.
+
+For a successful integration, remember that the internal address should not have a path, only the IP and the port (``http://ip:port``).
+
+In this case it would mean to remove anything of the likes of "/admin" from the link you would usually use.
+
+:::note
+Homarr supports both PiHole v5 and v6.
+It automatically detects the version and uses the correct API.
+:::
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| ApiKey | Private | Token used for authentication |
+
+  Please note, that in v6 of PiHole you no longer specify an API key, but instead either a password or application password.
+  We suggest to use the application password when possible.
+  </div>
+</details>
+
+## AdGuard Home
+The Adguard Home integration enables you to see basic stats like the number of queries in the day and how many are blocked.
+
+You can also disable and enable it using the dns-hole control widget.
+
+<details>
+  <summary>
+  Available configuration options
+  </summary>
+  <div>
+
+| Field    | Type    | Description |
+| -------- | ------- | ----------- |
+| Username | Public | Username used for authentication |
+| Password | Private | Password used for authentication |
+
+  </div>
+</details>
