@@ -242,7 +242,7 @@ service:
   enabled: true # Ensure the service is enabled for Ingress to route traffic
 ingress:
   enabled: true
-  className: "traefik"
+  ingressClassName: "traefik"
   annotations:
   # Add any additional annotations as needed
   hosts:
