@@ -51,7 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "cheerio": "1.0.0",
-    "eslint": "^9.22.0",
+    "eslint": "^9.23.0",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "prettier": "^3.2.4",
