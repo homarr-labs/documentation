@@ -10,6 +10,7 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
     screenshot: "only-on-failure",
   },
+  workers: 4,
   projects: [
     {
       name: 'chromium',
