@@ -172,3 +172,42 @@ html[data-theme="dark"] div#__docusaurus div[role="banner"] button svg {
     filter: invert(100%) hue-rotate(180deg);
   }
 }
+
+.hero-cards {
+  transform: rotate(20deg) scale(0.8) skew(21deg);
+  -webkit-transform: rotate(20deg) scale(0.8) skew(21deg);
+  -moz-transform: rotate(20deg) scale(0.8) skew(21deg);
+}
+
+.animated-width {
+  transition: width 0.3s ease-in-out;
+}
+
+.app-card {
+  cursor: not-allowed;
+}
+
+.app-card img {
+  transition:  transform 0.1s ease-in-out;
+}
+
+.app-card:hover img {
+  transform: scale(1.08) !important;
+}
+
+.hover-animation {
+  animation:  hover-animation 5s ease-in-out forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hover-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

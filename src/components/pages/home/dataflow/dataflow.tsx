@@ -13,41 +13,41 @@ export const DataflowVisualizationComponent = () => {
 
   return (
     <div className={'bg-black/[.10] py-20'}>
-      <h2 className={'text-center text-5xl font-extrabold mb-24'}>No YAML configurations.<br/>Easy and quick to manage integrations.</h2>
+      <h2 className={'text-center lg:text-5xl text-3xl font-extrabold mb-24'}>No YAML configurations.<br/>Easy and quick to manage integrations.</h2>
 
-      <div className="relative max-w-128 h-80 mx-auto animated-dataflow">
+      <div className="relative max-w-128 h-80 mx-auto animated-dataflow mx-5">
         <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}
              src={'/img/logo.png'}
              alt={'Homarr Logo'} width={100}
-             height={80} />
+             height={50} />
 
         <img ref={radarrRef} className={'absolute left-0 top-0'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/radarr.png?raw=true'}
              alt={'Radarr'}
-             width={80} height={80} />
+             width={50} height={50} />
         <img ref={sonarrRef} className={'absolute left-0 top-1/2 -translate-y-1/2'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/sonarr.png?raw=true'}
              alt={'Sonarr'}
-             width={80} height={80} />
+             width={50} height={50} />
         <img ref={lidarrRef} className={'absolute left-0 bottom-0'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/lidarr.png?raw=true'}
              alt={'Lidarr'}
-             width={80} height={80} />
+             width={50} height={50} />
 
         <img ref={jellyfinRef} className={'absolute right-0 top-1/2 -translate-y-1/2'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/jellyfin.png?raw=true'}
              alt={'Jellyfin'}
-             width={80} height={80} />
+             width={50} height={50} />
 
         <img ref={plexRef} className={'absolute right-0 bottom-0'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/plex.png?raw=true'}
              alt={'Plex'}
-             width={80} height={80} />
+             width={50} height={50} />
 
         <img ref={sabnzbdRef} className={'absolute right-0 top-0'}
              src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/sabnzbd.png?raw=true'}
              alt={'Sabnzbd'}
-             width={80} height={80} />
+             width={50} height={50} />
 
         <LineTree start={sonarrRef} end={homarrRef} startSocket={'right'} endSocket={'left'} />
         <LineTree start={radarrRef} end={homarrRef} startSocket={'right'} endSocket={'left'} />

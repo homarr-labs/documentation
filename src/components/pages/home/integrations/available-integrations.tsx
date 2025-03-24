@@ -40,7 +40,7 @@ export const AvailableIntegrations = () => {
       <div className={'md:h-80 w-full dark:bg-neutral-900 p-10 rounded-3xl overflow-hidden relative'}>
         <div className={'flex gap-10 flex-nowrap'}>
           <div className={'md:w-1/2 w-full'}>
-            <h2 className={'text-5xl font-extrabold '}>Many integrations built in</h2>
+            <h2 className={'lg:text-5xl text-3xl font-extrabold '}>Many integrations built in</h2>
             <p className={'text-base text-gray-500 dark:text-gray-400'}>Homarr has support for tons of your favourite
               applications, tools and websites.</p>
           </div>
