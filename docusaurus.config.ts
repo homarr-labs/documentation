@@ -80,11 +80,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    announcementBar: {
-      content:
-        'We just released Homarr 1.0 - with significant performance improvements, advanced permissions and user management. Read our <a href="/blog/2024/09/23/version-1.0"><b>blog post</b></a> for more information.',
-      isCloseable: true,
-    },
     navbar: {
       title: 'Homarr',
       logo: {
