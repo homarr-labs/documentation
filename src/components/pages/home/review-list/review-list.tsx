@@ -69,7 +69,10 @@ const reviews = [
 export default function HomepageUserReviews() {
   return (
     <div className="my-24">
-      <h2 className="lg:text-5xl text-3xl font-extrabold text-center mb-10">Big and friendly community</h2>
+      <h2 className="lg:text-5xl text-3xl font-extrabold text-center mb-10">Community</h2>
+      <p className={'text-xl text-gray-500 dark:text-gray-400 max-w-128 mx-auto mb-3'}>We have a big and active community, which
+        regularly contributes new features & integrations to Homarr. Our community translation program and modularity
+        end extendability in the code makes it easy to contribute and extend Homarr.</p>
 
       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {reviews.map((review, index) => (

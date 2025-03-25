@@ -41,6 +41,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       docusaurus-plugin-image-zoom:
         specifier: ^3.0.1
         version: 3.0.1(@docusaurus/theme-classic@3.7.0(@types/react@18.2.45)(eslint@9.23.0(jiti@1.21.7))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))
@@ -3876,6 +3879,9 @@ packages:
 
   dayjs@1.11.10:
     resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+
+  dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
   debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -10023,7 +10029,7 @@ snapshots:
       react-dev-utils: 12.0.1(eslint@9.23.0(jiti@1.21.7))(typescript@5.8.2)(webpack@5.96.1)
       terser-webpack-plugin: 5.3.10(webpack@5.96.1)
       tslib: 2.6.3
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.96.1)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.96.1)
       webpack: 5.96.1
       webpackbar: 6.0.1(webpack@5.96.1)
     transitivePeerDependencies:
@@ -10109,7 +10115,7 @@ snapshots:
       terser-webpack-plugin: 5.3.9(webpack@5.89.0)
       tslib: 2.6.3
       update-notifier: 6.0.2
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.89.0)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.89.0)
       wait-on: 7.2.0
       webpack: 5.89.0
       webpack-bundle-analyzer: 4.10.1
@@ -10252,7 +10258,7 @@ snapshots:
       tslib: 2.6.3
       unified: 11.0.4
       unist-util-visit: 5.0.0
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.96.1)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.96.1)
       vfile: 6.0.1
       webpack: 5.96.1
     transitivePeerDependencies:
@@ -10288,7 +10294,7 @@ snapshots:
       tslib: 2.6.3
       unified: 11.0.4
       unist-util-visit: 5.0.0
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.96.1)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.96.1)
       vfile: 6.0.1
       webpack: 5.96.1
     transitivePeerDependencies:
@@ -10928,7 +10934,7 @@ snapshots:
       resolve-pathname: 3.0.0
       shelljs: 0.8.5
       tslib: 2.6.3
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.96.1)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.96.1)
       webpack: 5.96.1
     optionalDependencies:
       '@docusaurus/types': 3.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -10958,7 +10964,7 @@ snapshots:
       resolve-pathname: 3.0.0
       shelljs: 0.8.5
       tslib: 2.6.3
-      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.96.1)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.96.1)
       utility-types: 3.10.0
       webpack: 5.96.1
     transitivePeerDependencies:
@@ -13604,6 +13610,8 @@ snapshots:
       lodash-es: 4.17.21
 
   dayjs@1.11.10: {}
+
+  dayjs@1.11.13: {}
 
   debounce@1.2.1: {}
 
@@ -18245,23 +18253,23 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.89.0):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.89.0):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
       webpack: 5.89.0
     optionalDependencies:
-      file-loader: 6.2.0(webpack@5.96.1)
+      file-loader: 6.2.0(webpack@5.89.0)
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@5.96.1))(webpack@5.96.1):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@5.89.0))(webpack@5.96.1):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
       webpack: 5.96.1
     optionalDependencies:
-      file-loader: 6.2.0(webpack@5.96.1)
+      file-loader: 6.2.0(webpack@5.89.0)
 
   url-parse@1.5.10:
     dependencies:

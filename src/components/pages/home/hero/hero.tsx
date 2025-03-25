@@ -7,9 +7,8 @@ import { HeroCards } from './hero-cards';
 export default function HomeHero() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner, styles.hero)}>
-      {/* TODO: remove container and add more columns to the grid */}
       <div className="flex">
-        <div className="flex-grow-0 ps-0 lg:ps-52">
+        <div className="ps-0 lg:ps-52">
           <h1 className="font-extrabold lg:text-7xl text-3xl">A simple, yet<br />powerful dashboard<br />for your
             server.</h1>
           <p className={'lg:text-2xl text-base'}>
@@ -29,7 +28,7 @@ export default function HomeHero() {
             </div>
           </Link>
         </div>
-        <div className="flex-grow-1 lg:block hidden hover-animation">
+        <div className="flex-grow-1 w-full lg:block hidden hover-animation">
           <HeroCards />
         </div>
       </div>

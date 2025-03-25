@@ -13,10 +13,12 @@ export const DataflowVisualizationComponent = () => {
 
   return (
     <div className={'bg-black/[.10] py-20'}>
-      <h2 className={'text-center lg:text-5xl text-3xl font-extrabold mb-24'}>No YAML configurations.<br/>Easy and quick to manage integrations.</h2>
+      <h2 className={'text-center lg:text-5xl text-3xl font-extrabold mb-24'}>No YAML configurations.<br />Easy and
+        quick to manage integrations.</h2>
 
       <div className="relative max-w-128 h-80 mx-auto animated-dataflow mx-5">
-        <img ref={homarrRef} className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'}
+        <img ref={homarrRef}
+             className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 aspect-square object-contain'}
              src={'/img/logo.png'}
              alt={'Homarr Logo'} width={100}
              height={50} />
@@ -79,7 +81,7 @@ export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }: {
           startSocket: startSocket,
           endSocket: endSocket,
           color: 'var(--ifm-color-primary)',
-          size: 5,
+          size: 3,
           dash: {
             animation: true,
           },

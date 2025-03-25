@@ -30,7 +30,9 @@ export const StockTrendCard = () => {
           data: stockTrend,
         },
       ]} height={200} curve={'natural'} enablePoints={false} enableGridX={false} enableGridY={false}
-                      yScale={{ type: 'linear', min: 'auto' }} enableArea={true} margin={{ bottom: 0, left: 0, right: 0, top: 0 }} />
+                      yScale={{ type: 'linear', min: 'auto' }} enableArea={true}
+                      margin={{ bottom: 0, left: 0, right: 0, top: 0 }} axisBottom={null} axisLeft={null}
+                      axisRight={null} axisTop={null} />
       <div className="absolute bottom-0 right-0 font-bold">
         {stockTrend[0].y}
       </div>

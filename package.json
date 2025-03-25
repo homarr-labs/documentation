@@ -30,6 +30,7 @@
     "@tabler/icons-react": "^3.31.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.0",
+    "dayjs": "^1.11.13",
     "docusaurus-plugin-image-zoom": "^3.0.1",
     "leader-line-new": "^1.1.9",
     "postcss": "^8.4.32",

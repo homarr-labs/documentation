@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getRndInteger } from '@site/src/tools/math';
 
 export const DownloadsCard = () => {
   const [downloads, setDownloads] = useState<Download[]>([]);
@@ -63,6 +64,3 @@ const generateRandomDownload = (): Download => {
   };
 };
 
-function getRndInteger(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
