@@ -10,7 +10,7 @@ export const HeroCards = () => {
 
 
   return (
-    <div className="grid grid-cols-5 grid-rows-2 gap-4 h-full hero-cards">
+    <div className="grid grid-cols-2 2xl:grid-cols-4 grid-rows-2 gap-4 h-full hero-cards">
       <Card>
         <div className="flex gap-2 justify-center items-center">
           <IconCloud />
@@ -60,7 +60,7 @@ const Card = ({ children, additionalClassNames, centered = true, padding = true,
   return (
     <div
       className={clsx('bg-zinc-800 rounded-xl w-full border-1 border-solid border-zinc-700 text-gray-300', centerStyles, padding ? 'p-2' : undefined, additionalClassNames)}
-      style={style}>
+      style={{ ...style, minHeight: 200 }}>
       {children}
     </div>
   );
