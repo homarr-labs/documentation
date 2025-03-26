@@ -9,9 +9,9 @@ export const DragAndDropShowcase = () => {
   const video = colorMode === 'dark' ? videoDark : videoLight;
   return (
     <div className={'my-24'}>
-      <SectionContainer className={"relative"}>
-        <h2 className={'text-5xl font-extrabold text-center mb-12'}>Easy setup using drag and drop</h2>
-        <div className={'absolute top-0 right-0 translate-x-10 translate-y-8'}>
+      <SectionContainer className={"relative max-w-5xl"}>
+        <h2 className={'lg:text-5xl text-3xl font-extrabold text-center mb-12'}>Easy setup using drag and drop</h2>
+        <div className={'absolute top-0 right-0 translate-x-10 translate-y-8 hidden lg:block'}>
           <IconClick size={120} />
         </div>
         <div className={'rounded-3xl overflow-hidden border-8 border-red-500 border-solid'} style={{ aspectRatio: '17.6/9' }}>
