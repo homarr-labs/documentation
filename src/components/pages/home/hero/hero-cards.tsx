@@ -1,67 +1,25 @@
-import { IconArrowDownRight, IconArrowUpRight, IconCloud, IconWind } from '@tabler/icons-react';
-import { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
-import { DownloadsCard } from '@site/src/components/pages/home/hero/cards/downloads';
-import { StockTrendCard } from '@site/src/components/pages/home/hero/cards/stock-trend';
-import { AppCard } from '@site/src/components/pages/home/hero/cards/app-card';
-import { ClockCard } from '@site/src/components/pages/home/hero/cards/clock-card';
+import { CSSProperties, ReactNode } from 'react';
+import { AppWidget } from './widgets/app-widget';
+import { WidgetCard } from './widgets/card';
+import { ClockWidget } from './widgets/clock-widget';
+import { DownloadsWidget } from './widgets/downloads-widget';
+import { WeatherWidget } from './widgets/weather-widget';
+import { StockWidget } from './widgets/stock-widget';
+import { EntityStateWidget } from './widgets/entity-state-widget';
 
 export const HeroCards = () => {
-
-
   return (
-    <div className="grid grid-cols-2 2xl:grid-cols-4 grid-rows-2 gap-4 h-full hero-cards">
-      <Card>
-        <div className="flex gap-2 justify-center items-center">
-          <IconCloud />
-          <span className="text-2xl font-bold">10.8°C</span>
-        </div>
-        <div className="flex gap-2 justify-center items-center">
-          <IconWind />
-          <span>5 km/h</span>
-        </div>
-        <div className="flex gap-2 justify-center items-center">
-          <IconArrowUpRight />
-          <span>13.5°C</span>
-          <IconArrowDownRight />
-          <span>6.4°C</span>
-        </div>
-      </Card>
-      <Card additionalClassNames={'col-span-2 text-xs'} centered={false} padding={false}>
-        <DownloadsCard />
-      </Card>
-      <Card>
-        <AppCard />
-      </Card>
-      <Card>
-        <AppCard />
-      </Card>
-      <Card additionalClassNames={'col-span-2 relative'} padding={false} style={{ height: 200 }}>
-        <StockTrendCard />
-      </Card>
-      <Card>
-        <AppCard />
-      </Card>
-      <Card>
-        <ClockCard />
-      </Card>
-    </div>
-  );
-};
+    <div className="hero-cards flex flex-wrap max-w-[504px] gap-y-4 gap-x-3 text-gray-700 dark:text-gray-300">
+      <StockWidget />
+      <AppWidget />
+      <AppWidget className="hidden 3xl:block" />
+      <WeatherWidget />
+      <DownloadsWidget />
+      <EntityStateWidget />
+      <AppWidget />
 
-const Card = ({ children, additionalClassNames, centered = true, padding = true, style }: {
-  children: ReactNode,
-  centered?: boolean;
-  padding?: boolean;
-  additionalClassNames?: string
-  style?: CSSProperties;
-}) => {
-  const centerStyles = centered ? 'flex gap-3 flex-col justify-center text-center' : undefined;
-  return (
-    <div
-      className={clsx('bg-zinc-800 rounded-xl w-full border-1 border-solid border-zinc-700 text-gray-300', centerStyles, padding ? 'p-2' : undefined, additionalClassNames)}
-      style={{ ...style, minHeight: 200 }}>
-      {children}
+      <ClockWidget />
     </div>
   );
 };
