@@ -167,6 +167,7 @@ Homarr supports multiple authentication options, from internal userbase (credent
         AUTH_OIDC_CLIENT_SECRET="client_secret"
         AUTH_OIDC_CLIENT_ID="homarr"
         AUTH_OIDC_CLIENT_NAME="Authelia"
+        AUTH_OIDC_FORCE_USERINFO="true" --> from v4.39 of authelia and above this is required
         ```
 
         For an azure app registration the setup could look like this:
@@ -197,6 +198,7 @@ Homarr supports multiple authentication options, from internal userbase (credent
     | ``AUTH_OIDC_SCOPE_OVERWRITE`` | Overwrite default scopes (openid, profile, email)        | openid email profile groups           |
     | ``AUTH_OIDC_GROUPS_ATTRIBUTE`` | Attribute used for groups (roles) claim                  | groups        |
     | ``AUTH_OIDC_NAME_ATTRIBUTE_OVERWRITE`` | Overwrite name attribute. By default it will use preferred_username if it does not contain a `@` and otherwise name. | ---          |
+    | ``AUTH_OIDC_FORCE_USERINFO`` | Force userinfo endpoint to be used for user information.    | false         |
 
     ### Permission System 
 
