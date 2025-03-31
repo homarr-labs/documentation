@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 3.4.1](https://img.shields.io/badge/Version-3.4.1-informational?style=flat)
+![Version: 3.4.2](https://img.shields.io/badge/Version-3.4.2-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.13.1](https://img.shields.io/badge/AppVersion-v1.13.1-informational?style=flat)
 
@@ -359,6 +359,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | service.ports.app.protocol | string | `"TCP"` | Service protocol |
 | service.ports.app.targetPort | string | `"http"` | Service target port |
 | service.type | string | `"ClusterIP"` | Service type |
+| strategyType | string | `"RollingUpdate"` | `strategyType` specifies the strategy used to replace old Pods by new ones. `strategyType` can be `"Recreate"` or `"RollingUpdate"`. `"RollingUpdate"` is the default value and updates Pods in a rolling update fashion. `"Recreate"` will kill all existing Pods before new ones are created. The `"Recreate"` strategy is necessary when persistent volume's `accessMode` is set to `"ReadWriteOnce"` when using `helm upgrade`, as pod volume attachments to an existing PersistentVolumeClaim need to be cleared before a new pod can attach to it. |
 | tolerations | list | `[]` | Node tolerations for pod scheduling |
 
 ---
