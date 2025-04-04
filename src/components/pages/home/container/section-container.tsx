@@ -7,5 +7,5 @@ interface SectionContainerProps {
 
 export const SectionContainer = ({ children, className }: SectionContainerProps) => {
   return <div
-    className={'mx-auto w-full md:w-2/3 ps-10 pr-10 mb-5' + (className ? ' ' + className : '')}>{children}</div>;
+    className={`container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-[90rem] w-full py-8 ${className || ''}`}>{children}</div>;
 };
