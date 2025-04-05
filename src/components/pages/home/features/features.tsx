@@ -1,13 +1,11 @@
-import React from 'react';
 import {
-  IconAccessible,
   IconAdjustments,
   IconDragDrop,
   IconIcons,
   IconKey,
   IconLanguage,
   IconPlug,
-  TablerIcon,
+  type TablerIcon,
 } from '@tabler/icons-react';
 
 interface Feature {
@@ -56,16 +54,18 @@ const featureList: Feature[] = [
 
 function FeatureComponent(props: Feature) {
   return (
-    <div>
-      <div className={'flex flex-nowrap gap-4 items-center mb-2'}>
-        <div className={'rounded-xl bg-gray-100 dark:bg-zinc-800 p-3 pb-0.5 aspect-square'}>
-          <props.icon size={40} />
+    <div className="group p-4 rounded-2xl transition-all duration-300 hover:bg-gray-50 dark:hover:bg-zinc-800/50">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-3">
+        <div className="rounded-xl ml-4 bg-gray-100 dark:bg-zinc-800 p-3 shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+          <props.icon size={40} className="text-primary-600 dark:text-primary-400" />
         </div>
         <div>
-          <h3 className="text-2xl font-extrabold text-gray-700 dark:text-gray-300 m-0">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-gray-800 dark:text-gray-200 mt-0 mb-2">
             {props.title}
           </h3>
-          <p className="mb-0 text-base text-gray-500 dark:text-gray-400">{props.content}</p>
+          <p className="m-0 text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+            {props.content}
+          </p>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ function FeatureComponent(props: Feature) {
 
 export default function HomepageFeatures() {
   return (
-    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-32">
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-2 mb-16">
       {featureList.map((props, idx) => (
         <FeatureComponent key={idx} {...props} />
       ))}
