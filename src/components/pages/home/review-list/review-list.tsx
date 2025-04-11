@@ -4,7 +4,7 @@ const reviews = [
     username: 'Maeglin',
     profilePicture: '/img/pictures/reviews/maeglin.webp',
     fullText:
-      "Day 49/100 set up Homarr just for a test spin. It's a nice dashboard and the Arrs integration especialy the calendar is awesome.",
+      "Day 49/100 set up Homarr just for a test spin. It's a nice dashboard and the Arrs integration especially the calendar is awesome.",
     link: 'https://twitter.com/Maeglin931/status/1555725442744586240',
   },
   {
