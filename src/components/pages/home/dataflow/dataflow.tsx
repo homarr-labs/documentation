@@ -3,71 +3,117 @@ import React, { useRef } from 'react';
 import LeaderLine, { SocketType } from 'leader-line-new';
 
 export const DataflowVisualizationComponent = () => {
-  const homarrRef = useRef();
-  const sonarrRef = useRef();
-  const lidarrRef = useRef();
-  const radarrRef = useRef();
-  const jellyfinRef = useRef();
-  const plexRef = useRef();
-  const sabnzbdRef = useRef();
+  const homarrRef = useRef<HTMLImageElement>(null);
+  const sonarrRef = useRef<HTMLImageElement>(null);
+  const lidarrRef = useRef<HTMLImageElement>(null);
+  const radarrRef = useRef<HTMLImageElement>(null);
+  const jellyfinRef = useRef<HTMLImageElement>(null);
+  const plexRef = useRef<HTMLImageElement>(null);
+  const sabnzbdRef = useRef<HTMLImageElement>(null);
+
+  const items = [
+    {
+      ref: radarrRef,
+      className: 'absolute left-0 top-0',
+      src: 'https://github.com/walkxcode/dashboard-icons/blob/main/png/radarr.png?raw=true',
+      alt: 'Radarr',
+      socket: 'right',
+      x: 0,
+    },
+    {
+      ref: sonarrRef,
+      className: 'absolute left-0 top-1/2 -translate-y-1/2',
+      src: 'https://github.com/walkxcode/dashboard-icons/blob/main/png/sonarr.png?raw=true',
+      alt: 'Sonarr',
+      socket: 'right',
+      x: 0,
+    },
+    {
+      ref: lidarrRef,
+      className: 'absolute left-0 bottom-0',
+      src: 'https://github.com/walkxcode/dashboard-icons/blob/main/png/lidarr.png?raw=true',
+      alt: 'Lidarr',
+      socket: 'right',
+      x: 0,
+    },
+    {
+      ref: jellyfinRef,
+      className: 'absolute right-0 top-1/2 -translate-y-1/2',
+      src: 'https://github.com/walkxcode/dashboard-icons/blob/main/png/jellyfin.png?raw=true',
+      alt: 'Jellyfin',
+      socket: 'left',
+      x: 100,
+    },
+    {
+      ref: plexRef,
+      className: 'absolute right-0 bottom-0',
+      src: 'https://github.com/walkxcode/dashboard-icons/blob/main/png/plex.png?raw=true',
+      alt: 'Plex',
+      socket: 'left',
+      x: 100,
+    },
+    {
+      ref: sabnzbdRef,
+      className: 'absolute right-0 top-0',
+      src: 'https://github.com/walkxcode/dashboard-icons/blob/main/png/sabnzbd.png?raw=true',
+      alt: 'Sabnzbd',
+      socket: 'left',
+      x: 100,
+    },
+  ];
 
   return (
     <div className={'bg-black/[.10] py-20'}>
-      <h2 className={'text-center lg:text-5xl text-3xl font-extrabold mb-24'}>No YAML configurations.<br />Easy and
-        quick to manage integrations.</h2>
-
+      <h2 className={'text-center lg:text-5xl text-3xl font-extrabold mb-24'}>
+        No YAML configurations.
+        <br />
+        Easy and quick to manage integrations.
+      </h2>
       <div className="relative max-w-128 h-80 mx-auto animated-dataflow mx-5">
-        <img ref={homarrRef}
-             className={'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 aspect-square object-contain'}
-             src={'/img/logo.png'}
-             alt={'Homarr Logo'} width={100}
-             height={50} />
+        <img
+          ref={homarrRef}
+          className={
+            'absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 aspect-square object-contain w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20'
+          }
+          src={'/img/logo.png'}
+          alt={'Homarr Logo'}
+        />
 
-        <img ref={radarrRef} className={'absolute left-0 top-0'}
-             src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/radarr.png?raw=true'}
-             alt={'Radarr'}
-             width={50} height={50} />
-        <img ref={sonarrRef} className={'absolute left-0 top-1/2 -translate-y-1/2'}
-             src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/sonarr.png?raw=true'}
-             alt={'Sonarr'}
-             width={50} height={50} />
-        <img ref={lidarrRef} className={'absolute left-0 bottom-0'}
-             src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/lidarr.png?raw=true'}
-             alt={'Lidarr'}
-             width={50} height={50} />
-
-        <img ref={jellyfinRef} className={'absolute right-0 top-1/2 -translate-y-1/2'}
-             src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/jellyfin.png?raw=true'}
-             alt={'Jellyfin'}
-             width={50} height={50} />
-
-        <img ref={plexRef} className={'absolute right-0 bottom-0'}
-             src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/plex.png?raw=true'}
-             alt={'Plex'}
-             width={50} height={50} />
-
-        <img ref={sabnzbdRef} className={'absolute right-0 top-0'}
-             src={'https://github.com/walkxcode/dashboard-icons/blob/main/png/sabnzbd.png?raw=true'}
-             alt={'Sabnzbd'}
-             width={50} height={50} />
-
-        <LineTree start={sonarrRef} end={homarrRef} startSocket={'right'} endSocket={'left'} />
-        <LineTree start={radarrRef} end={homarrRef} startSocket={'right'} endSocket={'left'} />
-        <LineTree start={lidarrRef} end={homarrRef} startSocket={'right'} endSocket={'left'} />
-        <LineTree start={plexRef} end={homarrRef} startSocket={'left'} endSocket={'right'} x={100} />
-        <LineTree start={jellyfinRef} end={homarrRef} startSocket={'left'} endSocket={'right'} x={100} />
-        <LineTree start={sabnzbdRef} end={homarrRef} startSocket={'left'} endSocket={'right'} x={100} />
+        {items.map((item) => (
+          <React.Fragment key={item.alt}>
+            <img
+              ref={item.ref}
+              src={item.src}
+              alt={item.alt}
+              // Hover animation to make it pop
+              className={`w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 ${item.className}`}
+            />
+            <LineTree
+              start={item.ref}
+              end={homarrRef}
+              startSocket={item.socket}
+              endSocket={item.socket === 'left' ? 'right' : 'left'}
+              x={item.x}
+            />
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );
 };
 
-export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }: {
-  start: any,
-  end: any,
-  startSocket: SocketType,
-  endSocket: SocketType,
-  x?: number
+export const LineTree = ({
+  start,
+  end,
+  startSocket,
+  endSocket,
+  x = 0,
+}: {
+  start: any;
+  end: any;
+  startSocket: SocketType;
+  endSocket: SocketType;
+  x?: number;
 }) => {
   const line = useRef();
   let leaderLine: LeaderLine;
@@ -85,7 +131,8 @@ export const LineTree = ({ start, end, startSocket, endSocket, x = 0 }: {
           dash: {
             animation: true,
           },
-        });
+        }
+      );
     };
     const timer = setInterval(() => {
       if (start.current) {
