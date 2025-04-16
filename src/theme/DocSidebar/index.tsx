@@ -78,7 +78,7 @@ export function Carbon() {
 					}
 				`}
 			</style>
-			<div className="ml-auto flex flex-col space-y-4">
+			<div className="ml-auto flex flex-col space-y-4 argos-ignore">
 				<div className="bg-white dark:bg-black/40 border-gray-500/20 shadow-xl flex flex-col border-t border-l border-b p-4 space-y-2 rounded-l-lg">
 					<div ref={ref} className="carbon-outer" />
 				</div>
