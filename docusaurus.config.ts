@@ -72,8 +72,19 @@ const config: Config = {
         sitemap: {
           changefreq: EnumChangefreq.WEEKLY,
           priority: 0.5,
+          lastmod: 'date',
+          // Ignore all versions except the latest one
           ignorePatterns: ['/tags/**'],
           filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, ...rest } = params;
+            const items = await defaultCreateSitemapItems(rest);
+            const filteredItems = items.filter(item => {
+              // Remove all versions except the latest onev (all the /docs/{numbers}/* and /docus/next/*)
+              return !/\/docs\/(\d+(\.\d+)*|next)\//.test(new URL(item.url).pathname);
+            });
+            return filteredItems;
+          }
         },
       } satisfies Preset.Options,
     ],
