@@ -1,3 +1,4 @@
+import { useLocation } from "@docusaurus/router";
 import type { WrapperProps } from "@docusaurus/types";
 import DocSidebar from "@theme-original/DocSidebar";
 import type DocSidebarType from "@theme/DocSidebar";
@@ -5,6 +6,7 @@ import React, { type ReactNode } from "react";
 
 export function Carbon() {
 	const ref = React.useRef<HTMLDivElement>(null!);
+	const location = useLocation();
 	if (process.env.NODE_ENV === "development") {
 		return null;
 	}
@@ -17,7 +19,7 @@ export function Carbon() {
 		s.id = "_carbonads_js";
 		s.src = `//cdn.carbonads.com/carbon.js?serve=${serve}&placement=${placement}`;
 		ref.current.appendChild(s);
-	}, []);
+	}, [location]);
 
 	return (
 		<>
