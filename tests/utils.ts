@@ -10,7 +10,11 @@ export function extractSitemapPathnames(sitemapPath: string): string[] {
   $('loc').each(function handleLoc() {
     urls.push($(this).text());
   });
-  return urls.map((url) => new URL(url).pathname);
+  const filteredUrls = urls.filter((url) => {
+    // Remove all the /docs/tags/* urls and the /blog/tags/
+    return !url.includes('/docs/tags/') && !url.includes('/blog/tags/');
+  });
+  return filteredUrls.map((url) => new URL(url).pathname);
 }
 
 // Converts a pathname to a decent screenshot name
