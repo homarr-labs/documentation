@@ -82,7 +82,7 @@ export function Carbon() {
 			</style>
 			<div
 				ref={ref}
-				className="bg-background shadow-xl flex flex-col m-4 space-y-2 rounded-l-lg carbon-outer"
+				className="argos-ignore bg-background shadow-xl flex flex-col m-4 space-y-2 rounded-l-lg carbon-outer"
 			/>
 		</>
 	);
