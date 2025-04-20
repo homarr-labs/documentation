@@ -16,8 +16,15 @@ It also displays useful information, that you can use when providing support to 
 Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
 
 ## Configuration
-This widget does not offer any configurations.
-Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#arrange-and-organize-your-board).
+
+| Configuration         | Description                                                      | Values   | Default Value |
+| --------------------- | ---------------------------------------------------------------- | -------- | ------------- |
+| Show only currently playing | If true only shows sessions that are currently playing media. Otherwise shows all sessions (exluding the connected Homarr Session) | yes / no | yes           |
+
+
+:::warning
+Plex will always show only currently playing sessions
+:::
 
 ## Common issues
 Is the widget not working? Please try out the following tips and tricks to possibly resolve your issue:
@@ -51,8 +58,3 @@ Is the widget not working? Please try out the following tips and tricks to possi
 
 </TabItem>
 </Tabs>
-
-## Stats for nerds
-The widget will display additional information, if you click on a session.
-Stats for nerds contain highly detailed information, that may help you troubleshoot encoding issues.
-Since not all media servers expose the same information, some information may be unavailable depending on the type.
