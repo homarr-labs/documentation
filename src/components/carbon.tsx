@@ -22,7 +22,6 @@ export function Carbon() {
 		<>
 			<style>
 				{`
-					#carbonads_1 { display: none; }
 					#carbonads * { margin: initial; padding: initial; }
 					#carbonads {
 						font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -82,7 +81,8 @@ export function Carbon() {
 			</style>
 			<div
 				ref={ref}
-				className="argos-ignore bg-background shadow-xl flex flex-col m-4 space-y-2 rounded-l-lg carbon-outer"
+				data-visual-test="blackout"
+				className="bg-background flex flex-col m-4 space-y-2 carbonads"
 			/>
 		</>
 	);

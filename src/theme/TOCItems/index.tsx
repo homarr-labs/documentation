@@ -8,9 +8,9 @@ type Props = WrapperProps<typeof TOCItemsType>;
 
 export default function TOCItemsWrapper(props: Props): ReactNode {
 	return (
-		<div>
+		<>
 			<TOCItems {...props} />
 			<Carbon />
-		</div>
+		</>
 	);
 }
