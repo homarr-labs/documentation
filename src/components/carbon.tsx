@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 export function Carbon() {
 	const ref = React.useRef<HTMLDivElement>(null!);
 	const location = useLocation();
-	// if (process.env.NODE_ENV === "development") {
-	// 	return null;
-	// }
+	if (process.env.NODE_ENV === "development") {
+		return null;
+	}
 
 	useEffect(() => {
 		const serve = "CW7IP27L";
