@@ -18,5 +18,5 @@ export function Carbon() {
 		ref.current.appendChild(s);
 	}, [location]);
 
-	return <div ref={ref} />;
+	return <div ref={ref} data-visual-test="blackout" />;
 }
