@@ -22,6 +22,7 @@ export function Carbon() {
 		<>
 			<style>
 				{`
+					#carbonads_1 { display: none; }
 					#carbonads * { margin: initial; padding: initial; }
 					#carbonads {
 						font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,

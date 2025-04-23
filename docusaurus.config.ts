@@ -56,8 +56,8 @@ const config: Config = {
           editUrl: 'https://github.com/homarr-labs/documentation/edit/master',
           remarkPlugins: [a11yEmoji],
           exclude: ['**/custom-widget.mdx'],
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
         },
         blog: {
           showReadingTime: true,
