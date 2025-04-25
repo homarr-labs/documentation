@@ -51,3 +51,7 @@ static/data/configs
 
 # docusaurus
 .docusaurus
+
+# CI Stuff
+screenshots
+test-results

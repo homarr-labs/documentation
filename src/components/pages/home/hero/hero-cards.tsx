@@ -10,7 +10,7 @@ import { EntityStateWidget } from './widgets/entity-state-widget';
 
 export const HeroCards = () => {
   return (
-    <div className="hero-cards flex flex-wrap max-w-[504px] gap-y-4 gap-x-3 text-gray-700 dark:text-gray-300">
+    <div className="argos-ignore hero-cards flex flex-wrap max-w-[504px] gap-y-4 gap-x-3 text-gray-700 dark:text-gray-300">
       <StockWidget />
       <AppWidget />
       <AppWidget className="hidden 3xl:block" />

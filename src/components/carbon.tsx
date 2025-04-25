@@ -1,8 +1,5 @@
 import { useLocation } from "@docusaurus/router";
-import type { WrapperProps } from "@docusaurus/types";
-import DocSidebar from "@theme-original/DocSidebar";
-import type DocSidebarType from "@theme/DocSidebar";
-import React, { type ReactNode } from "react";
+import React, { useEffect } from "react";
 
 export function Carbon() {
 	const ref = React.useRef<HTMLDivElement>(null!);
@@ -11,7 +8,7 @@ export function Carbon() {
 		return null;
 	}
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const serve = "CW7IP27L";
 		const placement = "homarrdev";
 		ref.current.innerHTML = "";
@@ -85,19 +82,9 @@ export function Carbon() {
 			</style>
 			<div
 				ref={ref}
-				className="bg-background shadow-xl flex flex-col m-4 space-y-2 rounded-l-lg carbon-outer"
+				data-visual-test="blackout"
+				className="bg-background flex flex-col m-4 space-y-2 carbonads"
 			/>
 		</>
-	);
-}
-
-type Props = WrapperProps<typeof DocSidebarType>;
-
-export default function DocSidebarWrapper(props: Props): ReactNode {
-	return (
-		<div>
-			<DocSidebar {...props} />
-			<Carbon />
-		</div>
 	);
 }

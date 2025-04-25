@@ -25,10 +25,11 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Install Playwright browsers
-        run: pnpm playwright install --with-deps chromium
-      - name: Build the website
-        run: pnpm docusaurus build
+      - name: Install Chrome and Build in Parallel
+        run: |
+          pnpm playwright install --with-deps chromium &
+          pnpm docusaurus build &
+          wait
       - name: Take screenshots with Playwright
         run: pnpm playwright test
       - name: Upload screenshots to Argos
