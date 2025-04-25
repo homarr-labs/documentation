@@ -208,3 +208,87 @@ Homarr supports multiple authentication options, from internal userbase (credent
 
   </TabItem>
 </Tabs>
+
+## Example setups
+
+<Tabs>
+  <TabItem value="authentik" label="Authentik (OIDC) Example" default>
+
+    This example demonstrates how to use [Authentik](https://goauthentik.io/) as an OIDC provider for Homarr.
+
+    User and group management is handled within Authentik. Homarr synchronizes group memberships based on OIDC claims provided by Authentik. To grant administrative privileges, create a group in Authentik (e.g., `homarr-admins`) and add the relevant users. The group name must match the value specified in `AUTH_OIDC_ADMIN_GROUP`.
+
+    <details>
+      <summary>
+        Example Setup
+      </summary>
+      <div>
+
+        **1. Configure Authentik:**
+
+        - Create an OIDC application in Authentik for Homarr.
+        - Set the redirect URIs to:
+          - `https://<your-homarr-domain>/api/auth/callback/oidc`
+          - `http://localhost:3000/api/auth/callback/oidc` (for local development)
+        - Record the client ID, client secret, and application slug.
+        - Create a group (e.g., `homarr-admins`) and assign users who require admin access.
+
+        **2. Example .env file:**
+        ```env
+        OIDC_CLIENT_ID=identificationid #OIDC client ID
+        OIDC_CLIENT_SECRET=secretsecretsecret #OIDC client secret
+        OIDC_SLUG=homarr #Application slug in Authentik
+        AUTH_DOMAIN=auth.example.com #Authentik FQDN
+        ADMIN_GROUP=homarr-admins #Authentik group for Homarr admins
+        HOMARR_FQDN=homarr.example.com #Homarr FQDN
+        SECRET_ENCRYPTION_KEY=encryptencryptencrypt #Homarr encryption key
+        ```
+
+        **3. Example Docker Compose configuration:**
+        ```yaml {14-26}
+        services:
+          homarr:
+            image: ghcr.io/homarr-labs/homarr:latest
+            container_name: homarr
+            restart: unless-stopped
+            ports:
+              - '7575:7575'
+            volumes:
+              - ./homarr:/appdata
+              - /var/run/docker.sock:/var/run/docker.sock:ro
+            environment:
+              - TZ=America/Los_Angeles
+              - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}
+              - BASE_URL=https://${HOMARR_FQDN}
+              - NEXTAUTH_URL=https://${HOMARR_FQDN}
+              - AUTH_PROVIDERS=oidc #(optional: include ',credentials' to keep local accounts as fallback)
+              - AUTH_OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
+              - AUTH_OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
+              - AUTH_OIDC_ISSUER=https://${AUTH_DOMAIN}/application/o/${OIDC_SLUG}/
+              - AUTH_OIDC_URI=https://${AUTH_DOMAIN}/application/o/authorize
+              - AUTH_OIDC_CLIENT_NAME=authentik
+              - AUTH_OIDC_SCOPE_OVERWRITE=openid email profile groups
+              - AUTH_OIDC_ADMIN_GROUP=${ADMIN_GROUP}
+              - AUTH_OIDC_GROUPS_ATTRIBUTE=groups
+              - AUTH_LOGOUT_REDIRECT_URL=https://${AUTH_DOMAIN}/application/o/${OIDC_SLUG}/end-session/
+              - AUTH_OIDC_AUTO_LOGIN=true #To sign in with Authentik automatically
+            networks:
+              - my-network
+        networks:
+          my-network:
+            external: true
+        ```
+
+        **4. Additional Notes:**
+        - Ensure both Authentik and Homarr are accessible via the specified FQDNs.
+        - The `AUTH_OIDC_GROUPS_ATTRIBUTE` should correspond to the claim in Authentik that contains group names (typically `groups`).
+        - The value of `AUTH_OIDC_ADMIN_GROUP` must match the Authentik group name for administrative access.
+        - For further information, refer to the [Authentik OIDC documentation](https://goauthentik.io/docs/providers/oauth2/).
+
+      </div>
+    </details>
+
+    Additional OIDC configuration options are described in the OIDC tab above.
+
+  </TabItem>
+</Tabs>
