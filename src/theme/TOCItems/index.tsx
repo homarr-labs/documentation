@@ -10,7 +10,6 @@ export default function TOCItemsWrapper(props: Props): ReactNode {
 	return (
 		<>
 			<TOCItems {...props} />
-			<Carbon />
 		</>
 	);
 }
