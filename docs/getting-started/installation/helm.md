@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 3.10.0](https://img.shields.io/badge/Version-3.10.0-informational?style=flat)
+![Version: 3.11.0](https://img.shields.io/badge/Version-3.11.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.19.0](https://img.shields.io/badge/AppVersion-v1.19.0-informational?style=flat)
 
@@ -304,6 +304,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | envSecrets.dbCredentials.dbUserPasswordKey | string | `"mysql-password"` | Secret key for database user |
 | envSecrets.dbCredentials.existingSecret | string | `"db-secret"` | Name of existing secret containing DB credentials |
 | fullnameOverride | string | `""` | Overrides chart's fullname |
+| hostAliases | list | `[]` | Add static entries to /etc/hosts in the Pod. This is useful in the following cases: - You are running in a dual-stack cluster (IPv4 + IPv6) and want to force usage of IPv4 for specific hostnames - Your application is having DNS resolution issues or IPv6 preference issues - You need to override or simulate DNS entries without changing global DNS - You are running in an air-gapped or isolated environment without external DNS Example: hostAliases:   - ip: "192.168.1.10"     hostnames:       - "example.com"       - "example.internal" |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
 | image.repository | string | `"ghcr.io/homarr-labs/homarr"` | Image repository |
 | image.tag | string | `"v1.19.0"` | Overrides the image tag whose default is the chart appVersion |
@@ -355,6 +356,8 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | resources | object | `{}` | Resource configuration |
 | securityContext | object | `{}` | Security context |
 | service.enabled | bool | `true` | Enable service |
+| service.ipFamilies | list | `[]` | List of IP families to use for the service. Examples: - ["IPv4"] - ["IPv6"] - ["IPv4", "IPv6"] for dual-stack Leave empty to use cluster default behavior |
+| service.ipFamilyPolicy | string | `"SingleStack"` | Defines how the service assigns IP families (IPv4/IPv6) Possible values: - SingleStack (default): Only one IP family, usually IPv4 - PreferDualStack: Use dual-stack if the cluster supports it, fallback to single - RequireDualStack: Fail if dual-stack cannot be assigned |
 | service.ports.app.port | int | `7575` | Service port |
 | service.ports.app.protocol | string | `"TCP"` | Service protocol |
 | service.ports.app.targetPort | string | `"http"` | Service target port |
