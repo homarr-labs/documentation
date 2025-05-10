@@ -77,12 +77,12 @@ const config: Config = {
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, ...rest } = params;
             const items = await defaultCreateSitemapItems(rest);
-            const filteredItems = items.filter(item => {
+            const filteredItems = items.filter((item) => {
               // Remove all versions except the latest one (all the /docs/{numbers}/* and /docus/next/*)
               return !/\/docs\/(\d+(\.\d+)*|next)\//.test(new URL(item.url).pathname);
             });
             return filteredItems;
-          }
+          },
         },
       } satisfies Preset.Options,
     ],
@@ -100,7 +100,7 @@ const config: Config = {
           type: 'docsVersionDropdown',
           position: 'left',
           dropdownActiveClassDisabled: true,
-          includeCurrentVersion: false
+          includeCurrentVersion: false,
         },
         {
           label: 'Documentation',
@@ -241,7 +241,7 @@ const config: Config = {
       },
     ],
     zoom: {
-      selector: '.markdown img',
+      selector: '.markdown :not(em) > img',
       background: {
         light: 'rgb(255, 255, 255)',
         dark: 'rgb(50, 50, 50)',
