@@ -23,49 +23,7 @@ Your apps have a self-signed certificate - Homarr will recognize that the certif
 
 :::
 
-Sadly, you can't add your self-signed certificates to Homarr yet.
-But you can deactivate the rejection for unauthorized TLS requests.
-Simply add the ``NODE_TLS_REJECT_UNAUTHORIZED`` environment variable and set it to ``0``.
-
-<Tabs>
-  <TabItem value="docker_run" label="Example with Docker Run" default>
-
-```bash title=Terminal
-docker run  \
-  --name homarr \
-  --restart unless-stopped \
-  -p 7575:7575 \
-  -v ./homarr/appdata:/appdata \
-  -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
-  -e SECRET_ENCRYPTION_KEY=your_64_character_hex_string \
-  -d ghcr.io/homarr-labs/homarr:latest
-```
-
-  </TabItem>
-  <TabItem value="docker_compose" label="Example with Docker Compose">
-
-```yml title=docker-compose.yml
-#---------------------------------------------------------------------#
-#                Homarr -  A homepage for your server.                #
-#---------------------------------------------------------------------#
-services:
-  homarr:
-    container_name: homarr
-    image: ghcr.io/homarr-labs/homarr:latest
-    restart: unless-stopped
-    volumes:
-      - ./homarr/appdata:/appdata
-    environment:
-      NODE_TLS_REJECT_UNAUTHORIZED: 0
-      SECRET_ENCRYPTION_KEY: your_64_character_hex_string # <--- can be generated with `openssl rand -hex 32`
-    ports:
-      - '7575:7575'
-```
-
-  </TabItem>
-</Tabs>
-
----
+To allow self-signed certificates, you can configure them on the certificates management page. You can find more informations on the dedicated page: [Certificates](/docs/management/certificates/)
 
 ## Securing Homarr with Traefik
 
