@@ -26,7 +26,7 @@ export default function HomeHero() {
             you've added, providing you with valuable information.
           </p>
 
-          <div className="mt-8 sm:mt-10 flex">
+          <div className="mt-8 sm:mt-10 gap-2 flex">
             <Link
               data-umami-event="Install button"
               className={
