@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 export function Carbon() {
 	const ref = React.useRef<HTMLDivElement>(null!);
 	const location = useLocation();
-	if (process.env.NODE_ENV === "development") {
-		return null;
-	}
+	// if (process.env.NODE_ENV === "development") {
+	// 	return null;
+	// }
 
 	useEffect(() => {
 		const serve = "CW7IP27L";
@@ -83,7 +83,9 @@ export function Carbon() {
 			<div
 				ref={ref}
 				data-visual-test="blackout"
-				className="bg-background flex flex-col m-4 space-y-2 carbonads"
+				id="carbonads"
+				data-selector="carbonads"
+				className="bg-background flex flex-col m-4 space-y-2 carbonads argos-ignore"
 			/>
 		</>
 	);
