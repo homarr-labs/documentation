@@ -39,6 +39,16 @@ export default function HomeHero() {
                 <IconDownload className={'dark:text-gray-200'} size={20} />
               </div>
             </Link>
+            <Link
+              data-umami-event="Redirect to PikaPods"
+              className={`button bg-neutral-900 button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800`}
+              to="https://www.pikapods.com/pods?run=homarr-v1"
+            >
+              <div className={'flex items-center gap-5'}>
+                <img src={"/img/pictures/partner/pika-pods.svg"} alt={"Pika Pods logo"} height={20} />
+                <span className={'dark:text-gray-200'}>Host from $2.3/month</span>
+              </div>
+            </Link>
           </div>
         </div>
 

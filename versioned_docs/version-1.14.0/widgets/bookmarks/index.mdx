@@ -1,0 +1,54 @@
+---
+title: Bookmarks
+tags:
+  - Widgets
+  - Bookmark
+  - Notes
+---
+
+The Bookmarks widget enables you, to add a list of web pages or URLs to your dashboard - similar like bookmarks in Browsers.
+
+## Adding the widget
+Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
+
+## Configuration
+| Configuration | Description                                                                                         | Values                                                          | Default Value |
+| ------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------- |
+| Widget title  | Title of the widget. Will appear at the top of the widget. Can be left empty to not have any title. | String                                                          | Empty         |
+| Items         | List of bookmarks                                                                                   | -                                                               | Empty List    |
+| Layout        | Changes the layout of the bookmarks                                                                 | <ul><li>Auto-Grid</li><li>Horizontal</li><li>Vertical</li></ul> | Auto-Grid     |
+
+### Configuration per item
+
+| Configuration   | Description                                                                                 | Values     | Default Value        |
+| --------------- | ------------------------------------------------------------------------------------------- | ---------- | -------------------- |
+| Name            | Name of your bookmark.                                                                      | String     | Homarr Documentation |
+| URL             | Link to your bookmark.                                                                      | URL/String | https://homarr.dev   |
+| App Icon        | URL or Link to the icon to represent your bookmark.                                         | URL/String | /imgs/logo/logo.png  |
+| Open in new tab | If switched, the link will open in a new tab, otherwise it will redirect on the current tab | yes / no   | no                   |
+| Hide Hostname   | Hide the link under the the title/name.                                                     | yes / no   | no                   |
+| Hide Icon       | Hide the icon of the bookmark (Helps Using less space).                                     | yes / no   | no                   |
+
+:::tip
+
+Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#arrange-and-organize-your-board).
+
+:::
+
+## Layouts
+### Auto Grid
+The Auto Grid mode will automatically scale the items.
+Items will have a min width of 150px, but can scale bigger if they need more space.
+If there is no space available, they will wrap.
+
+![](./img/screenshot-grid.png)
+
+### Vertical (default)
+Vertical mode will put items in a vertical list. Overflowing items will create a scroll bar.
+
+![](./img/screenshot-vertical.png)
+
+### Horizontal
+Horizontal mode will put items in a horizontal list. Overflowing items will create a scroll bar.
+
+![](./img/screenshot-horizontal.png)

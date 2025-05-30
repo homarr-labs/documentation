@@ -7,7 +7,7 @@ import { WeatherWidget } from './widgets/weather-widget';
 
 export const HeroCards = () => {
   return (
-    <div className="hero-cards flex flex-wrap max-w-[504px] gap-y-4 gap-x-3 text-gray-700 dark:text-gray-300 transform transition-all duration-500 hover:scale-105">
+    <div className="argos-ignore hero-cards flex flex-wrap max-w-[504px] gap-y-4 gap-x-3 text-gray-700 dark:text-gray-300 transform transition-all duration-500 hover:scale-105">
       <StockWidget />
       <AppWidget />
       <AppWidget className="hidden 3xl:block" />

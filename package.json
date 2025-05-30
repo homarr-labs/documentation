@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "docusaurus": "docusaurus",
-    "dev": "docusaurus start",
+    "dev": "docusaurus start --no-open",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,js,jsx,md}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx,js,jsx,md}\"",
     "lint": "eslint .",
@@ -22,12 +22,12 @@
   },
   "dependencies": {
     "@dipakparmar/docusaurus-plugin-umami": "^2.1.2",
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/plugin-sitemap": "^3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/core": "^3.8.0",
+    "@docusaurus/plugin-sitemap": "^3.8.0",
+    "@docusaurus/preset-classic": "^3.8.0",
     "@mdx-js/react": "^3.1.0",
     "@nivo/line": "^0.88.0",
-    "@tabler/icons-react": "^3.31.0",
+    "@tabler/icons-react": "^3.33.0",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.13",
@@ -37,8 +37,8 @@
     "postcss": "^8.4.32",
     "prism-react-renderer": "^2.4.1",
     "random-word-slugs": "^0.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "swagger-ui-react": "^5.19.0",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.0.2",
@@ -47,14 +47,14 @@
   "devDependencies": {
     "@argos-ci/cli": "^2.5.5",
     "@argos-ci/playwright": "^4.1.0",
-    "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/tsconfig": "^3.7.0",
-    "@docusaurus/types": "^3.7.0",
+    "@docusaurus/module-type-aliases": "^3.8.0",
+    "@docusaurus/tsconfig": "^3.8.0",
+    "@docusaurus/types": "^3.8.0",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@playwright/test": "^1.51.1",
     "@tsconfig/docusaurus": "^2.0.3",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.1.5",
+    "@types/react-dom": "19.1.5",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "cheerio": "1.0.0",
@@ -64,11 +64,11 @@
     "prettier": "^3.2.4",
     "tailwindcss-motion": "^1.1.0",
     "typescript": "^5.8.2",
-    "zod": "^3.24.2"
+    "zod": "^3.25.28"
   },
   "peerDependencies": {
-    "@docusaurus/theme-common": "^3.7.0",
-    "@docusaurus/theme-mermaid": "^3.7.0"
+    "@docusaurus/theme-common": "^3.8.0",
+    "@docusaurus/theme-mermaid": "^3.8.0"
   },
   "browserslist": {
     "production": [
@@ -83,6 +83,6 @@
     ]
   },
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=22.15.0"
   }
 }
