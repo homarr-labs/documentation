@@ -83,7 +83,9 @@ export function Carbon() {
 			<div
 				ref={ref}
 				data-visual-test="blackout"
-				className="bg-background flex flex-col m-4 space-y-2 carbonads"
+				id="carbonads"
+				data-selector="carbonads"
+				className="bg-background flex flex-col m-4 space-y-2 carbonads argos-ignore"
 			/>
 		</>
 	);
