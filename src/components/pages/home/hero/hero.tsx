@@ -52,7 +52,7 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <div className="hover-animation">
+        <div className="hover-animation hidden lg:block">
           <HeroCards />
         </div>
       </div>

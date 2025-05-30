@@ -51,12 +51,11 @@ const featureList: Feature[] = [
       'Adjust apps and dashboards until you like them with helpful and easy to understand settings',
   },
 ];
-
 function FeatureComponent(props: Feature) {
   return (
     <div className="group p-4 rounded-2xl transition-all duration-300">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-3">
-        <div className="rounded-xl ml-4 bg-gray-100 dark:bg-zinc-800 p-3 shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="rounded-xl bg-gray-100 dark:bg-zinc-800 p-3 shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300 flex items-center justify-center">
           <props.icon size={40} className="text-primary-600 dark:text-primary-400" />
         </div>
         <div>

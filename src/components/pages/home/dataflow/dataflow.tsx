@@ -69,7 +69,7 @@ export const DataflowVisualizationComponent = () => {
         <br />
         Easy and quick to manage integrations.
       </h2>
-      <div className="relative max-w-128 h-80 mx-auto animated-dataflow mx-5">
+      <div className="relative max-w-128 h-80 mx-auto animated-dataflow mx-4 sm:mx-5 md:mx-8 lg:mx-auto">
         <img
           ref={homarrRef}
           className={
