@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 3.16.0](https://img.shields.io/badge/Version-3.16.0-informational?style=flat)
+![Version: 3.17.0](https://img.shields.io/badge/Version-3.17.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.23.0](https://img.shields.io/badge/AppVersion-v1.23.0-informational?style=flat)
 
@@ -264,6 +264,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| additionalObjects | list | `[]` | Additional resources to deploy. These objects are templated. |
 | affinity | object | `{}` | Node affinity for pod scheduling |
 | autoscaling.enabled | bool | `false` | Enable autoscaling |
 | autoscaling.maxReplicas | int | `100` | Maximum replicas |
