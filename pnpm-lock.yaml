@@ -50,6 +50,9 @@ importers:
       leader-line-new:
         specifier: ^1.1.9
         version: 1.1.9
+      motion:
+        specifier: ^12.6.2
+        version: 12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       postcss:
         specifier: ^8.4.32
         version: 8.5.1
@@ -69,8 +72,11 @@ importers:
         specifier: ^5.19.0
         version: 5.19.0(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       swiper:
-        specifier: ^11.2.8
+        specifier: ^11.2.6
         version: 11.2.8
+      tailwind-merge:
+        specifier: ^3.0.2
+        version: 3.0.2
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -126,6 +132,9 @@ importers:
       prettier:
         specifier: ^3.2.4
         version: 3.2.4
+      tailwindcss-motion:
+        specifier: ^1.1.0
+        version: 1.1.0(tailwindcss@3.4.17)
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -4529,6 +4538,20 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
+  framer-motion@12.15.0:
+    resolution: {integrity: sha512-XKg/LnKExdLGugZrDILV7jZjI599785lDIJZLxMiiIFidCsy0a4R2ZEf+Izm67zyOuJgQYTHOmodi7igQsw3vg==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
@@ -5650,6 +5673,26 @@ packages:
 
   mlly@1.7.4:
     resolution: {integrity: sha512-qmdSIPC4bDJXgZTCR7XosJiNKySV7O215tsPtDN9iEO/7q/76b/ijtgRu/+epFXSJhijtTCCGp3DWS549P3xKw==}
+
+  motion-dom@12.15.0:
+    resolution: {integrity: sha512-D2ldJgor+2vdcrDtKJw48k3OddXiZN1dDLLWrS8kiHzQdYVruh0IoTwbJBslrnTXIPgFED7PBN2Zbwl7rNqnhA==}
+
+  motion-utils@12.12.1:
+    resolution: {integrity: sha512-f9qiqUHm7hWSLlNW8gS9pisnsN7CRFRD58vNjptKdsqFLpkVnX00TNeD6Q0d27V9KzT7ySFyK1TZ/DShfVOv6w==}
+
+  motion@12.15.0:
+    resolution: {integrity: sha512-HLouXyIb1uQFiZgJTYGrtEzbatPc6vK+HP+Qt6afLQjaudiGiLLVsoy71CwzD/Stlh06FUd5OpyiXqn6XvqjqQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   mrmime@2.0.0:
     resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
@@ -7450,6 +7493,14 @@ packages:
   swiper@11.2.8:
     resolution: {integrity: sha512-S5FVf6zWynPWooi7pJ7lZhSUe2snTzqLuUzbd5h5PHUOhzgvW0bLKBd2wv0ixn6/5o9vwc/IkQT74CRcLJQzeg==}
     engines: {node: '>= 4.7.0'}
+
+  tailwind-merge@3.0.2:
+    resolution: {integrity: sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==}
+
+  tailwindcss-motion@1.1.0:
+    resolution: {integrity: sha512-0lK6rA4+367ffJdi1TtB72GlMCxJi2TP/xRiHc6An5pZSlU6WfIHhSvLxpcGilGZfBrOqc2q4woH1DEP/lCNbQ==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
 
   tailwindcss@3.4.17:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
@@ -14379,6 +14430,15 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
+  framer-motion@12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      motion-dom: 12.15.0
+      motion-utils: 12.12.1
+      tslib: 2.6.3
+    optionalDependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   fresh@0.5.2: {}
 
   fs-extra@11.2.0:
@@ -15827,6 +15887,20 @@ snapshots:
       pathe: 2.0.3
       pkg-types: 1.3.1
       ufo: 1.6.1
+
+  motion-dom@12.15.0:
+    dependencies:
+      motion-utils: 12.12.1
+
+  motion-utils@12.12.1: {}
+
+  motion@12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      framer-motion: 12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      tslib: 2.6.3
+    optionalDependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   mrmime@2.0.0: {}
 
@@ -17851,6 +17925,12 @@ snapshots:
       - debug
 
   swiper@11.2.8: {}
+
+  tailwind-merge@3.0.2: {}
+
+  tailwindcss-motion@1.1.0(tailwindcss@3.4.17):
+    dependencies:
+      tailwindcss: 3.4.17
 
   tailwindcss@3.4.17:
     dependencies:
