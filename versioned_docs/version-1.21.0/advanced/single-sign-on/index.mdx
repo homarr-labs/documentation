@@ -217,7 +217,7 @@ Homarr supports multiple authentication options, from internal userbase (credent
 
     This example demonstrates how to use [Authentik](https://goauthentik.io/) as an OIDC provider for Homarr.
 
-    User and group management is handled within Authentik. Homarr synchronizes group memberships based on OIDC claims provided by Authentik. To grant administrative privileges, create a group in Authentik (e.g., `homarr-admins`) and add the relevant users. The group name must match the value specified in `AUTH_OIDC_ADMIN_GROUP`.
+    User and group management is handled within Authentik. Homarr synchronizes group memberships based on OIDC claims provided by Authentik. To grant administrative privileges, create a group in Authentik (e.g., `homarr-admins`) and add the relevant users. Then add the group with the same name in Homarr and assign the desired permissions to it.
 
     <details>
       <summary>
@@ -269,7 +269,6 @@ Homarr supports multiple authentication options, from internal userbase (credent
               - AUTH_OIDC_URI=https://${AUTH_DOMAIN}/application/o/authorize
               - AUTH_OIDC_CLIENT_NAME=authentik
               - AUTH_OIDC_SCOPE_OVERWRITE=openid email profile groups
-              - AUTH_OIDC_ADMIN_GROUP=${ADMIN_GROUP}
               - AUTH_OIDC_GROUPS_ATTRIBUTE=groups
               - AUTH_LOGOUT_REDIRECT_URL=https://${AUTH_DOMAIN}/application/o/${OIDC_SLUG}/end-session/
               - AUTH_OIDC_AUTO_LOGIN=true #To sign in with Authentik automatically
@@ -283,7 +282,7 @@ Homarr supports multiple authentication options, from internal userbase (credent
         **4. Additional Notes:**
         - Ensure both Authentik and Homarr are accessible via the specified FQDNs.
         - The `AUTH_OIDC_GROUPS_ATTRIBUTE` should correspond to the claim in Authentik that contains group names (typically `groups`).
-        - The value of `AUTH_OIDC_ADMIN_GROUP` must match the Authentik group name for administrative access.
+        - Your user will automatically be placed in groups that have the same name as those of authentik. So simply create them in Homarr and give them the permissions you want.
         - For further information, refer to the [Authentik OIDC documentation](https://goauthentik.io/docs/providers/oauth2/).
 
       </div>
