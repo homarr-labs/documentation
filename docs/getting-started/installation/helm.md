@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 3.19.0](https://img.shields.io/badge/Version-3.19.0-informational?style=flat)
+![Version: 4.0.0](https://img.shields.io/badge/Version-4.0.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.25.0](https://img.shields.io/badge/AppVersion-v1.25.0-informational?style=flat)
 
@@ -258,7 +258,105 @@ ingress:
 ````
 </details>
 
-All available values are listed on the [artifacthub](https://artifacthub.io/packages/helm/homarr/homarr?modal=values). If you find any issue please open an issue on [github](https://github.com/homarr-labs/charts/issues/new?assignees=maintainers&labels=bug&projects=&template=bug_report.yaml)
+### Certificates
+
+Configuration for trusted certificate persistence. Supports:
+
+- Declarative config via `configmap` or `secret`
+- Pre-existing secret with `existingSecret`
+
+#### type: configmap
+
+Use inline certificates to generate a ConfigMap, mounted as individual files.
+
+<details>
+<summary>values.yaml</summary>
+
+````yaml
+persistence:
+  homarrTrustedCerts:
+    enabled: true
+    type: configmap
+    certificates:
+      cert1.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIID...ABCD==
+        -----END CERTIFICATE-----
+      cert2.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIID...EFGH==
+        -----END CERTIFICATE-----
+````
+</details>
+
+Behavior:
+
+- Helm creates a ConfigMap with keys cert1.crt and cert2.crt
+- Mounts them as /appdata/trusted-certificates/cert1.crt and /appdata/trusted-certificates/cert2.crt
+
+#### type: secret
+
+Use inline certificates to generate a Kubernetes Secret, mounted as files.
+
+<details>
+<summary>values.yaml</summary>
+
+````yaml
+persistence:
+  homarrTrustedCerts:
+    enabled: true
+    type: secret
+    certificates:
+      cert1.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIC...XYZ==
+        -----END CERTIFICATE-----
+      cart2.crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIC...XYZ==
+        -----END CERTIFICATE-----
+````
+</details>
+
+Behavior:
+
+- Helm creates a Kubernetes Secret with cert1.crt and cart2.crt keys
+- Mounts it into the container
+
+#### type: existingSecret
+
+Use an existing Kubernetes Secret, assuming its keys are filenames.
+
+<details>
+<summary>values.yaml</summary>
+
+````yaml
+persistence:
+  homarrTrustedCerts:
+    enabled: true
+    type: existingSecret
+    existingSecretName: "existingSecretName"
+    existingSecretKeys:
+        - cert3.crt
+        - cert4.crt
+````
+</details>
+
+Behavior:
+
+- No new Secret is created
+- Uses existingSecretName directly
+- Mounts all keys as files in /appdata/trusted-certificates
+
+#### Summary Table
+
+| Type             | Creates Resource | Requires Certificates | Uses Existing | Mounts As Files |
+| ---------------- | ---------------- | --------------------- | ------------- | --------------- |
+| `configmap`      | ConfigMap        | Yes (`certificates`)  | ❌            | ✅              |
+| `secret`         | Secret           | Yes (`certificates`)  | ❌            | ✅              |
+| `existingSecret` | ❌               | ❌                    | ✅            | ✅              |
+
+All available values are listed on the [artifacthub](https://artifacthub.io/packages/helm/homarr-labs/homarr?modal=values). If you find any issue please open an issue on [github](https://github.com/homarr-labs/charts/issues/new?assignees=maintainers&labels=bug&projects=&template=bug_report.yaml)
 
 ## Values
 
@@ -336,16 +434,12 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | persistence.homarrImages.size | string | `"50Mi"` | homarr-images storage size |
 | persistence.homarrImages.storageClassName | string | `"local-path"` | homarr-images storage class name |
 | persistence.homarrImages.volumeClaimName | string | `""` | homarr-images optional volumeClaimName to target specific PV |
-| persistence.homarrTrustedCerts.accessMode | string | `"ReadWriteOnce"` | homarr-trusted-certificates access mode |
 | persistence.homarrTrustedCerts.certificates | string | `nil` | homarr-trusted-certificates certificates, each entry will become a new trusted certificate as a dedicated file (works only for "configmap" and "secret" mode) |
 | persistence.homarrTrustedCerts.enabled | bool | `false` | Enable trusted certificates persistence |
-| persistence.homarrTrustedCerts.existingSecret | string | `""` | Existing secret to mount certificates. Only works with "secret" type. Secret should have file name as keys. |
+| persistence.homarrTrustedCerts.existingSecretKeys | string | `nil` | List of keys (filenames) to mount from the existing secret (used only when type is "existingSecret") |
+| persistence.homarrTrustedCerts.existingSecretName | string | `""` | Name of the existing Kubernetes Secret to mount (required if type is "existingSecret") |
 | persistence.homarrTrustedCerts.mountPath | string | `"/appdata/trusted-certificates"` | homarr-trusted-certificates  mount path inside the pod |
-| persistence.homarrTrustedCerts.name | string | `"homarr-trusted-certificates"` | homarr-trusted-certificates persistent storage name |
-| persistence.homarrTrustedCerts.size | string | `"50Mi"` | homarr-trusted-certificates storage size |
-| persistence.homarrTrustedCerts.storageClassName | string | `"local-path"` | homarr-trusted-certificates storage class name |
-| persistence.homarrTrustedCerts.type | string | `"configmap"` | Persistence mode can be : configmap (declarative), secret (declarative) or pvc (persistence storage) |
-| persistence.homarrTrustedCerts.volumeClaimName | string | `""` | homarr-trusted-certificates optional volumeClaimName to target specific PV |
+| persistence.homarrTrustedCerts.type | string | `"configmap"` | Persistence mode can be : configmap (declarative), secret (declarative) or existingSecret (mount an existing Kubernetes Secret by name and specify which keys to mount as files) |
 | podAnnotations | object | `{}` | Pod annotations |
 | podLabels | object | `{}` | Pod labels |
 | podSecurityContext | object | `{}` | Pod security context |
