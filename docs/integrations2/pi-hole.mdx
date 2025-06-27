@@ -1,0 +1,33 @@
+---
+title: 'PiHole'
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationWidgets } from '@site/src/components/integrations/widgets';
+import {IntegrationSecrets} from '@site/src/components/integrations/secrets';
+import { IconAd, IconDeviceGamepad } from "@tabler/icons-react";
+
+
+<IntegrationHeader
+  title="PiHole"
+  description="PiHole is a network-wide ad blocker that acts as a DNS sinkhole, blocking unwanted content and improving your browsing experience."
+  iconUrl="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pi-hole.svg"
+  categories={['DNS Hole']}
+/>
+
+<IntegrationWidgets
+    widgets={[{
+        icon: IconAd,
+        name: "DNS Hole Summary",
+        description: "Displays the summary of your DNS Hole",
+        url: "/widgets/dns-hole-summary"
+    },{
+        icon: IconDeviceGamepad,
+        name: "DNS Hole Controls",
+        description: "Control PiHole or AdGuard from your dashboard",
+        url: "/widgets/dns-hole-controls"
+    }]}
+/>
+
+<IntegrationSecrets />

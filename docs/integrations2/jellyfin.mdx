@@ -1,0 +1,39 @@
+---
+title: 'Jellyfin'
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationWidgets } from '@site/src/components/integrations/widgets';
+import {IntegrationSecrets} from '@site/src/components/integrations/secrets';
+import { IconVideo, IconTicket } from "@tabler/icons-react";
+
+
+<IntegrationHeader
+  title="Jellyfin"
+  description="Jellyfin is a free and open-source media server software that allows you to organize, manage, and share your media files."
+  iconUrl="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg"
+  categories={['Media server']}
+/>
+
+<IntegrationWidgets
+    widgets={[{
+        icon: IconVideo,
+        name: "Current media server streams",
+        description: "Show the current streams on your media servers",
+        url: "/widgets/media-server"
+    },{
+        icon: IconTicket,
+        name: "Media releases",
+        description: "Display newly added medias or upcoming releases from different integrations",
+        url: "/widgets/media-releases"
+    }]}
+/>
+
+<IntegrationSecrets secrets={[{
+    credentials: ['apiKey'],
+    steps: []
+},{
+    credentials: ['username', 'password'],
+    steps: []
+}]} />
