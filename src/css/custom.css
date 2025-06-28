@@ -106,6 +106,7 @@
   white-space: nowrap;
 }
 
+
 .navbar__items.navbar__items--right .navbar__item.navbar__link:first-of-type {
   background-color: var(--ifm-color-primary-light) !important;
   border-radius: 30px;

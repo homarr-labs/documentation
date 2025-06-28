@@ -1,0 +1,38 @@
+---
+title: 'Home Assistant'
+description: "Home Assistant is an open-source home automation platform that focuses on privacy and local control, allowing you to automate and control your smart home devices."
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
+import { AddingIntegration } from '@site/src/components/integrations/adding';
+import {IntegrationSecrets} from '@site/src/components/integrations/secrets';
+import { IconBinaryTree } from "@tabler/icons-react";
+import { homeAssistantIntegration } from '.';
+import { smartHomeEntityStateWidget } from '@site/docs/widgets2/smart-home-entity-state';
+import { smartHomeExecuteAutomationWidget } from '@site/docs/widgets2/smart-home-execute-automation';
+
+
+<IntegrationHeader
+    integration={homeAssistantIntegration}
+    categories={['Smart Home', 'Automation']}
+/>
+
+### Widgets & Capabilities
+<IntegrationCapabilites
+    items={[{
+        widget: smartHomeEntityStateWidget
+    }, {
+        widget: smartHomeExecuteAutomationWidget,
+    }]}
+/>
+
+### Adding the integration
+<AddingIntegration />
+
+### Secrets
+<IntegrationSecrets secrets={[{
+    credentials: ['apiKey'],
+    steps: []
+}]} />
