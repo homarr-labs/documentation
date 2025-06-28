@@ -5,5 +5,5 @@ export const jellyseerrIntegration: IntegrationDefinition = {
   description:
     'Jellyseerr is a self-hosted media request management system that integrates with Jellyfin and other media servers.',
   iconUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyseerr.svg',
-  path: '../integrations/jellyseerr',
+  path: '../../integrations/jellyseerr',
 };

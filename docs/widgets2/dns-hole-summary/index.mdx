@@ -11,8 +11,6 @@ import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
 import { IconAd } from "@tabler/icons-react";
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { adguardHomeIntegration } from '../../integrations/adguard-home';
-import { piHoleIntegration } from '../../integrations/pi-hole';
 import { dnsHoleSummaryWidget } from '.';
 
 
@@ -28,6 +26,8 @@ This widget allows you to display statistics about your DNS Hole like total quer
 import gridLayout from './img/grid.png';
 import verticalLayout from './img/vertical.png';
 import horizontalLayout from './img/horizontal.png';
+import { adguardHomeIntegration } from '@site/docs/integrations/adguard-home';
+import { piHoleIntegration } from '@site/docs/integrations/pi-hole';
 
 <div className='flex gap-2'>
   <img src={gridLayout} alt="grid-layout pi-hole-colors" width={256 + 8} height={256 + 8} />
