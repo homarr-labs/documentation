@@ -29,7 +29,7 @@ export const downloadsWidget: WidgetDefinition = {
   icon: IconDownload,
   name: 'Download Client',
   description: 'Allows you to view and manage your Downloads from both Torrent and Usenet clients.',
-  path: '../../widgets/downloads',
+  path: '../../widgets2/downloads',
   configuration: {
     items: [
       {

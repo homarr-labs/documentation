@@ -5,5 +5,5 @@ export const networkControllerSummaryWidget: WidgetDefinition = {
   icon: IconTopologyFull,
   name: 'Network Controller Summary',
   description: 'Displays the summary of a Network Controller',
-  path: '../../widgets/network-controller-summary',
+  path: '../../widgets2/network-controller-summary',
 };

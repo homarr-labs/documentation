@@ -5,5 +5,6 @@ export const dockerContainersWidget: WidgetDefinition = {
   icon: IconBrandDocker,
   name: 'Docker stats',
   description: 'Stats of your containers',
-  path: '../../widgets/docker-containers',
+  path: '../../widgets2/docker-containers',
+  configuration: { items: [] },
 };

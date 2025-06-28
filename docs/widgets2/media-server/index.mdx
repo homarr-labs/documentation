@@ -1,0 +1,49 @@
+---
+title: 'Media server streams'
+description: 'Show the current streams on your media servers'
+hide_title: true
+---
+
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { IconAd } from "@tabler/icons-react";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { mediaServerWidget } from '.';
+import { embyIntegration } from '@site/docs/integrations/emby';
+import { jellyfinIntegration } from '@site/docs/integrations/jellyfin';
+import { plexIntegration } from '@site/docs/integrations/plex';
+
+
+<WidgetHeader
+  widget={mediaServerWidget}
+  categories={['Media server']}
+/>
+
+The media server widget enables you to watch and view current active sessions over all your media servers. 
+It also displays useful information, that you can use when providing support to users or debugging a problem.
+
+
+
+### Screenshots
+
+{/* TODO: We need screenshots */}
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+<WidgetConfig configuration={mediaServerWidget.configuration} />
+
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+    integration: embyIntegration,
+}, {
+    integration: jellyfinIntegration,
+}, {
+    integration: plexIntegration,
+}]} />
