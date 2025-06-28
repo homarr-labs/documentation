@@ -1,0 +1,42 @@
+---
+title: 'Entity State'
+description: 'Display the state of an entity and toggle it optionally'
+hide_title: true
+---
+
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { IconAd } from "@tabler/icons-react";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { smartHomeEntityStateWidget } from '.';
+import { homeAssistantIntegration } from '@site/docs/integrations/home-assistant';
+
+
+<WidgetHeader
+  widget={smartHomeEntityStateWidget}
+  categories={['Smart home']}
+/>
+
+The entity state enables you to display the current state of an entity.
+This works with most entities and enables you display almost any data. 
+It is recommended that you transform data on the integration as much as possible since Homarr's capabilities in transformation are very limited.
+
+### Screenshots
+
+{/* TODO: We need screenshots */}
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+<WidgetConfig configuration={smartHomeEntityStateWidget.configuration} />
+
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+    integration: homeAssistantIntegration,
+}]} />

@@ -5,7 +5,7 @@ export const dnsHoleControlsWidget: WidgetDefinition = {
   icon: IconDeviceGamepad,
   name: 'DNS Hole Controls',
   description: 'Control PiHole or AdGuard from your dashboard',
-  path: '../../widgets/dns-hole-controls',
+  path: '../../widgets2/dns-hole-controls',
   configuration: {
     items: [
       {

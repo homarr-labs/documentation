@@ -5,5 +5,8 @@ export const mediaRequestStatsWidget: WidgetDefinition = {
   icon: IconChartBar,
   name: 'Media Requests Stats',
   description: 'Statistics about your media requests',
-  path: '../../widgets/media-request-stats',
+  path: '../../widgets2/media-request-stats',
+  configuration: {
+    items: [],
+  },
 };

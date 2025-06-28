@@ -5,5 +5,8 @@ export const notificationsWidget: WidgetDefinition = {
   icon: IconMessage,
   name: 'Notifications',
   description: 'Display notification history from an integration',
-  path: '../../widgets/notifications',
+  path: '../../widgets2/notifications',
+  configuration: {
+    items: [],
+  },
 };
