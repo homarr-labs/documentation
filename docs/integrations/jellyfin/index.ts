@@ -5,5 +5,5 @@ export const jellyfinIntegration: IntegrationDefinition = {
   description:
     'Jellyfin is a free and open-source media server software that allows you to organize, manage, and share your media files.',
   iconUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg',
-  path: '../integrations/jellyfin',
+  path: '../../integrations/jellyfin',
 };

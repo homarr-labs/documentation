@@ -5,5 +5,5 @@ export const dockerIntegration: IntegrationDefinition = {
   description:
     'Docker is a platform where you can run your applications in containers, allowing for easy deployment and management of applications.',
   iconUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/docker.svg',
-  path: '../integrations/docker',
+  path: '../../integrations/docker',
 };
