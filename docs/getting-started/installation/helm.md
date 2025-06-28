@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 4.1.0](https://img.shields.io/badge/Version-4.1.0-informational?style=flat)
+![Version: 5.0.0](https://img.shields.io/badge/Version-5.0.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.26.0](https://img.shields.io/badge/AppVersion-v1.26.0-informational?style=flat)
 
@@ -212,24 +212,6 @@ database:
 ````
 </details>
 
-### Images
-
-You can import your local images into `homarr-images` PVC
-
-<details>
-<summary>values.yaml</summary>
-
-````yaml
-persistence:
-  homarrImages:
-    enabled: true
-
-imagesCopy:
-  enabled: true
-  pathToLocalImages: "/path-to-local-images"
-````
-</details>
-
 ### Ingress
 
 The ingress section in the values.yaml file allows you to configure how external traffic accesses your application through an Ingress resource. This section defines whether Ingress is enabled, the class to use, and how to set up hosts, paths, and TLS for secure connections.
@@ -408,8 +390,6 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | image.repository | string | `"ghcr.io/homarr-labs/homarr"` | Image repository |
 | image.tag | string | `"v1.26.0"` | Overrides the image tag whose default is the chart appVersion |
 | imagePullSecrets | list | `[]` | Secrets for Docker registry |
-| imagesCopy.enabled | bool | `false` | Set to true to enable the init container for copying local images to the PVC. Requires homarr-images PVC to be enabled. |
-| imagesCopy.pathToLocalImages | string | `"/path-to-local-images"` | The path where local images are stored for copying to the PVC |
 | ingress.annotations | object | `{}` | Ingress annotations |
 | ingress.enabled | bool | `false` | Enable ingress |
 | ingress.hosts | list | `[{"host":"chart-example.local","paths":[{"path":"/"}]}]` | Ingress hosts configuration |
@@ -422,18 +402,11 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | nodeSelector | object | `{}` | Node selectors for pod scheduling |
 | persistence.homarrDatabase.accessMode | string | `"ReadWriteOnce"` | homarr-database access mode |
 | persistence.homarrDatabase.enabled | bool | `false` | Enable homarr-database persistent storage |
-| persistence.homarrDatabase.mountPath | string | `"/appdata/db"` | homarr-database mount path inside the pod |
+| persistence.homarrDatabase.mountPath | string | `"/appdata"` | homarr-database mount path inside the pod |
 | persistence.homarrDatabase.name | string | `"homarr-database"` | homarr-database persistent storage name |
 | persistence.homarrDatabase.size | string | `"50Mi"` | homarr-database storage size |
 | persistence.homarrDatabase.storageClassName | string | `"local-path"` | homarr-database storage class name |
 | persistence.homarrDatabase.volumeClaimName | string | `""` | homarr-database optional volumeClaimName to target specific PV |
-| persistence.homarrImages.accessMode | string | `"ReadWriteOnce"` | homarr-images access mode |
-| persistence.homarrImages.enabled | bool | `false` | Enable homarr-images persistent storage |
-| persistence.homarrImages.mountPath | string | `"/images"` | homarr-images mount path inside the pod |
-| persistence.homarrImages.name | string | `"homarr-images"` | homarr-images persistent storage name |
-| persistence.homarrImages.size | string | `"50Mi"` | homarr-images storage size |
-| persistence.homarrImages.storageClassName | string | `"local-path"` | homarr-images storage class name |
-| persistence.homarrImages.volumeClaimName | string | `""` | homarr-images optional volumeClaimName to target specific PV |
 | persistence.homarrTrustedCerts.certificates | string | `nil` | homarr-trusted-certificates certificates, each entry will become a new trusted certificate as a dedicated file (works only for "configmap" and "secret" mode) |
 | persistence.homarrTrustedCerts.enabled | bool | `false` | Enable trusted certificates persistence |
 | persistence.homarrTrustedCerts.existingSecretKeys | string | `nil` | List of keys (filenames) to mount from the existing secret (used only when type is "existingSecret") |
