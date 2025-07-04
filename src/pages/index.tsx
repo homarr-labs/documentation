@@ -15,9 +15,7 @@ import { AvailableIntegrations } from '@site/src/components/pages/home/integrati
 
 export default function Home() {
   return (
-    <Layout
-      description="Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods."
-    >
+    <Layout description="Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.">
       <HomeHero />
 
       <svg
@@ -37,7 +35,8 @@ export default function Home() {
       </SectionContainer>
       <BrowserOnly fallback={<span>loading...</span>}>
         {() => {
-          const DataflowVisualizationComponent = require('../components/pages/home/dataflow/dataflow').DataflowVisualizationComponent;
+          const DataflowVisualizationComponent =
+            require('../components/pages/home/dataflow/dataflow').DataflowVisualizationComponent;
           return <DataflowVisualizationComponent />;
         }}
       </BrowserOnly>
