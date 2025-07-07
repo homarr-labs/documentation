@@ -21,7 +21,7 @@ export const StockWidget = ({ className }: CommonWidgetProps) => {
 
   return (
     <WidgetCard width={2} className={clsx('!p-0', className)}>
-      <div className="absolute top-2 left-2 flex gap-1 font-bold items-center">
+      <div className="absolute top-2 left-2 flex gap-1 font-bold items-center z-10">
         {upwardTrend && <IconTrendingUp size={20} color={'green'} />}
         {!upwardTrend && <IconTrendingDown size={20} color={'red'} />}
         HOMR
