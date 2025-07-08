@@ -29,7 +29,17 @@ It allows you to view calendar events or upcoming releases from your media manag
 
 ### Screenshots
 
-{/* TODO: We need screenshots */}
+import popover from './img/popover.png';
+import withIntegrations from './img/with-integrations.png';
+import withoutIntegrations from './img/without-integrations.png';
+
+<div className='flex gap-1'>
+    <img src={withIntegrations} alt="calendar with-integrations big-size" width={256 + 4} height={256 + 4} />
+    <div className='flex flex-col gap-1'>
+        <img src={popover} alt="calendar popover-details the-mandalorian" width={128 * 3} height={128} />
+        <img src={withoutIntegrations} alt="calendar without-integrations small-size" width={256} height={128} />
+    </div>
+</div>
 
 ### Adding the widget
 
