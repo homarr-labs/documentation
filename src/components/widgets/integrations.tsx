@@ -1,5 +1,7 @@
+import { useColorMode } from '@docusaurus/theme-common';
 import { IntegrationDefinition } from '@site/src/types';
-import { IconExternalLink, TablerIcon } from '@tabler/icons-react';
+import { IconExternalLink } from '@tabler/icons-react';
+import { getIntegrationIconUrl } from '../integrations/header';
 
 interface WidgetIntegrationsProps {
   items: {
@@ -9,6 +11,8 @@ interface WidgetIntegrationsProps {
 }
 
 export const WidgetIntegrations = ({ items }: WidgetIntegrationsProps) => {
+  const { isDarkTheme } = useColorMode();
+
   return (
     <div className="flex flex-col gap-4 mt-4 w-full">
       <div className="flex flex-col gap-2">
@@ -21,7 +25,7 @@ export const WidgetIntegrations = ({ items }: WidgetIntegrationsProps) => {
               <img
                 width={40}
                 height={40}
-                src={item.integration.iconUrl}
+                src={getIntegrationIconUrl(item.integration, isDarkTheme)}
                 alt={`${item.integration.name} icon`}
                 className="w-10 h-10"
               />

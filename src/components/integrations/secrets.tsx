@@ -32,6 +32,11 @@ const secretKinds = {
     name: 'Topic',
     description: 'The topic to from which notifications should be retrieved.',
   },
+  personalAccessToken: {
+    name: 'Personal Access Token',
+    description: 'A personal access token for authentication.',
+    icon: IconKey,
+  },
 };
 
 type SecretKind = keyof typeof secretKinds;

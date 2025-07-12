@@ -4,7 +4,12 @@ import { ReactNode } from 'react';
 export interface IntegrationDefinition {
   name: string;
   description: string;
-  iconUrl: string;
+  iconUrl:
+    | string
+    | {
+        light: string;
+        dark: string;
+      };
   path: string;
 }
 
