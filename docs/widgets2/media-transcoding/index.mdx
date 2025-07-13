@@ -27,7 +27,15 @@ It shows you the current queue, worker status, and statistics about your transco
 
 ### Screenshots
 
-{/* TODO: We need screenshots */}
+import queueCard from './img/queue.png';
+import workersCard from './img/workers.png';
+import statisticsCard from './img/statistics.png';
+
+<div className="flex gap-1 flex-wrap">
+  <img src={workersCard} alt="media-transcoding workers-tab" width={128 * 3} />
+  <img src={queueCard} alt="media-transcoding  queue-tab" width={128 * 3} />
+  <img src={statisticsCard} alt="media-transcoding statistics-tab" width={128 * 3} />
+</div>
 
 ### Adding the widget
 
