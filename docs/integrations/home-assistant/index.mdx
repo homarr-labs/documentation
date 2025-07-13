@@ -34,5 +34,12 @@ import { smartHomeExecuteAutomationWidget } from '@site/docs/widgets2/smart-home
 ### Secrets
 <IntegrationSecrets secrets={[{
     credentials: ['apiKey'],
-    steps: []
+    steps: [
+        "Click on your profile in the bottom left corner of Home Assistant.",
+        "Switch to the Security tab.",
+        "Scroll down to the Long-lived access tokens section.",
+        "Click on the Create Token button.",
+        "Enter a name for the token (e.g., 'Homarr Integration') and click Create.",
+        "Copy the generated token and paste it into the Homarr integration settings.",
+    ]
 }]} />
