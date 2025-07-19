@@ -32,6 +32,14 @@ import smallSize from './img/small.png';
 <img src={bigSize} alt="dns-hole-controls big-size with-toggle-all-buttons" width={256} height={128} />
 <img src={smallSize} alt="dns-hole-controls small-size no-toggle-all-buttons" width={128} height={128} />
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: adguardHomeIntegration,
+}, {
+  integration: piHoleIntegration,
+}]} />
+
 ### Interactions
 
 - Enable / Disable one dns-hole by clicking on the badge.
@@ -44,11 +52,3 @@ import smallSize from './img/small.png';
 
 ### Configuration
 <WidgetConfig configuration={dnsHoleControlsWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: adguardHomeIntegration,
-}, {
-    integration: piHoleIntegration,
-}]} />

@@ -35,6 +35,20 @@ import noDetailsCard from './img/no-details.png';
   <img src={noDetailsCard} alt="releases no details" width={128 * 3} />
 </div>
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: githubIntegration,
+}, {
+  integration: gitlabIntegration,
+}, {
+  integration: dockerHubIntegration,
+}, {
+  integration: npmIntegration,
+}, {
+  integration: codebergIntegration,
+}]} />
+
 ### Adding the widget
 
 <AddingWidget />
@@ -51,17 +65,3 @@ Setting the Prefix to `v`, precision to `3`, will match `v5.2.0` but not `v1.0.2
 
 :::
 
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: githubIntegration,
-}, {
-  integration: gitlabIntegration,
-}, {
-  integration: dockerHubIntegration,
-}, {
-  integration: npmIntegration,
-}, {
-  integration: codebergIntegration,
-}]} />

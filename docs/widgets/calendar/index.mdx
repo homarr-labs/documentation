@@ -41,6 +41,20 @@ import withoutIntegrations from './img/without-integrations.png';
     </div>
 </div>
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: nextcloudIntegration,
+}, {
+  integration: lidarrIntegration,
+}, {
+  integration: radarrIntegration,
+}, {
+  integration: readarrIntegration,
+}, {
+  integration: sonarrIntegration,
+}]} />
+
 ### Interactions
 
 - View calendar events by clicking on the marked dates.
@@ -51,17 +65,3 @@ import withoutIntegrations from './img/without-integrations.png';
 
 ### Configuration
 <WidgetConfig configuration={calendarWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: nextcloudIntegration,
-}, {
-    integration: lidarrIntegration,
-}, {
-    integration: radarrIntegration,
-}, {
-    integration: readarrIntegration,
-}, {
-    integration: sonarrIntegration,
-}]} />

@@ -31,19 +31,19 @@ import poster from './img/poster.png';
   <img src={poster} alt="media-releases layout-poster" width={256} />
 </div>
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: embyIntegration,
+}, {
+  integration: jellyfinIntegration,
+}, {
+  integration: plexIntegration,
+}]} />
+
 ### Adding the widget
 
 <AddingWidget />
 
 ### Configuration
 <WidgetConfig configuration={mediaReleasesWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: embyIntegration,
-}, {
-    integration: jellyfinIntegration,
-}, {
-  integration: plexIntegration,
-}]} />

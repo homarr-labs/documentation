@@ -34,6 +34,24 @@ import downloadsCard from './img/screenshot.png';
     <img src={downloadsCard} alt="downloads" width={128 * 4} />
 </div>
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: sabnzbdIntegration,
+  note: "Usenet client"
+}, {
+  integration: nzbgetIntegration,
+  note: "Usenet client"
+}, {
+  integration: delugeIntegration,
+  note: "Torrent client"
+}, {
+  integration: transmissionIntegration,
+  note: "Torrent client"
+}, {
+  integration: qBittorentIntegration,
+  note: "Torrent client"
+}]} />
 
 ### Interactions
 
@@ -47,22 +65,3 @@ import downloadsCard from './img/screenshot.png';
 
 ### Configuration
 <WidgetConfig configuration={downloadsWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: sabnzbdIntegration,
-    note: "Usenet client"
-}, {
-    integration: nzbgetIntegration,
-    note: "Usenet client"
-}, {
-    integration: delugeIntegration,
-    note: "Torrent client"
-}, {
-    integration: transmissionIntegration,
-    note: "Torrent client"
-}, {
-    integration: qBittorentIntegration,
-    note: "Torrent client"
-}]} />

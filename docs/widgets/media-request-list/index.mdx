@@ -29,6 +29,14 @@ import mediaRequestList from './img/list.png';
 
 <img src={mediaRequestList} alt="media-request-list" width={256} height={256} />
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: jellyseerrIntegration,
+}, {
+  integration: overseerrIntegration,
+}]} />
+
 ### Interactions
 
 -Approve / decline a request by clicking on the thumbs up or down icon.
@@ -39,11 +47,3 @@ import mediaRequestList from './img/list.png';
 
 ### Configuration
 <WidgetConfig configuration={mediaRequestListWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: jellyseerrIntegration,
-}, {
-    integration: overseerrIntegration,
-}]} />

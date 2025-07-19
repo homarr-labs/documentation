@@ -33,6 +33,17 @@ import mediaTable from './img/table.png';
 
 <img src={mediaTable} alt="media-server-streams" width={128 * 3 * 1.5} height={128 * 1.5} />
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: embyIntegration,
+}, {
+  integration: jellyfinIntegration,
+}, {
+  integration: plexIntegration,
+  note: "Will always show only currently playing streams, not all active sessions."
+}]} />
+
 ### Adding the widget
 
 <AddingWidget />
@@ -40,13 +51,3 @@ import mediaTable from './img/table.png';
 ### Configuration
 <WidgetConfig configuration={mediaServerWidget.configuration} />
 
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: embyIntegration,
-}, {
-    integration: jellyfinIntegration,
-}, {
-    integration: plexIntegration,
-    note: "Will always show only currently playing streams, not all active sessions."
-}]} />

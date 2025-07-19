@@ -32,6 +32,12 @@ import withDisplayname from './img/with-displayname.png';
   <img src={withDisplayname} alt="smart-home-execute-automation with-displayname" width={128 * 1.5} height={128 * 1.5} />
 </div>
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: homeAssistantIntegration,
+}]} />
+
 ### Interactions
 
 - Trigger the automation by clicking on the widget.
@@ -42,9 +48,3 @@ import withDisplayname from './img/with-displayname.png';
 
 ### Configuration
 <WidgetConfig configuration={smartHomeExecuteAutomationWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: homeAssistantIntegration,
-}]} />

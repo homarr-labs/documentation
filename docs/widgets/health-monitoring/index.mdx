@@ -22,7 +22,7 @@ import { proxmoxIntegration } from '@site/docs/integrations/proxmox';
   categories={['Health monitoring']}
 />
 
-This widget displays information about the health and status of your system(s), including CPU, memory, disk usage, and more. 
+This widget displays information about the health and status of your system(s), including CPU, memory, disk usage, and more.
 
 ### Screenshots
 
@@ -32,22 +32,22 @@ import clusterView from './img/cluster-view.png';
 <img src={systemView} alt="health-monitoring system-view" width={256} height={256} />
 <img src={clusterView} alt="health-monitoring cluster-view" width={256} height={256} />
 
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: dashDotIntegration,
+  note: "Will display information on the system tab"
+}, {
+  integration: openMediaVaultIntegration,
+  note: "Will display information on the system tab"
+}, {
+  integration: proxmoxIntegration,
+  note: "Will display information on the cluster tab, only supports one integration at a time"
+}]} />
+
 ### Adding the widget
 
 <AddingWidget />
 
 ### Configuration
 <WidgetConfig configuration={healthMonitoringWidget.configuration} />
-
-### Supported Integrations
-
-<WidgetIntegrations items={[{
-    integration: dashDotIntegration,
-    note: "Will display information on the system tab"
-}, {
-    integration: openMediaVaultIntegration,
-    note: "Will display information on the system tab"
-}, {
-    integration: proxmoxIntegration,
-    note: "Will display information on the cluster tab, only supports one integration at a time"
-}]} />
