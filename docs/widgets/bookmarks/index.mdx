@@ -1,54 +1,44 @@
 ---
-title: Bookmarks
-tags:
-  - Widgets
-  - Bookmark
-  - Notes
+title: 'Bookmarks'
+description: 'Displays multiple app links'
+hide_title: true
 ---
 
-The Bookmarks widget enables you, to add a list of web pages or URLs to your dashboard - similar like bookmarks in Browsers.
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { bookmarksWidget } from '.';
 
-## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
 
-## Configuration
-| Configuration | Description                                                                                         | Values                                                          | Default Value |
-| ------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------- |
-| Widget title  | Title of the widget. Will appear at the top of the widget. Can be left empty to not have any title. | String                                                          | Empty         |
-| Items         | List of bookmarks                                                                                   | -                                                               | Empty List    |
-| Layout        | Changes the layout of the bookmarks                                                                 | <ul><li>Auto-Grid</li><li>Horizontal</li><li>Vertical</li></ul> | Auto-Grid     |
+<WidgetHeader
+  widget={bookmarksWidget}
+  categories={['Links', 'Apps']}
+/>
 
-### Configuration per item
+The bookmarks widget allows you to display multiple app links in a single widget.
+You can add links to your favorite applications, websites, or any other resources you want quick access to.
 
-| Configuration   | Description                                                                                 | Values     | Default Value        |
-| --------------- | ------------------------------------------------------------------------------------------- | ---------- | -------------------- |
-| Name            | Name of your bookmark.                                                                      | String     | Homarr Documentation |
-| URL             | Link to your bookmark.                                                                      | URL/String | https://homarr.dev   |
-| App Icon        | URL or Link to the icon to represent your bookmark.                                         | URL/String | /imgs/logo/logo.png  |
-| Open in new tab | If switched, the link will open in a new tab, otherwise it will redirect on the current tab | yes / no   | no                   |
-| Hide Hostname   | Hide the link under the the title/name.                                                     | yes / no   | no                   |
-| Hide Icon       | Hide the icon of the bookmark (Helps Using less space).                                     | yes / no   | no                   |
+### Screenshots
 
-:::tip
+import gridIconsOnly from './img/grid-icons-only.png';
+import gridWithTitle from './img/grid-with-title.png';
+import verticalListAll from './img/vertical-list-all.png';
+import vericalListSimple from './img/vertical-list-simple.png';
 
-Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#arrange-and-organize-your-board).
+<div className='flex gap-1'>
+    <div className='flex flex-col gap-1'>
+        <img src={gridIconsOnly} alt="bookmarks grid icons-only" width={128} height={128} />
+        <img src={vericalListSimple} alt="bookmarks vertical-list no-domain" width={128} height={128} />
+    </div>
 
-:::
+    <img src={gridWithTitle} alt="bookmarks grid with-title" width={256 + 4} height={256 + 4} />
+    <img src={verticalListAll} alt="bookmarks vertical-list all-elements" width={128} height={256 + 4} />
+</div>
 
-## Layouts
-### Auto Grid
-The Auto Grid mode will automatically scale the items.
-Items will have a min width of 150px, but can scale bigger if they need more space.
-If there is no space available, they will wrap.
 
-![](./img/screenshot-grid.png)
+### Adding the widget
 
-### Vertical (default)
-Vertical mode will put items in a vertical list. Overflowing items will create a scroll bar.
+<AddingWidget />
 
-![](./img/screenshot-vertical.png)
-
-### Horizontal
-Horizontal mode will put items in a horizontal list. Overflowing items will create a scroll bar.
-
-![](./img/screenshot-horizontal.png)
+### Configuration
+<WidgetConfig configuration={bookmarksWidget.configuration} />

@@ -1,43 +1,67 @@
 ---
-title: Calendar
-tags:
-  - Widgets
-  - Integration
-  - Configuration
+title: 'Calendar'
+description: 'Display events from your integrations in a calendar view within a certain relative time period'
+hide_title: true
 ---
 
-The calendar Widget will use [Integrations](/docs/category/integrations) to display upcoming content.
-It can display content from [Sonarr](/docs/integrations/servarr#sonarr),
-[Radarr](/docs/integrations/servarr#radarr),
-[Lidarr](/docs/integrations/servarr#lidarr) and
-[Readarr](/docs/integrations/servarr#readarr).
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { IconAd } from "@tabler/icons-react";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { calendarWidget } from '.';
+import { lidarrIntegration } from '@site/docs/integrations/lidarr';
+import { nextcloudIntegration } from '@site/docs/integrations/nextcloud';
+import { radarrIntegration } from '@site/docs/integrations/radarr';
+import { readarrIntegration } from '@site/docs/integrations/readarr';
+import { sonarrIntegration } from '@site/docs/integrations/sonarr';
 
-## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
 
-## Using the widget
-The calendar widget will display a calendar with indicators for upcoming releases:
+<WidgetHeader
+  widget={calendarWidget}
+  categories={['Media manager', "Servarr"]}
+/>
 
-![Screenshot showing multiple indicators](./img/screenshot.png)
+The calendar widget shows a month view of events from different integrations.
+It allows you to view calendar events or upcoming releases from your media managers.
 
-### Colors of indicators and their meaning
-All indicators in the calendar have a specific color depending on their app:
+### Screenshots
 
-| Color          | Integration | Project link                                 |
-| -------------- | ----------- | -------------------------------------------- |
-| 🔴 *(red)*    | Readarr     | [Readarr project link](https://readarr.com/) |
-| 🟡 *(yellow)* | Radarr      | [Radarr project link](https://radarr.video/) |
-| 🟢 *(green)*  | Lidarr      | [Lidarr project link](https://lidarr.audio/) |
-| 🔵 *(blue)*   | Sonarr      | [Sonarr project link](https://sonarr.tv/)    |
+import popover from './img/popover.png';
+import withIntegrations from './img/with-integrations.png';
+import withoutIntegrations from './img/without-integrations.png';
 
-#### Release Poster
-Homarr will load the images from your integration, for example Sonarr.
-It will choose the image with the highest quality automatically.
+<div className='flex gap-1'>
+    <img src={withIntegrations} alt="calendar with-integrations big-size" width={256 + 4} height={256 + 4} />
+    <div className='flex flex-col gap-1'>
+        <img src={popover} alt="calendar popover-details the-mandalorian" width={128 * 3} height={128} />
+        <img src={withoutIntegrations} alt="calendar without-integrations small-size" width={256} height={128} />
+    </div>
+</div>
 
-## Configuration
+### Supported Integrations
 
-| Configuration       | Description                                                                                  | Values                                                     | Default Value |
-| ------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------- |
-| Radarr release type | Select what type of release date to see.                                                     | <ul><li>Cinemas</li><li>Physical</li><li>Digital</li></ul> | In Cinemas    |
-| Start from          | Amount of months in past that Homarr should load in background. Higher number means more memory usage.   | 2-9999                                                     | 2             |
-| End at              | Amount of months in future that Homarr should load in background. Higher number means more memory usage. | 2-9999                                                     | 2             |
+<WidgetIntegrations items={[{
+  integration: nextcloudIntegration,
+}, {
+  integration: lidarrIntegration,
+}, {
+  integration: radarrIntegration,
+}, {
+  integration: readarrIntegration,
+}, {
+  integration: sonarrIntegration,
+}]} />
+
+### Interactions
+
+- View calendar events by clicking on the marked dates.
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+<WidgetConfig configuration={calendarWidget.configuration} />

@@ -1,17 +1,47 @@
 ---
-title: Indexer Manager
-tags:
-  - Widgets
-  - Integration
-  - Configuration
+title: 'Indexer manager status'
+description: 'View the status of your indexers.'
+hide_title: true
 ---
 
-The Indexer Manager widget uses [Integrations](/docs/category/integrations) to display Indexers status with their name.
-You can also perform a quick test of all indexers to update their status.
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { indexerManagerWidget } from '.';
 
-![](./img/screenshot.png)
 
-*(Screenshot censored for privacy)*
+<WidgetHeader
+  widget={indexerManagerWidget}
+  categories={['Indexer']}
+/>
 
-## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
+### Screenshots
+
+import bigItem from './img/big.png';
+import smallItem from './img/small.png';
+import { prowlarrIntegration } from '@site/docs/integrations/prowlarr';
+
+<div className='flex gap-1'>
+  <img src={bigItem} height={256} alt="indexer-manager size-big" />
+  <img src={smallItem} height={128} alt="indexer-manager size-small" />
+</div>
+
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: prowlarrIntegration,
+}]} />
+
+### Interactions
+
+- Test all indexers by clicking on the test button.
+
+### Adding the widget
+
+<AddingWidget />
+
+
+### Configuration
+<WidgetConfig configuration={indexerManagerWidget.configuration} />
+

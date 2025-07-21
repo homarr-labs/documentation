@@ -44,26 +44,37 @@ This is to ensure that you minimize the amount of broken applications on your Ho
 The test and create button will perform a network request to the application and authenticate if required.
 
 ## Troubleshooting connection
-The connection to your integrations can fail due to many factors.
-This is not an exhaustive list, and you will need to adjust some steps regarding on your setup.
+The connection to your integrations can fail due to many factors. Most of the time it should show you the reason why it failed.
+If it doesn't, you can follow these steps to troubleshoot the issue:
 
-1. Check whether you followed the Homarr documentation and didn't skip any steps.
+1. Check whether you are using the correct URL and secrets.
+   - The URL must be the base URL of the application, **without any paths**.
+   - The secrets must be correct and have the correct permissions.
+2. If you use https to connect to the application, check the chapter below about [certificate issues](#certificate-issues).
+3. Check whether you followed the Homarr documentation and didn't skip any steps.
 This is the most often mistake that create many noisy support requests and following all steps will often resolve the problems.
-2. Check Homarr's logs for more information. As we have no control over breaking changes in upstream APIs and third party software,
+4. Check Homarr's logs for more information. As we have no control over breaking changes in upstream APIs and third party software,
 they can break without notice in unexpected ways which can also lead to errors within Homarr. In such case, these occurrences must be reported
 and fixed within the source code of Homarr.
-3. Check whether the host can reach the destination hostname / IP using ``ping`` and ``curl`` or ``wget`` afterward.
+5. Check whether the host can reach the destination hostname / IP using ``ping`` and ``curl`` or ``wget`` afterward.
 Execute this command on the host machine, not inside containers, to check whether it can connect or not.
-4. Check whether the container / pod can reach the destination hostname / IP. Execute the same commands in the shell inside the container / pod.
-5. Check your reverse proxy / authentication proxy logs for failures / hints
-6. Check your security log of tunnels and VPNs
-7. Check your router for security events
-8. Check your VLAN configuration and firewall rules
-9. Check your DNS settings for the host machine and the containers / pods and whether they can resolve the hostnames
-10. Check throughput and stability of your network connection using ``iperf3``
-11. Check syslog / drivers of your OS for hints
-12. Check logs of your destination applications (eg. SABnzbd)
-13. Attempt to disable CSRF / tamper protections when absolutely no other workaround available -> this comes with some security implications - be careful!
+6. Check whether the container / pod can reach the destination hostname / IP. Execute the same commands in the shell inside the container / pod.
+7. Check your reverse proxy / authentication proxy logs for failures / hints
+8. Check your security log of tunnels and VPNs
+9. Check your router for security events
+10. Check your VLAN configuration and firewall rules
+11. Check your DNS settings for the host machine and the containers / pods and whether they can resolve the hostnames
+12. Check throughput and stability of your network connection using ``iperf3``
+13. Check syslog / drivers of your OS for hints
+14. Check logs of your destination applications (eg. SABnzbd)
+15. Attempt to disable CSRF / tamper protections when absolutely no other workaround available -> this comes with some security implications - be careful!
 Re-enable if this didn't fix the issue.
 
 If none of these troubleshooting steps worked, you can request support from our team in Discord or GitHub.
+
+### Certificate issues
+
+If you are using a self-signed certificate you'll need to add it to the [trusted certificates](../certificates) in Homarr.
+Most of the time you should also get a button to add the certificate automatically when you try to connect to the integration.
+Please check that the certificate is the one you are expecting to prevent Man in the Middle attacks.
+For some integrations, you can find a guide on how to retrieve the certificate [here](../certificates/#obtaining-certificates).
