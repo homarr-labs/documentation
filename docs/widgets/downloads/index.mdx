@@ -1,46 +1,67 @@
 ---
-title: Downloads
-tags:
-  - Widgets
-  - Integration
-  - Configuration
-  - Torrent
-  - Usenet
+title: 'Download Client'
+description: 'Allows you to view and manage your Downloads from both Torrent and Usenet clients.'
+hide_title: true
 ---
 
-The download widget uses [Integrations](/docs/category/integrations) to display a list of torrents or Usenet articles with their name, download/upload speed and progress.
+import { delugeIntegration } from '@site/docs/integrations/deluge';
+import { nzbgetIntegration } from '@site/docs/integrations/nzbget';
+import { qBittorentIntegration } from '@site/docs/integrations/q-bittorent';
+import { sabnzbdIntegration } from '@site/docs/integrations/sabnzbd';
+import { transmissionIntegration } from '@site/docs/integrations/transmission';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { IconAd } from "@tabler/icons-react";
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+import { downloadsWidget } from '.';
 
-![](./img/screenshots.png)
 
-## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
+<WidgetHeader
+  widget={downloadsWidget}
+  categories={['Torrent client', 'Usenet client', 'Downloads']}
+/>
 
-## Controls
-You can control the downloads directly from the widget.
-For example, you can pause or delete a download:
+This widget displays a list of torrents or usenet-articles that are currently being downloaded, along with their progress and other relevant information.
 
-![](./img/download-item-actions.png)
+### Screenshots
 
-If you delete a job you will be asked for confirmation:
+import downloadsCard from './img/screenshot.png';
 
-![](./img/delete-modal.png)
+<div>
+    <img src={downloadsCard} alt="downloads" width={128 * 4} />
+</div>
 
-At the bottom of the widget, you can also see the download speed over all your download clients:
+### Supported Integrations
 
-![](./img/download-speed.png)
+<WidgetIntegrations items={[{
+  integration: sabnzbdIntegration,
+  note: "Usenet client"
+}, {
+  integration: nzbgetIntegration,
+  note: "Usenet client"
+}, {
+  integration: delugeIntegration,
+  note: "Torrent client"
+}, {
+  integration: transmissionIntegration,
+  note: "Torrent client"
+}, {
+  integration: qBittorentIntegration,
+  note: "Torrent client"
+}]} />
 
-## Configuration
+### Interactions
 
-| Configuration                           | Description                          | Values                                                                                               | Default Value                                                                                        |
-| --------------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Columns to show                         | Defines what columns should be shown | <ul><li>Integration</li><li>Job name</li><li>Progress</li><li>Finish time</li><li>Controls</li></ul> | <ul><li>Integration</li><li>Job name</li><li>Progress</li><li>Finish time</li><li>Controls</li></ul> |
-| Enable items sorting                    | Enables the sorting in the table     | yes / no                                                                                             | no                                                                                                   |
-| Show usenet entries marked as completed | Also show completed usenet downloads | yes / no                                                                                             | yes                                                                                                  |
-| Categories / labels to filter           | Filter the categories and labels     | list                                                                                                 | empty list                                                                                           |
-| Filter as a whitelist                   | Invert the above filter              | yes / no                                                                                             | no                                                                                                   |
+- Pause / Resume one download by clicking on the according icon.
+- Delete one download by clicking on the trash icon. (Can also delete the files)
+- Pause / Resume all downloads by using the bottom button.
 
-:::tip
+### Adding the widget
 
-Check out our documentation on [editing tiles](/docs/getting-started/after-the-installation#arrange-and-organize-your-board).
+<AddingWidget />
 
-:::
+### Configuration
+<WidgetConfig configuration={downloadsWidget.configuration} />

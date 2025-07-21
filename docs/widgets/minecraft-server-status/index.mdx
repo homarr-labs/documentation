@@ -1,26 +1,44 @@
 ---
-title: Minecraft Server Status
-tags:
-  - Widgets
-  - Configuration
-  - Minecraft
+title: 'Minecraft Server Status'
+description: 'Displays the status of a Minecraft server.'
+hide_title: true
 ---
 
-import screenshot from './img/screenshot.png';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { IconAd } from "@tabler/icons-react";
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+import { minecraftServerStatusWidget } from '.';
 
-The Minecraft server status widget allows you to monitor the status of your Minecraft server.
-It displays the number of online players, the server logo and the current status.
-The status is fetched through the https://api.mcsrvstat.us/ API. Only public servers can be monitored.
 
-<img src={screenshot} alt="Minecraft Server Status" style={{maxWidth: 200}} />
+<WidgetHeader
+  widget={minecraftServerStatusWidget}
+  categories={['Gaming', 'Minecraft']}
+/>
 
-## Adding the widget
-Please check out our documentation on [how to add a widget](/docs/getting-started/after-the-installation#embed-integration-data-using-widgets).
+Shows the status and amount of players on a Minecraft server. It supports both Java and Bedrock editions, however only public servers are supported which can be reached through the used api of [api.mcsrvstat.us](https://api.mcsrvstat.us).
 
-## Configuration
+### Screenshots
 
-| Configuration        | Description                                                                                                                    | Values      | Default Value       |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------- | ------------------- |
-| Title                | Choose a custom title that will be shown behind the status instead of the server domain.                                       | String      | Empty               |
-| Server Domain        | The domain of your Minecraft server. It has to be a public domain.                                                             | URL/String  | hypixel.net         |
-| Bedrock Edition      | If your server is a Bedrock Edition server, enable this option.                                                                | yes / no    | no                  |
+import javaItem from './img/java.png';
+import bedrockItem from './img/bedrock.png';
+
+<div className='flex gap-1'>
+  <img src={javaItem} alt="minecraft-server-status java-edition" width={128 * 1.5} height={128 * 1.5} />
+  <img src={bedrockItem} alt="minecraft-server-status bedrock-editon" width={128 * 1.5} height={128 * 1.5} />
+</div>
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+<WidgetConfig configuration={minecraftServerStatusWidget.configuration} />
+
+### Data source
+
+We use the Minecraft Server Status API to fetch the server status.
+If you need to whitelist the api, please use the following URL: `hhttps://api.mcsrvstat.us`
