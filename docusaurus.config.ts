@@ -17,7 +17,17 @@ const config: Config = {
   // Has to be set even if not using translations
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'cn'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en-GB',
+      },
+      cn: {
+        label: '简体中文',
+        htmlLang: 'zh-Hans',
+      },
+    },
   },
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -117,6 +127,10 @@ const config: Config = {
           label: 'About us',
           position: 'left',
           to: '/about-us',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         /*{
           to: 'https://demo.homarr.dev/',
