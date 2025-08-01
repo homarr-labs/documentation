@@ -28,6 +28,9 @@ It also supports importing releases from your local docker containers.
 import collapsibleCard from './img/collapsible.png';
 import fullCard from './img/full.png';
 import noDetailsCard from './img/no-details.png';
+import { quayIntegration } from '@site/docs/integrations/quay';
+import { githubPackagesIntegration } from '@site/docs/integrations/github-packages';
+import { linuxServerIoIntegration } from '@site/docs/integrations/linux-server-io';
 
 <div className='flex gap-1'>
   <img src={fullCard} alt="releases full" width={128 * 3} />
@@ -47,6 +50,13 @@ import noDetailsCard from './img/no-details.png';
   integration: npmIntegration,
 }, {
   integration: codebergIntegration,
+}, {
+  integration: githubPackagesIntegration,
+  note: "Use if release is only available in ghcr.io"
+}, {
+  integration: quayIntegration
+}, {
+  integration: linuxServerIoIntegration
 }]} />
 
 ### Adding the widget
