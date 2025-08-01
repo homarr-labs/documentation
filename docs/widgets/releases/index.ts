@@ -34,6 +34,12 @@ export const releasesWidget: WidgetDefinition = {
         defaultValue: 'yes',
       },
       {
+        name: 'Show only icon',
+        description: 'Hides the repository name or identifier',
+        values: { type: 'boolean' },
+        defaultValue: 'no',
+      },
+      {
         name: 'Top Releases',
         description: 'The max number of latest releases to show. Zero means no limit.',
         values: 'Any positive integer or zero to disable the limit.',
