@@ -1,0 +1,36 @@
+---
+title: 'OPNsense'
+description: "OPNsense is an open-source, easy-to-use, and easy-to-build firewall and routing platform."
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
+import { AddingIntegration } from '@site/src/components/integrations/adding';
+import {IntegrationSecrets} from '@site/src/components/integrations/secrets';
+import { IconHeartRateMonitor } from "@tabler/icons-react";
+import { opnsenseIntegration } from '.';
+import Alert from '@theme/Admonition'
+import { firewallWidget } from '../../widgets/firewall';
+
+<IntegrationHeader
+  integration={opnsenseIntegration}
+  categories={['Firewall']}
+/>
+
+### Widgets & Capabilities
+<IntegrationCapabilites
+    items={[{
+        widget: firewallWidget,
+    }]}
+/>
+
+### Adding the integration
+<AddingIntegration />
+
+### Secrets
+<IntegrationSecrets secrets={[{
+    tabLabel: "ApiKey (Key & Secret)",
+    credentials: ['opnsenseApiKey', 'opnsenseApiSecret'],
+    steps: [],
+}]} />
