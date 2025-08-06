@@ -37,6 +37,16 @@ const secretKinds = {
     description: 'A personal access token for authentication.',
     icon: IconKey,
   },
+  opnsenseApiKey: {
+    name: 'Api Key (Key)',
+    description: 'The Key part of the API Key for authentication.',
+    icon: IconKey,
+  },
+  opnsenseApiSecret: {
+    name: 'Api Key (Secret)',
+    description: 'The Secret part of the API Key for authentication.',
+    icon: IconPassword,
+  },
 };
 
 type SecretKind = keyof typeof secretKinds;
@@ -63,9 +73,10 @@ export const IntegrationSecrets = ({ secrets }: IntegrationSecretsProps) => {
               secret.credentials.map((value) => secretKinds[value]).find((value) => 'icon' in value)
                 ?.icon || IconKeyOff;
             const tabLabel =
-              secret.tabLabel ?? secret.credentials.length === 0
+              secret.tabLabel ??
+              (secret.credentials.length === 0
                 ? 'No Authentication'
-                : secret.credentials.map((value) => secretKinds[value].name).join(' & ');
+                : secret.credentials.map((value) => secretKinds[value].name).join(' & '));
 
             return (
               <TabItem
