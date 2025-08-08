@@ -41,3 +41,19 @@ This method is only useful, when you want to develop on Homarr or extend it with
   <li>Run the server using `pnpm start`</li>
   <li>Open `http://localhost:3000` in your browser</li>
 </ol>
+
+## Extra Configuration Variables
+
+You may find that the default ports for Homarr services conflict with ports on your host. You can override
+these ports with the following variables.
+
+<ul>
+  <li>`UNSAFE_WEB_PORT` [defaults to 3000]. You must also set `PORT` or use the -p flag when invoking
+  nextjs[^1],
+  both are required</li>
+  <li>`UNSAFE_WEBSOCKET_PORT` [defaults to 3001]</li>
+  <li>`UNSAFE_CRON_JOB_PORT` [defaults to 3002]</li>
+</ul>
+
+
+[^1]: https://nextjs.org/docs/app/api-reference/cli/next#changing-the-default-port
