@@ -1,0 +1,44 @@
+---
+title: 前提条件
+sidebar_position: 1
+tags:
+  - 入门指南
+  - 安装
+  - Docker
+  - Unraid
+---
+
+import Link from '@docusaurus/Link';
+import { IconArrowRight } from '@tabler/icons-react';
+
+在尝试安装 Homarr 之前，请检查您的设备是否满足要求。
+在不受支持的设备上安装可能导致不稳定的行为，我们将不提供支持。
+
+## 硬件要求
+- 至少 500MB 内存
+- 至少 600MB 的可用磁盘空间用于 Docker 镜像。建议使用 SSD。
+- 单核或双核 CPU
+- 稳定的网络连接，不建议使用 Wi-Fi
+
+## 架构
+
+我们为多种不同的架构构建 Homarr，包括 ARM。请确保您的设备架构受 Homarr 支持。我们无法为不常见或过时的架构提供支持。
+
+| 架构         | 支持状态        |
+|--------------|-----------------|
+| linux/amd64  | ✅ 支持         |
+| linux/arm64  | ✅ 支持         |
+| linux/arm/v7 | ❌ 不支持       |
+
+## 开始安装
+
+<Link
+  data-umami-event="Go to installation"
+  className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
+  to="/docs/category/installation-1"
+>
+  <div className={'flex items-center gap-3'}>
+    <span className={"dark:text-gray-200"}>前往安装指南</span>
+    <IconArrowRight className={"dark:text-gray-200"} size={20} />
+  </div>
+</Link>

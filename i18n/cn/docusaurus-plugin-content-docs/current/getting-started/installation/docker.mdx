@@ -1,0 +1,105 @@
+import { DockerInstallSnippet } from '@site/src/components/pages/installation/docker/dynamic-docker-install'
+
+# Docker
+Docker 是我们推荐的安装方法，适合初学者和专业人士。
+它易于使用，将所有依赖项打包在单个容器中，易于使用和维护。
+它需要至少一些 [Docker](https://www.docker.com/) 的基础知识。
+我们推荐 [NetworkChuck 的 Docker Containers 101](https://www.youtube.com/watch?v=eGz9DS-aIeY) 作为完全初学者的良好起点。
+
+## Docker compose
+### 前提条件
+
+- 满足[硬件前提条件](/docs/getting-started/#hardware)和[架构前提条件](/docs/getting-started/#architecture)的 Linux 或 Windows 系统。
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/) - *现在许多系统都预装了*
+
+### 安装
+
+<DockerInstallSnippet data-visual-test="blackout"/>
+最后，在同一目录中运行 ``docker compose up -d``。这将在后台启动 Homarr 容器。
+
+:::caution
+
+Docker compose creates a network by default. Some integrations may not work (specifically Dash.) when the network internal hostname is used since clients do not know this name. It is recommended that you either use a local network wide hostname or the IP directly. An alternative is to create a DNS record with the same internal compose stack hostname for all clients outside.
+
+:::
+
+### Updating
+
+To update, navigate to the directory with the ``docker-compose.yaml`` located.
+
+- Stop Homarr using ``docker compose down``
+- Pull the newest image of Homarr using ``docker compose pull``
+- Start Homarr again using ``docker compose up -d`` (``-d`` for detached mode - start in background)
+- Delete the old image using ``docker image prune`` (*Warning: this also removes you other unused images - not just Homarr*)
+
+You can automate this process using [Watchtower](https://containrrr.dev/watchtower/).
+
+### Uninstalling
+
+To uninstall, navigate to the directory with the ``docker-compose.yaml`` located.
+
+- Stop Homarr using ``docker compose down``
+- Delete the created directories & files on your root file system (check ``docker-compose.yaml`` file for your specific locations)
+- Delete compose file using ``rm docker-compose.yaml``
+- Prune unused Docker images using ``docker image prune`` (*Warning: this also removes you other unused images - not just Homarr*)
+- (Optional): Prune any network or volumes if you use any.
+- (Optional): Remove Homarr from your reverse proxy, VPNs or tunnels if you use any.
+
+
+## Docker standalone
+
+:::caution
+
+[Docker Compose](#docker-compose) is easier and recommended for beginners. Consider using compose instead.
+
+:::
+
+### Prerequisites
+
+- A Linux or Windows based system that meets the [hardware prerequisites](/docs/getting-started/#hardware) and [architecture prerequisites](/docs/getting-started/#architecture).
+- [Docker](https://docs.docker.com/get-docker/)
+
+### Installation
+
+To install Homarr using Docker, simply run the following command.
+
+```bash
+docker run  \
+  --name homarr \
+  --restart unless-stopped \
+  -p 7575:7575 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v <your-path>/homarr/appdata:/appdata \
+  -e SECRET_ENCRYPTION_KEY='your_64_character_hex_string' \
+  -d ghcr.io/homarr-labs/homarr:latest
+```
+
+:::note
+
+Docker will mount the configuration files and icons to your host machine. Please make sure to replace ``<your-path>`` from the docker run command with your desired storage location. The path must be absolute.
+
+:::
+
+### Updating
+To update Homarr, you must remove your container first. Make sure that you've mounted your data and that you have access to it, so your configuration doesn't get lost.
+
+1. Run ``docker rm homarr`` to remove the container.
+2. Pull the latest Homarr image ``docker pull ghcr.io/homarr-labs/homarr:latest``.
+3. Re-run the command you used to install Homarr.
+
+This process can get tideous, if you update frequently. Thus, we recommend [using docker-compose](#docker-compose)
+
+:::tip
+
+Want to update all your containers automatically? Checkout [Watchtower](https://containrrr.dev/watchtower/) a service which will automatically update your containers on a set interval.
+
+:::
+
+### Uninstalling
+
+1. Obtain the container ID of your Homarr container using ``docker ps | grep homarr``.
+2. Delete the container using ``docker rm <your-container-id>``
+3. Prune unused Docker images using ``docker image prune`` (*Warning: this also removes you other unused images - not just Homarr*)
+4. (Optional): Prune any network or volumes if you use any.
+5. (Optional): Remove Homarr from your reverse proxy, VPNs or tunnels if you use any.
