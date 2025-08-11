@@ -1,0 +1,82 @@
+{
+  "version.label": {
+    "message": "1.31.0",
+    "description": "The label for version 1.31.0"
+  },
+  "sidebar.GettingStarted.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar GettingStarted"
+  },
+  "sidebar.GettingStarted.category.Installation.link.generated-index.title": {
+    "message": "Getting started",
+    "description": "The generated-index page title for category Installation in sidebar GettingStarted"
+  },
+  "sidebar.Docs.category.Getting started": {
+    "message": "Getting started",
+    "description": "The label for category Getting started in sidebar Docs"
+  },
+  "sidebar.Docs.category.Getting started.link.generated-index.title": {
+    "message": "Getting started",
+    "description": "The generated-index page title for category Getting started in sidebar Docs"
+  },
+  "sidebar.Docs.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar Docs"
+  },
+  "sidebar.Docs.category.Installation.link.generated-index.title": {
+    "message": "Getting started",
+    "description": "The generated-index page title for category Installation in sidebar Docs"
+  },
+  "sidebar.Docs.category.Management": {
+    "message": "Management",
+    "description": "The label for category Management in sidebar Docs"
+  },
+  "sidebar.Docs.category.Management.link.generated-index.title": {
+    "message": "Management pages",
+    "description": "The generated-index page title for category Management in sidebar Docs"
+  },
+  "sidebar.Docs.category.Integrations": {
+    "message": "Integrations",
+    "description": "The label for category Integrations in sidebar Docs"
+  },
+  "sidebar.Docs.category.Integrations.link.generated-index.title": {
+    "message": "Integrations",
+    "description": "The generated-index page title for category Integrations in sidebar Docs"
+  },
+  "sidebar.Docs.category.Integrations.link.generated-index.description": {
+    "message": "Integration are a principal part of homarr, it's where you can connect your other apps to interact with them with widgets or other capabilities, Homarr currently integrates with the following applications:",
+    "description": "The generated-index page description for category Integrations in sidebar Docs"
+  },
+  "sidebar.Docs.category.Widgets": {
+    "message": "Widgets",
+    "description": "The label for category Widgets in sidebar Docs"
+  },
+  "sidebar.Docs.category.Widgets.link.generated-index.title": {
+    "message": "Widgets",
+    "description": "The generated-index page title for category Widgets in sidebar Docs"
+  },
+  "sidebar.Docs.category.Widgets.link.generated-index.description": {
+    "message": "Widgets allow you to show data on your board or control applications. Click on one of the widgets below for further information:",
+    "description": "The generated-index page description for category Widgets in sidebar Docs"
+  },
+  "sidebar.Docs.category.Advanced": {
+    "message": "Advanced",
+    "description": "The label for category Advanced in sidebar Docs"
+  },
+  "sidebar.Docs.category.Advanced.link.generated-index.title": {
+    "message": "Advanced Concepts or features",
+    "description": "The generated-index page title for category Advanced in sidebar Docs"
+  },
+  "sidebar.Docs.category.Developer guides": {
+    "message": "Developer guides",
+    "description": "The label for category Developer guides in sidebar Docs"
+  },
+  "sidebar.Docs.category.Command line interface": {
+    "message": "Command line interface",
+    "description": "The label for category Command line interface in sidebar Docs"
+  },
+  "sidebar.Docs.category.Community": {
+    "message": "Community",
+    "description": "The label for category Community in sidebar Docs"
+  }
+}

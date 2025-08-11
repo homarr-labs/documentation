@@ -17,7 +17,19 @@ const config: Config = {
   // Has to be set even if not using translations
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'cn'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      cn: {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-CN',
+      },
+    },
   },
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -162,6 +174,10 @@ const config: Config = {
               label: 'X / Twitter',
             },
           ],
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           type: 'search',

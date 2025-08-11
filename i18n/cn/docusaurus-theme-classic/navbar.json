@@ -1,0 +1,58 @@
+{
+  "title": {
+    "message": "Homarr",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Homarr 标志",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentation": {
+    "message": "文档",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.About us": {
+    "message": "关于我们",
+    "description": "Navbar item with label About us"
+  },
+  "item.label.💴 Donate": {
+    "message": "💴 捐赠",
+    "description": "Navbar item with label 💴 Donate"
+  },
+  "item.label.Community": {
+    "message": "社区",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Answer Overflow": {
+    "message": "Answer Overflow",
+    "description": "Navbar item with label Answer Overflow"
+  },
+  "item.label.Community translations (Crowdin)": {
+    "message": "社区翻译 (Crowdin)",
+    "description": "Navbar item with label Community translations (Crowdin)"
+  },
+  "item.label.Reddit": {
+    "message": "Reddit",
+    "description": "Navbar item with label Reddit"
+  },
+  "item.label.OpenCollective": {
+    "message": "OpenCollective",
+    "description": "Navbar item with label OpenCollective"
+  },
+  "item.label.X / Twitter": {
+    "message": "X / Twitter",
+    "description": "Navbar item with label X / Twitter"
+  }
+}

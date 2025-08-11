@@ -1,4 +1,5 @@
 import Link from '@docusaurus/Link';
+import Translate from '@docusaurus/Translate';
 import { IconDownload } from '@tabler/icons-react';
 import clsx from 'clsx';
 import styles from '../../../../pages/index.module.css';
@@ -9,12 +10,15 @@ export default function HomeHero() {
     <header className={clsx('hero hero--primary', styles.heroBanner, styles.hero)}>
       <div className="flex">
         <div className="ps-0 lg:ps-52">
-          <h1 className="font-extrabold lg:text-7xl text-3xl">A simple, yet<br />powerful dashboard<br />for your
-            server.</h1>
+          <h1 className="font-extrabold lg:text-7xl text-3xl">
+            <Translate>A simple, yet powerful dashboard for your server.</Translate>
+          </h1>
           <p className={'lg:text-2xl text-base'}>
-            A sleek, modern dashboard that puts all of your apps and services at your fingertips.
-            Control everything in one convenient location. Seamlessly integrates with the
-            apps you've added, providing you with valuable information.
+            <Translate>
+              A sleek, modern dashboard that puts all of your apps and services at your fingertips.
+              Control everything in one convenient location. Seamlessly integrates with the
+              apps you've added, providing you with valuable information.
+            </Translate>
           </p>
 
           <div className={'flex flex-nowrap gap-2'}>
@@ -25,7 +29,9 @@ export default function HomeHero() {
               to="/docs/getting-started"
             >
               <div className={'flex items-center gap-3'}>
-                <span className={'dark:text-gray-200'}>Install</span>
+                <span className={'dark:text-gray-200'}>
+                  <Translate>Install</Translate>
+                </span>
                 <IconDownload className={'dark:text-gray-200'} size={20} />
               </div>
             </Link>
@@ -36,7 +42,9 @@ export default function HomeHero() {
             >
               <div className={'flex items-center gap-5'}>
                 <img src={"/img/pictures/partner/pika-pods.svg"} alt={"Pika Pods logo"} height={20} />
-                <span className={'dark:text-gray-200'}>Host from $2.3/month</span>
+                <span className={'dark:text-gray-200'}>
+                  <Translate>Host from $2.3/month</Translate>
+                </span>
               </div>
             </Link>
           </div>
