@@ -1,7 +1,7 @@
 import { useLocation } from "@docusaurus/router";
 import React, { useEffect } from "react";
 
-export function Carbon() {
+export function Carbon({ sidebar = false }: { sidebar?: boolean } = {}) {
 	const ref = React.useRef<HTMLDivElement>(null!);
 	const location = useLocation();
 	if (process.env.NODE_ENV === "development") {
@@ -85,7 +85,9 @@ export function Carbon() {
 				data-visual-test="blackout"
 				id="carbonads"
 				data-selector="carbonads"
-				className="bg-background flex flex-col m-4 space-y-2 carbonads argos-ignore"
+				className={`bg-background flex flex-col carbonads argos-ignore ${
+					sidebar ? "mt-6 mb-4 mx-0" : "m-4 space-y-2"
+				}`}
 			/>
 		</>
 	);
