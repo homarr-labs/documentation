@@ -20,9 +20,9 @@ jobs:
           private_key: ${{ secrets.HOMARR_DOCS_RELEASE_APP_PRIVATE_KEY }}
           app_id: ${{ vars.HOMARR_DOCS_RELEASE_APP_ID }}
       - name: Checkout code
-        env:
-          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
         uses: actions/checkout@v5
+        with:
+          token: ${{ steps.obtainToken.outputs.token }}
       - uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -36,6 +36,9 @@ jobs:
           pnpm run docusaurus docs:version $CLEAN_TAG
       - uses: EndBug/add-and-commit@v9
         with:
-          default_author: github_actor
           message: 'docs: add version ${{ github.event.client_payload.tag }}'
           push: true
+          author_name: "Docs Releases Homarr"
+          author_email: "204403377+homarr-docs-releases[bot]@users.noreply.github.com"
+          committer_name:  "Docs Releases Homarr"
+          committer_email: "204403377+homarr-docs-releases[bot]@users.noreply.github.com"
