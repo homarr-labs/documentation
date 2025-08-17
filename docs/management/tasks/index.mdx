@@ -12,10 +12,16 @@ The tasks page allows you to run background jobs manually and configure them.
 
 ![Tasks page](./img/tasks.png)
 
-## Opening the certificates page
+## Opening the tasks page
 
 Navigate to `Management` > `Tools` > `Tasks`.
 The page is only accessible to users with admin permission.
+
+## Changing interval
+
+In the column `Schedule interval` you can change the interval in which the task runs.
+Different intervals are available, such as `1 minute`, `5 minutes`, `10 minutes`, `30 minutes`, and `1 hour`.
+All intervals are cron expressions, which means it will run the next time the cron expression matches the current time.
 
 ## Actions
 
@@ -33,10 +39,5 @@ When a task is disabled, it will not run automatically according to its schedule
 You can enable it again by clicking the "Power-Off" button, which will change it back to a "Power" button.
 Running a task manually is still possible when it is disabled.
 
-### Settings
 
-The settings button (gear icon) allows you to configure the task's interval.
-Different intervals are available, such as `1 minute`, `5 minutes`, `10 minutes`, `30 minutes`, and `1 hour`.
-All intervals are cron expressions, which means it will run the next time the cron expression matches the current time.
 
-![Task settings](./img/settings.png)
