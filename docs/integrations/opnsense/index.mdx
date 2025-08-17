@@ -32,5 +32,41 @@ import { firewallWidget } from '../../widgets/firewall';
 <IntegrationSecrets secrets={[{
     tabLabel: "ApiKey (Key & Secret)",
     credentials: ['opnsenseApiKey', 'opnsenseApiSecret'],
-    steps: [],
+    steps: [
+        Create a User, Assign Privileges, and Generate an API Key in OPNsense.
+
+        1. Create a User and Assign Privileges
+
+        Log in to the OPNsense web interface as an administrator.
+        Go to System → Access → Users.
+        Click + (Add) to create a new user.
+        Fill in the user details:
+
+        Username: Enter a unique name.
+        Password: Leave empty.
+        Scrambled Password: Enable this option.
+        Full name: (Optional) Add a descriptive name.
+
+        Assign Privileges:
+
+        Scroll to the Privileges section.
+        Enable:
+
+        Lobby: Dashboard
+        Reporting:Traffic
+
+        Click Save.
+
+        2. Generate and Download the API Key
+
+        Return to the Users list.
+        Find the user and click the ticket icon (🎫) in the Commands column.
+        A popup will appear—click Yes to confirm.
+        A .txt file will download automatically, containing:
+
+        API Key
+        API Secret
+
+        Save this file securely—this information will only be shown once.
+    ],
 }]} />
