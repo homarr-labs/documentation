@@ -39,3 +39,4 @@ jobs:
           default_author: github_actor
           message: 'docs: add version ${{ github.event.client_payload.tag }}'
           push: true
+          github_token: ${{ steps.obtainToken.outputs.token }}
