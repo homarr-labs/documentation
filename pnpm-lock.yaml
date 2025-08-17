@@ -36,7 +36,7 @@ importers:
         specifier: ^0.88.0
         version: 0.88.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@tabler/icons-react':
-        specifier: ^3.34.0
+        specifier: ^3.34.1
         version: 3.34.1(react@19.1.1)
       autoprefixer:
         specifier: ^10.4.21
