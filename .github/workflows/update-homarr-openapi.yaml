@@ -16,7 +16,7 @@ jobs:
       matrix:
         node-version: [22]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         name: "Checkout app source repository"
         with:
           repository: homarr-labs/homarr
@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: start-homarr-and-export-api-spec
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         name: "Checkout documentation source repository"
         with:
           repository: homarr-labs/documentation
