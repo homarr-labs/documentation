@@ -33,6 +33,15 @@ export const appWidget: WidgetDefinition = {
         defaultValue: 'no',
       },
       {
+        name: 'Layout',
+        description: 'How to arrange the app widget.',
+        values: {
+          type: 'select',
+          options: ['Horizontal', 'Horizontal (reversed)', 'Vertical', 'Vertical (reversed)'],
+        },
+        defaultValue: 'Vertical',
+      },
+      {
         name: 'Enable status check',
         description: 'Whether to enable the status check for the app.',
         values: { type: 'boolean' },
