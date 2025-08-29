@@ -27,10 +27,10 @@ export const appWidget: WidgetDefinition = {
         defaultValue: 'yes',
       },
       {
-        name: 'Show description tooltip',
-        description: 'Whether to show the description of the app as a tooltip on hover.',
-        values: { type: 'boolean' },
-        defaultValue: 'no',
+        name: 'Description display mode',
+        description: 'Choose how to display the app description',
+        values: { type: 'select', options: ['Within widget', 'As tooltip', 'Hidden'] },
+        defaultValue: 'Hidden',
       },
       {
         name: 'Layout',
