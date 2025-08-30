@@ -79,7 +79,7 @@ importers:
         version: 3.4.17
     devDependencies:
       '@argos-ci/cli':
-        specifier: ^2.5.5
+        specifier: ^2.5.10
         version: 2.5.10
       '@argos-ci/playwright':
         specifier: ^4.1.0
