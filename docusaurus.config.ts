@@ -53,7 +53,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/homarr-labs/documentation/edit/master',
+          editUrl: ({ docPath }) =>
+            `https://github.com/homarr-labs/documentation/edit/master/docs/${docPath}`,
           remarkPlugins: [a11yEmoji],
           exclude: ['**/custom-widget.mdx'],
           showLastUpdateAuthor: false,
