@@ -50,7 +50,7 @@
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
     "@fec/remark-a11y-emoji": "^3.1.0",
-    "@playwright/test": "^1.51.1",
+    "@playwright/test": "^1.55.0",
     "@tsconfig/docusaurus": "^2.0.3",
     "@types/react": "19.1.11",
     "@types/react-dom": "19.1.7",
