@@ -1,8 +1,8 @@
-import { ResponsiveLine } from '@nivo/line';
-import { useEffect, useState } from 'react';
+import { Line } from '@nivo/line';
 import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-react';
-import { CommonWidgetProps, WidgetCard } from './card';
 import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+import { CommonWidgetProps, WidgetCard } from './card';
 
 export const StockWidget = ({ className }: CommonWidgetProps) => {
   const [stockTrend, setStockTrend] = useState<{ x: number; y: number }[]>(generateStockTrend());
@@ -26,7 +26,9 @@ export const StockWidget = ({ className }: CommonWidgetProps) => {
         {!upwardTrend && <IconTrendingDown size={20} color={'red'} />}
         HOMR
       </div>
-      <ResponsiveLine
+      <Line
+        height={128}
+        width={244}
         colors={[upwardTrend ? 'green' : 'red']}
         data={[
           {
@@ -34,14 +36,13 @@ export const StockWidget = ({ className }: CommonWidgetProps) => {
             data: stockTrend,
           },
         ]}
-        height={128}
         curve={'natural'}
         enablePoints={false}
         enableGridX={false}
         enableGridY={false}
         yScale={{ type: 'linear', min: 'auto' }}
         enableArea={true}
-        margin={{ bottom: 8, left: 0, right: 0, top: 8 }}
+        margin={{ bottom: 0, left: 4, right: 4, top: 40 }}
         axisBottom={null}
         axisLeft={null}
         axisRight={null}
