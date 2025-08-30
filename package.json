@@ -27,7 +27,7 @@
     "@docusaurus/plugin-sitemap": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@mdx-js/react": "^3.1.0",
-    "@nivo/line": "^0.88.0",
+    "@nivo/line": "^0.99.0",
     "@tabler/icons-react": "^3.34.1",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.0",
