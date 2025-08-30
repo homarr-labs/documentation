@@ -69,7 +69,7 @@ importers:
         specifier: ^19.1.0
         version: 19.1.1(react@19.1.1)
       swagger-ui-react:
-        specifier: ^5.19.0
+        specifier: ^5.27.1
         version: 5.27.1(@types/react@19.1.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       swiper:
         specifier: ^11.2.10
