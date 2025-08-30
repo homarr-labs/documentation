@@ -44,7 +44,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@argos-ci/cli": "^2.5.5",
+    "@argos-ci/cli": "^3.0.4",
     "@argos-ci/playwright": "^4.1.0",
     "@docusaurus/module-type-aliases": "^3.8.1",
     "@docusaurus/tsconfig": "^3.8.1",
