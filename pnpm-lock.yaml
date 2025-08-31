@@ -82,7 +82,7 @@ importers:
         specifier: ^3.0.4
         version: 3.0.6
       '@argos-ci/playwright':
-        specifier: ^6.1.1
+        specifier: ^6.1.2
         version: 6.1.3
       '@docusaurus/module-type-aliases':
         specifier: ^3.8.1
