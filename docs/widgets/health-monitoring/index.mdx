@@ -28,6 +28,7 @@ This widget displays information about the health and status of your system(s), 
 
 import systemView from './img/system-view.png';
 import clusterView from './img/cluster-view.png';
+import { truenasIntegration } from '@site/docs/integrations/truenas';
 
 <img src={systemView} alt="health-monitoring system-view" width={256} height={256} />
 <img src={clusterView} alt="health-monitoring cluster-view" width={256} height={256} />
@@ -39,6 +40,9 @@ import clusterView from './img/cluster-view.png';
   note: "Will display information on the system tab"
 }, {
   integration: openMediaVaultIntegration,
+  note: "Will display information on the system tab"
+}, {
+  integration: truenasIntegration,
   note: "Will display information on the system tab"
 }, {
   integration: proxmoxIntegration,
