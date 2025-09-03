@@ -2,9 +2,9 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 5.9.0](https://img.shields.io/badge/Version-5.9.0-informational?style=flat)
+![Version: 5.9.1](https://img.shields.io/badge/Version-5.9.1-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
-![AppVersion: v1.35.0](https://img.shields.io/badge/AppVersion-v1.35.0-informational?style=flat)
+![AppVersion: v1.35.1](https://img.shields.io/badge/AppVersion-v1.35.1-informational?style=flat)
 
 A Helm chart to deploy homarr for Kubernetes
 
@@ -388,7 +388,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | hostAliases | list | `[]` | Add static entries to /etc/hosts in the Pod. This is useful in the following cases: - You are running in a dual-stack cluster (IPv4 + IPv6) and want to force usage of IPv4 for specific hostnames - Your application is having DNS resolution issues or IPv6 preference issues - You need to override or simulate DNS entries without changing global DNS - You are running in an air-gapped or isolated environment without external DNS Example: hostAliases:   - ip: "192.168.1.10"     hostnames:       - "example.com"       - "example.internal" |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
 | image.repository | string | `"ghcr.io/homarr-labs/homarr"` | Image repository |
-| image.tag | string | `"v1.35.0"` | Overrides the image tag whose default is the chart appVersion |
+| image.tag | string | `"v1.35.1"` | Overrides the image tag whose default is the chart appVersion |
 | imagePullSecrets | list | `[]` | Secrets for Docker registry |
 | ingress.annotations | object | `{}` | Ingress annotations |
 | ingress.enabled | bool | `false` | Enable ingress |
