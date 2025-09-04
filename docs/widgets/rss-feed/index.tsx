@@ -60,6 +60,12 @@ export const rssFeedWidget: WidgetDefinition = {
         values: '1-9999',
         defaultValue: '100',
       },
+      {
+        name: 'Hide description',
+        description: 'Hide the description of individual feeds',
+        values: { type: 'boolean' },
+        defaultValue: 'no'
+      }
     ],
   },
 };
