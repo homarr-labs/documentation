@@ -24,6 +24,7 @@ Displays CPU, RAM and network of your host in real time
 ### Screenshots
 
 import widget from './img/dark-widget.png';
+import { truenasIntegration } from '@site/docs/integrations/truenas';
 
 <div className='flex gap-1'>
   <img src={widget} alt="system resources widget" width={256} height={256} />
@@ -37,6 +38,8 @@ import widget from './img/dark-widget.png';
   integration: openMediaVaultIntegration
 }, {
   integration: proxmoxIntegration
+}, {
+  integration: truenasIntegration
 }]} />
 
 ### Adding the widget
