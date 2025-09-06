@@ -21,12 +21,6 @@ export const iframeWidget: WidgetDefinition = {
         defaultValue: 'no',
       },
       {
-        name: 'Allow transparency',
-        description: 'Whether to allow the embedded content to have a transparent background.',
-        values: { type: 'boolean' },
-        defaultValue: 'no',
-      },
-      {
         name: 'Allow scrolling',
         description: 'Whether to allow the embedded content to be scrolled.',
         values: { type: 'boolean' },
