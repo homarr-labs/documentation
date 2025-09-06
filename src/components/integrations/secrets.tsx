@@ -1,4 +1,11 @@
-import { IconKey, IconKeyOff, IconPassword, IconUser } from '@tabler/icons-react';
+import {
+  IconCode,
+  IconKey,
+  IconKeyOff,
+  IconPassword,
+  IconPlug,
+  IconUser,
+} from '@tabler/icons-react';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import { ReactNode } from 'react';
@@ -46,6 +53,17 @@ const secretKinds = {
     name: 'Api Key (Secret)',
     description: 'The Secret part of the API Key for authentication.',
     icon: IconPassword,
+  },
+  githubAppId: { name: 'App ID', description: 'The ID of the GitHub App', icon: IconCode },
+  githubInstallationId: {
+    name: 'Installation ID',
+    description: 'The ID of the GitHub Installation',
+    icon: IconPlug,
+  },
+  privateKey: {
+    name: 'Private Key',
+    description: 'The private key for authentication',
+    icon: IconKey,
   },
 };
 
