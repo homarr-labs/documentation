@@ -82,8 +82,8 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6
       '@argos-ci/playwright':
-        specifier: ^6.1.3
-        version: 6.1.3
+        specifier: ^6.1.5
+        version: 6.1.5
       '@docusaurus/module-type-aliases':
         specifier: ^3.8.1
         version: 3.8.1(acorn@8.15.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -248,8 +248,12 @@ packages:
     resolution: {integrity: sha512-DSw3QNLmlvwGiYIMXvi+kqJMiZm2KLN5H9xchfUH1Lu/adjR3X9L7c6/OD9HFdCmRoLZ7RQ+jYo4VLV31cn4zw==}
     engines: {node: '>=20.0.0'}
 
-  '@argos-ci/playwright@6.1.3':
-    resolution: {integrity: sha512-IQMM3jVKGkmbF0UN2iCVmNX1Vb8lScXMQcNAs0pZs1QETidSQ0URdE3bn1cBT9kLPeNK/TF5J1qQBtwlUXaU8A==}
+  '@argos-ci/core@4.1.4':
+    resolution: {integrity: sha512-CNQR+C2okfDfpvi43aWaQCviUmVskUdbs5AIpNM7r74ZxIz/jXHA4yap5d1Dlz24HQ+q/ZhSMXZi6PkZgGImvA==}
+    engines: {node: '>=20.0.0'}
+
+  '@argos-ci/playwright@6.1.5':
+    resolution: {integrity: sha512-P/1B6+pOz1/Bi2gS6ng71jpaAqI+vFbMARE7OkhKTBaxAeVsoPD+BcD5V6G4jeOLZuEx9+W6HQIsXHPpONjTfA==}
     engines: {node: '>=20.0.0'}
 
   '@argos-ci/util@3.1.0':
@@ -6993,10 +6997,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@argos-ci/playwright@6.1.3':
+  '@argos-ci/core@4.1.4':
+    dependencies:
+      '@argos-ci/api-client': 0.11.0
+      '@argos-ci/util': 3.1.0
+      convict: 6.2.4
+      debug: 4.4.1
+      fast-glob: 3.3.3
+      sharp: 0.34.3
+      tmp: 0.2.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@argos-ci/playwright@6.1.5':
     dependencies:
       '@argos-ci/browser': 5.0.0
-      '@argos-ci/core': 4.1.2
+      '@argos-ci/core': 4.1.4
       '@argos-ci/util': 3.1.0
       chalk: 5.4.1
       debug: 4.4.1
