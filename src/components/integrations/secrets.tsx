@@ -2,6 +2,7 @@ import {
   IconCode,
   IconKey,
   IconKeyOff,
+  IconLink,
   IconPassword,
   IconPlug,
   IconUser,
@@ -64,6 +65,11 @@ const secretKinds = {
     name: 'Private Key',
     description: 'The private key for authentication',
     icon: IconKey,
+  },
+  url: {
+    name: 'Url',
+    description: 'The url of the service',
+    icon: IconLink,
   },
 };
 
