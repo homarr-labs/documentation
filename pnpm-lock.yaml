@@ -79,8 +79,8 @@ importers:
         version: 3.4.17
     devDependencies:
       '@argos-ci/cli':
-        specifier: ^3.0.6
-        version: 3.0.6
+        specifier: ^3.0.8
+        version: 3.0.8
       '@argos-ci/playwright':
         specifier: ^6.1.5
         version: 6.1.5
@@ -239,14 +239,10 @@ packages:
     resolution: {integrity: sha512-SKAD7EXoLX4u50dzTIT/ABnpD284+DnBfoJM0ZrTIav2eiiVJyknNKSznF5w118lYGnYvugTXbKMnukGPzJeOA==}
     engines: {node: '>=20.0.0'}
 
-  '@argos-ci/cli@3.0.6':
-    resolution: {integrity: sha512-IaxoID7rVkiuGVUFvq8bE7LP8rlyhCSOCFOt2p52xc4MELsNGE7JUTAG6wjcwBmLJUr/wgCapBM+qsQadNgH/Q==}
+  '@argos-ci/cli@3.0.8':
+    resolution: {integrity: sha512-7QfKZUoZigcErJtwKTDpnCtGM941Ul0GjgJ1ZJX/JK3gwtGfijBtdx2HVMLzdwL3WsC86M36okx5uWPZtWtbPg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
-
-  '@argos-ci/core@4.1.2':
-    resolution: {integrity: sha512-DSw3QNLmlvwGiYIMXvi+kqJMiZm2KLN5H9xchfUH1Lu/adjR3X9L7c6/OD9HFdCmRoLZ7RQ+jYo4VLV31cn4zw==}
-    engines: {node: '>=20.0.0'}
 
   '@argos-ci/core@4.1.4':
     resolution: {integrity: sha512-CNQR+C2okfDfpvi43aWaQCviUmVskUdbs5AIpNM7r74ZxIz/jXHA4yap5d1Dlz24HQ+q/ZhSMXZi6PkZgGImvA==}
@@ -6976,24 +6972,12 @@ snapshots:
 
   '@argos-ci/browser@5.0.0': {}
 
-  '@argos-ci/cli@3.0.6':
+  '@argos-ci/cli@3.0.8':
     dependencies:
-      '@argos-ci/core': 4.1.2
+      '@argos-ci/core': 4.1.4
       commander: 14.0.0
       ora: 8.2.0
       update-notifier: 7.3.1
-    transitivePeerDependencies:
-      - supports-color
-
-  '@argos-ci/core@4.1.2':
-    dependencies:
-      '@argos-ci/api-client': 0.11.0
-      '@argos-ci/util': 3.1.0
-      convict: 6.2.4
-      debug: 4.4.1
-      fast-glob: 3.3.3
-      sharp: 0.34.3
-      tmp: 0.2.3
     transitivePeerDependencies:
       - supports-color
 
