@@ -26,6 +26,14 @@ export const systemResourcesWidget: WidgetDefinition = {
         },
         defaultValue: 'Show text with icon',
       },
+      {
+        name: 'Enable chart shading',
+        description: 'Not only show a line, but also fill the area below',
+        values: {
+          type: 'boolean',
+        },
+        defaultValue: 'Yes',
+      },
     ],
   },
 };
