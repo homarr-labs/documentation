@@ -17,6 +17,15 @@ export const systemResourcesWidget: WidgetDefinition = {
         },
         defaultValue: 'CPU, Memory, Network',
       },
+      {
+        name: 'Label display mode',
+        description: 'Select how the graphs should be labeled',
+        values: {
+          type: 'select',
+          options: ['Show text with icon', 'Show only text', 'Show only icon', 'Hide label'],
+        },
+        defaultValue: 'Show text with icon',
+      },
     ],
   },
 };
