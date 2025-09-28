@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 5.13.0](https://img.shields.io/badge/Version-5.13.0-informational?style=flat)
+![Version: 6.0.0](https://img.shields.io/badge/Version-6.0.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.39.0](https://img.shields.io/badge/AppVersion-v1.39.0-informational?style=flat)
 
@@ -240,6 +240,42 @@ ingress:
 ````
 </details>
 
+### HTTPRoute (Gateway API)
+
+The httproute section in the values.yaml file allows you to configure how external traffic accesses your application using the Kubernetes Gateway API.
+This provides a more expressive and future-proof alternative to Ingress, with support for advanced routing, filters, and multiple parent Gateways.
+
+<details>
+<summary>values.yaml</summary>
+
+````yaml
+service:
+  enabled: true  # must be enabled for HTTPRoute to forward traffic
+httproute:
+  enabled: true
+  parentRefs:
+    - name: my-gateway
+      namespace: default
+  hostnames:
+    - homarr.homelab.dev
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: homarr
+          port: 8080
+````
+</details>
+
+#### Notes:
+
+- parentRefs: the Gateway(s) this route attaches to. Gateways must already exist.
+- hostnames: domain names this route applies to.
+- rules:  each rule can define matches (paths, headers, queries), optional filters, and backendRefs to services
+- TLS must be configured on the Gateway (not on HTTPRoute). For example, the Gateway can have a TLS listener for homarr.homelab.dev, and this route will automatically apply once matched.
+
 ### Certificates
 
 Configuration for trusted certificate persistence. Supports:
@@ -386,6 +422,14 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | envSecrets.dbCredentials.existingSecret | string | `"db-secret"` | Name of existing secret containing DB credentials |
 | fullnameOverride | string | `""` | Overrides chart's fullname |
 | hostAliases | list | `[]` | Add static entries to /etc/hosts in the Pod. This is useful in the following cases: - You are running in a dual-stack cluster (IPv4 + IPv6) and want to force usage of IPv4 for specific hostnames - Your application is having DNS resolution issues or IPv6 preference issues - You need to override or simulate DNS entries without changing global DNS - You are running in an air-gapped or isolated environment without external DNS Example: hostAliases:   - ip: "192.168.1.10"     hostnames:       - "example.com"       - "example.internal" |
+| httproute | object | `{"enabled":false,"hostnames":["chart-example.local"],"parentRefs":[{"name":"my-gateway","namespace":"default"}],"rules":[{"backendRefs":[{"name":"homarr","port":8080}],"filters":[],"matches":[{"path":{"type":"PathPrefix","value":"/"}}]}]}` | Gateway API HTTPRoute configuration |
+| httproute.enabled | bool | `false` | Enable HTTPRoute |
+| httproute.hostnames | list | `["chart-example.local"]` | Hostnames this route matches (similar to ingress.hosts.host) |
+| httproute.parentRefs | list | `[{"name":"my-gateway","namespace":"default"}]` | References to the parent Gateway(s) this route attaches to. Each item must include at least a `name`, and optionally a `namespace`. |
+| httproute.rules | list | `[{"backendRefs":[{"name":"homarr","port":8080}],"filters":[],"matches":[{"path":{"type":"PathPrefix","value":"/"}}]}]` | List of routing rules. Each rule can include: - matches: path/header/query matching - filters: optional transformations (redirects, header modifications, etc.) - backendRefs: one or more Kubernetes Services to forward traffic to |
+| httproute.rules[0].filters | list | `[]` | Optional filters for this rule (default: empty) |
+| httproute.rules[0].matches[0].path.type | string | `"PathPrefix"` | Path match type. One of: Exact, PathPrefix, RegularExpression |
+| httproute.rules[0].matches[0].path.value | string | `"/"` | Path value to match |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
 | image.repository | string | `"ghcr.io/homarr-labs/homarr"` | Image repository |
 | image.tag | string | `"v1.39.0"` | Overrides the image tag whose default is the chart appVersion |
