@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 7.0.0](https://img.shields.io/badge/Version-7.0.0-informational?style=flat)
+![Version: 7.1.0](https://img.shields.io/badge/Version-7.1.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.39.0](https://img.shields.io/badge/AppVersion-v1.39.0-informational?style=flat)
 
@@ -76,21 +76,15 @@ To avoid including sensitive information in plain text within your version contr
 
 Below is an exhaustive list of all secrets:
 
-<center>
-
-| FEATURE   | SECRET NAME             | SECRET KEYS                                                          | Required                                                              |
+| FEATURE   | SECRET NAME             | SECRET KEYS                             | Required                                                              |
 |-----------|-------------------------|-----------------------------------------|-----------------------------------------------------------------------|
 | OIDC      | auth-oidc-secret        | oidc-client-id<br>oidc-client-secret    | No                                                                    |
 | LDAP      | auth-ldap-secret        | bind-password                           | No                                                                    |
 | DATABASE  | db-secret               | db-encryption-key<br>db-url             | Depends (see Database section) at least db-encryption-key is required |
 
-</center>
-
 ### Database
 
 You have multiple options for configuring the database:
-
-<center>
 
 | DRIVER TYPE    | Persistence mode                |
 |----------------|---------------------------------|
@@ -98,8 +92,6 @@ You have multiple options for configuring the database:
 | better-sqlite3 | homarr-database PVC             |
 | mysql2         | External MySql database         |
 | node-postgres  | External Postgresql database    |
-
-</center>
 
 #### Pod disk
 
@@ -378,7 +370,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization for autoscaling |
 | containerPorts | object | `{"http":{"port":7575,"protocol":"TCP"}}` | containerPorts defines the ports to open on the container. It is a map where each entry specifies:    - `port`     (int)    (required): The port number to expose inside the container.    - `protocol` (string) (required): The network protocol (TCP or UDP) used for the port.    - `disabled` (bool)              : Optional flag to disable this port (defaults to false). Can be overridden via Helm values.  By default, this configuration exposes TCP port 7575 with the name `http`. |
 | database.migrationEnabled | bool | `true` | Database migration configuration. DB_MIGRATIONS_DISABLED Set to `true` to disable database migrations. Migrations are enabled by default (`false`). |
-| database.type | string | `"sqlite"` | Database type: sqlite | mysql | postgresql |
+| database.type | string | `"sqlite"` | Database type: sqlite, mysql or postgresql |
 | env.AUTH_LDAP_BASE | string | `nil` | Base dn of your LDAP server |
 | env.AUTH_LDAP_BIND_DN | string | `nil` | User used for finding users and groups |
 | env.AUTH_LDAP_GROUP_CLASS | string | `"groupOfUniqueNames"` | Class used for querying groups |
@@ -432,7 +424,6 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | ingress.tls | list | `[]` | Ingress TLS configuration |
 | livenessProbe.httpGet.path | string | `"/api/health/live"` | This is the liveness check endpoint used by Kubernetes to determine if the application is still running. |
 | livenessProbe.httpGet.port | int | `7575` | The port on which the liveness check will be performed. This must be the same as the container port exposed by the application. |
-| mysql | object | See [values.yaml](https://github.com/homarr-labs/charts/blob/dev/charts/homarr/values.yaml) | Enable and configure Mysql database subchart under this key.    For more options see [Mysql chart documentation](https://github.com/bitnami/charts/tree/main/bitnami/mysql) |
 | nameOverride | string | `""` | Overrides chart's name |
 | nodeSelector | object | `{}` | Node selectors for pod scheduling |
 | persistence.homarrDatabase.accessMode | string | `"ReadWriteOnce"` | homarr-database access mode |
