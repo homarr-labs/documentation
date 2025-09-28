@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 6.0.0](https://img.shields.io/badge/Version-6.0.0-informational?style=flat)
+![Version: 7.0.0](https://img.shields.io/badge/Version-7.0.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.39.0](https://img.shields.io/badge/AppVersion-v1.39.0-informational?style=flat)
 
@@ -20,9 +20,7 @@ Kubernetes: `>=1.24.0-0`
 
 ## Dependencies
 
-| Repository | Name | Version |
-|------------|------|---------|
-| <https://charts.bitnami.com/bitnami> | mysql | 14.0.3 |
+This chart has no dependencies.
 
 ## Installing the Chart
 
@@ -81,10 +79,10 @@ Below is an exhaustive list of all secrets:
 <center>
 
 | FEATURE   | SECRET NAME             | SECRET KEYS                                                          | Required                                                              |
-|-----------|-------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------|
-| OIDC      | auth-oidc-secret        | oidc-client-id<br>oidc-client-secret                                 | No                                                                    |
-| LDAP      | auth-ldap-secret        | bind-password                                                        | No                                                                    |
-| DATABASE  | db-secret               | db-encryption-key<br>db-url<br>mysql-root-password<br>mysql-password | Depends (see Database section) at least db-encryption-key is required |
+|-----------|-------------------------|-----------------------------------------|-----------------------------------------------------------------------|
+| OIDC      | auth-oidc-secret        | oidc-client-id<br>oidc-client-secret    | No                                                                    |
+| LDAP      | auth-ldap-secret        | bind-password                           | No                                                                    |
+| DATABASE  | db-secret               | db-encryption-key<br>db-url             | Depends (see Database section) at least db-encryption-key is required |
 
 </center>
 
@@ -97,9 +95,9 @@ You have multiple options for configuring the database:
 | DRIVER TYPE    | Persistence mode                |
 |----------------|---------------------------------|
 | better-sqlite3 | Pod disk                        |
-| better-sqlite3 | `homarr-database` PVC           |
-| mysql2         | MySql database chart dependency |
+| better-sqlite3 | homarr-database PVC             |
 | mysql2         | External MySql database         |
+| node-postgres  | External Postgresql database    |
 
 </center>
 
@@ -152,41 +150,7 @@ persistence:
 
 </details>
 
-#### MySql database chart dependency
-
-We are using [mysql bitnami](https://artifacthub.io/packages/helm/bitnami/mysql) chart as a dependency for data persistence. For additional configuration options, refer to the [Mysql chart documentation](https://github.com/bitnami/charts/tree/main/bitnami/mysql)
-
-To create the necessary database secrets, execute the following command:
-
-<details>
-<summary>Required Secrets</summary>
-
-````yaml
-kubectl create secret generic db-secret \
---from-literal=db-encryption-key='<SECRET_ENCRYPTION_KEY_SECRET_TO_CHANGE>' \
---from-literal=db-url='mysql://homarr:your-db-password1@homarr-mysql:3306/homarrdb' \
---from-literal=mysql-root-password='your-db-password1' \
---from-literal=mysql-password='your-db-password2' \
---namespace homarr
-````
-</details>
-
-if the key `mysql.auth.usersame` has been modified, please update the `db-url` accordingly. The database host and port should remain unchanged.
-
-Below is an example of the override values file:
-
-<details>
-<summary>values.yaml</summary>
-
-````yaml
-mysql:
-  internal: true
-````
-</details>
-
 #### External MySql database
-
-The chart offer the possibility to use an external database.
 
 To create the necessary database secrets, execute the following command:
 
@@ -208,7 +172,33 @@ Below is an example of the override values file:
 
 ````yaml
 database:
-  externalDatabaseEnabled: true
+  type: mysql
+````
+</details>
+
+#### External Postgresql database
+
+To create the necessary database secrets, execute the following command:
+
+<details>
+<summary>Required Secrets</summary>
+
+````yaml
+kubectl create secret generic db-secret \
+--from-literal=db-encryption-key='<SECRET_ENCRYPTION_KEY_SECRET_TO_CHANGE>' \
+--from-literal=db-url='postgresql://user:password@host:port/homarrdb' \
+--namespace homarr
+````
+</details>
+
+Below is an example of the override values file:
+
+<details>
+<summary>values.yaml</summary>
+
+````yaml
+database:
+  type: postgresql
 ````
 </details>
 
@@ -387,8 +377,8 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | autoscaling.minReplicas | int | `1` | Minimum replicas |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization for autoscaling |
 | containerPorts | object | `{"http":{"port":7575,"protocol":"TCP"}}` | containerPorts defines the ports to open on the container. It is a map where each entry specifies:    - `port`     (int)    (required): The port number to expose inside the container.    - `protocol` (string) (required): The network protocol (TCP or UDP) used for the port.    - `disabled` (bool)              : Optional flag to disable this port (defaults to false). Can be overridden via Helm values.  By default, this configuration exposes TCP port 7575 with the name `http`. |
-| database.externalDatabaseEnabled | bool | `false` | Enable external database |
 | database.migrationEnabled | bool | `true` | Database migration configuration. DB_MIGRATIONS_DISABLED Set to `true` to disable database migrations. Migrations are enabled by default (`false`). |
+| database.type | string | `"sqlite"` | Database type: sqlite | mysql | postgresql |
 | env.AUTH_LDAP_BASE | string | `nil` | Base dn of your LDAP server |
 | env.AUTH_LDAP_BIND_DN | string | `nil` | User used for finding users and groups |
 | env.AUTH_LDAP_GROUP_CLASS | string | `"groupOfUniqueNames"` | Class used for querying groups |
@@ -409,6 +399,9 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | env.AUTH_OIDC_SCOPE_OVERWRITE | string | `"openid email profile groups"` | Override the OIDC scopes |
 | env.AUTH_PROVIDERS | string | `"credentials"` | Enabled authentication methods. Multiple providers can be enabled with by separating them with , (ex. AUTH_PROVIDERS=credentials,oidc, it is highly recommended to just enable one provider). |
 | env.AUTH_SESSION_EXPIRY_TIME | string | `"30d"` | Time for the session to time out. Can be set as pure number, which will automatically be used in seconds, or followed by s, m, h or d for seconds, minutes, hours or days. (ex: "30m") |
+| env.ENABLE_DNS_CACHING | string | `"false"` | Enables dns caching. This is not yet working for all users. See #4006 |
+| env.LOG_LEVEL | string | `"info"` | Log level to use. Possible values: debug/info/warn/error |
+| env.NO_EXTERNAL_CONNECTION | string | `"false"` | Disables some requests that need internet connection |
 | env.TZ | string | `"Europe/Paris"` | Your local time zone |
 | envSecrets.authLdapCredentials.existingSecret | string | `"auth-ldap-secret"` | Name of existing secret containing LDAP credentials |
 | envSecrets.authLdapCredentials.ldapBindingPassword | string | `"bind-password"` | Password for bind user secret key |
@@ -416,9 +409,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | envSecrets.authOidcCredentials.oidcClientId | string | `"oidc-client-id"` | ID of OIDC client (application) secret key |
 | envSecrets.authOidcCredentials.oidcClientSecret | string | `"oidc-client-secret"` | Secret of OIDC client (application) secret key |
 | envSecrets.dbCredentials.dbEncryptionKey | string | `"db-encryption-key"` | Secret key for SECRET_ENCRYPTION_KEY can be generated with `openssl rand -hex 32` |
-| envSecrets.dbCredentials.dbPasswordKey | string | `"mysql-root-password"` | Secret key for DB_PASSWORD |
-| envSecrets.dbCredentials.dbUrlKey | string | `"db-url"` | Secret key for DB_URL Example for internal database: `mysql://username:password@homarr-mysql:3306/homarrdb` |
-| envSecrets.dbCredentials.dbUserPasswordKey | string | `"mysql-password"` | Secret key for database user |
+| envSecrets.dbCredentials.dbUrlKey | string | `"db-url"` | Secret key for DB_URL Example for external database: `mysql://username:password@host:port/homarrdb` or `postgresql://username:password@host:port/homarrdb` |
 | envSecrets.dbCredentials.existingSecret | string | `"db-secret"` | Name of existing secret containing DB credentials |
 | fullnameOverride | string | `""` | Overrides chart's fullname |
 | hostAliases | list | `[]` | Add static entries to /etc/hosts in the Pod. This is useful in the following cases: - You are running in a dual-stack cluster (IPv4 + IPv6) and want to force usage of IPv4 for specific hostnames - Your application is having DNS resolution issues or IPv6 preference issues - You need to override or simulate DNS entries without changing global DNS - You are running in an air-gapped or isolated environment without external DNS Example: hostAliases:   - ip: "192.168.1.10"     hostnames:       - "example.com"       - "example.internal" |
