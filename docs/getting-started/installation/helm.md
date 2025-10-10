@@ -2,9 +2,9 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 7.2.0](https://img.shields.io/badge/Version-7.2.0-informational?style=flat)
+![Version: 7.3.0](https://img.shields.io/badge/Version-7.3.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
-![AppVersion: v1.40.0](https://img.shields.io/badge/AppVersion-v1.40.0-informational?style=flat)
+![AppVersion: v1.41.0](https://img.shields.io/badge/AppVersion-v1.41.0-informational?style=flat)
 
 A Helm chart to deploy homarr for Kubernetes
 
@@ -415,7 +415,7 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | httproute.rules[0].matches[0].path.value | string | `"/"` | Path value to match |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
 | image.repository | string | `"ghcr.io/homarr-labs/homarr"` | Image repository |
-| image.tag | string | `"v1.40.0"` | Overrides the image tag whose default is the chart appVersion |
+| image.tag | string | `"v1.41.0"` | Overrides the image tag whose default is the chart appVersion |
 | imagePullSecrets | list | `[]` | Secrets for Docker registry |
 | ingress.annotations | object | `{}` | Ingress annotations |
 | ingress.enabled | bool | `false` | Enable ingress |
