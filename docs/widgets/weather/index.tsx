@@ -31,6 +31,14 @@ export const weatherWidget: WidgetDefinition = {
         defaultValue: 'yes',
       },
       {
+        name: 'Use imperial speed units',
+        description: 'Display wind speed in mph instead of km/h',
+        values: {
+          type: 'boolean',
+        },
+        defaultValue: 'no',
+      },
+      {
         name: 'Weather location',
         description: 'Location for which to display the weather information',
         values: 'Select location through search or longitude/latitude',
