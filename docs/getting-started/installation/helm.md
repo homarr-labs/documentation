@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/homarr-labs/charts/refs/heads/main/charts/homarr/icon.svg" align="right" width="92" alt="homarr logo">
 
-![Version: 7.3.0](https://img.shields.io/badge/Version-7.3.0-informational?style=flat)
+![Version: 8.0.0](https://img.shields.io/badge/Version-8.0.0-informational?style=flat)
 ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat)
 ![AppVersion: v1.41.0](https://img.shields.io/badge/AppVersion-v1.41.0-informational?style=flat)
 
@@ -76,11 +76,12 @@ To avoid including sensitive information in plain text within your version contr
 
 Below is an exhaustive list of all secrets:
 
-| FEATURE   | SECRET NAME             | SECRET KEYS                             | Required                                                              |
-|-----------|-------------------------|-----------------------------------------|-----------------------------------------------------------------------|
-| OIDC      | auth-oidc-secret        | oidc-client-id<br>oidc-client-secret    | No                                                                    |
-| LDAP      | auth-ldap-secret        | bind-password                           | No                                                                    |
-| DATABASE  | db-secret               | db-encryption-key<br>db-url             | Depends (see Database section) at least db-encryption-key is required |
+| FEATURE   | SECRET NAME             | SECRET KEYS                             | Required |
+|-----------|-------------------------|-----------------------------------------|----------|
+| OIDC      | auth-oidc-secret        | oidc-client-id<br>oidc-client-secret    | No       |
+| LDAP      | auth-ldap-secret        | bind-password                           | No       |
+| DATABASE  | db-secret               | db-url                                  | No       |
+| DATABASE  | db-encryption           | db-encryption-key                       | yes      |
 
 ### Database
 
@@ -103,7 +104,7 @@ To create the necessary database secret, execute the following command:
 <summary>Required Secrets</summary>
 
 ````yaml
-kubectl create secret generic db-secret \
+kubectl create secret generic db-encryption \
 --from-literal=db-encryption-key='<SECRET_ENCRYPTION_KEY_SECRET_TO_CHANGE>' \
 --namespace homarr
 ````
@@ -120,7 +121,7 @@ Associated secret to create :
 <summary>DB Required Secrets</summary>
 
 ````yaml
-kubectl create secret generic db-secret \
+kubectl create secret generic db-encryption \
 --from-literal=db-encryption-key='<SECRET_ENCRYPTION_KEY_SECRET_TO_CHANGE>' \
 --namespace homarr
 ````
@@ -150,8 +151,13 @@ To create the necessary database secrets, execute the following command:
 <summary>Required Secrets</summary>
 
 ````yaml
-kubectl create secret generic db-secret \
+kubectl create secret generic db-encryption \
 --from-literal=db-encryption-key='<SECRET_ENCRYPTION_KEY_SECRET_TO_CHANGE>' \
+--namespace homarr
+````
+
+````yaml
+kubectl create secret generic db-secret \
 --from-literal=db-url='mysql://user:password@host:port/homarrdb' \
 --namespace homarr
 ````
@@ -176,11 +182,17 @@ To create the necessary database secrets, execute the following command:
 <summary>Required Secrets</summary>
 
 ````yaml
-kubectl create secret generic db-secret \
+kubectl create secret generic db-encryption \
 --from-literal=db-encryption-key='<SECRET_ENCRYPTION_KEY_SECRET_TO_CHANGE>' \
+--namespace homarr
+````
+
+````yaml
+kubectl create secret generic db-secret \
 --from-literal=db-url='postgresql://user:password@host:port/homarrdb' \
 --namespace homarr
 ````
+
 </details>
 
 Below is an example of the override values file:
@@ -400,9 +412,10 @@ All available values are listed on the [artifacthub](https://artifacthub.io/pack
 | envSecrets.authOidcCredentials.existingSecret | string | `"auth-oidc-secret"` | Name of existing secret containing OIDC credentials |
 | envSecrets.authOidcCredentials.oidcClientId | string | `"oidc-client-id"` | ID of OIDC client (application) secret key |
 | envSecrets.authOidcCredentials.oidcClientSecret | string | `"oidc-client-secret"` | Secret of OIDC client (application) secret key |
-| envSecrets.dbCredentials.dbEncryptionKey | string | `"db-encryption-key"` | Secret key for SECRET_ENCRYPTION_KEY can be generated with `openssl rand -hex 32` |
 | envSecrets.dbCredentials.dbUrlKey | string | `"db-url"` | Secret key for DB_URL Example for external database: `mysql://username:password@host:port/homarrdb` or `postgresql://username:password@host:port/homarrdb` |
 | envSecrets.dbCredentials.existingSecret | string | `"db-secret"` | Name of existing secret containing DB credentials |
+| envSecrets.dbEncryption.existingSecret | string | `"db-encryption"` | Name of existing secret containing DB encryption |
+| envSecrets.dbEncryption.key | string | `"db-encryption-key"` | Secret key for SECRET_ENCRYPTION_KEY can be generated with `openssl rand -hex 32` |
 | fullnameOverride | string | `""` | Overrides chart's fullname |
 | hostAliases | list | `[]` | Add static entries to /etc/hosts in the Pod. This is useful in the following cases: - You are running in a dual-stack cluster (IPv4 + IPv6) and want to force usage of IPv4 for specific hostnames - Your application is having DNS resolution issues or IPv6 preference issues - You need to override or simulate DNS entries without changing global DNS - You are running in an air-gapped or isolated environment without external DNS Example: hostAliases:   - ip: "192.168.1.10"     hostnames:       - "example.com"       - "example.internal" |
 | httproute | object | `{"enabled":false,"hostnames":["chart-example.local"],"parentRefs":[{"name":"my-gateway","namespace":"default"}],"rules":[{"backendRefs":[{"name":"homarr","port":8080}],"filters":[],"matches":[{"path":{"type":"PathPrefix","value":"/"}}]}]}` | Gateway API HTTPRoute configuration |
