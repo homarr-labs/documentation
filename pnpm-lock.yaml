@@ -72,8 +72,8 @@ importers:
         specifier: ^5.29.0
         version: 5.29.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       swiper:
-        specifier: ^11.2.10
-        version: 11.2.10
+        specifier: ^12.0.2
+        version: 12.0.3
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -6283,8 +6283,8 @@ packages:
       react: '>=16.8.0 <20'
       react-dom: '>=16.8.0 <20'
 
-  swiper@11.2.10:
-    resolution: {integrity: sha512-RMeVUUjTQH+6N3ckimK93oxz6Sn5la4aDlgPzB+rBrG/smPdCTicXyhxa+woIpopz+jewEloiEE3lKo1h9w2YQ==}
+  swiper@12.0.3:
+    resolution: {integrity: sha512-BHd6U1VPEIksrXlyXjMmRWO0onmdNPaTAFduzqR3pgjvi7KfmUCAm/0cj49u2D7B0zNjMw02TSeXfinC1hDCXg==}
     engines: {node: '>= 4.7.0'}
 
   tailwindcss@3.4.17:
@@ -15092,7 +15092,7 @@ snapshots:
       - '@types/react'
       - debug
 
-  swiper@11.2.10: {}
+  swiper@12.0.3: {}
 
   tailwindcss@3.4.17:
     dependencies:
