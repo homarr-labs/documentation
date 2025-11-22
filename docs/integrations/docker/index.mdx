@@ -76,6 +76,12 @@ They are then available in the app list and can be used as normally added apps.
 
 ![Apps added from containers](img/add-to-homarr-apps.png)
 
+### Configuration
+
+Currently Homarr supports one label for configuration of the containers:
+
+- **homarr.hide:** If set to any value, the container will be hidden from the Docker Containers widget and tools page.
+
 ### Security
 Mounting docker sockets can be risky, as they permit full control over your docker service.
 As an example, a thread actor could abuse Homarr use the socket to start, stop or delete containers on your system.
