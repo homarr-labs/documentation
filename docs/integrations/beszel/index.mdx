@@ -1,0 +1,34 @@
+---
+title: 'Beszel'
+description: "Beszel is a simple, lightweight server monitoring tool."
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
+import { AddingIntegration } from '@site/src/components/integrations/adding';
+import {IntegrationSecrets} from '@site/src/components/integrations/secrets';
+import { IconAd, IconDeviceGamepad } from "@tabler/icons-react";
+import { beszelIntegration } from '.';
+import { systemUsageWidget } from '@site/docs/widgets/system-usage';
+
+<IntegrationHeader
+    integration={beszelIntegration}
+    categories={['System monitoring']}
+/>
+
+### Widgets & Capabilities
+<IntegrationCapabilites
+    items={[{
+        widget: systemUsageWidget,
+    }]}
+/>
+
+### Adding the integration
+<AddingIntegration />
+
+### Secrets
+<IntegrationSecrets secrets={[{
+    credentials: ['username', 'password'],
+    steps: []
+}]} />
