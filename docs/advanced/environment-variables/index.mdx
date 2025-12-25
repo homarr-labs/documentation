@@ -91,6 +91,15 @@ External redis is currently not supported with Proxmox Community Scripts
 | `REDIS_TLS_CA`         | CA certificate for Redis TLS connections. If a certificate is specified the connection will use TLS. | Any valid CA certificate | - |
 
 
+## Proxy
+
+| Environment Variable     | Description | Possible values | Default |
+| ------------------------ | ----------- | --------------- | ------- |
+| ``HTTP_PROXY``           | HTTP proxy to use | Any valid HTTP proxy URL | - |
+| ``HTTPS_PROXY``          | HTTPS proxy to use | Any valid HTTPS proxy URL | - |
+| ``NO_PROXY``             | Comma separated list of hosts that should be excluded from proxying | Any valid hostnames | - |
+
+
 ## Advanced deployments
 
 :::warning
