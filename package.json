@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@dipakparmar/docusaurus-plugin-umami": "^2.1.2",
-    "@docusaurus/core": "^3.8.1",
-    "@docusaurus/plugin-content-docs": "^3.8.1",
-    "@docusaurus/plugin-sitemap": "^3.8.1",
-    "@docusaurus/preset-classic": "^3.8.1",
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/plugin-content-docs": "^3.9.2",
+    "@docusaurus/plugin-sitemap": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
     "@mdx-js/react": "^3.1.1",
     "@nivo/line": "^0.99.0",
     "@tabler/icons-react": "^3.34.1",
@@ -46,9 +46,9 @@
   "devDependencies": {
     "@argos-ci/cli": "^3.0.8",
     "@argos-ci/playwright": "^6.1.5",
-    "@docusaurus/module-type-aliases": "^3.8.1",
-    "@docusaurus/tsconfig": "^3.8.1",
-    "@docusaurus/types": "^3.8.1",
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/tsconfig": "^3.9.2",
+    "@docusaurus/types": "^3.9.2",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@playwright/test": "^1.55.0",
     "@tsconfig/docusaurus": "^2.0.7",
@@ -65,8 +65,8 @@
     "zod": "^4.1.7"
   },
   "peerDependencies": {
-    "@docusaurus/theme-common": "^3.8.1",
-    "@docusaurus/theme-mermaid": "^3.8.1"
+    "@docusaurus/theme-common": "^3.9.2",
+    "@docusaurus/theme-mermaid": "^3.9.2"
   },
   "browserslist": {
     "production": [
