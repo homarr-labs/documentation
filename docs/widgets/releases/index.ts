@@ -79,7 +79,7 @@ export const releasesWidget: WidgetDefinition = {
               },
               {
                 name: 'Version Regex',
-                description: 'The regex to extract the version from the release title.',
+                description: 'The regex to extract the version from the release tag.',
                 values: {
                   name: 'Version Regex',
                   type: 'object',
