@@ -39,7 +39,7 @@
     "random-word-slugs": "^0.1.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "swagger-ui-react": "^5.29.0",
+    "swagger-ui-react": "^5.31.0",
     "swiper": "^11.2.10",
     "tailwindcss": "^3.4.19"
   },
