@@ -23,4 +23,5 @@ export const supportedIntegrations = [
   { iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png', name: 'Tdarr' },
   { iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prowlarr.svg', name: 'Prowlarr' },
   { iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/ical.svg', name: 'iCal' },
+  { iconUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/incus.svg', name: 'Incus' },
 ];
