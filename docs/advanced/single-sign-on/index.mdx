@@ -201,7 +201,7 @@ Homarr supports multiple authentication options, from internal userbase (credent
     | ``AUTH_OIDC_FORCE_USERINFO`` | Force userinfo endpoint to be used for user information.    | false         |
     | ``AUTH_OIDC_ENABLE_DANGEROUS_ACCOUNT_LINKING`` | Enable account linking for OIDC provider. This will link the OIDC accounts by email. Be sure that you have verified emails to prevent stealing accounts. | false |
 
-    ### Permission System 
+    ### Permission System
 
     To give a user special permissions, first create a new group in homarr and assign the permission desired.
     For example if the group on homarr is called `homarr-admins` a new group on the oidc provider, for example authentik needs to be created with the same name, that would be `homarr-admins`.
@@ -285,6 +285,71 @@ Homarr supports multiple authentication options, from internal userbase (credent
         - Your user will automatically be placed in groups that have the same name as those of authentik. So simply create them in Homarr and give them the permissions you want.
         - For further information, refer to the [Authentik OIDC documentation](https://goauthentik.io/docs/providers/oauth2/).
 
+      </div>
+    </details>
+
+    Additional OIDC configuration options are described in the OIDC tab above.
+
+  </TabItem>
+  <TabItem value="google" label="Google (OIDC) Example" default>
+
+    This example demonstrates how to use [Google Auth Platform](https://console.cloud.google.com/auth/overview) as an OIDC provider for Homarr.
+
+    Unfortunately Google does not support synchronization of group membership. See https://issuetracker.google.com/issues/133774835?pli=1.
+
+    <details>
+      <summary>
+        Example Setup
+      </summary>
+      <div>
+
+        **1. Setup (Google):**
+
+        - Create a Project in [Google Cloud Console](https://console.cloud.google.com/) for Homarr  and switch to that Project.
+        - Configure [Authorized Domains](https://console.cloud.google.com/auth/branding) and set it to `<your-homarr-domain>`.
+        - Create a new [OAuth Client](https://console.cloud.google.com/auth/clients):
+          - Select Application Type `Web`
+          - Set the redirect URI to `https://<your-homarr-domain>/api/auth/callback/oidc`
+        - Record the `Client-ID` and `Client Key` (secret).
+
+        **2. Example .env file (Homarr):**
+        ```env
+        OIDC_CLIENT_ID=identificationid #Google Client-ID
+        OIDC_CLIENT_SECRET=secretsecretsecret #Google Client Key (secret)
+        HOMARR_FQDN=homarr.example.com #Homarr FQDN
+        SECRET_ENCRYPTION_KEY=encryptencryptencrypt #Homarr encryption key
+        ```
+
+        **3. Example Docker Compose configuration (Homarr):**
+        ```yaml {16-22}
+        services:
+          homarr:
+            image: ghcr.io/homarr-labs/homarr:latest
+            container_name: homarr
+            restart: unless-stopped
+            ports:
+              - '7575:7575'
+            volumes:
+              - ./homarr:/appdata
+              - /var/run/docker.sock:/var/run/docker.sock:ro
+            environment:
+              - TZ=Europe/Berlin
+              - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}
+              - BASE_URL=https://${HOMARR_FQDN}
+              - NEXTAUTH_URL=https://${HOMARR_FQDN}
+              - AUTH_PROVIDERS=oidc #(optional: include ',credentials' to keep local accounts as fallback)
+              - AUTH_OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
+              - AUTH_OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
+              - AUTH_OIDC_ISSUER=https://accounts.google.com
+              - AUTH_OIDC_CLIENT_NAME=Google
+              - AUTH_OIDC_SCOPE_OVERWRITE=openid email profile
+              - AUTH_OIDC_NAME_ATTRIBUTE_OVERWRITE=name
+            networks:
+              - my-network
+        networks:
+          my-network:
+            external: true
+        ```
       </div>
     </details>
 
