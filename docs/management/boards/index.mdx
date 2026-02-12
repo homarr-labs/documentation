@@ -14,6 +14,7 @@ import itemRadiusImage from './img/item-radius.png'
 import layoutLargeImage from './img/layout-large.png'
 import layoutMediumImage from './img/layout-medium.png'
 import layoutSmallImage from './img/layout-small.png'
+import {GridLayout} from '@site/src/components/grid-layout';
 
 Each dashboard is called a "board".
 You can create as many boards as you want.
@@ -31,6 +32,14 @@ When creating a board, the availability of the board name will be checked for yo
 ### Name
 The name must not include any special characters and must be at least one character long.
 Underscores and hyphen-minus are allowed.
+
+### Layout mode
+
+There are two layout modes available. They define how the board will behave on different screen sizes.
+- **Auto:** The board items will adjust for different screen sizes automatically based on the base layout.
+- **Custom:** The board items have to be adjusted manually for different screen sizes.
+
+For visualization of the two modes, see [here](#visualizations).
 
 ### Column count
 Homarr has a complex drag and drop system that can be used from the browser.
@@ -83,6 +92,59 @@ In this section you can configure the different responsive layouts. Depending on
 On each element the position and size of items can be changed seperately.
 When adding a new layout the position and sizes will automatically be generated depending on the column count.
 When adding a new item / dynamic section that will always be 1x1 on each layout and placed on the first available position.
+
+#### Layout mode
+
+There are two layout modes available. They define how the board will behave on different screen sizes.
+- **Auto:** The board items will adjust for different screen sizes automatically based on the base layout
+- **Custom:** The board items have to be adjusted manually for different screen sizes.
+
+##### Visualizations
+
+This is how the different layout modes behave on different screen sizes with the 8 column layout as base:
+
+<div class="flex items-start">
+  <GridLayout gap={8} columns={8} width={256} items={[
+    { xOffset: 0, yOffset: 0, content: '1'},
+    { xOffset: 1, yOffset: 0, width: 2, content: '2'},
+    { xOffset: 3, yOffset: 0, width: 3, height: 2, content: '3'},
+    { xOffset: 6, yOffset: 0, width: 2, content: '4'},
+    { xOffset: 0, yOffset: 1, width: 2, content: '5'},
+    { xOffset: 2, yOffset: 1, content: '6'},
+    { xOffset: 6, yOffset: 1, width: 2, height: 2, content: '7'},
+  ]} />
+
+  <GridLayout gap={8} columns={4} width={128} items={[
+    { xOffset: 0, yOffset: 0, content: '1'},
+    { xOffset: 1, yOffset: 0, width: 2, content: '2'},
+    { xOffset: 3, yOffset: 0, content: '6'},
+    { xOffset: 0, yOffset: 1, width: 3, height: 2, content: '3'},
+    { xOffset: 0, yOffset: 3, width: 2, content: '4'},
+    { xOffset: 2, yOffset: 3, width: 2, content: '5'},
+    { xOffset: 0, yOffset: 4, width: 2, height: 2, content: '7'},
+  ]} />
+
+  <GridLayout gap={8} columns={2} width={64} items={[
+    { xOffset: 0, yOffset: 0, content: '1'},
+    { xOffset: 1, yOffset: 0, content: '6'},
+    { xOffset: 0, yOffset: 1, width: 2, content: '2'},
+    { xOffset: 0, yOffset: 2, width: 2, height: 2, content: '3'},
+    { xOffset: 0, yOffset: 4, width: 2, content: '4'},
+    { xOffset: 0, yOffset: 5, width: 2, content: '5'},
+    { xOffset: 0, yOffset: 6, width: 2, height: 2, content: '7'},
+  ]} />
+</div>
+
+Order of items is defined by their position (top left to bottom right, row for row). 
+If the next item does not fit in the current row, it will be placed in the next row (see 4 in medium layout).
+If an item is small enough to fit into one of the gaps, it will be placed there (see 6 in medium layout).
+If the size of an item is to large to fix into the amount of columns available, it will automatically be resized to fit the entire width (see 3 in last layout).
+
+#### Base layout
+
+When using the layout mode **Auto** one of the layouts has to be defined as the base layout.
+It will be used to calculate position and size of items for other responsive layouts automatically.
+
 
 #### Name
 
