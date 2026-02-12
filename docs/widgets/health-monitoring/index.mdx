@@ -15,6 +15,7 @@ import { healthMonitoringWidget } from '.';
 import { dashDotIntegration } from '@site/docs/integrations/dash-dot';
 import { openMediaVaultIntegration } from '@site/docs/integrations/open-media-vault';
 import { proxmoxIntegration } from '@site/docs/integrations/proxmox';
+import { incusIntegration } from '@site/docs/integrations/incus';
 
 
 <WidgetHeader
@@ -47,6 +48,9 @@ import { truenasIntegration } from '@site/docs/integrations/truenas';
 }, {
   integration: proxmoxIntegration,
   note: "Will display information on the cluster tab, only supports one integration at a time"
+}, {
+  integration: incusIntegration,
+  note: "Will display information on the cluster tab with nodes, VMs, and containers"
 }]} />
 
 ### Adding the widget

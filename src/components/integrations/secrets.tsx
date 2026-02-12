@@ -66,6 +66,11 @@ const secretKinds = {
     description: 'The private key for authentication',
     icon: IconKey,
   },
+  clientCertificate: {
+    name: 'Client Certificate',
+    description: 'The client certificate for mTLS authentication',
+    icon: IconKey,
+  },
   url: {
     name: 'Url',
     description: 'The url of the service',
