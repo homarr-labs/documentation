@@ -1,0 +1,190 @@
+---
+title: 'Incus'
+description: "Incus is a modern, secure, and powerful system container and virtual machine manager."
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
+import { AddingIntegration } from '@site/src/components/integrations/adding';
+import { IntegrationSecrets } from '@site/src/components/integrations/secrets';
+import { IconHeartRateMonitor } from "@tabler/icons-react";
+import { incusIntegration } from '.';
+import Alert from '@theme/Admonition'
+import { healthMonitoringWidget } from '@site/docs/widgets/health-monitoring';
+
+<IntegrationHeader
+  integration={incusIntegration}
+  categories={['System monitoring', 'Containers', 'Virtualization']}
+/>
+
+Incus is a modern, secure, and powerful system container and virtual machine manager. This integration allows you to monitor and control your Incus instances directly from Homarr.
+
+### Features
+
+- **Real-time monitoring** of containers and virtual machines
+- **Health monitoring widget** showing cluster overview with nodes, instances, and resource usage
+- **Instance control** capabilities (start, stop, restart, freeze, unfreeze)
+- **Dedicated management page** for batch operations on instances
+
+### Widgets & Capabilities
+<IntegrationCapabilites
+    items={[
+        { widget: healthMonitoringWidget },
+    ]}
+/>
+
+### Adding the integration
+<AddingIntegration />
+
+### Secrets
+<IntegrationSecrets secrets={[{
+    header: <Alert type="info">
+        Incus uses mutual TLS (mTLS) for secure authentication. You'll need to provide both a client certificate and private key.
+    </Alert>,
+    credentials: ['clientCertificate', 'privateKey'],
+    steps: [
+        <>
+            <strong>Option 1: Use existing Incus client certificates</strong>
+            <br />
+            If you already have the <code>incus</code> CLI configured, find your certificates at:
+            <ul>
+                <li><code>~/.config/incus/client.crt</code> (Client certificate)</li>
+                <li><code>~/.config/incus/client.key</code> (Private key)</li>
+            </ul>
+        </>,
+        <>
+            <strong>Option 2: Generate new client certificates</strong>
+            <br />
+            Generate a private key:
+            <pre><code>openssl genrsa -out homarr-client.key 4096</code></pre>
+        </>,
+        <>
+            Create a Certificate Signing Request (CSR):
+            <pre><code>openssl req -new -key homarr-client.key -out homarr-client.csr -subj "/CN=homarr-client"</code></pre>
+        </>,
+        <>
+            Self-sign the certificate:
+            <pre><code>openssl x509 -req -days 3650 -in homarr-client.csr -signkey homarr-client.key -out homarr-client.crt</code></pre>
+        </>,
+        <>
+            Add the certificate to the Incus trust store on your Incus server:
+            <pre><code>incus config trust add homarr-client.crt --name homarr</code></pre>
+        </>,
+        <>
+            Verify your certificate is trusted:
+            <pre><code>incus config trust list</code></pre>
+        </>,
+    ],
+    body: <>
+        <span>
+            When adding secrets in Homarr, make sure to include the full certificate content including the header and footer lines:
+        </span>
+        <ul>
+            <li>
+                <b>Client Certificate:</b> Include <code>-----BEGIN CERTIFICATE-----</code> and <code>-----END CERTIFICATE-----</code>
+            </li>
+            <li>
+                <b>Private Key:</b> Include <code>-----BEGIN RSA PRIVATE KEY-----</code> and <code>-----END RSA PRIVATE KEY-----</code>
+            </li>
+        </ul>
+    </>
+}]} />
+
+### Network Requirements
+
+| Requirement | Details |
+|-------------|---------|
+| **Default Port** | 8443 |
+| **Protocol** | HTTPS with mTLS |
+| **Incus Version** | 5.0 or later recommended |
+
+Ensure Homarr can reach your Incus server. If the API is not accessible, enable network access on the Incus server:
+
+```bash
+incus config set core.https_address :8443
+```
+
+### Incus Tools Page
+
+The dedicated Incus management page provides full control over your instances. Navigate to **Manage** → **Tools** → **Incus** to access it.
+
+#### Features
+
+- **Integration Selector**: If you have multiple Incus integrations, select which server to manage
+- **Instance Table**: View all instances with name, state, type, description, and node location
+- **Batch Operations**: Select multiple instances and perform actions like start, stop, restart, freeze, or unfreeze
+
+| Action | Description |
+|--------|-------------|
+| **Start** | Start selected instances |
+| **Stop** | Stop selected instances |
+| **Restart** | Restart selected instances |
+| **Freeze** | Pause/freeze selected instances |
+| **Unfreeze** | Resume frozen instances |
+
+### Troubleshooting
+
+#### Connection Refused / Cannot Connect
+
+1. Verify the Incus server URL is correct and includes the port (default: 8443)
+2. Ensure Homarr can reach the Incus server (check firewalls)
+3. Verify Incus is listening on the network interface:
+   ```bash
+   incus config set core.https_address :8443
+   ```
+
+#### 403 Forbidden Error
+
+1. Verify your client certificate is added to Incus trust store:
+   ```bash
+   incus config trust list
+   ```
+2. Ensure the certificate and private key match
+3. Check certificate hasn't expired:
+   ```bash
+   openssl x509 -in client.crt -noout -dates
+   ```
+
+#### Certificate Errors
+
+1. Ensure you're using the correct certificate format (PEM)
+2. Include the full certificate chain if required
+3. Verify the private key matches the certificate:
+   ```bash
+   # These should produce the same output
+   openssl x509 -noout -modulus -in client.crt | openssl md5
+   openssl rsa -noout -modulus -in client.key | openssl md5
+   ```
+
+#### Widget Shows 0 for CPU/Memory
+
+Resource metrics require the instance to be running and may depend on:
+- For containers: cgroup metrics availability
+- For VMs: QEMU guest agent installation
+
+For VMs, install the QEMU guest agent:
+```bash
+# Inside the VM
+apt install qemu-guest-agent
+systemctl enable --now qemu-guest-agent
+```
+
+### Security Considerations
+
+- Client certificates and private keys are stored encrypted in Homarr's database
+- Use dedicated certificates for Homarr (not your personal Incus client cert)
+- Always use HTTPS (port 8443)
+- Consider placing Homarr and Incus on the same private network
+
+### Permissions
+
+- The Incus integration requires `integration-interact-all` permission for control operations
+- Read-only monitoring requires `integration-use-all` permission
+- Only admin users can access the Tools → Incus page
+
+### Further Reading
+
+- [Incus Documentation](https://linuxcontainers.org/incus/docs/main/)
+- [Incus REST API Reference](https://linuxcontainers.org/incus/docs/main/rest-api/)
+- [Incus Authentication](https://linuxcontainers.org/incus/docs/main/authentication/)
