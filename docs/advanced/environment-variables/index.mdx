@@ -9,6 +9,7 @@ tags:
   - Variables
   - Database
   - Redis
+  - Backup
 ---
 
 Homarr offers a Docker Container, which can be run on any compatible system, such as Unraid, Kubernetes and many more systems! Our Docker container is based on the ``22.12.0-alpine`` image and serves per standard on the port `7575`.
@@ -99,6 +100,16 @@ External redis is currently not supported with Proxmox Community Scripts
 | ``HTTPS_PROXY``          | HTTPS proxy to use | Any valid HTTPS proxy URL | - |
 | ``NO_PROXY``             | Comma separated list of hosts that should be excluded from proxying | Any valid hostnames | - |
 
+
+## Backup
+
+| Environment Variable     | Description | Possible values | Default |
+| ------------------------ | ----------- | --------------- | ------- |
+| ``BACKUP_STORAGE_PATH`` | Path to store backup files | Any valid directory path | ``./backups-archive`` (dev) / ``/appdata/backups-archive`` (prod) |
+| ``BACKUP_MAX_SIZE_MB`` | Maximum backup file size in megabytes | Any positive integer | ``100`` |
+| ``BACKUP_RETENTION_COUNT`` | Number of backups to retain (oldest deleted when limit exceeded) | Any positive integer | ``10`` |
+
+For more information on using backups, see the [Backups documentation](/docs/management/backups).
 
 ## Advanced deployments
 
