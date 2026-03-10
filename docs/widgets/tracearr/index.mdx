@@ -1,0 +1,39 @@
+---
+title: 'Tracearr'
+description: 'Monitor media server streams, user activity, and policy violations.'
+hide_title: true
+---
+
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { tracearrWidget } from '.';
+
+
+<WidgetHeader
+  widget={tracearrWidget}
+  categories={['Media Monitoring']}
+/>
+
+The Tracearr widget provides a real-time monitoring dashboard for your media server activity. It displays active streams, user statistics, recent watching history, and policy violations.
+
+### Screenshots
+
+import widgetOverview from './img/widget-overview.png';
+import streamsAndStats from './img/streams-and-stats.png';
+
+<div className="flex flex-col gap-2">
+  <img src={widgetOverview} alt="tracearr-widget-overview" width={128 * 4} />
+  <img src={streamsAndStats} alt="tracearr-streams-and-stats" width={128 * 4} />
+</div>
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+<WidgetConfig configuration={tracearrWidget.configuration} />
+
+### Data Source
+
+Tracearr connects to your media server (Plex, Jellyfin, Emby) and tracks streams, user activity, and policy violations. The widget requires a Tracearr integration to be configured first.
