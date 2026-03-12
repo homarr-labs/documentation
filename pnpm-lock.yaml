@@ -72,7 +72,7 @@ importers:
         specifier: ^5.32.0
         version: 5.32.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       swiper:
-        specifier: ^12.0.0
+        specifier: ^12.1.2
         version: 12.1.2
       tailwindcss:
         specifier: ^3.4.19
