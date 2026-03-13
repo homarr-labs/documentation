@@ -1,0 +1,330 @@
+---
+title: Backups
+sidebar_position: 9
+tags:
+  - Management
+  - Backup
+  - Restore
+  - Data Management
+---
+
+import BrowserWindow from '@site/src/components/ui/browser-window';
+
+Homarr provides a comprehensive backup system that allows you to export your entire configuration or individual boards, and restore them when needed. This feature is essential for:
+
+- **Disaster recovery** - Restore your Homarr instance after a failure
+- **Migration** - Move your configuration to a new server
+- **Sharing** - Export specific boards to share with others
+- **Version control** - Keep snapshots of your configuration at different points in time
+
+## Overview
+
+The backup system supports two types of exports:
+
+| Type | Format | Contains | Permissions Required |
+|------|--------|----------|---------------------|
+| **Full Backup** | ZIP file | All boards, integrations, users, groups, apps, settings, media files | Admin only |
+| **Board Export** | JSON file | Single board (optionally with integrations) | Board full access |
+
+:::info Storage Location
+
+Backups are stored in the following locations by default:
+- **Development**: `./backups-archive/` (in the project directory)
+- **Production**: `/appdata/backups-archive/` (inside the container)
+
+You can customize this location using the `BACKUP_STORAGE_PATH` environment variable.
+
+:::
+
+## Accessing Backup Management
+
+The backup management interface is located at:
+
+<BrowserWindow url="http://homarr.local/manage/tools/backups">
+  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+    <span>🗂️</span>
+    <span>Manage → Tools → Backups</span>
+  </div>
+</BrowserWindow>
+
+:::note Admin Access Required
+
+The backup management page is only accessible to users with **admin** permissions. Regular users can only export boards they have full access to.
+
+:::
+
+---
+
+## Creating Backups
+
+### Full System Backup
+
+A full system backup creates a complete snapshot of your Homarr instance, including:
+
+- All boards and their configurations
+- All integrations with their settings
+- User accounts and group permissions
+- Custom apps and search engines
+- Media files (images, icons)
+- Server settings
+
+To create a full backup:
+
+1. Navigate to **Manage → Tools → Backups**
+2. Click the **"Create Backup"** button
+3. Optionally enter a custom name for the backup
+4. Wait for the backup to complete
+
+:::tip Backup Limits
+
+By default, Homarr retains the **10 most recent backups**. Older backups are automatically deleted when this limit is exceeded. You can adjust this using the `BACKUP_RETENTION_COUNT` environment variable.
+
+:::
+
+### Board Export
+
+To export a single board (useful for sharing or migrating individual boards):
+
+1. Navigate to **Manage → Boards**
+2. Find the board you want to export
+3. Click the **menu icon** (three dots) on the board card
+4. Select **"Export board"**
+5. Choose whether to include associated integrations
+6. The board will be downloaded as a `.json` file
+
+```bash
+# Example: Board export filename
+homarr-board-my-dashboard-2025-01-15.json
+```
+
+---
+
+## Restoring from Backup
+
+### Restoring a Full Backup
+
+:::danger Destructive Operation
+
+Restoring a backup will **replace your current data**. Always create a new backup before restoring, in case you need to revert.
+
+:::
+
+Homarr supports two restore modes:
+
+| Mode | Behavior | Use Case |
+|------|----------|----------|
+| **Full** | Deletes all existing data and replaces it with the backup | Starting fresh from a known state |
+| **Merge** | Adds backup data to existing data (non-conflicting) | Importing boards/integrations without losing current data |
+
+To restore from a backup:
+
+1. Navigate to **Manage → Tools → Backups**
+2. Find the backup you want to restore from the list
+3. Click **"Restore"**
+4. Choose the restore mode (**Full** or **Merge**)
+5. **Verify** the backup contents when prompted
+6. Confirm the restore operation
+
+:::warning Pre-Restore Backup
+
+By default, Homarr creates an automatic backup **before** restoring. This safety feature can be disabled, but it's highly recommended to keep it enabled.
+
+:::
+
+### Importing a Board
+
+To import a board from a JSON file:
+
+1. Navigate to **Manage → Boards**
+2. Click **"Import board"**
+3. Select the `.json` file exported previously
+4. Review the import summary
+5. Confirm the import
+
+---
+
+## Configuration
+
+### Environment Variables
+
+You can configure the backup system using these environment variables in your `.env` file or `docker-compose.yml`:
+
+```bash
+# Backup Configuration
+
+# Path to store backup files
+# Default: ./backups-archive (development) or /appdata/backups-archive (production)
+BACKUP_STORAGE_PATH='./backups-archive'
+
+# Maximum backup file size in megabytes
+# Default: 100
+BACKUP_MAX_SIZE_MB=100
+
+# Number of backups to retain (oldest deleted when limit exceeded)
+# Default: 10
+BACKUP_RETENTION_COUNT=10
+```
+
+### Docker Compose Example
+
+```yaml
+version: '3'
+services:
+  homarr:
+    image: ghcr.io/homarr-labs/homarr:latest
+    volumes:
+      - ./homarr/appdata:/appdata
+      - ./homarr/backups:/appdata/backups  # Backup volume
+    environment:
+      - BACKUP_STORAGE_PATH=/appdata/backups
+      - BACKUP_MAX_SIZE_MB=100
+      - BACKUP_RETENTION_COUNT=10
+```
+
+---
+
+## Managing Backups
+
+### Viewing Backups
+
+The backup list shows:
+
+- **Name** - Custom or auto-generated name
+- **Type** - Manual or automatic
+- **Size** - File size in human-readable format
+- **Created** - Date and time of creation
+- **Creator** - User who created the backup
+- **Status** - Completed or failed
+
+### Downloading Backups
+
+You can download any backup for offline storage:
+
+1. Find the backup in the list
+2. Click the **download icon**
+3. The `.zip` file will be saved to your device
+
+:::tip Permissions
+
+- **Admins** can download any backup
+- **Regular users** can only download backups they created
+
+:::
+
+### Deleting Backups
+
+To free up space or remove old backups:
+
+1. Find the backup in the list
+2. Click the **delete icon** (trash)
+3. Confirm the deletion
+
+:::warning Permanent Deletion
+
+Deleted backups **cannot be recovered**. The backup file is permanently removed from both the database and filesystem.
+
+:::
+
+---
+
+## Backup Format
+
+### Full Backup Structure
+
+Full backups are stored as `.zip` files with the following structure:
+
+```
+homarr-backup-<name>-<timestamp>.zip
+├── metadata.json       # Backup metadata (version, checksum, etc.)
+├── data.json           # All database entities (boards, users, etc.)
+└── media/              # Binary media files
+    ├── icons/
+    ├── backgrounds/
+    └── uploads/
+```
+
+### Metadata
+
+Each backup contains metadata for integrity verification:
+
+```json
+{
+  "version": "1.0",
+  "homarrVersion": "1.2.3",
+  "exportedAt": "2025-01-15T10:30:00.000Z",
+  "exportedBy": "user-123",
+  "checksum": "sha256:abc123...",
+  "summary": {
+    "boards": 5,
+    "integrations": 12,
+    "users": 3,
+    "groups": 2,
+    "apps": 8,
+    "mediaFiles": 24,
+    "searchEngines": 3
+  }
+}
+```
+
+### Board Export Format
+
+Board exports are plain JSON files:
+
+```json
+{
+  "version": "1.0",
+  "exportedAt": "2025-01-15T10:30:00.000Z",
+  "type": "board",
+  "data": {
+    "name": "My Dashboard",
+    "items": [...],
+    "sections": [...],
+    "layouts": [...],
+    "settings": {...}
+  }
+}
+```
+
+---
+
+## Troubleshooting
+
+### Backup Fails
+
+⚠️ **Problem**: Backup creation fails with an error
+
+**Solutions**:
+- Check disk space - ensure sufficient space for the backup file
+- Verify `BACKUP_STORAGE_PATH` is writable
+- Check that `BACKUP_MAX_SIZE_MB` is sufficient for your data
+- Review logs for specific error messages
+
+### Restore Fails Validation
+
+⚠️ **Problem**: Backup file fails validation during import
+
+**Solutions**:
+- Verify the backup file wasn't corrupted during download
+- Check that the backup format version is compatible with your Homarr version
+- Ensure the file is a valid `.zip` archive
+- Review validation errors for specific issues
+
+### Can't Download Backup
+
+⚠️ **Problem**: Download button is disabled or returns an error
+
+**Solutions**:
+- Verify you have permission (must be admin or backup creator)
+- Check that the backup file still exists on the filesystem
+- Ensure the backup status is "completed"
+
+---
+
+## Best Practices
+
+1. **Regular Backups** - Create backups before making significant changes
+2. **Offsite Storage** - Download important backups to external storage
+3. **Test Restores** - Periodically test restoring backups to verify integrity
+4. **Retention Policy** - Set `BACKUP_RETENTION_COUNT` based on your needs and disk space
+5. **Version Matching** - Only restore backups from the same or compatible Homarr versions
+6. **Document Custom Names** - Use descriptive backup names for easier identification
