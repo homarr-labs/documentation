@@ -8,8 +8,8 @@ import { IntegrationHeader } from '@site/src/components/integrations/header';
 import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
 import { AddingIntegration } from '@site/src/components/integrations/adding';
 import { IntegrationSecrets } from '@site/src/components/integrations/secrets';
-import { IconNotes } from "@tabler/icons-react";
 import { anchorIntegration } from '.';
+import { anchorNoteWidget } from '@site/docs/widgets/anchor-note';
 
 
 <IntegrationHeader
@@ -22,12 +22,7 @@ The Anchor integration lets Homarr connect to your Anchor instance so you can di
 ### Widgets & Capabilities
 <IntegrationCapabilites
   items={[{
-    capability: {
-      icon: IconNotes,
-      name: 'Anchor Note',
-      description: 'Display and edit a selected Anchor note directly in Homarr.',
-      path: '../../integrations/anchor#example-screenshots'
-    }
+    widget: anchorNoteWidget
   }]}
 />
 
