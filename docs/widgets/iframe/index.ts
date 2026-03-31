@@ -56,6 +56,12 @@ export const iframeWidget: WidgetDefinition = {
         values: { type: 'boolean' },
         defaultValue: 'no',
       },
+      {
+        name: 'Allow modals',
+        description: 'Whether to allow the embedded content to open modal windows.',
+        values: { type: 'boolean' },
+        defaultValue: 'no',
+      },
     ],
   },
 };
