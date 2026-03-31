@@ -13,7 +13,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { notificationsWidget } from '.';
 import { ntfyIntegration } from '@site/docs/integrations/ntfy';
-
+import { nextcloudIntegration } from '@site/docs/integrations/nextcloud'
 
 <WidgetHeader
   widget={notificationsWidget}
@@ -30,9 +30,12 @@ import notificationsScreenshot from './img/notifications.png';
 
 ### Supported Integrations
 
-<WidgetIntegrations items={[{
-  integration: ntfyIntegration,
-}]} />
+<WidgetIntegrations
+  items={[
+    { integration: ntfyIntegration },
+    { integration: nextcloudIntegration }
+  ]}
+/>
 
 ### Adding the widget
 
