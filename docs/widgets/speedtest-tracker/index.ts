@@ -10,13 +10,15 @@ export const speedtestTrackerWidget: WidgetDefinition = {
     items: [
       {
         name: 'Show latest result',
-        description: 'Displays the most recent speed test result, including download speed, upload speed, ping, and health status.',
+        description:
+          'Displays the most recent speed test result, including download speed, upload speed, ping, and health status.',
         values: { type: 'boolean' },
         defaultValue: 'yes',
       },
       {
         name: 'Show averages',
-        description: 'Displays average download speed, upload speed, and ping across all recorded tests.',
+        description:
+          'Displays average download speed, upload speed, and ping across all recorded tests.',
         values: { type: 'boolean' },
         defaultValue: 'yes',
       },
@@ -25,6 +27,13 @@ export const speedtestTrackerWidget: WidgetDefinition = {
         description: 'Displays an area chart of the last 12 hours of speed test results.',
         values: { type: 'boolean' },
         defaultValue: 'yes',
+      },
+      {
+        name: 'Show ping results',
+        description:
+          "Displays a chart of ping results. Only shown if 'Show recent results' is disabled.",
+        values: { type: 'boolean' },
+        defaultValue: 'no',
       },
     ],
   },

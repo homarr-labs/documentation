@@ -11,16 +11,6 @@ import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
 import { speedtestTrackerWidget } from '.';
 import { speedtestTrackerIntegration } from '@site/docs/integrations/speedtest-tracker';
 
-### Screenshots
-
-import dark from './img/stt_dark.png';
-import light from './img/stt_light.png';
-
-<div className='flex gap-1'>
-  <img src={dark} alt="speedtest-tracker image dark" width={500} height={355} />
-  <img src={light} alt="speedtest-tracker image light" width={500} height={355} />
-</div>
-
 <WidgetHeader
   widget={speedtestTrackerWidget}
   categories={['Speedtest']}
@@ -28,6 +18,12 @@ import light from './img/stt_light.png';
 
 This widget displays internet speed test results from your [Speedtest Tracker](https://docs.speedtest-tracker.dev/) instance,
 including the latest result, historical averages, and a live chart of the last 12 hours.
+
+### Screenshots
+
+import screenshot from './img/screenshot.png';
+
+<img src={screenshot} alt="speedtest-tracker image" width={500} height={355} />
 
 ### Supported Integrations
 
