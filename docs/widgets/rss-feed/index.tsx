@@ -64,8 +64,14 @@ export const rssFeedWidget: WidgetDefinition = {
         name: 'Hide description',
         description: 'Hide the description of individual feeds',
         values: { type: 'boolean' },
-        defaultValue: 'no'
-      }
+        defaultValue: 'no',
+      },
+      {
+        name: 'Show poster image',
+        description: 'Show the poster image beside the content',
+        values: { type: 'boolean' },
+        defaultValue: 'no',
+      },
     ],
   },
 };
