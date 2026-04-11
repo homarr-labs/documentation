@@ -4,7 +4,7 @@ This guide covers how to install homarr inside of a linux-container in ProxmoxVE
 
 # What is community-scripts?
 
-https://community-scripts.github.io/ProxmoxVE/
+https://community-scripts.org/
 
 This installation method is provided by the Proxmox Community-Scripts. We are a community-driven initiative that simplifies the setup of Proxmox Virtual Environment (VE).
 With hundreds of scripts to help you manage your Proxmox VE environment. Whether you're a seasoned user or a newcomer, we've got you covered.
@@ -14,8 +14,10 @@ With hundreds of scripts to help you manage your Proxmox VE environment. Whether
 It's as simple as pasting the following snippet into your Proxmox node's console
 
 ```bash
-bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/ct/homarr.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/homarr.sh)"
 ```
+
+Check out the website for more info: https://community-scripts.org/scripts?q=homarr
 
 :::warning
 Never trust any script directly injected from the web, without prior looking through it or searching the web for other's opinions.
@@ -38,8 +40,12 @@ update
 or running the script again but this time inside the container's shell:
 
 ```bash
-bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/ct/homarr.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/homarr.sh)"
 ```
+
+# Configuration
+
+Some Homarr features require setting environment variables. When installing Homarr on Proxmox using the community-scripts installer, these can be configured in the file /opt/homarr.env. This path is also documented on the community-scripts website as the configuration path.
 
 # Troubleshooting
 
