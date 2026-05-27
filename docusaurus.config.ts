@@ -257,7 +257,7 @@ const config: Config = {
       'posthog-docusaurus',
       {
         apiKey: 'phc_pWxeD1hbl4ip02JYReX1Crjkt5DhB3dduigirHMCtFE',
-        appUrl: 'https://hog.ajnart.dev',
+        appUrl: 'https://hog.homarr.dev',
         enableInDevelopment: true,
         ui_host: 'https://eu.posthog.com',
         defaults: '2026-01-30',
