@@ -1,0 +1,47 @@
+package.json
+  s_b3756e08c1c2ed::t_e15a927832f5a1 24
+docusaurus.config.ts
+  s_b3756e08c1c2ed::t_f9e9b9b893c6c0 34-35
+src/components/pages/home/review-list/review-list.tsx
+  s_b3756e08c1c2ed::t_7861a448d4843e 2
+  s_b3756e08c1c2ed::t_1404f0485b1a9d 79-80
+  s_b3756e08c1c2ed::t_518264801d9d1f 81-82
+  s_b3756e08c1c2ed::t_7950a54ab7bcfb 94
+docs/getting-started/installation/unraid.mdx
+  s_b3756e08c1c2ed::t_8da98fd5d03b14 2
+  s_b3756e08c1c2ed::t_a6fe9e101e0d20 15-16
+  s_b3756e08c1c2ed::t_8faa3669959c7d 24
+src/components/TrackLink.tsx
+  s_b3756e08c1c2ed::t_a8fcef9e1072a2 1-4,6-16,21,25-38,42-45,48-54
+  s_b3756e08c1c2ed::t_22904362e32362 5,17-20,22-24,39-41,46-47
+pnpm-lock.yaml
+  ai_agent 56-58,1684-1755,1780-1815,3516-3518,3827-3829,4628-4630,5760-5765,5810-5813,5836-5838,6883-6885,9551-9626,9648-9675,11877-11880,12237-12238,13051-13052,14528-14545,14584-14598,14618-14619,15870
+src/components/pages/home/hero/hero.tsx
+  s_b3756e08c1c2ed::t_5941e07234fdd0 3
+  s_b3756e08c1c2ed::t_e59a368a35f16d 31-33
+  s_b3756e08c1c2ed::t_9e401f80139b67 22-23
+  s_b3756e08c1c2ed::t_50513be1af0df7 41
+src/posthog-client.ts
+  s_b3756e08c1c2ed::t_026129a438c347 1-3,5-6,8-19
+  s_b3756e08c1c2ed::t_9a0a9729dc60dd 4,7
+docs/getting-started/index.mdx
+  s_b3756e08c1c2ed::t_6b7040a23d1096 35-36
+  s_b3756e08c1c2ed::t_639f0557022f75 12
+  s_b3756e08c1c2ed::t_de1be351e96b24 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "f218644f8c6ea566c9db91e3f56cc600f0719af4",
+  "prompts": {},
+  "sessions": {
+    "s_b3756e08c1c2ed": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f5693112-ec10-4afe-b9a1-d58083bc770f",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
