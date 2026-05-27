@@ -33,11 +33,6 @@ const config: Config = {
 
   scripts: [
     {
-      src: 'https://umami.homarr.dev/script.js',
-      async: true,
-      'data-website-id': '2847e7dd-32a1-41f2-a6ed-2d9db17d71b9',
-    },
-    {
       src: 'https://widget.kapa.ai/kapa-widget.bundle.js',
       'data-website-id': '1e4656f4-abeb-4343-bbae-1d8626f52378',
       'data-project-name': 'Homarr',
@@ -258,6 +253,19 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
+    [
+      'posthog-docusaurus',
+      {
+        apiKey: 'phc_pWxeD1hbl4ip02JYReX1Crjkt5DhB3dduigirHMCtFE',
+        appUrl: 'https://hog.ajnart.dev',
+        enableInDevelopment: true,
+        ui_host: 'https://eu.posthog.com',
+        defaults: '2026-01-30',
+        autocapture: true,
+        disable_session_recording: true,
+        advanced_disable_feature_flags: true,
+      },
+    ],
     'docusaurus-plugin-image-zoom',
     async function tailwindCssPlugin(context, options) {
       return {

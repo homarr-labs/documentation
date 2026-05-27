@@ -20,7 +20,7 @@ export default function HomeHero() {
           <div className={'flex flex-nowrap gap-2'}>
 
             <Link
-              data-umami-event="Install button"
+              data-attr="Install button"
               className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
               to="/docs/getting-started"
             >
@@ -30,7 +30,7 @@ export default function HomeHero() {
               </div>
             </Link>
             <Link
-              data-umami-event="Redirect to PikaPods"
+              data-attr="Redirect to PikaPods"
               className={`button bg-neutral-900 button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800`}
               to="https://www.pikapods.com/pods?run=homarr-v1"
             >
@@ -48,4 +48,3 @@ export default function HomeHero() {
     </header>
   );
 }
-
