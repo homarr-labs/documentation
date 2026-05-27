@@ -21,7 +21,6 @@
     "api-dump-contributors": "node ./scripts/dump-contributors.mjs"
   },
   "dependencies": {
-    "posthog-js": "^1.335.3",
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/plugin-content-docs": "^3.9.2",
     "@docusaurus/plugin-sitemap": "^3.9.2",
@@ -35,6 +34,8 @@
     "docusaurus-plugin-image-zoom": "^3.0.1",
     "leader-line-new": "^1.1.9",
     "postcss": "^8.4.32",
+    "posthog-docusaurus": "^2.0.5",
+    "posthog-docusaurus": "^2.0.5",
     "prism-react-renderer": "^2.4.1",
     "random-word-slugs": "^0.1.7",
     "react": "^19.2.4",
