@@ -8,8 +8,8 @@ tags:
   - Unraid
 ---
 
+import Link from '@docusaurus/Link';
 import { IconArrowRight } from '@tabler/icons-react';
-import { TrackLink } from '@site/src/components/TrackLink';
 
 Before you try to install Homarr, please review if your device meets the requirements.
 Installing on an unsupported device may lead to unstable behaviour and no support will be provided.
@@ -32,8 +32,8 @@ We build Homarr for a bunch of different architectures, including ARM. Please en
 
 ## Getting started with installation
 
-<TrackLink
-  eventName="Go to installation"
+<Link
+  data-attr="Go to installation"
   className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
   to="/docs/category/installation-1"
 >
@@ -41,4 +41,4 @@ We build Homarr for a bunch of different architectures, including ARM. Please en
     <span className={"dark:text-gray-200"}>Go to Installation</span>
     <IconArrowRight className={"dark:text-gray-200"} size={20} />
   </div>
-</TrackLink>
+</Link>

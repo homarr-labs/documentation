@@ -1,5 +1,4 @@
 import React from 'react';
-import { TrackAnchor } from '@site/src/components/TrackLink';
 
 const reviews = [
   {
@@ -78,8 +77,8 @@ export default function HomepageUserReviews() {
       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {reviews.map((review) => (
           <article key={review.link} className="bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 rounded-2xl">
-            <TrackAnchor className="hover:no-underline h-full block p-5" href={review.link} target="_blank"
-               eventName="Open review">
+            <a className="hover:no-underline h-full block p-5" href={review.link} target="_blank" rel="noopener noreferrer"
+               data-attr="Open review">
               <div className="flex space-x-4">
                 <img className="w-24 h-24 rounded-full dark:bg-zinc-900"
                      src={review.profilePicture} alt="profile" />
@@ -91,7 +90,7 @@ export default function HomepageUserReviews() {
                   <p className="text-gray-600 dark:text-gray-400 text-sm m-0">{review.fullText}</p>
                 </div>
               </div>
-            </TrackAnchor>
+            </a>
           </article>
         ))}
       </div>

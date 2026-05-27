@@ -1,6 +1,6 @@
+import Link from '@docusaurus/Link';
 import { IconDownload } from '@tabler/icons-react';
 import clsx from 'clsx';
-import { TrackLink } from '@site/src/components/TrackLink';
 import styles from '../../../../pages/index.module.css';
 import { HeroCards } from './hero-cards';
 
@@ -19,8 +19,8 @@ export default function HomeHero() {
 
           <div className={'flex flex-nowrap gap-2'}>
 
-            <TrackLink
-              eventName="Install button"
+            <Link
+              data-attr="Install button"
               className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
               to="/docs/getting-started"
             >
@@ -28,9 +28,9 @@ export default function HomeHero() {
                 <span className={'dark:text-gray-200'}>Install</span>
                 <IconDownload className={'dark:text-gray-200'} size={20} />
               </div>
-            </TrackLink>
-            <TrackLink
-              eventName="Redirect to PikaPods"
+            </Link>
+            <Link
+              data-attr="Redirect to PikaPods"
               className={`button bg-neutral-900 button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800`}
               to="https://www.pikapods.com/pods?run=homarr-v1"
             >
@@ -38,7 +38,7 @@ export default function HomeHero() {
                 <img src={"/img/pictures/partner/pika-pods.svg"} alt={"Pika Pods logo"} height={20} />
                 <span className={'dark:text-gray-200'}>Host from $2.3/month</span>
               </div>
-            </TrackLink>
+            </Link>
           </div>
         </div>
         <div className="flex-grow-1 w-full lg:block hidden hover-animation">
@@ -48,4 +48,3 @@ export default function HomeHero() {
     </header>
   );
 }
-
