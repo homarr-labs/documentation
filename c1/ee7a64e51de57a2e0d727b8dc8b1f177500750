@@ -1,0 +1,32 @@
+src/components/pages/home/hero/hero.tsx
+  s_b3756e08c1c2ed::t_a1bcea566bae44 1,22-23,31-33,41
+docs/getting-started/installation/unraid.mdx
+  s_b3756e08c1c2ed::t_22038d76a95c22 1
+  s_b3756e08c1c2ed::t_ed020daa452a18 15-16
+  s_b3756e08c1c2ed::t_2c3896d1770664 24
+src/components/pages/home/review-list/review-list.tsx
+  s_b3756e08c1c2ed::t_6160a894fefab9 80-81
+  s_b3756e08c1c2ed::t_4bac9526809d68 93
+src/posthog-client.ts
+  s_b3756e08c1c2ed::t_4760ff3a65573e 4,7,13
+docs/getting-started/index.mdx
+  s_b3756e08c1c2ed::t_3e6b2089fb8a62 11
+  s_b3756e08c1c2ed::t_be018687118983 44
+  s_b3756e08c1c2ed::t_56bbdb1674fe5e 35-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "c1ee7a64e51de57a2e0d727b8dc8b1f177500750",
+  "prompts": {},
+  "sessions": {
+    "s_b3756e08c1c2ed": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f5693112-ec10-4afe-b9a1-d58083bc770f",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
