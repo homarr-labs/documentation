@@ -35,7 +35,6 @@
     "leader-line-new": "^1.1.9",
     "postcss": "^8.4.32",
     "posthog-docusaurus": "^2.0.5",
-    "posthog-docusaurus": "^2.0.5",
     "prism-react-renderer": "^2.4.1",
     "random-word-slugs": "^0.1.7",
     "react": "^19.2.4",
