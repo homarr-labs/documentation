@@ -1,0 +1,25 @@
+pnpm-lock.yaml
+  ai_agent 56-58,5643-5645,14287
+package.json
+  s_b3756e08c1c2ed::t_9a72450221c61b 38
+  s_b3756e08c1c2ed::t_678ea09d4c47b9 37
+docusaurus.config.ts
+  s_b3756e08c1c2ed::t_aa298ed42e9812 256-260,262-268
+  s_b3756e08c1c2ed::t_a7cf1ca5e9088c 261
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "a09e159b1dd9d6fec6728782f83af26e8fafc4df",
+  "prompts": {},
+  "sessions": {
+    "s_b3756e08c1c2ed": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f5693112-ec10-4afe-b9a1-d58083bc770f",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
