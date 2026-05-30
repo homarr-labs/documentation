@@ -1,0 +1,40 @@
+---
+title: 'Gluetun'
+description: 'Live VPN status from one or more Gluetun integrations'
+hide_title: true
+---
+
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { gluetunIntegration } from '@site/docs/integrations/gluetun';
+import { gluetunWidget } from '.';
+import Alert from '@theme/Admonition';
+
+
+<WidgetHeader
+  widget={gluetunWidget}
+  categories={['VPN']}
+/>
+
+The Gluetun widget shows the live state of one or more Gluetun integrations on a board.
+
+### Screenshots
+
+import singleIntegrationImage from './img/single.png';
+
+<div>
+  <img src={singleIntegrationImage} alt="iframe wikipedia-homepage" width={128 * 3} />
+</div>
+
+
+
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: gluetunIntegration,
+}]} />
+
+### Adding the widget
+
+<AddingWidget />
