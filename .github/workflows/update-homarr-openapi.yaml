@@ -20,7 +20,7 @@ jobs:
         name: "Checkout app source repository"
         with:
           repository: homarr-labs/homarr
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v6
         name: "Install pnpm"
       - name: "Use Node.js ${{ matrix.node-version }}"
         uses: actions/setup-node@v6
