@@ -3,6 +3,7 @@ import { IconDownload } from '@tabler/icons-react';
 import clsx from 'clsx';
 import styles from '../../../../pages/index.module.css';
 import { HeroCards } from './hero-cards';
+import Translate from '@docusaurus/Translate';
 
 export default function HomeHero() {
   return (
@@ -12,9 +13,11 @@ export default function HomeHero() {
           <h1 className="font-extrabold lg:text-7xl text-3xl">A simple, yet<br />powerful dashboard<br />for your
             server.</h1>
           <p className={'lg:text-2xl text-base'}>
-            A sleek, modern dashboard that puts all of your apps and services at your fingertips.
-            Control everything in one convenient location. Seamlessly integrates with the
-            apps you've added, providing you with valuable information.
+            <Translate>
+              A sleek, modern dashboard that puts all of your apps and services at your fingertips.
+              Control everything in one convenient location. Seamlessly integrates with the
+              apps you've added, providing you with valuable information.
+            </Translate>
           </p>
 
           <div className={'flex flex-nowrap gap-2'}>
