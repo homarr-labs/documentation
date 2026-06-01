@@ -1,0 +1,21 @@
+docs/management/boards/index.mdx
+  s_1a92cc8ecc59c5::t_c43996ff4add89 145
+.github/workflows/release.yaml
+  s_1a92cc8ecc59c5::t_0ebf773c947489 33-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "f484f14ccf39c6fcf3e71f4661b2133fd74e87bb",
+  "prompts": {},
+  "sessions": {
+    "s_1a92cc8ecc59c5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "768a478b-f98c-49b9-b634-070842d3aaa0",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
