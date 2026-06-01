@@ -1,0 +1,68 @@
+name: "[Docs] Generate version after Helm chart sync"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  generate-docs-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout documentation repo
+        uses: actions/checkout@v4
+        with:
+          path: target-repo
+
+      - name: Install jq and curl
+        run: sudo apt-get update && sudo apt-get install -y jq curl
+
+      - name: Get latest release from Homarr main repo
+        id: get-version
+        run: |
+          set -eux
+          cd target-repo
+
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/homarr-labs/homarr/releases/latest)
+          VERSION=$(echo "$LATEST_RELEASE" | jq -r .tag_name | sed 's/^v//')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          MAJOR_MINOR="$MAJOR.$MINOR"
+          echo "MAJOR_MINOR=$MAJOR_MINOR" >> $GITHUB_ENV
+          echo "major_minor=$MAJOR_MINOR" >> $GITHUB_OUTPUT
+
+          EXISTS=$(jq -r --arg prefix "$MAJOR_MINOR." '[.[] | select(startswith($prefix))] | length' versions.json)
+
+          if [ "$EXISTS" -eq 0 ]; then
+            echo "should_generate=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_generate=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Node and pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate versioned docs
+        if: steps.get-version.outputs.should_generate == 'true'
+        run: |
+          cd target-repo
+          pnpm install
+          pnpm run docusaurus docs:version ${{ steps.get-version.outputs.version }}
+
+      - name: Commit versioned docs
+        if: steps.get-version.outputs.should_generate == 'true'
+        run: |
+          cd target-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "docs(version): Add versioned docs for ${{ steps.get-version.outputs.version }}" || echo "No changes to commit"
+          git push
