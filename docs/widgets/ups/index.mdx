@@ -20,11 +20,19 @@ This widget displays the status of the UPS devices reported by a Network UPS Too
 status (online, on battery, charging or low battery), battery charge and estimated runtime, output load, and input and
 output voltage.
 
-### Screenshots
+### Layouts
 
-import screenshot from './img/screenshot.png';
+import screenshotFull from './img/screenshot.png';
+import screenshotCompact from './img/screenshot-compact.png';
+import screenshotMini from './img/screenshot-mini.png';
 
-<img src={screenshot} alt="ups widget" width={480} height={355} />
+The widget adapts to the size of the tile, so it stays readable from a full dashboard panel down to a single cell. Multiple UPS devices scroll within the widget at any height.
+
+| Layout | Size | Preview |
+| --- | --- | --- |
+| Full | 3+ columns wide | <img src={screenshotFull} alt="UPS widget full layout" width={239} /> |
+| Compact | ~2 columns | <img src={screenshotCompact} alt="UPS widget compact layout" width={171} /> |
+| Mini | 1 column | <img src={screenshotMini} alt="UPS widget mini layout" width={90} /> |
 
 ### Supported Integrations
 
