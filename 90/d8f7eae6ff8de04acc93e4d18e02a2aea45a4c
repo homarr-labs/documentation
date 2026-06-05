@@ -1,0 +1,21 @@
+docs/widgets/docker-containers/index.mdx
+  s_4cd2c25ee53e70::t_abbc86c011761f 43-47
+docs/integrations/docker/index.mdx
+  s_4cd2c25ee53e70::t_f9f9d9d9bdb2e6 60-66,68,72-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "90d8f7eae6ff8de04acc93e4d18e02a2aea45a4c",
+  "prompts": {},
+  "sessions": {
+    "s_4cd2c25ee53e70": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "05f42fb6-5580-4a8f-b2d8-bb0b890bd10c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
