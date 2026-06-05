@@ -55,3 +55,25 @@ The following integrations support a search functionality and can be selected he
   integration: overseerrIntegration,
   note: "Search for movies and TV shows in Overseerr and request them."
 }]} />
+
+## Media request search
+
+Jellyseerr, Overseerr, and Seerr integrations have a dedicated **Spotlight mode** for searching and requesting media.
+This mode does not require creating a search engine entry — it is available automatically when you have a compatible integration configured.
+
+You can access it from:
+- The **Modes list** in Spotlight (opened with `CTRL + K`)
+- The **search button** on the media request list and stats widgets
+
+### Availability indicators
+
+Search results display colored status badges showing the media's current state in your integration:
+- **Available** — fully available in your media library
+- **Partial** — some content (e.g. seasons) is available
+- **Processing** — currently being downloaded or processed
+- **Requested** — requested but not yet available
+
+### Requesting TV show seasons
+
+For partially available TV shows, you can request additional seasons.
+The request modal shows which seasons are already requested (marked with a status badge and not selectable), so you can select only the missing seasons.
