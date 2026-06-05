@@ -1,0 +1,19 @@
+docs/getting-started/after-the-installation.mdx
+  s_4cd2c25ee53e70::t_86e65a442246c2 69-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "ccb0cd296de8884426f4b61b6f1a4498e73c9f48",
+  "prompts": {},
+  "sessions": {
+    "s_4cd2c25ee53e70": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "05f42fb6-5580-4a8f-b2d8-bb0b890bd10c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
