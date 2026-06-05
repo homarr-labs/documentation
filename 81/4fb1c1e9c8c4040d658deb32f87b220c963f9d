@@ -1,0 +1,25 @@
+docs/integrations/seerr/index.mdx
+  s_35ee83bb40c328::t_b49b650644e004 31-32
+docs/integrations/jellyseerr/index.mdx
+  s_35ee83bb40c328::t_154be10179401b 31-32
+docs/management/search-engines/index.mdx
+  s_35ee83bb40c328::t_2e94653a4e82eb 42-45
+docs/integrations/overseerr/index.mdx
+  s_35ee83bb40c328::t_2b2f72c16bc381 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "814fb1c1e9c8c4040d658deb32f87b220c963f9d",
+  "prompts": {},
+  "sessions": {
+    "s_35ee83bb40c328": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8f93b81c-3b40-4ea9-afb1-c1143291b23e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
