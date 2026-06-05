@@ -154,8 +154,14 @@ const config: Config = {
     algolia: {
       appId: 'N69WSPZTID',
       apiKey: 'b2b00f4ed8ca3dc87b5d211c55121416',
-      contextualSearch: true,
-      indexName: 'homarr',
+      indexName: 'Docusaurus',
+      contextualSearch: false,
+      searchPagePath: 'search',
+      insights: false,
+      replaceSearchResultPathname: {
+        from: '/docs/(next|\\d+(?:\\.\\d+)*)/',
+        to: '/docs/',
+      },
     },
     footer: {
       links: [
