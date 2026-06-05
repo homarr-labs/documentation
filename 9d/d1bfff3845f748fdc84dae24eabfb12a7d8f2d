@@ -1,0 +1,29 @@
+docs/management/search-engines/index.mdx
+  s_4cd2c25ee53e70::t_6b51f481079579 57-79
+docs/widgets/media-request-list/index.mdx
+  s_4cd2c25ee53e70::t_52df511244012a 42-43
+docs/integrations/jellyseerr/index.mdx
+  s_4cd2c25ee53e70::t_78dde65953477d 32-33
+docs/integrations/seerr/index.mdx
+  s_4cd2c25ee53e70::t_11f4a602424ce3 32-33
+docs/integrations/overseerr/index.mdx
+  s_4cd2c25ee53e70::t_b37b01f3416347 32-33
+docs/widgets/media-request-stats/index.mdx
+  s_4cd2c25ee53e70::t_78f766a6734e9a 40-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "9dd1bfff3845f748fdc84dae24eabfb12a7d8f2d",
+  "prompts": {},
+  "sessions": {
+    "s_4cd2c25ee53e70": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "05f42fb6-5580-4a8f-b2d8-bb0b890bd10c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
