@@ -66,6 +66,32 @@ Here you can also disable analytics. Please note that our analytics are completl
 
 <img src={imageStartFromScratchStepServerSettings} alt={"Screenshot of analytics and indexing settings in the onboarding"} width={300} />
 
+### Setting up integrations
+
+After configuring server settings, the onboarding guides you through setting up your integrations.
+
+#### Docker service discovery
+If Docker is available (socket mounted), Homarr automatically detects running containers and matches them to known integration types.
+Matching integrations are pre-selected in the integration list, saving you from manually picking each one.
+
+#### URL templating
+You can define a base URL template to auto-fill integration URLs in bulk.
+Two modes are supported:
+- **Subdomain mode** — e.g. `{app}.example.com` where `{app}` is replaced with the integration name
+- **Port mode** — e.g. `192.168.1.1:{port}` where `{port}` is replaced with the integration's default port
+
+#### API key helper links
+For integrations that require API keys (such as Sonarr, Radarr, SABnzbd, or Seerr), a helper link opens the relevant settings page in the target application so you can quickly copy your key.
+
+#### Creating apps from Docker containers
+You can optionally auto-create bookmark apps for all discovered Docker containers, making them immediately available on your board.
+
+:::note
+
+Some niche and registry integrations (GitHub, npm, Docker Hub, GitLab, Codeberg, LinuxServer.io, GHCR, Quay, Search.ch) are hidden from the onboarding selection grid but remain available on the manage integrations page.
+
+:::
+
 After this step, you finished the onboarding.
 The onboarding can no longer be started again.
 From here you can click on one of the provided links to continue your journey.
