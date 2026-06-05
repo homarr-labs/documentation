@@ -1,0 +1,37 @@
+src/components/pages/home/drag-and-drop/drag-and-drop-showcase.tsx
+  s_06ae1e825633d3::t_34220e7fffcacd 21-30
+  s_06ae1e825633d3::t_eb67e84addb45a 1
+docs/community/donate.mdx
+  s_06ae1e825633d3::t_2782c764e84c70 16
+docusaurus.config.ts
+  s_06ae1e825633d3::t_fa69d2645b4a16 118-120
+  s_06ae1e825633d3::t_62015077d7eada 203-206
+  s_06ae1e825633d3::t_1c03580dd48c11 102,104,106
+src/components/pages/home/hero/hero.tsx
+  s_06ae1e825633d3::t_dbc3a2f2d90220 2
+  s_06ae1e825633d3::t_870e9e637a04e0 23-33
+docs/getting-started/index.mdx
+  s_06ae1e825633d3::t_7b3598238e0f32 33-49
+  s_06ae1e825633d3::t_e4f6b98a28f5c9 12
+src/components/pages/home/integrations/available-integrations.tsx
+  s_06ae1e825633d3::t_a4838b004263f3 23-32
+  s_06ae1e825633d3::t_04ebf85a7fa0d2 1
+src/css/custom.css
+  s_06ae1e825633d3::t_465b58e924ca28 109,117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "367918092d523c6933c0f6ea4bcf34fba1b07a2e",
+  "prompts": {},
+  "sessions": {
+    "s_06ae1e825633d3": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "42bec108-9668-453a-b983-d3a4483122b0",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
