@@ -1,0 +1,21 @@
+docs/getting-started/index.mdx
+  s_c4ba4dfe01ffc4::t_f1805f3a152c44 12
+src/components/pages/home/hero/hero.tsx
+  s_c4ba4dfe01ffc4::t_35cc07e1b2f78e 23-25,28-29,33,35-37,40-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "c2b82b162f0d60115c9774f51ed2a28dc4f965f0",
+  "prompts": {},
+  "sessions": {
+    "s_c4ba4dfe01ffc4": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8438690c-4127-4025-8217-ebb00f7ba65c",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
