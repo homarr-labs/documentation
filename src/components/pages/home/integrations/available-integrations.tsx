@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import { splitToNChunks } from '@site/src/tools/array';
 import classes from './available-integrations.module.css';
 import { SectionContainer } from '@site/src/components/pages/home/container/section-container';
@@ -19,6 +20,16 @@ export const AvailableIntegrations = () => {
               applications, tools and websites. It integrates seamlessly and tests proper connectivity and configuration
               for you. Using the tasks system, it scales efficiently with tons of users, making Homarr reliable in big
               scale deployments too.</p>
+            <p className={'mt-4'}>
+              <Link
+                data-attr="Try demo from integrations"
+                to="https://demo.homarr.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                See integrations in action
+              </Link>
+            </p>
           </div>
           <div className={'rotate-12 w-1/2 hidden md:block argos-ignore'}>
             <div className={'grid gap-12 grid-cols-3'}>

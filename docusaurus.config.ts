@@ -99,11 +99,11 @@ const config: Config = {
           position: 'left',
           to: '/about-us',
         },
-        /*{
+        {
           to: 'https://demo.homarr.dev/',
-          label: '🚀 Demo',
+          label: 'Demo',
           position: 'right',
-        },*/
+        },
         {
           to: 'https://opencollective.com/homarr',
           label: '💴 Donate',
@@ -114,6 +114,10 @@ const config: Config = {
           label: 'Community',
           position: 'right',
           items: [
+            {
+              to: 'https://demo.homarr.dev/',
+              label: 'Live Demo',
+            },
             {
               to: 'https://discord.com/invite/aCsmEV5RgA',
               label: 'Discord',
@@ -195,6 +199,10 @@ const config: Config = {
             {
               label: 'About us',
               to: '/about-us',
+            },
+            {
+              label: 'Live Demo',
+              to: 'https://demo.homarr.dev/',
             },
           ],
         },

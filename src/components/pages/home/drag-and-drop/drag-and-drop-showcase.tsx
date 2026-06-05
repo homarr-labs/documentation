@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import videoLight from './showcase-light.mp4';
 import videoDark from './showcase-dark.mp4';
 import { IconClick } from '@tabler/icons-react';
@@ -17,6 +18,16 @@ export const DragAndDropShowcase = () => {
         <div className={'rounded-3xl overflow-hidden border-8 border-red-500 border-solid'} style={{ aspectRatio: '17.6/9' }}>
           <video className={'w-full'} src={video} autoPlay loop muted />
         </div>
+        <p className={'text-center mt-6 text-lg'}>
+          <Link
+            data-attr="Try demo from drag-and-drop"
+            to="https://demo.homarr.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Try it live on the demo
+          </Link>
+        </p>
       </SectionContainer>
     </div>
   );
