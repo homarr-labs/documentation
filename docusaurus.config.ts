@@ -99,11 +99,11 @@ const config: Config = {
           position: 'left',
           to: '/about-us',
         },
-        /*{
+        {
           to: 'https://demo.homarr.dev/',
-          label: '🚀 Demo',
+          label: 'Demo',
           position: 'right',
-        },*/
+        },
         {
           to: 'https://opencollective.com/homarr',
           label: '💴 Donate',

@@ -1,5 +1,5 @@
 import Link from '@docusaurus/Link';
-import { IconDownload } from '@tabler/icons-react';
+import { IconDownload, IconExternalLink } from '@tabler/icons-react';
 import clsx from 'clsx';
 import styles from '../../../../pages/index.module.css';
 import { HeroCards } from './hero-cards';
@@ -27,6 +27,18 @@ export default function HomeHero() {
               <div className={'flex items-center gap-3'}>
                 <span className={'dark:text-gray-200'}>Install</span>
                 <IconDownload className={'dark:text-gray-200'} size={20} />
+              </div>
+            </Link>
+            <Link
+              data-attr="Try demo button"
+              className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
+              to="https://demo.homarr.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={'flex items-center gap-3'}>
+                <span className={'dark:text-gray-200'}>Try Demo</span>
+                <IconExternalLink className={'dark:text-gray-200'} size={20} />
               </div>
             </Link>
             <Link
