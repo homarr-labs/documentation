@@ -57,12 +57,27 @@ In Windows, you'll need to adjust the slashes: `-v //var/run/docker.sock:/var/ru
 
 ### Managing your Docker containers within Homarr
 Homarr allows you to interact with Docker containers running on your system.
-You can **restart**, **stop**, **start**, **refresh** and **remove** containers.
-A search also allows you to search through your containers.
+Each container row has an action menu with the following options:
+- **View logs** — opens a dedicated logs page with a live terminal
+- **Start** — start a stopped container
+- **Stop** — stop a running container
+- **Restart** — restart a container
+- **Remove** — remove a container
+- **Add to Homarr** — create a bookmark app from the container
 
-Additionally, if you have a lot of containers you can search and filter them by **container** or **image** name:
+You can also search and filter containers by **container** or **image** name:
 
 ![Container and Image Search](img/container-and-image-search.png)
+
+#### Viewing container logs
+
+You can view the real-time logs of any container by selecting **View logs** from the row action menu.
+This opens a dedicated page with an xterm.js terminal that streams the container's log output.
+
+#### CPU and Memory columns
+
+The Docker management table supports optional **CPU usage** and **Memory usage** columns.
+These columns are hidden by default and can be toggled on from the table column visibility settings.
 
 #### Add apps from containers
 
