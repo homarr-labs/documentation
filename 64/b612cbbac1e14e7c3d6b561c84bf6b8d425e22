@@ -1,0 +1,37 @@
+.github/workflows/algolia-recrawl.yaml
+  s_c471c5650ffdf9::t_75f075258aea0a 1-19,40-48
+  s_c471c5650ffdf9::t_3688bf03bd2c8e 20-39,49-57
+README.md
+  s_c471c5650ffdf9::t_ab325a87c51a34 26-28,30,32,34,36,38,42-43
+  s_c471c5650ffdf9::t_fbfa901cb645dd 44-50
+  s_c471c5650ffdf9::t_636ec0dc0106d5 29,31,33,35,37,39-41,51
+package.json
+  s_c471c5650ffdf9::t_3bc9df92c54e8e 21-22
+docsearch.config.js
+  s_c471c5650ffdf9::t_5e5b1a5858eb3d 1-3,5,18,48-80,83,140-150
+  s_c471c5650ffdf9::t_82c3b6da9fcab0 4,6-17,19-47,81-82,84-139,151-153
+scripts/verify-algolia-search.mjs
+  s_c471c5650ffdf9::t_1d8e9f2f729b77 89-92,95-99
+  s_c471c5650ffdf9::t_06b121359aa7a2 21
+  s_c471c5650ffdf9::t_53625f708cc596 3-8,26,28,41,53-54,56-61,64-65,67-87,93-94,100,103,109,112-113,122,126-153,159-166,169-174,176,178-182
+  s_c471c5650ffdf9::t_43767a68ad4fa1 1-2,9-20,22-25,27,29-40,42-52,55,62-63,66,88,101-102,104-108,110-111,114-121,123-125,154-158,167-168,175,177,183-189
+docusaurus.config.ts
+  s_c471c5650ffdf9::t_6a75178955ab0e 159-164
+  s_c471c5650ffdf9::t_5df22a1beded67 157-158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "64b612cbbac1e14e7c3d6b561c84bf6b8d425e22",
+  "prompts": {},
+  "sessions": {
+    "s_c471c5650ffdf9": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "d64b206b-d7fc-422f-95e8-770c6b8c8ff7",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
