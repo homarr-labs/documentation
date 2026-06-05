@@ -1,0 +1,19 @@
+src/css/custom.css
+  s_c4ba4dfe01ffc4::t_271171f71632c6 109,117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "e95dee44099293503748d79959dcd56a247d34ae",
+  "prompts": {},
+  "sessions": {
+    "s_c4ba4dfe01ffc4": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8438690c-4127-4025-8217-ebb00f7ba65c",
+        "model": "composer-2.5"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
