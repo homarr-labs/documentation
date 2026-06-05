@@ -20,18 +20,6 @@ export default function HomeHero() {
           <div className={'flex flex-nowrap gap-2'}>
 
             <Link
-              data-attr="Try demo button"
-              className={'button button--primary button--lg rounded-3xl'}
-              to="https://demo.homarr.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className={'flex items-center gap-3'}>
-                <span>Try Demo</span>
-                <IconExternalLink size={20} />
-              </div>
-            </Link>
-            <Link
               data-attr="Install button"
               className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
               to="/docs/getting-started"
@@ -39,6 +27,18 @@ export default function HomeHero() {
               <div className={'flex items-center gap-3'}>
                 <span className={'dark:text-gray-200'}>Install</span>
                 <IconDownload className={'dark:text-gray-200'} size={20} />
+              </div>
+            </Link>
+            <Link
+              data-attr="Try demo button"
+              className={'button button--secondary button--lg rounded-3xl dark:border-zinc-600 dark:bg-zinc-800'}
+              to="https://demo.homarr.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={'flex items-center gap-3'}>
+                <span className={'dark:text-gray-200'}>Try Demo</span>
+                <IconExternalLink className={'dark:text-gray-200'} size={20} />
               </div>
             </Link>
             <Link

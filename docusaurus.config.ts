@@ -115,10 +115,6 @@ const config: Config = {
           position: 'right',
           items: [
             {
-              to: 'https://demo.homarr.dev/',
-              label: 'Live Demo',
-            },
-            {
               to: 'https://discord.com/invite/aCsmEV5RgA',
               label: 'Discord',
             },
@@ -199,10 +195,6 @@ const config: Config = {
             {
               label: 'About us',
               to: '/about-us',
-            },
-            {
-              label: 'Live Demo',
-              to: 'https://demo.homarr.dev/',
             },
           ],
         },
