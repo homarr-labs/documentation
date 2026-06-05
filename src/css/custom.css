@@ -106,7 +106,7 @@
   white-space: nowrap;
 }
 
-.navbar__items.navbar__items--right .navbar__item.navbar__link:first-of-type {
+/*.navbar__items.navbar__items--right .navbar__item.navbar__link:first-of-type {
   background-color: var(--ifm-color-primary-light) !important;
   border-radius: 30px;
 }
@@ -114,7 +114,7 @@
 .navbar__items.navbar__items--right .navbar__item.navbar__link:first-of-type:hover {
   background-color: var(--ifm-color-primary) !important;
   color: var(--ifm-navbar-link-color) !important;
-}
+}*/
 
 html[data-theme="dark"] div#__docusaurus div[role="banner"] {
   background-color: #1b1b1d;
