@@ -1,0 +1,25 @@
+docs/integrations/uptime-kuma/index.ts
+  s_3610582ca2943b::t_3f492d949cb32d 1-9
+docs/integrations/uptime-kuma/index.mdx
+  s_3610582ca2943b::t_ab33950e0174d0 1-44
+docs/widgets/uptime-kuma/index.ts
+  s_3610582ca2943b::t_023d9b2b87fda7 1-49
+docs/widgets/uptime-kuma/index.mdx
+  s_3610582ca2943b::t_3dcf3562ec8e05 1-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "80b8a40abb60331109e23832dbd0ae8eee158533",
+  "prompts": {},
+  "sessions": {
+    "s_3610582ca2943b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "aa2f49da-9959-4b5e-b271-a951fddc12ad",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
