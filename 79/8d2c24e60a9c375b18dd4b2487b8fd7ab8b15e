@@ -1,0 +1,29 @@
+docs/integrations/audiobookshelf/index.ts
+  s_3610582ca2943b::t_38ecd12cacd97f 1-9
+docs/integrations/navidrome/index.ts
+  s_3610582ca2943b::t_ef7fd18c823577 1-9
+docs/integrations/audiobookshelf/index.mdx
+  s_3610582ca2943b::t_bc2be39af2a78d 1-41
+docs/widgets/audio-stats/index.ts
+  s_3610582ca2943b::t_6bc91ad1dbd78f 1-85
+docs/integrations/navidrome/index.mdx
+  s_3610582ca2943b::t_0a0956bad48953 1-39
+docs/widgets/audio-stats/index.mdx
+  s_3610582ca2943b::t_ad83402f184b22 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "798d2c24e60a9c375b18dd4b2487b8fd7ab8b15e",
+  "prompts": {},
+  "sessions": {
+    "s_3610582ca2943b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "aa2f49da-9959-4b5e-b271-a951fddc12ad",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
