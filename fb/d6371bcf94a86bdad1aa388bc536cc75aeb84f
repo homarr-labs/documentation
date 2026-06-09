@@ -1,0 +1,25 @@
+docs/integrations/paperless-ngx/index.ts
+  s_3610582ca2943b::t_5265ca750ada01 1-9
+docs/widgets/paperless-ngx/index.mdx
+  s_3610582ca2943b::t_1fc15d82aee0f2 1-34
+docs/integrations/paperless-ngx/index.mdx
+  s_3610582ca2943b::t_2c0cb45b7aa7d5 1-41
+docs/widgets/paperless-ngx/index.ts
+  s_3610582ca2943b::t_73e7296ee2f98a 1-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "fbd6371bcf94a86bdad1aa388bc536cc75aeb84f",
+  "prompts": {},
+  "sessions": {
+    "s_3610582ca2943b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "aa2f49da-9959-4b5e-b271-a951fddc12ad",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Thomas Camlong <thomas@ajnart.fr>"
+    }
+  }
+}
