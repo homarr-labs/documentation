@@ -51,7 +51,7 @@ jobs:
         with:
           node-version: 24
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v6
 
       - name: Verify search index
         run: pnpm install --frozen-lockfile && pnpm verify:search
