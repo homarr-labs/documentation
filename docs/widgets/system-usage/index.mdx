@@ -1,0 +1,43 @@
+---
+title: 'System Usage'
+description: 'CPU, Memory, Disk and other hardware usage of your system.'
+hide_title: true
+---
+
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { systemUsageWidget } from '.';
+import { dashDotIntegration } from '@site/docs/integrations/dash-dot';
+import { openMediaVaultIntegration } from '@site/docs/integrations/open-media-vault';
+import { proxmoxIntegration } from '@site/docs/integrations/proxmox';
+
+
+<WidgetHeader
+  widget={systemUsageWidget}
+  categories={['CPU', 'RAM', 'Memory', 'Network', 'Disk']}
+/>
+
+Shows percentage usage of system resources like CPU, Memory and Disk. Inspired by Beszel's grid view.
+
+### Screenshots
+
+import screenshot from './img/image.png';
+import { beszelIntegration } from '@site/docs/integrations/beszel';
+
+<img src={screenshot} alt="system-usage-widget" width={256} height={256} />
+
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: beszelIntegration
+}]} />
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+
+<WidgetConfig configuration={systemUsageWidget.configuration} />
