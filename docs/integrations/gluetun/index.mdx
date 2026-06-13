@@ -1,0 +1,46 @@
+---
+title: 'Gluetun'
+description: "Connect homarr to a Gluetun VPN container to display live VPN connection status."
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
+import { AddingIntegration } from '@site/src/components/integrations/adding';
+import { IntegrationSecrets } from '@site/src/components/integrations/secrets';
+import Alert from '@theme/Admonition';
+import { gluetunIntegration } from '.';
+import { gluetunWidget } from '@site/docs/widgets/gluetun';
+
+
+<IntegrationHeader
+  integration={gluetunIntegration}
+  categories={['VPN']}
+/>
+
+[Gluetun](https://github.com/qdm12/gluetun) is a lightweight, OpenVPN- and Wireguard-capable VPN client container with a built-in HTTP control server. Homarr reads that control server to surface your live VPN state — status, public IP, exit location, provider and protocol — in the [Gluetun widget](../../widgets/gluetun).
+
+### Widgets & Capabilities
+<IntegrationCapabilites
+    items={[{
+        widget: gluetunWidget,
+    }]}
+/>
+
+## Setting up the Gluetun control server
+
+Homarr connects to Gluetun's HTTP control server, which is disabled by default. Enable it and configure authentication by setting the control-server environment variables and mounting an auth config file — see the [Gluetun authentication guide](https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md#authentication).
+
+
+### Adding the integration
+<AddingIntegration />
+
+
+### Secrets
+<IntegrationSecrets secrets={[{
+    credentials: ['apiKey'],
+    steps: [],
+}, {
+    credentials: ['username', 'password'],
+    steps: [],
+}]} />
